@@ -2,7 +2,7 @@
 <html <?php language_attributes();?>>
 <head>
 	<meta charset="<?php bloginfo('charset');?>" />
-	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, maximum-scale=1.0">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<?php wp_head()?>
 	<title><?= is_front_page() ? get_bloginfo('name') : wp_title()?></title>
 	<link rel="icon" href="<?= get_site_icon_url() ?>" />
