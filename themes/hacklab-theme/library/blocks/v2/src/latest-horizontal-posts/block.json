@@ -1,0 +1,106 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "hacklabr/latest-horizontal-posts",
+	"version": "1.0.0",
+	"title": "Últimos posts (Horizontal)",
+	"category": "text",
+	"icon": "excerpt-view",
+	"description": "Exibe os últimos posts (e outros conteúdos) em formato horizontal com slider.",
+	"example": {},
+	"supports": {
+		"html": false
+	},
+	"attributes": {
+		"blockId": {
+			"type": "string"
+		},
+		"blockModel": {
+			"type": "string",
+			"default": "specials"
+		},
+		"channelId": {
+			"type": "string"
+		},
+		"coAuthor": {
+			"type": "string"
+		},
+		"contentPosition": {
+			"type": "string",
+			"default": "left"
+		},
+		"description": {
+			"type": "string"
+		},
+		"flickrAPIKey": {
+			"type": "string"
+		},
+		"flickrByType": {
+			"type": "string",
+			"default": "user"
+		},
+		"flickrAlbumId": {
+			"type": "string"
+		},
+		"flickrUserId": {
+			"type": "string"
+		},
+		"heading": {
+			"type": "string"
+		},
+		"linkUrl": {
+			"type": "string"
+		},
+		"noCompare": {
+			"type": "string",
+			"default": "OR"
+		},
+		"noPostType": {
+			"type": "string"
+		},
+		"noQueryTerms": {
+			"type": "array"
+		},
+		"noTaxonomy": {
+			"type": "string"
+		},
+		"playlistId": {
+			"type": "string"
+		},
+		"postsToShow": {
+			"type": "number",
+			"default": 5
+		},
+		"postType": {
+			"type": "string",
+			"default": "post"
+		},
+		"queryTerms": {
+			"type": "array"
+		},
+		"showChildren": {
+			"type": "boolean",
+			"default": false
+		},
+		"showTaxonomy": {
+			"type": "string",
+			"default": "category"
+		},
+		"slidesToShow": {
+			"type": "number",
+			"default": 3
+		},
+		"taxonomy": {
+			"type": "string"
+		},
+		"videoModel": {
+			"type": "string",
+			"default": "playlist"
+		}
+	},
+	"textdomain": "hacklabr",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css",
+	"viewScript": "file:./view.js"
+}
