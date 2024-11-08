@@ -82,41 +82,49 @@ function latest_horizontal_posts_callback( $attributes ) {
             $post__not_in = array_merge( $latest_blocks_posts_ids, array_keys( $newspack_blocks_post_id ) );
             $post__not_in = array_unique( $post__not_in, SORT_STRING );
 
-            if ( method_exists( 'AjaxPageviews', 'get_top_viewed_by_terms' ) && $block_model == 'most-read' ) {
+            if ( $block_model == 'most-read' ) {
+                if ( class_exists( 'AjaxPageviews' ) && method_exists( 'AjaxPageviews', 'get_top_viewed_by_terms' ) ) {
 
-                $apv_args = [
-                    'post_type' => ! empty( $attributes['postType'] ) ? sanitize_text_field( $attributes['postType'] ) : null,
-                    'taxonomy'  => ! empty( $attributes['taxonomy'] ) ? $attributes['taxonomy'] : null,
-                    'terms'     => ! empty( $attributes['queryTerms'] ) ? array_map( function( $t ) { return $t['id']; }, $attributes['queryTerms'] ) : null,
-                    'post_from' => date( 'Y-m-d', strtotime( '-10 hours' ) )
-                ];
-
-                if ( is_plugin_active( 'co-authors-plus/co-authors-plus.php' ) ) {
-                    $apv_args['co_author'] = ! empty( $attributes['coAuthor'] ) ? sanitize_text_field( $attributes['coAuthor'] ) : null;
-                }
-
-                $limit = ! empty( $attributes['postsToShow'] ) ? $attributes['postsToShow'] : 10;
-
-                $top_viewed_posts = \AjaxPageviews::get_top_viewed_by_terms( $limit , $apv_args );
-
-                if ( $top_viewed_posts ) {
-                    $top_viewed_posts = array_map( function( $item ) {
-                        return $item->post_id;
-                    }, $top_viewed_posts );
-
-                    $args = [
-                        'ignore_sticky_posts' => 1,
-                        'no_found_rows'       => true,
-                        'orderby'             => 'post__in',
-                        'post__in'            => $top_viewed_posts,
-                        'post_status'         => 'publish',
-                        'post_type'           => $attributes['postType'],
-                        'posts_per_page'      => $limit
+                    $apv_args = [
+                        'post_type' => ! empty( $attributes['postType'] ) ? sanitize_text_field( $attributes['postType'] ) : null,
+                        'taxonomy'  => ! empty( $attributes['taxonomy'] ) ? $attributes['taxonomy'] : null,
+                        'terms'     => ! empty( $attributes['queryTerms'] ) ? array_map( function( $t ) { return $t['id']; }, $attributes['queryTerms'] ) : null,
+                        'post_from' => date( 'Y-m-d', strtotime( '-10 hours' ) )
                     ];
 
-                    if ( ! $show_children ) {
-                        $args['post_parent'] = 0;
+                    if ( is_plugin_active( 'co-authors-plus/co-authors-plus.php' ) ) {
+                        $apv_args['co_author'] = ! empty( $attributes['coAuthor'] ) ? sanitize_text_field( $attributes['coAuthor'] ) : null;
                     }
+
+                    $limit = ! empty( $attributes['postsToShow'] ) ? $attributes['postsToShow'] : 10;
+
+                    $top_viewed_posts = \AjaxPageviews::get_top_viewed_by_terms( $limit , $apv_args );
+
+                    if ( $top_viewed_posts ) {
+                        $top_viewed_posts = array_map( function( $item ) {
+                            return $item->post_id;
+                        }, $top_viewed_posts );
+
+                        $args = [
+                            'ignore_sticky_posts' => 1,
+                            'no_found_rows'       => true,
+                            'orderby'             => 'post__in',
+                            'post__in'            => $top_viewed_posts,
+                            'post_status'         => 'publish',
+                            'post_type'           => $attributes['postType'],
+                            'posts_per_page'      => $limit
+                        ];
+
+                        if ( ! $show_children ) {
+                            $args['post_parent'] = 0;
+                        }
+                    }
+                } else {
+                    if ( is_admin() || defined( 'REST_REQUEST' ) && REST_REQUEST ) {
+                        return '<h2>' . __( 'This feature depends on the AjaxPageviews plugin.', 'hacklabr' ) . '</h2>';
+                    }
+
+                    return;
                 }
             } else {
                 $args = build_posts_query( $attributes, $post__not_in );
