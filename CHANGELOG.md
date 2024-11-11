@@ -16,4 +16,6 @@ O formato é baseado em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.0.
 
 ### Fixed
 
+- Corrige o comando de criação de zip do tema, para remover a pasta node_modules do blocks/v2
+
 ### Removed
