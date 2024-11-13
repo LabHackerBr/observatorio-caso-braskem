@@ -27,6 +27,9 @@ function blocks_init() {
     $active_blocks = [
         'latest-horizontal-posts' => [
             'render_callback' => 'hacklabr\v2\latest_horizontal_posts_callback'
+        ],
+        'latest-vertical-posts' => [
+            'render_callback' => 'hacklabr\v2\latest_vertical_posts_callback'
         ]
     ];
 
