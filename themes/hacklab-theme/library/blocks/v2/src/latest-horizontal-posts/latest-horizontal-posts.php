@@ -9,7 +9,7 @@ function latest_horizontal_posts_callback( $attributes ) {
     global $latest_blocks_posts_ids;
 
     $block_id         = ( ! empty( $attributes['blockId'] ) ) ? esc_attr( $attributes['blockId'] ) : '';
-    $block_model      = ( ! empty( $attributes['blockModel'] ) ) ? esc_attr( $attributes['blockModel'] ) : 'specials';
+    $block_model      = ( ! empty( $attributes['blockModel'] ) ) ? esc_attr( $attributes['blockModel'] ) : 'post';
     $content_position = ( ! empty( $attributes['contentPosition'] ) ) ? esc_attr( $attributes['contentPosition'] ) : 'left';
     $custom_class     = isset( $attributes['className'] ) ? sanitize_title( $attributes['className'] ) : '';
     $description      = ( ! empty( $attributes['description'] ) ) ? apply_filters( 'the_content', $attributes['description'] ) : false;
@@ -68,7 +68,7 @@ function latest_horizontal_posts_callback( $attributes ) {
         $has_content = columnists_get_contents( $attributes );
     }
 
-    if ( $block_model == 'most-read' || $block_model == 'specials' || $block_model == 'post') {
+    if ( $block_model == 'most-read' || $block_model == 'specials' || $block_model == 'post' ) {
         // Posts
         $cache_key = 'hacklabr_horizontal_' . $attributes_hash;
 
@@ -203,7 +203,7 @@ function latest_horizontal_posts_callback( $attributes ) {
                     }
                 echo '</div>';
 
-                if ( $block_model == 'most-read' || $content_position !== 'full' ) {
+                if ( $block_model == 'most-read' || $block_model == 'post' || $content_position !== 'full' ) {
                     // The footer with dots and arrows
                     echo '<div class="latest-horizontal-posts-block__footer">';
                     echo '<div class="latest-horizontal-posts-block__dots"></div>';
@@ -284,7 +284,7 @@ function latest_horizontal_posts_callback( $attributes ) {
 
             $footer_class = 'latest-horizontal-posts-block__footer';
 
-            if ( $content_position !== 'full' || $block_model == 'most-read' ) {
+            if ( $content_position == 'full' ) {
                 $footer_class .= ' medium-only';
             }
 

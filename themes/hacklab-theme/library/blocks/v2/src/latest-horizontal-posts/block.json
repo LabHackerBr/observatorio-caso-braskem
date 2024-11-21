@@ -2,7 +2,7 @@
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
 	"name": "hacklabr/latest-horizontal-posts",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"title": "Últimos posts (Horizontal)",
 	"category": "text",
 	"icon": "excerpt-view",
@@ -17,7 +17,7 @@
 		},
 		"blockModel": {
 			"type": "string",
-			"default": "specials"
+			"default": "post"
 		},
 		"channelId": {
 			"type": "string"

@@ -376,7 +376,7 @@ export default function Edit( { attributes, setAttributes } ) {
                         </>
                     ) }
 
-                    { ( blockModel === 'most-read' || blockModel === 'specials' ) && (
+                    { ( blockModel === 'most-read' || blockModel === 'post' || blockModel === 'specials' ) && (
                         <>
                             <PanelRow>
                                 <SelectPostType postType={postType} onChangePostType={onChangePostType} />
@@ -433,7 +433,7 @@ export default function Edit( { attributes, setAttributes } ) {
                             ) }
 
 
-                            { blockModel === 'most-read' && (
+                            { ( blockModel === 'most-read' || blockModel === 'post' ) && (
                                 <PanelRow>
                                     <SelectGuestAuthor coAuthor={ coAuthor } onChangeCoAuthor={ onChangeCoAuthor } />
                                 </PanelRow>
@@ -471,7 +471,6 @@ export default function Edit( { attributes, setAttributes } ) {
                             </PanelRow>
 
                             <PanelRow>
-
                                 <SelectPostType postType={ noPostType } onChangePostType={ onChangeNoPostType } />
                             </PanelRow>
 
@@ -513,7 +512,6 @@ export default function Edit( { attributes, setAttributes } ) {
                                                 label: __( 'AND', 'hacklabr' ),
                                                 value: "and"
                                             }
-
                                         ]}
                                         onChange={ onChangeNoCompare }
                                     />
