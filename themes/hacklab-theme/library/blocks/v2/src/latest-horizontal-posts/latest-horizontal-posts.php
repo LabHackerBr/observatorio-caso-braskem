@@ -68,7 +68,7 @@ function latest_horizontal_posts_callback( $attributes ) {
         $has_content = columnists_get_contents( $attributes );
     }
 
-    if ( $block_model == 'most-read' || $block_model == 'specials' || $block_model == 'post' ) {
+    if ( $block_model == 'most-read' || $block_model == 'post' ) {
         // Posts
         $cache_key = 'hacklabr_horizontal_' . $attributes_hash;
 
@@ -256,7 +256,7 @@ function latest_horizontal_posts_callback( $attributes ) {
                     wp_reset_postdata();
                 }
 
-                if ( $block_model == 'specials' || $block_model == 'post' ) {
+                if ( $block_model == 'post' ) {
                     // Posts
                     while ( $has_content->have_posts() ) :
                         $has_content->the_post();

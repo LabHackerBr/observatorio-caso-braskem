@@ -213,10 +213,6 @@ export default function Edit( { attributes, setAttributes } ) {
                                     value: "most-read"
                                 },
                                 {
-                                    label: __( 'Specials', 'hacklabr' ),
-                                    value: "specials"
-                                },
-                                {
                                     label: __( 'Latest posts', 'hacklabr' ),
                                     value: "post"
                                 },
@@ -376,7 +372,7 @@ export default function Edit( { attributes, setAttributes } ) {
                         </>
                     ) }
 
-                    { ( blockModel === 'most-read' || blockModel === 'post' || blockModel === 'specials' ) && (
+                    { ( blockModel === 'most-read' || blockModel === 'post' ) && (
                         <>
                             <PanelRow>
                                 <SelectPostType postType={postType} onChangePostType={onChangePostType} />
