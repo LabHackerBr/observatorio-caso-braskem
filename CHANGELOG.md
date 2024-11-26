@@ -8,6 +8,8 @@ O formato é baseado em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.0.
 
 ### Added
 
+- Adiciona o bloco de Eventos do Mapas Culturais
+
 - Adiciona o bloco Latest Vertical Posts
 
 - Adiciona o bloco Latest Horizontal Posts

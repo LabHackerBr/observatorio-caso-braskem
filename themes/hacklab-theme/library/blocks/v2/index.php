@@ -25,6 +25,9 @@ function blocks_init() {
     }
 
     $active_blocks = [
+        'events-from-mapas-culturais' => [
+            'render_callback' => 'hacklabr\v2\events_from_mapas_culturais_callback'
+        ],
         'latest-horizontal-posts' => [
             'render_callback' => 'hacklabr\v2\latest_horizontal_posts_callback'
         ],
@@ -39,7 +42,7 @@ function blocks_init() {
         $args = [];
 
         if ( $block_args ) {
-            $file = __DIR__ . '/src/' . $block_name . '/'. $block_name . '.php';
+            $file = __DIR__ . '/src/' . $block_name . '/' . $block_name . '.php';
 
             if ( file_exists( $file ) ) {
                 include_once $file;
