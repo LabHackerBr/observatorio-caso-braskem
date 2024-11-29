@@ -249,3 +249,11 @@ function count_guest_author_posts( $guest_author_slug ) {
 
     return 0;
 }
+
+function sanitize_encode( $value ) {
+    if ( ! is_string( $value ) ) {
+        return $value;
+
+    }
+    return str_replace( ',', '%2C', rawurlencode( trim( $value ) ) );
+}

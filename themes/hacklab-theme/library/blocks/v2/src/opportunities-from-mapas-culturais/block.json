@@ -1,0 +1,30 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 3,
+    "name": "hacklabr/opportunities-from-mapas-culturais",
+    "version": "0.0.1",
+    "title": "Oportunidades do Mapas Culturais",
+    "category": "text",
+    "icon": "excerpt-view",
+    "description": "Exibe as últimas Oportunidades do Mapas Culturais.",
+    "example": {},
+    "supports": {
+        "html": false
+    },
+    "attributes": {
+        "blockId": {
+            "type": "string"
+        },
+        "heading": {
+            "type": "string"
+        },
+        "itemsToShow": {
+            "type": "number",
+            "default": 4
+        }
+    },
+    "textdomain": "hacklabr",
+    "editorScript": "file:./index.js",
+    "editorStyle": "file:./index.css",
+    "style": "file:./style-index.css"
+}

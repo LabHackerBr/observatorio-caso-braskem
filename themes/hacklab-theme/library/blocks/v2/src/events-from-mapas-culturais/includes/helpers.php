@@ -21,10 +21,6 @@ function build_mapas_culturais_api_url( $api_url, $from = null, $to = null, $eve
     return esc_url( $api_url ) . '?' . implode( '&', $query_params );
 }
 
-function sanitize_encode( $value ) {
-    return str_replace( ',', '%2C', rawurlencode( trim( $value ) ) );
-}
-
 function get_events_from_mapas_culturais( $from, $to, $limit ) {
     $base_url = get_option( 'mapas_culturais_url', false );
 
