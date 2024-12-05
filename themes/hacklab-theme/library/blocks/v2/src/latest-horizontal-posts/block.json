@@ -86,6 +86,10 @@
 			"type": "string",
 			"default": "category"
 		},
+        "showExcerpt": {
+			"type": "boolean",
+			"default": false
+		},
 		"slidesToShow": {
 			"type": "number",
 			"default": 3

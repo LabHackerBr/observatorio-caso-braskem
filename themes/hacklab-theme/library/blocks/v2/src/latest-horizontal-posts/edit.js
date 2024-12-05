@@ -62,6 +62,7 @@ export default function Edit( { attributes, setAttributes } ) {
         queryTerms,
         showChildren,
         showTaxonomy,
+        showExcerpt,
         slidesToShow,
         taxonomy,
         videoModel
@@ -76,6 +77,7 @@ export default function Edit( { attributes, setAttributes } ) {
     const onChangeBlockModel = ( value ) => {
         setAttributes( { blockModel: value } )
         setAttributes( { showTaxonomy: '' } )
+        setAttributes( { showExcerpt: '' } )
         setAttributes( { taxonomy: '' } )
         setAttributes( { queryTerms: [] } )
         setAttributes( { coAuthor: '' } )
@@ -92,6 +94,7 @@ export default function Edit( { attributes, setAttributes } ) {
     const onChangePostType = ( value ) => {
         setAttributes( { postType: value } )
         setAttributes( { showTaxonomy: '' } )
+        setAttributes( { showExcerpt: '' } )
         setAttributes( { taxonomy: '' } )
         setAttributes( { queryTerms: [] } )
     }
@@ -103,6 +106,7 @@ export default function Edit( { attributes, setAttributes } ) {
     const onChangeTaxonomy = ( value ) => {
         setAttributes( { taxonomy: value } )
         setAttributes( { showTaxonomy: '' } )
+        setAttributes( { showExcerpt: '' } )
         setAttributes( { queryTerms: [] } )
     }
 
@@ -461,6 +465,15 @@ export default function Edit( { attributes, setAttributes } ) {
                                     ) }
                                 />
                             </PanelRow>
+
+                            <PanelRow>
+                                <ToggleControl
+                                    label={ __( 'Show excerpt?', 'hacklabr' ) }
+                                    checked={ showExcerpt }
+                                    onChange={ () => { setAttributes( { showExcerpt: ! showExcerpt } ) } }
+                                />
+                            </PanelRow>
+
 
                             <PanelRow>
                                 <h2>{ __( 'Filter posts to not display', 'hacklabr' ) }</h2>

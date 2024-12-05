@@ -1,4 +1,6 @@
 <?php $show_taxonomy = isset( $args['attributes']['showTaxonomy'] ) ? $args['attributes']['showTaxonomy'] : false; ?>
+>
+<?php $show_excerpt = isset( $args['attributes']['showExcerpt'] ) ? $args['attributes']['showExcerpt'] : false; ?>
 
 <a href="<?php echo get_permalink();?>">
     <div class="post">
@@ -13,6 +15,12 @@
         </div>
         <div class="post-content">
             <h2 class="post-title"><?php echo apply_filters( 'the_title', $args['post']->post_title ); ?></h2>
+
+            <?php if ($show_excerpt) :?>
+                <span class="post-excerpt">
+                    <?php _e(get_the_excerpt())?>
+                </span>
+            <?php endif?>
 
             <div class="post-meta">
                 <span class="post-meta--date"><?php echo hacklabr\v2\get_the_time_ago(); ?></span>
