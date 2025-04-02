@@ -1,8 +1,8 @@
 .git/
 mariadb_data/
 mariadb_data/*
-themes/hacklab-theme/node_modules/
+themes/observatorio-caso-braskem/node_modules/
 *.sql*
-themes/hacklab-theme/dist/app.js
-themes/hacklab-theme/dist/app.css
+themes/observatorio-caso-braskem/dist/app.js
+themes/observatorio-caso-braskem/dist/app.css
 

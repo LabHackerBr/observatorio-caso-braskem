@@ -7,7 +7,7 @@ on:
     tags:
       - '*'
 env:
-  THEME_NAME: hacklab-theme
+  THEME_NAME: observatorio-caso-braskem
   CURL_URL: https://helmtestec1.hacklab.com.br/
   DEPLOY: 0
 

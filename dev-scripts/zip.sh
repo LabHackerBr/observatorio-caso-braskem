@@ -2,5 +2,5 @@
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 CDIR=$( pwd )
 cd $DIR/../themes
-rm -f ../zips/hacklab-theme.zip
-zip -r ../zips/hacklab-theme.zip hacklab-theme -x "hacklab-theme/node_modules/*"
+rm -f ../zips/observatorio-caso-braskem.zip
+zip -r ../zips/observatorio-caso-braskem.zip observatorio-caso-braskem -x "observatorio-caso-braskem/node_modules/*"

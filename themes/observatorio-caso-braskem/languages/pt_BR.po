@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"Report-Msgid-Bugs-To: https://wordpress.org/support/theme/hacklab-theme\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/theme/observatorio-caso-braskem\n"
 "POT-Creation-Date: 2024-06-10T12:35:29+00:00\n"
 "PO-Revision-Date: 2024-06-10 09:36-0300\n"
 "Last-Translator: \n"

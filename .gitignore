@@ -12,4 +12,4 @@ wp-content/languages/*
 mariadb_data/
 mix-manifest.json
 wp-root
-themes/hacklab-theme/mix-manifest.json
+themes/observatorio-caso-braskem/mix-manifest.json

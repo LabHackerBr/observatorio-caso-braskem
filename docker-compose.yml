@@ -18,7 +18,7 @@ services:
       WORDPRESS_DEBUG: 1
     volumes:
       - ./wp-root:/var/www/html/
-      - ./themes/hacklab-theme:/var/www/html/wp-content/themes/hacklab-theme
+      - ./themes/observatorio-caso-braskem:/var/www/html/wp-content/themes/observatorio-caso-braskem
       - ./plugins/hacklab-dev-utils:/var/www/html/wp-content/plugins/hacklab-dev-utils
       - ./compose/local/wordpress/htaccess:/var/www/html/.htaccess
       - ./compose/local/wordpress/php/extra.ini:/usr/local/etc/php/conf.d/extra.ini
@@ -28,7 +28,7 @@ services:
       context: .
       dockerfile: ./compose/local/watcher/Dockerfile
     volumes:
-      - ./themes/hacklab-theme:/app
+      - ./themes/observatorio-caso-braskem:/app
 
   mariadb:
     image: mariadb:10.4

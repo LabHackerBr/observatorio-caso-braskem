@@ -3,7 +3,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: hacklabr 1.0.4\n"
-"Report-Msgid-Bugs-To: https://wordpress.org/support/theme/hacklab-theme\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/theme/observatorio-caso-braskem\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
