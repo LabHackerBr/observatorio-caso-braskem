@@ -1,0 +1,35 @@
+.latest-vertical-posts-block-inspector-controls {
+    // Fixed on: https://github.com/WordPress/gutenberg/pull/41768/files
+    .components-panel__row {
+        .components-base-control {
+            width: 100%;
+        }
+    }
+}
+.block-editor-block-list__block{
+    .latest-vertical-posts-block{
+        border-radius: 8px;
+
+        .latest-vertical-posts-block__slides{
+            :nth-child(n+3){
+                display: none;
+            }
+
+            .slide{
+                a{
+                    color: #333;
+                    text-decoration: none;
+                    text-transform: uppercase;
+                    .post-meta{
+                        font-size: 10px;
+                        .post-meta--terms{
+                            :nth-child(n+3){
+                                display: none;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
