@@ -20,6 +20,9 @@ $color--warning-dark:       var(--wp--preset--color--warning-dark);
 $color--helper-pure:        var(--wp--preset--color--helper-pure);
 $color--helper-light:       var(--wp--preset--color--helper-light);
 $color--helper-dark:        var(--wp--preset--color--helper-dark);
+$color--highlight-pure: var(--wp--preset--color--highlight-pure);
+$color--highlight-light: var(--wp--preset--color--highlight-light);
+$color--highlight-dark: var(--wp--preset--color--highlight-dark);
 
 // Font sizes
 $font-size--hero:       var(--wp--preset--font-size--hero);
@@ -31,6 +34,13 @@ $font-size--medium:     var(--wp--preset--font-size--medium);
 $font-size--small:      var(--wp--preset--font-size--small);
 $font-size--x-small:    var(--wp--preset--font-size--x-small);
 
+$font-size-mobile--hero: $font-size--hero;
+$font-size-mobile--xx-large: $font-size--xx-large;
+$font-size-mobile--x-large: $font-size--x-large;
+$font-size-mobile--large: $font-size--large;
+$font-size-mobile--medium: $font-size--medium;
+$font-size-mobile--small: $font-size--small;
+$font-size-mobile--x-small: $font-size--x-small;
 // Font families
 $font-family--primary:   var(--wp--preset--font-family--primary);
 $font-family--secondary: var(--wp--preset--font-family--secondary);

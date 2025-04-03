@@ -97,7 +97,24 @@
                     "name": "Helper dark",
                     "slug": "helper-dark",
                     "color": "#005212"
+                },
+                {
+                    "name": "Highlight pure",
+                    "slug": "highlight-pure",
+                    "color": "#FFD700"
+                },
+                {
+                    "name": "Highlight light",
+                    "slug": "highlight-light",
+                    "color": "#FFECB3"
+                },
+                {
+                    "name": "Highlight dark",
+                    "slug": "highlight-dark",
+                    "color": "#B8860B"
                 }
+
+
             ]
         },
         "spacing": {
@@ -192,6 +209,7 @@
                     "slug": "loose",
                     "size": "1.75"
                 }
+
             ]
         },
         "layout": {
