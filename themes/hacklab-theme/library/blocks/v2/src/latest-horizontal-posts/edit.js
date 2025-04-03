@@ -58,6 +58,7 @@ export default function Edit( { attributes, setAttributes } ) {
         noTaxonomy,
         playlistId,
         postsToShow,
+        postsOffset,
         postType,
         queryTerms,
         showChildren,
@@ -449,7 +450,16 @@ export default function Edit( { attributes, setAttributes } ) {
                                     step={ 2 }
                                 />
                             </PanelRow>
-
+                            <PanelRow>
+                                <RangeControl
+                                    label={ __( 'Offset', 'hacklabr' ) }
+                                    value={ postsOffset }
+                                    onChange={ ( value ) => setAttributes( { postsOffset: value } ) }
+                                    min={ 0 }
+                                    max={ 100 }
+                                    step={ 1 }
+                                />
+                            </PanelRow>
                             <PanelRow>
                                 <SelectControl
                                     label={ __( 'Show taxonomy, which?', 'hacklabr' ) }

@@ -16,6 +16,7 @@ function latest_horizontal_posts_callback( $attributes ) {
     $heading          = $attributes['heading'] ?? '';
     $link             = ( ! empty( $attributes['linkUrl'] ) ) ? esc_url( $attributes['linkUrl'] ) : false;
     $show_children    = ! empty( $attributes['showChildren'] );
+    $offset = ! empty ($attributes['postsOffset']);
 
     $block_classes[] = 'latest-horizontal-posts-block';
     $block_classes[] = $custom_class;

@@ -71,6 +71,10 @@
 			"type": "number",
 			"default": 5
 		},
+        "postsOffset": {
+			"type": "number",
+			"default": 0
+		},
 		"postType": {
 			"type": "string",
 			"default": "post"

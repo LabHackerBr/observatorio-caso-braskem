@@ -22,6 +22,8 @@ function build_posts_query( $attributes, $post__not_in = [] ) {
     $query_terms   = isset( $attributes['queryTerms'] ) ? $attributes['queryTerms'] : [];
     $return_ids    = isset( $attributes['returnIds'] ) ? $attributes['returnIds'] : false;
     $show_children = ! empty( $attributes['showChildren'] );
+    $offset = isset( $attributes['postsOffset'] ) ? $attributes['postsOffset'] : '';
+
 
     // Exclude posts
     $no_compare     = ! empty( $attributes['noCompare'] ) ? $attributes['noCompare'] : 'OR';
@@ -61,7 +63,8 @@ function build_posts_query( $attributes, $post__not_in = [] ) {
         'order'               => $order,
         'orderby'             => $order_by,
         'post_type'           => $post_type,
-        'posts_per_page'      => $posts_to_show
+        'posts_per_page'      => $posts_to_show,
+        'offset'              => $offset
     ];
 
     if ( $taxonomy && $query_terms ) {
