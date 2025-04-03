@@ -11,52 +11,37 @@
                 {
                     "name": "Primary pure",
                     "slug": "primary-pure",
-                    "color": "#1DACE4"
+                    "color": "#490806"
                 },
                 {
                     "name": "Primary light",
                     "slug": "primary-light",
-                    "color": "#C2ECFB"
+                    "color": "#932801"
                 },
                 {
                     "name": "Primary dark",
                     "slug": "primary-dark",
-                    "color": "#007CB8"
+                    "color": "#630F05"
                 },
                 {
                     "name": "Secondary pure",
                     "slug": "secondary-pure",
-                    "color": "#333333"
+                    "color": "#21B574"
                 },
                 {
                     "name": "Secondary light",
                     "slug": "secondary-light",
-                    "color": "#C9C9C9"
+                    "color": "#97D2B2"
                 },
                 {
                     "name": "Secondary dark",
                     "slug": "secondary-dark",
-                    "color": "#111111"
-                },
-                {
-                    "name": "Highlight pure",
-                    "slug": "highlight-pure",
-                    "color": "#CCCC33"
-                },
-                {
-                    "name": "Highlight light",
-                    "slug": "highlight-light",
-                    "color": "#FFFF68"
-                },
-                {
-                    "name": "Highlight dark",
-                    "slug": "highlight-dark",
-                    "color": "#59631E"
+                    "color": "#016738"
                 },
                 {
                     "name": "Low Pure",
                     "slug": "low-pure",
-                    "color": "#000000"
+                    "color": "#222222"
                 },
                 {
                     "name": "Low light",
@@ -66,7 +51,7 @@
                 {
                     "name": "Low dark",
                     "slug": "low-dark",
-                    "color": "#333333"
+                    "color": "#111111"
                 },
                 {
                     "name": "High pure",
@@ -76,49 +61,26 @@
                 {
                     "name": "High light",
                     "slug": "high-light",
-                    "color": "#F5F5F5"
+                    "color": "#FAF7F0"
                 },
                 {
                     "name": "High dark",
                     "slug": "high-dark",
-                    "color": "#DDDDDD"
-                },
-                {
-                    "name": "Warning pure",
-                    "slug": "warning-pure",
-                    "color": "#FF358B"
-                },
-                {
-                    "name": "Warning light",
-                    "slug": "warning-light",
-                    "color": "#FF72BB"
-                },
-                {
-                    "name": "Warning dark",
-                    "slug": "warning-dark",
-                    "color": "#C6005E"
-                },
-                {
-                    "name": "Helper pure",
-                    "slug": "helper-pure",
-                    "color": "#29D9C2"
-                },
-                {
-                    "name": "Helper light",
-                    "slug": "helper-light",
-                    "color": "#70FFF5"
-                },
-                {
-                    "name": "Helper dark",
-                    "slug": "helper-dark",
-                    "color": "#00A792"
+                    "color": "#D3CEC1"
                 }
             ]
         },
         "spacing": {
             "customPadding": true,
             "customMargin": true,
-            "units": [ "px", "em", "rem", "vh", "vw", "%" ]
+            "units": [
+                "px",
+                "em",
+                "rem",
+                "vh",
+                "vw",
+                "%"
+            ]
         },
         "typography": {
             "customFontSize": false,
@@ -129,32 +91,32 @@
                 {
                     "name": "Huge",
                     "slug": "hero",
-                    "size": "4rem"
+                    "size": "8rem"
                 },
                 {
                     "name": "Extra big",
                     "slug": "xx-large",
-                    "size": "2rem"
+                    "size": "5rem"
                 },
                 {
                     "name": "Very large",
                     "slug": "x-large",
-                    "size": "1.5rem"
+                    "size": "3rem"
                 },
                 {
                     "name": "Big",
                     "slug": "large",
-                    "size": "1.25rem"
+                    "size": "2rem"
                 },
                 {
                     "name": "Average",
                     "slug": "medium",
-                    "size": "1rem"
+                    "size": "1.5rem"
                 },
                 {
                     "name": "Small",
                     "slug": "small",
-                    "size": "0.875rem"
+                    "size": "1rem"
                 },
                 {
                     "name": "Too small",
@@ -166,23 +128,23 @@
                 {
                     "name": "Primary",
                     "slug": "primary",
-                    "fontFamily": "'Open Sans', sans-serif"
+                    "fontFamily": "'JOST', sans-serif"
                 },
                 {
-                    "name": "System",
+                    "name": "Secondary",
                     "slug": "secondary",
-                    "fontFamily": "system-ui, sans-serif"
+                    "fontFamily": "'Sofia Sans', sans-serif"
                 },
                 {
                     "name": "Title",
                     "slug": "heading",
-                    "fontFamily": "'Montserrat', sans-serif"
+                    "fontFamily": "'Sofia Sans Condensed', sans-serif"
                 }
             ]
         },
         "layout": {
             "contentSize": "1170px",
-            "wideSize": "1170px"
+            "wideSize": "100%"
         }
     }
 }
