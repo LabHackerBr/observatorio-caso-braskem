@@ -2,7 +2,7 @@
 <html <?php language_attributes();?>>
 <head>
 	<meta charset="<?php bloginfo('charset');?>" />
-	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, maximum-scale=1.0">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<?php wp_head()?>
 	<title><?= is_front_page() ? get_bloginfo('name') : wp_title()?></title>
 	<link rel="icon" href="<?= get_site_icon_url() ?>" />
@@ -19,7 +19,7 @@
                 <div class="acessibilidade">
                     <a href="#"><iconify-icon icon="material-symbols-light:contrast"></iconify-icon></a>
                     <a href="#"><iconify-icon icon="mdi:format-font-size-increase"></iconify-icon></a>
-                    <a href="#"><iconify-icon icon="mdi:format-font-size-decrease"></iconify-icon></a> 
+                    <a href="#"><iconify-icon icon="mdi:format-font-size-decrease"></iconify-icon></a>
                     <a href="#"><iconify-icon icon="bi:volume-down-fill"></iconify-icon></a>
                     <a href="#"><iconify-icon icon="fa:print"></iconify-icon></a>
                 </div>
@@ -31,7 +31,7 @@
         <div class="container container--wide">
 			<div class="main-header-lateral__content">
                 <button type="button" class="main-header__toggle-menu main-header-lateral__toggle-menu" aria-label="<?= __('Toggle menu visibility', 'hacklabr') ?>" @click="menuOpen = !menuOpen">
-                    <svg class="hamburger" :class="{ 'hamburger--open': menuOpen }" role="image" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                    <svg class="hamburger" :class="{ 'hamburger--open': menuOpen }" role="img" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg">
                         <title>Exibir menu</title>
                         <rect width="16" height="2" x="0" y="2"/>
                         <rect width="16" height="2" x="0" y="7"/>
@@ -53,7 +53,7 @@
                     <?= wp_nav_menu(['theme_location' => 'main-menu', 'container' => 'nav', 'menu_class' => 'menu', 'container_class' => 'main-header-lateral__menu-desktop']) ?>
                 </div>
 
-                <div class="main-header-lateral__search">
+                <div class="main-header-lateral__search" x-init="$watch('searchOpen', (isOpen) => isOpen && document.querySelector('#search').focus())">
                     <?php get_search_form(); ?>
                     <button type="button" class="main-header__toggle-search main-header-lateral__toggle-search" aria-label="<?= __( 'Toggle search form visibility', 'hacklabr' ) ?>" @click="searchOpen = !searchOpen">
                         <iconify-icon icon="fa-solid:search"></iconify-icon>

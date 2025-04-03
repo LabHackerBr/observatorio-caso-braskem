@@ -16,6 +16,4 @@ require __DIR__ . '/library/sanitizers/index.php';
 require __DIR__ . '/library/template-tags/index.php';
 require __DIR__ . '/library/utils.php';
 require __DIR__ . '/library/blocks/index.php';
-
-
-
+require __DIR__ . '/library/blocks/v2/index.php';

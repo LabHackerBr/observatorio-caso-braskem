@@ -18,7 +18,7 @@ $categories = get_the_category();
 ?>
 <article id="post-ID-<?php the_ID(); ?>" class="post-card <?=$modifiers?>">
     <header class="post-card__image">
-        <a href="<?php the_permalink();?>">
+        <a href="<?php the_permalink();?>" aria-label="<?= esc_attr(get_the_title()) ?>">
             <?php if (has_post_thumbnail()): ?>
                 <?php the_post_thumbnail($image_size); ?>
             <?php else: ?>
