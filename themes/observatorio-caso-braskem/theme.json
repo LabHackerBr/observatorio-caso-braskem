@@ -11,17 +11,17 @@
                 {
                     "name": "Primary pure",
                     "slug": "primary-pure",
-                    "color": "#490806"
+                    "color": "#630F05"
                 },
                 {
                     "name": "Primary light",
                     "slug": "primary-light",
-                    "color": "#932801"
+                    "color": "#A35B5C"
                 },
                 {
                     "name": "Primary dark",
                     "slug": "primary-dark",
-                    "color": "#630F05"
+                    "color": "#490806"
                 },
                 {
                     "name": "Secondary pure",
@@ -67,6 +67,36 @@
                     "name": "High dark",
                     "slug": "high-dark",
                     "color": "#D3CEC1"
+                },
+                {
+                    "name": "Warning pure",
+                    "slug": "warning-pure",
+                    "color": "#27AAE0"
+                },
+                {
+                    "name": "Warning light",
+                    "slug": "warning-light",
+                    "color": "#C0EDFF"
+                },
+                {
+                    "name": "Warning dark",
+                    "slug": "warning-dark",
+                    "color": "#0070BA"
+                },
+                {
+                    "name": "Helper pure",
+                    "slug": "helper-pure",
+                    "color": "#932801"
+                },
+                {
+                    "name": "Helper light",
+                    "slug": "helper-light",
+                    "color": "#FFDE00"
+                },
+                {
+                    "name": "Helper dark",
+                    "slug": "helper-dark",
+                    "color": "#005212"
                 }
             ]
         },
@@ -89,37 +119,42 @@
             "fluid": false,
             "fontSizes": [
                 {
-                    "name": "Huge",
+                    "name": "Hero",
                     "slug": "hero",
-                    "size": "8rem"
+                    "size": "4rem"
                 },
                 {
-                    "name": "Extra big",
-                    "slug": "xx-large",
-                    "size": "5rem"
-                },
-                {
-                    "name": "Very large",
-                    "slug": "x-large",
+                    "name": "Extra Extra Extra Large",
+                    "slug": "xxx-large",
                     "size": "3rem"
                 },
                 {
-                    "name": "Big",
-                    "slug": "large",
+                    "name": "Extra Extra Large",
+                    "slug": "xx-large",
                     "size": "2rem"
                 },
                 {
-                    "name": "Average",
-                    "slug": "medium",
+                    "name": "Extra Large",
+                    "slug": "x-large",
                     "size": "1.5rem"
+                },
+                {
+                    "name": "Large",
+                    "slug": "large",
+                    "size": "1.25rem"
+                },
+                {
+                    "name": "Medium",
+                    "slug": "medium",
+                    "size": "1rem"
                 },
                 {
                     "name": "Small",
                     "slug": "small",
-                    "size": "1rem"
+                    "size": "0.875rem"
                 },
                 {
-                    "name": "Too small",
+                    "name": "Extra Small",
                     "slug": "x-small",
                     "size": "0.75rem"
                 }
@@ -139,6 +174,23 @@
                     "name": "Title",
                     "slug": "heading",
                     "fontFamily": "'Sofia Sans Condensed', sans-serif"
+                }
+            ],
+            "lineHeights": [
+                {
+                    "name": "Tight",
+                    "slug": "tight",
+                    "size": "1.25"
+                },
+                {
+                    "name": "Normal",
+                    "slug": "normal",
+                    "size": "1.5"
+                },
+                {
+                    "name": "Loose",
+                    "slug": "loose",
+                    "size": "1.75"
                 }
             ]
         },
