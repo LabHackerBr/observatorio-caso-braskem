@@ -14,14 +14,7 @@
         <div class="container container--wide">
             <div class="pre-header__content">
                 <div class="main-header__social-content">
-                    <?= the_social_networks_menu( false ); ?>
-                </div>
-                <div class="acessibilidade">
-                    <a href="#"><iconify-icon icon="material-symbols-light:contrast"></iconify-icon></a>
-                    <a href="#"><iconify-icon icon="mdi:format-font-size-increase"></iconify-icon></a>
-                    <a href="#"><iconify-icon icon="mdi:format-font-size-decrease"></iconify-icon></a>
-                    <a href="#"><iconify-icon icon="bi:volume-down-fill"></iconify-icon></a>
-                    <a href="#"><iconify-icon icon="fa:print"></iconify-icon></a>
+                    <?= the_social_networks_menu( ); ?>
                 </div>
             </div>
         </div>
@@ -44,14 +37,10 @@
                         <?php the_custom_logo(); ?>
                     <?php else: ?>
                         <a href="<?= home_url() ?>">
-                            <img src="<?= get_template_directory_uri() ?>/assets/images/logo.png" width="200" alt="<?= get_bloginfo( 'name' ) ?>">
+                            <img src="<?= get_template_directory_uri() ?>/assets/images/logo.svg" width="200" alt="<?= get_bloginfo( 'name' ) ?>">
                         </a>
                     <?php endif; ?>
 				</div>
-
-                <div class="main-header-lateral__desktop-content">
-                    <?= wp_nav_menu(['theme_location' => 'main-menu', 'container' => 'nav', 'menu_class' => 'menu', 'container_class' => 'main-header-lateral__menu-desktop']) ?>
-                </div>
 
                 <div class="main-header-lateral__search" x-init="$watch('searchOpen', (isOpen) => isOpen && document.querySelector('#search').focus())">
                     <?php get_search_form(); ?>
@@ -59,10 +48,13 @@
                         <iconify-icon icon="fa-solid:search"></iconify-icon>
                     </button>
                 </div>
-
-                <?php do_action( 'hacklabr/header/menus-end' ); ?>
-				</div>
 			</div>
+
+            <div class="main-header-lateral__desktop-content">
+                <?= wp_nav_menu(['theme_location' => 'main-menu', 'container' => 'nav', 'menu_class' => 'menu', 'container_class' => 'main-header-lateral__menu-desktop']) ?>
+            </div>
+            <?php do_action( 'hacklabr/header/menus-end' ); ?>
+
         </div>
 
         <div class="main-header-lateral__mobile-content">

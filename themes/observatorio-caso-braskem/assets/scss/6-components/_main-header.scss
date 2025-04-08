@@ -20,6 +20,12 @@
         padding: 0;
     }
 
+    &__toggle-search{
+       iconify-icon{
+        color: $color--primary-pure;
+       }
+    }
+
     .sub-menu {
         background-color: $background-color;
     }

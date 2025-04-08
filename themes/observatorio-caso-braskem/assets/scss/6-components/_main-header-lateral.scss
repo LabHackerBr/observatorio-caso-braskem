@@ -6,7 +6,7 @@
         display: flex;
         justify-content: space-between;
         min-height: size(80);
-        padding: $padding--medium;
+        padding: $padding--medium 0;
     }
 
     &__toggle-menu {
@@ -37,9 +37,14 @@
         input[type="submit"] {
             @include sr-only;
         }
+
     }
 
     &__desktop-content {
+        background-color: $color--low-pure;
+        color: $color--high-pure;
+        width: 100vw;
+        margin-inline-start: calc(50% - 50vw);
 
         @include tablet {
             display: none;
@@ -47,6 +52,12 @@
     }
 
     &__menu-desktop {
+        display: flex;
+        align-items: center;
+        max-width: $grid--wide;
+        margin-inline: auto;
+        padding-inline: $padding--medium;
+        height: 2.625rem;
 
         ul,
         li {
@@ -55,15 +66,19 @@
         }
 
         &>ul {
+            width: 100%;
             align-items: center;
             display: flex;
             gap: $gap--medium;
+            justify-content: space-between;
         }
 
         li {
+            font-family: $font-family--primary;
             list-style: none;
-            font-size: $font-size--small;
+            font-size: $font-size--medium;
             font-weight: $font-weight--bold;
+            text-transform: uppercase;
         }
 
         .sub-menu {
