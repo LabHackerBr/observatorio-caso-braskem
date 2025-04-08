@@ -22,6 +22,7 @@ $font-size--x-small: 0.75rem;
 
 // Font weights
 $font-weight--bold: 700;
+$font-weight--semibold: 600;
 $font-weight--medium: 500;
 $font-weight--regular: 400;
 $font-weight--light: 300;
@@ -67,12 +68,18 @@ $gap--x-small: 0.25rem;
 $gap--small: 0.5rem;
 $gap--medium: 1rem;
 $gap--large: 2rem;
+$gap--x-large: 2.5rem;
+$gap--xx-large: 3rem;
+$gap--xxx-large: 4rem;
+$gap--huge: 5rem;
+$gap--giant: 8rem;
 
 // Border radius
-$border-radius--round: 50%;
-$border-radius--small: 3px;
-$border-radius--medium: 6px;
-$border-radius--large: 9px;
+$border-radius--small: 8px;
+$border-radius--medium: 12px;
+$border-radius--large: 16px;
+$border-radius--round: 32px;
+$border-radius--pilled: 80px;
 
 // Border widths
 $border-width--small: 1px;
@@ -87,7 +94,9 @@ $border-color--dark: $color--primary-dark;
 $transition--default: all 0.3s ease-in-out;
 
 // Box shadows
-$box-shadow--default: 0 0 2px rgba(0, 0, 0, 0.12), 0 2px 2px rgba(0, 0, 0, 0.24);
+$box-shadow--default: 0px 8px 16px 0px rgba(0, 0, 0, 0.16);
+$box-shadow--light: 0px 4px 8px 0px rgba(0, 0, 0, 0.16);
+$box-shadow--dark: 0px 8px 24px 0px rgba(0, 0, 0, 0.24);
 
 // Paths
 $path--theme: '/wp-content/themes/observatorio-caso-braskem';

@@ -180,17 +180,17 @@
                 {
                     "name": "Primary",
                     "slug": "primary",
-                    "fontFamily": "'JOST', sans-serif"
+                    "fontFamily": "'Sofia Sans', sans-serif"
                 },
                 {
                     "name": "Secondary",
                     "slug": "secondary",
-                    "fontFamily": "'Sofia Sans', sans-serif"
+                    "fontFamily": "'Sofia Sans Condensed', sans-serif"
                 },
                 {
                     "name": "Title",
                     "slug": "heading",
-                    "fontFamily": "'Sofia Sans Condensed', sans-serif"
+                    "fontFamily": "'Jost', sans-serif"
                 }
             ],
             "lineHeights": [
