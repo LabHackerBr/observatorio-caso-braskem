@@ -364,6 +364,12 @@ class Assets {
                 'file' => 'tabs.js',
                 'global' => true,
 			],
+
+            'menu' => [
+                'file' => 'menu.js',
+                'pre-load' => true,
+                'global' => true,
+			],
  		];
 
 		$js_files = apply_filters('js_files_before_output', $js_files);

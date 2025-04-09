@@ -4,25 +4,13 @@
     &__content {
         align-items: center;
         display: flex;
-        justify-content: space-between;
-        min-height: 40px;
+        justify-content: flex-end;
+        min-height: 30px;
 
         .social-menu {
-            gap: calc($gap--small * 3);
+            gap: $gap--medium;
             color: $color--high-pure;
         }
 
-        .acessibilidade {
-            display: flex;
-            gap: $gap--large;
-
-            iconify-icon {
-                color: $color--high-pure;
-
-                svg {
-                    width: 12px;
-                }
-            }
-        }
     }
 }

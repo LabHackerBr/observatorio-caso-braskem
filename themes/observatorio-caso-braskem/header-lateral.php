@@ -14,7 +14,7 @@
         <div class="container container--wide">
             <div class="pre-header__content">
                 <div class="main-header__social-content">
-                    <?= the_social_networks_menu( ); ?>
+                    <?= the_social_networks_menu(false); ?>
                 </div>
             </div>
         </div>
@@ -45,7 +45,7 @@
                 <div class="main-header-lateral__search" x-init="$watch('searchOpen', (isOpen) => isOpen && document.querySelector('#search').focus())">
                     <?php get_search_form(); ?>
                     <button type="button" class="main-header__toggle-search main-header-lateral__toggle-search" aria-label="<?= __( 'Toggle search form visibility', 'hacklabr' ) ?>" @click="searchOpen = !searchOpen">
-                        <iconify-icon icon="fa-solid:search"></iconify-icon>
+                    <img src="<?= get_template_directory_uri() ?>/assets/images/search-icon.svg" width="20" alt="Search icon">
                     </button>
                 </div>
 			</div>
