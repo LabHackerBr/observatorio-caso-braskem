@@ -1,14 +1,30 @@
 .site-by-hacklab {
-    background-color: $color--low-pure;
-    color: $color--high-pure;
+    background-color: #F5F5F5;
+    color: #222;
+    display: flex;
+    justify-content: flex-end;
+    gap: $gap--x-small;
+    height: 34px;
+    align-items: center;
+    align-self: flex-end;
+    font-size: $font-size--medium;
+
+    @include mobile{
+        align-self: flex-start;
+    }
+
+    span, a{
+        font-family: $font-family--primary;
+    }
 
     a {
         display: block;
-        width: 100%;
+        max-width: fit-content;
         text-align: end;
         text-decoration: none;
+        font-weight: $font-weight--bold;
 
-        span {
+        b {
             color: #CA0C25;
         }
     }

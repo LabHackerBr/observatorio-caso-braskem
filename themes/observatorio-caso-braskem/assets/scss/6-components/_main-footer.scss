@@ -1,21 +1,89 @@
 .main-footer {
-    background-color: $color--primary-dark;
-    padding-bottom: $padding--large;
-    padding-top: $padding--xx-large;
+    background-color: $color--high-pure;
+    padding-bottom: 0;
+    padding-top: $padding--medium;
 
     @include mobile {
-        padding-top: $padding--x-large;
+        padding-top: $padding--medium;
     }
 
     &__widgets {
         max-width: $grid--wide;
 
         @include mobile {
-            padding-inline: $padding--x-large;
+            padding-inline: $padding--medium;
+        }
+
+        .wp-block-columns{
+            margin-bottom: $margin--small;
+        }
+
+        p{
+            line-height: 1.1;
+            letter-spacing: -0.6px;
         }
 
         .wp-block-heading {
             margin-block: $margin--small;
         }
+
+        .widget_nav_menu {
+            >div{
+                >ul{
+                    display: flex;
+                    justify-content: space-between;
+                    padding-inline: calc($padding--xx-large + $padding--large);
+                }
+
+                ul, li{
+                    text-transform: uppercase;
+                    list-style: none;
+                    font-weight: $font-weight--bold;
+                }
+
+                a{
+                    text-decoration: none;
+                }
+            }
+            @include mobile{
+                display: none;
+            }
+        }
+
     }
+
+    &__legal{
+        background-color: #F5F5F5;
+        color: $color--low-light;
+
+        &-row{
+            display: flex;
+            align-items: center;
+            max-width: $grid--wide;
+            margin-inline: auto;
+            justify-content: space-between;
+
+            @include mobile{
+                flex-flow: column;
+                align-items: flex-start;
+                padding: $padding--small $padding--medium;
+            }
+
+            >span{
+                font-family: $font-family--primary;
+                display: flex;
+                gap: 2px;
+                font-size: 12px;
+
+                p{
+                    font-size: 12px;
+                }
+
+                a{
+                    font-weight: $font-weight--semibold;
+                }
+            }
+        }
+    }
+
 }
