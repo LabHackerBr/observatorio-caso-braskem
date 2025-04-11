@@ -1,3 +1,15 @@
+:root{
+    --wp--preset--font-size--x-small: .75rem !important;
+    --wp--preset--font-size--small: .875rem !important;
+    --wp--preset--font-size--medium: 1rem !important;
+    --wp--preset--font-size--large: 1.25rem !important;
+    --wp--preset--font-size--x-large: 1.5rem !important;
+    --wp--preset--font-size--xx-large: 2rem !important;
+    --wp--preset--font-size--xxx-large: 3rem !important;
+    --wp--preset--font-size--hero: 4rem !important;
+
+}
+
 html, body {
     font-size: $font-size--medium;
     font-family: $font-family--primary;
