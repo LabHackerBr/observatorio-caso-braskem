@@ -188,6 +188,11 @@
                     "fontFamily": "'Sofia Sans Condensed', sans-serif"
                 },
                 {
+                    "name": "Helper",
+                    "slug": "helper",
+                    "fontFamily": "'Open Sans', sans-serif"
+                },
+                {
                     "name": "Title",
                     "slug": "heading",
                     "fontFamily": "'Jost', sans-serif"
