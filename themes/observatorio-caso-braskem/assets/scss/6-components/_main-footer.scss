@@ -23,8 +23,7 @@
                     font-size: $font-size--large !important;
                     padding-inline:  0 !important;
                 }
-                :last-child{
-                    //width: 90%;
+                >:last-child{
                     margin-inline: auto;
                     .wp-block-column{
                         flex-basis: 20% !important;
@@ -68,6 +67,12 @@
             }
             @include mobile{
                 display: none;
+            }
+        }
+
+        .redes{
+            >:last-child{
+                margin-block-start: $margin--medium;
             }
         }
 
