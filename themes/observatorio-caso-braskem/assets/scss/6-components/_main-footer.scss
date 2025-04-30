@@ -7,11 +7,35 @@
         padding-top: $padding--medium;
     }
 
+    p{
+        margin-block-start: 0;
+    }
+
     &__widgets {
         max-width: $grid--wide;
 
         @include mobile {
             padding-inline: $padding--medium;
+
+            .redes{
+                .siga-nas-redes, .wp-block-heading{
+                    text-align: center;
+                    font-size: $font-size--large !important;
+                    padding-inline:  0 !important;
+                }
+                :last-child{
+                    //width: 90%;
+                    margin-inline: auto;
+                    .wp-block-column{
+                        flex-basis: 20% !important;
+                        .wp-block-image{
+                            display: flex;
+                            justify-content: center;
+                        }
+                    }
+                }
+            }
+
         }
 
         .wp-block-columns{
@@ -47,6 +71,18 @@
             }
         }
 
+        :last-child{
+            p{
+                justify-content: center;
+                font-family: $font-family--primary;
+                gap: $gap--x-small;
+
+                a{
+                    font-weight: $font-weight--bold ;
+                }
+            }
+        }
+
     }
 
     &__legal{
@@ -61,7 +97,7 @@
             justify-content: space-between;
 
             @include mobile{
-                flex-flow: column;
+                justify-content: center;
                 align-items: flex-start;
                 padding: $padding--small $padding--medium;
             }

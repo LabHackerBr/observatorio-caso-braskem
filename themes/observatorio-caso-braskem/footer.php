@@ -7,9 +7,9 @@
         </div>
         <div class="main-footer__legal">
             <div class="main-footer__legal-row">
-                <span>
+                <span class="hide-mobile">
                     <a class="termos-uso" href="<?php get_site_url()?>/politica-de-privacidade" target="_blank"><span><?php _e('Terms of use', 'hacklabr') ?></span></a>
-                    <p>e</p>
+                    <p><?php _e('and', 'hacklabr') ?></p>
                     <a class="privacidade" href="<?php get_site_url()?>/politica-de-privacidade" target="_blank"><span><?php _e('Privacy Policy', 'hacklabr') ?></span></a>
                 </span>
 

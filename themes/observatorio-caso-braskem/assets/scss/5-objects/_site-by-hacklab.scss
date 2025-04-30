@@ -22,7 +22,9 @@
         max-width: fit-content;
         text-align: end;
         text-decoration: none;
+        font-family: 'Roboto Slab';
         font-weight: $font-weight--bold;
+        padding-bottom: $padding--x-small;
 
         b {
             color: #CA0C25;
