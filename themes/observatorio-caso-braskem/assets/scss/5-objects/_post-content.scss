@@ -1,5 +1,6 @@
 .post-content {
     max-width: $grid--normal;
+    margin-inline: auto;
     padding-top: $padding--large;
 
     & > h2 {
@@ -36,6 +37,7 @@
     }
 
     & .alignfull{
+
 
     }
 }
