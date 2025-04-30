@@ -170,3 +170,10 @@
     font-weight: 700;
     src: url('#{$path--assets}/fonts/OpenSans-Bold.ttf') format(truetype);
 }
+
+@font-face {
+    font-family: 'Roboto Slab';
+    font-display: swap;
+    font-weight: 700;
+    src: url('#{$path--assets}/fonts/RobotoSlab-Bold.ttf') format(truetype);
+}
