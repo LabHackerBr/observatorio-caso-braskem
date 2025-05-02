@@ -33,11 +33,26 @@
         max-width: $grid--wide;
         width: 150%;
 		padding-inline: $padding--medium;
-		margin-inline-start: -25% !important;
+
+        @include mobile{
+            width: 100%;
+            padding-inline: 0;
+        }
     }
+}
 
-    & .alignfull{
-
-
+.home{
+    .post-content{
+        padding-top: 0;
+        .wp-block{
+            &-columns{
+                @include mobile{
+                    padding: $padding--x-large 0;
+                }
+            }
+            &-column{
+                min-height: 100%;
+            }
+        }
     }
 }
