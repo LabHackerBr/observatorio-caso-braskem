@@ -185,6 +185,7 @@
     }
 
     &.scrolled{
+        transition: $transition--default;
         max-height: 55px;
         .main-header-lateral__toggle-menu{
             display: block;
@@ -193,11 +194,13 @@
             display: none;
         }
         .main-header-lateral__content{
+            transition: $transition--default;
             min-height: 55px;
             padding: 0;
         }
         .main-header-lateral__logo{
             img{
+                transition: $transition--default;
                 height: 3rem;
                 @include mobile{
                     height: 2rem;
