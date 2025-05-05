@@ -81,7 +81,7 @@
     font-family: 'Sofia Sans';
     font-display: swap;
     font-weight: 700;
-    src: url('#{$path--assets}/fonts/SofiaSans-SemiBold.ttf') format(truetype);
+    src: url('#{$path--assets}/fonts/SofiaSans-Bold.ttf') format(truetype);
 
 }
 
@@ -151,7 +151,7 @@
 }
 
 @font-face {
-    font-family: 'Sofia Sans Condensed';
+    font-family: 'Open Sans';
     font-display: swap;
     font-weight: 500;
     src: url('#{$path--assets}/fonts/OpenSans-Medium.ttf') format(truetype);
