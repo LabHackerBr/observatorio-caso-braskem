@@ -1,0 +1,17 @@
+.eapps-instagram-feed{
+    margin-block-start: $margin--large !important;
+    >a{
+        display: none !important;
+    }
+    &-content{
+        width: 100vw;
+        margin-inline-start: calc(50% - 50vw);
+        @include mobile{
+            width: 100vw !important;
+            //margin-inline-start: 0;
+        }
+    }
+    &-header-container{
+        display: none;
+    }
+}
