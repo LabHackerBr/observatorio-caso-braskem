@@ -1,0 +1,8 @@
+.section-title{
+    display: flex;
+    margin-top: $margin--large !important;
+    gap: $gap--small;
+    &:not(.has-text-color){
+        color: $color--high-pure;
+    }
+}

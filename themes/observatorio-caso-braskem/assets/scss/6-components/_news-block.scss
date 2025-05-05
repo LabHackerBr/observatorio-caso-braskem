@@ -1,0 +1,48 @@
+//Bloco de Notícias - Query Loop
+
+.wp-block-query{
+    >ul{
+        gap: 0;
+        .wp-block-post{
+            &-featured-image{
+                max-width: 15.5rem;
+                aspect-ratio:  16 / 9;
+                img{
+                    width: 100%;
+                    object-fit: cover;
+                    aspect-ratio: 16 / 9;
+                }
+            }
+            &-terms{
+                a{
+                    text-decoration: none;
+                }
+            }
+            &-title{
+                margin-block-start: $margin--small;
+            }
+
+            .wp-block-group{
+                margin-block-start: 0;
+                gap: $gap--small;
+                @include mobile{
+                    >p{
+                        margin-block-start: 0;
+                    }
+                }
+            }
+
+            .wp-block-columns{
+                gap: $gap--medium;
+                @include mobile{
+                    padding: 0;
+                }
+            }
+
+            time{
+                line-height: 1.2;
+                letter-spacing: 0.14px;
+            }
+        }
+    }
+}

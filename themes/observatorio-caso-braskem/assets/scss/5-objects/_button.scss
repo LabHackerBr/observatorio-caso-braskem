@@ -1,3 +1,12 @@
+.more-button{
+    .wp-block-button{
+        &__link{
+            padding: $padding--small $padding--x-large;
+            clip-path: polygon(0 0, 100% 0, 95% 100%, 5% 100%);
+        }
+    }
+}
+
 .button {
     border: $border-width--medium solid transparent;
     border-radius: $border-radius--medium;
