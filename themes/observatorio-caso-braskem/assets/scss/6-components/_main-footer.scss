@@ -2,6 +2,8 @@
     background-color: $color--high-pure;
     padding-bottom: 0;
     padding-top: $padding--medium;
+    position: relative;
+    z-index: 1;
 
     @include mobile {
         padding-top: $padding--medium;
