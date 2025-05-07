@@ -1,8 +1,13 @@
 .more-button{
     .wp-block-button{
         &__link{
-            padding: $padding--small $padding--x-large;
-            clip-path: polygon(0 0, 100% 0, 95% 100%, 5% 100%);
+            padding: $padding--x-small $padding--x-large;
+            clip-path: polygon(0 0, 100% 0, 97% 100%, 3% 100%);
+            font-family: $font-family--heading;
+            font-weight: $font-weight--bold;
+            @include mobile{
+                font-size: $font-size--medium !important;
+            }
         }
     }
 }
