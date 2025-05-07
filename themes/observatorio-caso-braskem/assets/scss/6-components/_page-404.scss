@@ -24,6 +24,11 @@
         font-weight: 700;
         line-height: 100%;
         text-transform: uppercase;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: $gap--x-large;
+        flex-wrap: wrap;
 
         @media (max-width: 660px) {
             font-size: 8rem;

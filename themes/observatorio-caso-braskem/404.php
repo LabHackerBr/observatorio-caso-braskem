@@ -2,7 +2,9 @@
 
 <div class="error-404">
     <div class="error-404__header container">
-        <h1 class="error-404__title"><?php _e('404 :(', 'hacklabr') ?></h1>
+    <h1 class="error-404__title"><?php _e('404', 'hacklabr') ?>
+        <span class="error-404__title-symbol"><?php _e(':(', 'hacklabr') ?></span>
+    </h1>
     </div>
 
     <div class="error-404__content container container--wide">
