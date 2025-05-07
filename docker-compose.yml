@@ -33,7 +33,7 @@ services:
       context: .
       dockerfile: ./compose/local/watcher/blocks/Dockerfile
     volumes:
-      - ./themes/hacklab-theme/library/blocks/v2:/app
+      - ./themes/observatorio-caso-braskem/library/blocks/v2:/app
 
   mariadb:
     image: mariadb:10.4

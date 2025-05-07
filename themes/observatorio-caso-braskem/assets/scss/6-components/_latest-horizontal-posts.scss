@@ -1,0 +1,115 @@
+.latest-horizontal-posts-block{
+    max-width: $grid--wide !important;
+    >.container{
+        max-width: $grid--wide;
+        padding: 0 0 $padding--x-large!important;
+    }
+
+    &__heading{
+        color: $color--high-light;
+        font-weight: $font-weight--semibold;
+        >p{
+            font-size: 24px;
+        }
+        @include mobile{
+            text-align: left !important;
+            width: 95%;
+        }
+    }
+
+    &__content{
+        flex-basis: 33% !important;
+        justify-content: unset !important;
+        gap: $gap--large;
+    }
+
+    &__slides{
+        .slide{
+            margin-bottom: $margin--large !important;
+            margin-top: 0 !important;
+        }
+    }
+
+    &__footer{
+        padding-left: $padding--large;
+        @include mobile{
+            padding-left: 0;
+            bottom: -21rem;
+            width: 95%;
+        }
+    }
+
+    &__dots{
+        justify-content: center;
+        width: 90%;
+        .slick-dots{
+            gap: 24px !important;
+            margin-left: 0 !important;
+            li{
+                width: 10px;
+                height: 10px;
+            }
+            .slick-active{
+                background-color: $color--secondary-pure !important;
+            }
+        }
+
+        @include mobile{
+            width: 95%;
+        }
+    }
+
+    &__arrows{
+        width: 90% !important;
+        .slick-arrow{
+            background-color: $color--high-light !important;
+            opacity: 1 !important;
+        }
+        @include mobile{
+            width: 95% !important;
+            margin-inline: 0 !important ;
+        }
+    }
+
+    .post{
+        display: flex;
+        gap: $gap--medium;
+
+        @include mobile{
+            width: 95% !important;
+        }
+
+        &-thumbnail{
+            width: 112px;
+            height: 112px;
+            aspect-ratio: 1 / 1;
+            border-radius:  $border-radius--pilled;
+            margin-inline: 0 !important;
+        }
+
+        &-title{
+            color: $color--high-light;
+            font-size: 20px;
+            text-decoration: none;
+            margin-bottom: $margin--small;
+
+            @include mobile{
+                text-align: left !important;
+            }
+        }
+
+        &-content{
+            width: 60%;
+            display: flex;
+            flex-flow: column;
+            justify-content: center;
+            gap: $gap--small;
+            margin-inline: 0;
+            p{
+                color: $color--high-pure;
+                font-size: 16px;
+                text-decoration: none;
+            }
+        }
+    }
+}

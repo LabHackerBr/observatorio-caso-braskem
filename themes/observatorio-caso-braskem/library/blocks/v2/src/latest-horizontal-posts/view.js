@@ -20,23 +20,32 @@ document.addEventListener("DOMContentLoaded", function () {
             slidesToShowMobile = 1.5
         }
 
+        let rowsToShow = 1
+
+        if (slider.classList.contains('model-columnists')) {
+            rowsToShow = 2
+        }
+
         jQuery(slides).slick({
             appendArrows: arrows,
             appendDots: dots,
+            rows: rowsToShow,
             dots: true,
-            infinite: false,
+            infinite: true,
             slidesToShow: parseInt(slidesToShow),
             responsive: [
                 {
                     breakpoint: 783,
                     settings: {
-                        appendArrows: arrowsMobile,
-                        appendDots: dotsMobile,
+                        appendArrows: arrows,
+                        appendDots: dots,
                         slidesToShow: slidesToShowMobile,
                     }
                 }
             ]
         })
+
+
 
     }
     horizontalSliders.forEach(slider => {
