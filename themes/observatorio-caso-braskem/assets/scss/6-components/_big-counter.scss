@@ -1,0 +1,12 @@
+.big-counter{
+    .wp-block{
+        &-columns{
+            @include mobile{
+                padding: $padding--x-large 0;
+            }
+        }
+        &-column{
+            min-height: 100%;
+        }
+    }
+}
