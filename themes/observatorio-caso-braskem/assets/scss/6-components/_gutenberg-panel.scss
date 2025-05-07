@@ -5,6 +5,13 @@
     .interface-navigable-region  {
         font-family: $font-family--gutenberg;
     }
+    .editor-styles-wrapper{
+        background-color: #f5f5f5;
+
+        .block-editor-rich-text__editable{
+            color: $color--low-dark;
+        }
+    }
 }
 
 .hacklabr-gutenberg-panel {
