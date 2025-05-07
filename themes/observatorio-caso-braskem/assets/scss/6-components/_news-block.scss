@@ -12,6 +12,9 @@
                     object-fit: cover;
                     aspect-ratio: 16 / 9;
                 }
+                @include mobile{
+                    max-width: 100%;
+                }
             }
             &-terms{
                 a{

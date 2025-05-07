@@ -1,0 +1,27 @@
+.library-card{
+    &__thumb{
+        margin-top: -3rem !important;
+        p{
+            text-transform: uppercase;
+            position: relative;
+            max-width: fit-content !important;
+            padding: 4px 12px;
+            top: 14.5rem;
+            font-weight: $font-weight--bold;
+            font-family: $font-family--heading;
+            margin-left: $margin--medium !important;
+
+            @include mobile{
+                top: 8rem;
+                padding: 2px 8px;
+                font-size: 14px !important;
+                margin-left: $margin--small !important;
+            }
+        }
+    }
+    @include mobile{
+        &-second{
+            margin-top: -1rem !important;
+        }
+    }
+}

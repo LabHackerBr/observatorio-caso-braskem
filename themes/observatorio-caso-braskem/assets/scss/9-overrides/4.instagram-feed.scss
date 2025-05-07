@@ -4,11 +4,10 @@
         display: none !important;
     }
     &-content{
-        width: 100vw;
+        width: 100vw !important;
         margin-inline-start: calc(50% - 50vw);
         @include mobile{
             width: 100vw !important;
-            //margin-inline-start: 0;
         }
     }
     &-header-container{

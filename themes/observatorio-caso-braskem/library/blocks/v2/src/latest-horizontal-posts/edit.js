@@ -255,8 +255,8 @@ export default function Edit( { attributes, setAttributes } ) {
                     <PanelRow>
                         <NumberControl
                             label={ __( 'Slides to show', 'hacklabr' ) }
-                            max={ 5 }
-                            min={ 3 }
+                            max={ 12 }
+                            min={ 2 }
                             onChange={ ( value ) => { setAttributes( { slidesToShow: parseInt(value) } ) } }
                             step={ 1 }
                             value={ slidesToShow }
@@ -296,7 +296,7 @@ export default function Edit( { attributes, setAttributes } ) {
                                     value={ postsToShow }
                                     onChange={ ( value ) => setAttributes( { postsToShow: value } ) }
                                     min={ 2 }
-                                    max={ 10 }
+                                    max={ 12 }
                                     step={ 1 }
                                 />
                             </PanelRow>
@@ -540,9 +540,19 @@ export default function Edit( { attributes, setAttributes } ) {
                     ) }
 
                     { ( blockModel === 'columnists' ) && (
-                        <PanelRow>
-                            <h2>{ __( 'With this configuration the block will display Co-Authors', 'hacklabr' ) }</h2>
-                        </PanelRow>
+                        <><PanelRow>
+                            <h2>{__('With this configuration the block will display Co-Authors', 'hacklabr')}</h2>
+                        </PanelRow><>
+                                <PanelRow>
+                                    <RangeControl
+                                        label={__('Total number of posts to display', 'hacklabr')}
+                                        value={postsToShow}
+                                        onChange={(value) => setAttributes({ postsToShow: value })}
+                                        min={2}
+                                        max={12}
+                                        step={1} />
+                                </PanelRow>
+                            </></>
                     ) }
                 </PanelBody>
             </InspectorControls>

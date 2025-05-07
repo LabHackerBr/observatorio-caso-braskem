@@ -8,9 +8,9 @@ function columnists_get_contents( $attributes ) {
     $cache_key = 'hacklabr_columnists_' . $block_id;
     $cached_data = get_transient( $cache_key );
 
-    if ( false !== $cached_data ) {
-        return $cached_data;
-    }
+    // if ( false !== $cached_data ) {
+    //     return $cached_data;
+    // }
 
     $data = [];
 
@@ -32,14 +32,7 @@ function columnists_get_contents( $attributes ) {
         $args = [
             'post_type'      => 'guest-author',
             'posts_per_page' => 999,
-            'orderby'        => 'rand',
-            'meta_query'     => [
-                [
-                    'key'     => 'colunista',
-                    'value'   => 1,
-                    'compare' => '='
-                ],
-            ]
+            'orderby'        => 'rand'
         ];
 
         $authors = get_posts( $args );
@@ -56,9 +49,9 @@ function columnists_get_contents( $attributes ) {
         }
     }
 
-    if ( ! empty( $data ) ) {
-        set_transient( $cache_key, $data, 3600 );
-    }
+    // if ( ! empty( $data ) ) {
+    //     set_transient( $cache_key, $data, 3600 );
+    // }
 
     return $data;
 }

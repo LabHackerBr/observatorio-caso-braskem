@@ -259,7 +259,7 @@
             .slick-arrow {
                 background-color: var(--wp--preset--color--secondary-light);
                 background-image: url("./images/slider-arrow.svg");
-                background-position: center;
+                background-position: 51% 50%;
                 background-repeat: no-repeat;
                 border-radius: 30px;
                 border-style: unset;
@@ -269,9 +269,13 @@
                 text-indent: -9999px;
                 transition: all 0.2s ease-in-out;
                 width: 30px;
+                transform: rotate(180deg);
+                padding-right: 2px;
 
                 &.slick-next {
-                    transform: rotate(180deg);
+                    transform: rotate(360deg);
+                    padding-right: 0;
+                    background-position: center;
                 }
 
                 &.slick-disabled {
