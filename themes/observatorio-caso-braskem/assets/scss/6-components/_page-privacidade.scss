@@ -32,6 +32,8 @@
 
     .post-header__title {
         display: flex;
+        align-items: center;
+        justify-content: center;
         gap: 6px;
         padding: 56px 138px;
         margin-top: 0;
@@ -41,21 +43,10 @@
         font-size: $font-size--xx-large;
         text-transform: uppercase;
 
-        @media (max-width: 1030px) {
-            padding: 60px 100px;
-        }
-
-        @media (max-width: 1014px) {
-            padding: 60px 70px;
-        }
-
-        @media (max-width: 894px) {
-            padding: 60px 45px;
-            font-size: $font-size--x-large;
-        }
-
-        @media (max-width: 730px) {
-            padding: 40px 95px;
+        @include mobile {
+            font-size: $font-size--large;
+            align-items: center;
+            padding: 35px 130px;
         }
     }
 
