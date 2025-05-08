@@ -33,7 +33,6 @@
     .post-header__title {
         display: flex;
         align-items: center;
-        justify-content: center;
         gap: 6px;
         padding: 56px 138px;
         margin-top: 0;
@@ -47,6 +46,7 @@
             font-size: $font-size--large;
             align-items: center;
             padding: 35px 130px;
+            justify-content: center;
         }
     }
 
