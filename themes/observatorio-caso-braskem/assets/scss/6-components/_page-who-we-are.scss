@@ -44,12 +44,11 @@
 
     &__submit {
         p {
-            padding-left: 70px;
-        }
-        @include mobile {
-            p {
-                padding-left: 64px;
-            }
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            flex-direction: column;
         }
     }
 
