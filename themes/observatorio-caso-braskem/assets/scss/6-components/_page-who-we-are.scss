@@ -1,0 +1,240 @@
+.who-we-are {
+    position: relative;
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url("/wp-content/themes/observatorio-caso-braskem/assets/images/bg-who-we-are.svg");
+        background-repeat: repeat;
+        background-position: center;
+        background-size: cover;
+        opacity: 1;
+        z-index: 0;
+    }
+
+    &__team {
+        gap: $gap--small !important;
+        p {
+            font-family: $font-family--secondary !important;
+        }
+    }
+
+    &__team-subtitle {
+        font-size: $font-size--small !important;
+    }
+
+    &__contact-form-separator {
+        @include mobile {
+            display: none;
+        }
+    }
+
+    &__submit-wrapper {
+        @include mobile {
+            max-width: 639px;
+            width: 100%;
+            margin: 0 auto;
+            margin-top: $margin--medium;
+        }
+    }
+
+    &__submit {
+        p {
+            padding-left: 70px;
+        }
+        @include mobile {
+            p {
+                padding-left: 64px;
+            }
+        }
+    }
+
+    &__recaptcha-privacy-policy {
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        flex-wrap: wrap;
+        margin-bottom: $margin--medium;
+
+        .g-recaptcha {
+            transform: scale(0.7);
+        }
+
+        @include mobile {
+            flex-direction: column-reverse;
+            align-items: center;
+        }
+    }
+
+    &__content {
+        gap: $gap--xx-large !important;
+    }
+
+    .post-header__title {
+        position: relative;
+        color: $color--high-pure;
+        display: flex;
+        gap: 6px;
+        font-size: $font-size--xx-large;
+        font-weight: $font-weight--bold;
+        text-transform: uppercase;
+        font-family: $font-family--heading;
+        text-align: left;
+        z-index: 2;
+
+        @include mobile {
+            font-size: $font-size--large;
+            align-items: center;
+        }
+    }
+
+    .post-header__separator {
+        margin-bottom: unset;
+        border: unset;
+        max-width: $grid--normal;
+        margin-inline: auto;
+    }
+
+    .container {
+        padding: 102px 16px 67px;
+    }
+
+    .post-content {
+        color: $color--high-pure;
+
+        p {
+            font-family: $font-family--primary;
+            font-size: $font-size--x-large;
+        }
+    }
+
+    .wp-block-cover {
+        .has-primary-dark-background-color {
+            background-color: unset !important;
+        }
+
+        padding: 5rem 0;
+    }
+
+    .wp-block-image {
+        margin: $margin--large 0;
+    }
+
+    .wp-block-heading {
+        font-family: $font-family--primary;
+        font-size: $font-size--xx-large;
+        font-weight: $font-weight--semibold;
+        color: $color--secondary-pure;
+    }
+
+    .wp-block-columns {
+        p {
+            font-size: $font-size--large;
+        }
+    }
+
+    .wp-block-separator {
+        max-width: 100%;
+        width: 766px;
+    }
+
+    .wp-block-contact-form-7-contact-form-selector {
+        position: relative;
+        z-index: 1;
+        margin-top: $margin--large;
+
+        .wpcf7-form {
+            max-width: 100%;
+            margin: 0 auto;
+
+            p {
+                text-align: center;
+                font-size: $font-size--small;
+            }
+
+            .wpcf7-acceptance {
+                label {
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+                    cursor: pointer;
+                    justify-content: center;
+                    margin-bottom: $margin--large;
+
+                    @include mobile {
+                        max-width: 217px;
+                        width: 100%;
+                        margin: 0 auto;
+                        align-items: flex-start;
+                    }
+                }
+
+                input[type="checkbox"] {
+                    width: 18px;
+                    height: 18px;
+                    accent-color: $color--secondary-pure;
+                }
+
+                .termos-checkbox-container {
+                    margin: 0 auto;
+                }
+
+                .destaque-termos {
+                    color: $color--secondary-pure;
+                    font-weight: $font-weight--bold;
+                }
+            }
+        }
+
+        input:not([type="submit"]),
+        textarea {
+            max-width: 100%;
+            width: 639px;
+            height: 48px;
+            padding: 12px 24px;
+            margin-bottom: 12px;
+            border: none;
+            border-radius: $border-radius--small;
+            background-color: rgba(217, 217, 217, 1);
+            color: $color--low-dark;
+            font-family: $font-family--secondary;
+            font-size: $font-size--medium;
+
+            &::placeholder {
+                color: $color--low-dark;
+            }
+        }
+
+        textarea {
+            min-height: 147px;
+            resize: vertical;
+        }
+
+        input[type="submit"] {
+            margin-top: 1.5rem;
+            max-width: 100%;
+            width: 207px;
+            height: 40px;
+            background-color: $color--secondary-pure;
+            color: $color--high-pure;
+            padding: 10px 30px;
+            border: none;
+            cursor: pointer;
+            font-size: $font-size--large;
+            font-family: $font-family--heading;
+            font-weight: $font-weight--bold;
+            text-transform: uppercase;
+
+            clip-path: polygon(
+                0% 0%,
+                100% 0%,
+                95% 100%,
+                5% 100%
+            );
+        }
+    }
+}
