@@ -25,6 +25,10 @@
 
     &__team-subtitle {
         font-size: $font-size--small !important;
+
+        @include mobile {
+            display: none;
+        }
     }
 
     &__contact-form-separator {
@@ -88,6 +92,7 @@
         @include mobile {
             font-size: $font-size--large;
             align-items: center;
+            gap: $gap--medium;
         }
     }
 
