@@ -31,13 +31,13 @@
         }
     }
 
-    &__contact-form-separator {
+    .contact-form-separator {
         @include mobile {
             display: none;
         }
     }
 
-    &__submit-wrapper {
+    .submit-wrapper {
         @include mobile {
             max-width: 639px;
             width: 100%;
@@ -46,7 +46,7 @@
         }
     }
 
-    &__submit {
+    .submit {
         p {
             display: flex;
             justify-content: center;
@@ -56,7 +56,7 @@
         }
     }
 
-    &__recaptcha-privacy-policy {
+    .recaptcha-privacy-policy {
         display: flex;
         justify-content: center;
         align-items: flex-end;
