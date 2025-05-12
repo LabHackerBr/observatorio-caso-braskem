@@ -40,6 +40,8 @@
         color: $color--high-pure;
         font-family: $font-family--heading;
         font-size: $font-size--xx-large;
+        font-weight: $font-weight--bold;
+        vertical-align: middle;
         text-transform: uppercase;
 
         @include mobile {
@@ -51,7 +53,9 @@
     }
 
     .post-content {
-        max-width: $grid--wide;
+        max-width: 968px;
+        width: 100%;
+        padding-top: unset;
 
         p {
             line-height: 160%;
