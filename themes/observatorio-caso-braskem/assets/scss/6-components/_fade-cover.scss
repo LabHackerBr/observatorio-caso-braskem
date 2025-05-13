@@ -1,0 +1,7 @@
+.fade-cover{
+    .wp-block-cover__background{
+        opacity: 1 !important;
+        background-color: transparent !important;
+        background: linear-gradient(0deg,rgba(99, 15, 5, 1) 0%, rgba(99, 15, 5, 0) 100%) !important;
+    }
+}
