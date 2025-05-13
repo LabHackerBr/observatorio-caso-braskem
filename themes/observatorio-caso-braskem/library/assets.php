@@ -370,6 +370,12 @@ class Assets {
                 'pre-load' => true,
                 'global' => true,
 			],
+
+            'webstories-slider' => [
+                'file' => 'webstories-slider.js',
+                'pre-load' => true,
+                'global' => true,
+			],
  		];
 
 		$js_files = apply_filters('js_files_before_output', $js_files);
