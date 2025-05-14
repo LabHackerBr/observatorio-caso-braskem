@@ -5,7 +5,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     if (!fileInput || !fileList) return;
 
-    // Função para atualizar a lista visual
     function updateFileList() {
         fileList.innerHTML = '';
 
@@ -15,11 +14,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 listItem.className = 'file-item';
                 listItem.setAttribute('data-file-id', file.name + file.size + file.lastModified);
 
-                // Nome do arquivo
                 const fileName = document.createElement('span');
                 fileName.textContent = file.name;
 
-                // Botão para remover
                 const removeBtn = document.createElement('button');
                 removeBtn.innerHTML = "<img src='/wp-content/themes/observatorio-caso-braskem/assets/images/exclude-file-icon.svg' alt='Remover arquivo' />";
                 removeBtn.className = 'remove-file';
@@ -34,10 +31,8 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    // Evento quando novos arquivos são selecionados
     fileInput.addEventListener('change', function() {
         if (this.files.length > 0) {
-            // Adiciona apenas arquivos novos (evita duplicação)
             Array.from(this.files).forEach(newFile => {
                 const fileExists = allFiles.some(existingFile =>
                     existingFile.name === newFile.name &&
@@ -58,7 +53,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // Evento para remover arquivos individuais
     fileList.addEventListener('click', function(e) {
         const removeBtn = e.target.closest('.remove-file');
 
@@ -66,7 +60,6 @@ document.addEventListener('DOMContentLoaded', function() {
             e.preventDefault();
             const fileId = removeBtn.getAttribute('data-file-id');
 
-            // Remove o arquivo pelo ID único
             allFiles = allFiles.filter(file =>
                 (file.name + file.size + file.lastModified) !== fileId
             );
@@ -77,13 +70,11 @@ document.addEventListener('DOMContentLoaded', function() {
             allFiles.forEach(file => dataTransfer.items.add(file));
             fileInput.files = dataTransfer.files;
 
-            // Dispara evento de mudança para o CF7
             const event = new Event('change', { bubbles: true });
             fileInput.dispatchEvent(event);
         }
     });
 
-    // Limpar lista após envio
     document.addEventListener('wpcf7mailsent', function() {
         allFiles = [];
         fileList.innerHTML = '';
