@@ -12,6 +12,10 @@
             font-size: $font-size--small;
         }
 
+        .wpcf7-form-control-wrap {
+            max-width: 100%;
+        }
+
         .wpcf7-acceptance {
             .wpcf7-list-item {
                 @include mobile{
