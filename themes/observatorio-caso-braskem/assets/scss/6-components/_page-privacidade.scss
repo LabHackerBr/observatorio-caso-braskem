@@ -34,7 +34,6 @@
         display: flex;
         align-items: center;
         gap: 6px;
-        padding: 56px 138px;
         margin-top: 0;
         text-align: unset;
         color: $color--high-pure;
@@ -46,9 +45,6 @@
 
         @include mobile {
             font-size: $font-size--large;
-            align-items: center;
-            padding: 35px 130px;
-            justify-content: center;
         }
     }
 
