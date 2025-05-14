@@ -3,7 +3,6 @@
 namespace hacklabr;
 
 function register_file_upload_assets() {
-    // Registrar o script
     wp_register_script(
         'hacktlabr-file-upload',
         get_template_directory_uri() . '/assets/javascript/functionalities/file-upload.js',
@@ -12,10 +11,8 @@ function register_file_upload_assets() {
         true
     );
 
-    // Enfileirar o script
     wp_enqueue_script('hacktlabr-file-upload');
 
-    // Garantir que Dashicons esteja carregado
     wp_enqueue_style('dashicons');
 }
 
