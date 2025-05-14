@@ -19,3 +19,4 @@ require __DIR__ . '/library/blocks/index.php';
 require __DIR__ . '/library/blocks/v2/index.php';
 require __DIR__ . '/library/search-redirect.php';
 require __DIR__ . '/library/recaptcha.php';
+require __DIR__ . '/library/file-uploads.php';
