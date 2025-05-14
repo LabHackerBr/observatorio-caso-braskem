@@ -1,0 +1,144 @@
+.wp-block-contact-form-7-contact-form-selector {
+    position: relative;
+    z-index: 1;
+    margin-top: $margin--large;
+
+    .wpcf7-form {
+        max-width: 100%;
+        margin: 0 auto;
+
+        p {
+            text-align: center;
+            font-size: $font-size--small;
+        }
+
+        .wpcf7-acceptance {
+            .wpcf7-list-item {
+                @include mobile{
+                    margin: 0;
+                }
+            }
+
+            label {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                font-size: $font-size--small;
+                cursor: pointer;
+                justify-content: center;
+                margin-bottom: $margin--large;
+
+                @include mobile {
+                    max-width: 217px;
+                    width: 100%;
+                    margin: 0 auto;
+                    align-items: flex-start;
+                }
+            }
+
+            input[type="checkbox"] {
+                width: 18px;
+                height: 18px;
+                accent-color: $color--secondary-pure;
+            }
+
+            .termos-checkbox-container {
+                margin: 0 auto;
+            }
+
+            .destaque-termos {
+                color: $color--secondary-pure;
+                font-weight: $font-weight--bold;
+            }
+        }
+    }
+
+    .input-text,
+    textarea {
+        max-width: 100%;
+        width: 639px;
+        height: 48px;
+        padding: 12px 24px;
+        margin-bottom: 12px;
+        border: none;
+        border-radius: $border-radius--small;
+        background-color: rgba(217, 217, 217, 1);
+        color: $color--low-dark;
+        font-family: $font-family--secondary;
+        font-size: $font-size--medium;
+
+        &::placeholder {
+            color: $color--low-dark;
+        }
+    }
+
+    textarea {
+        min-height: 147px;
+        resize: vertical;
+    }
+
+    input[type="submit"] {
+        margin-top: 1.5rem;
+        max-width: 100%;
+        width: 207px;
+        height: 40px;
+        background-color: $color--secondary-pure;
+        color: $color--high-pure;
+        padding: 10px 30px;
+        border: none;
+        cursor: pointer;
+        font-size: $font-size--large;
+        font-family: $font-family--heading;
+        font-weight: $font-weight--bold;
+        text-transform: uppercase;
+
+        clip-path: polygon(
+            0% 0%,
+            100% 0%,
+            95% 100%,
+            5% 100%
+        );
+    }
+
+    .contact-form-separator {
+        @include mobile {
+            display: none;
+        }
+    }
+
+    .submit-wrapper {
+        @include mobile {
+            max-width: 639px;
+            width: 100%;
+            margin: 0 auto;
+            margin-top: $margin--medium;
+        }
+    }
+
+    .submit {
+        p {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            flex-direction: column;
+        }
+    }
+
+    .recaptcha-privacy-policy {
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        flex-wrap: wrap;
+        margin-bottom: $margin--medium;
+
+        .g-recaptcha {
+            transform: scale(0.7);
+        }
+
+        @include mobile {
+            flex-direction: column-reverse;
+            align-items: center;
+        }
+    }
+}
