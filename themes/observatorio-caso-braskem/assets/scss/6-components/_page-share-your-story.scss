@@ -1,0 +1,240 @@
+.share-your-story {
+    position: relative;
+    background-color: $color--primary-pure;
+    mix-blend-mode: multiply;
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url("/wp-content/themes/observatorio-caso-braskem/assets/images/pattern-privacy-policy.svg");
+        background-repeat: repeat;
+        background-size: cover;
+        opacity: 1;
+        z-index: 0;
+    }
+
+    &__column {
+       .text {
+            font-family: $font-family--secondary;
+            font-size: $font-size--x-large;
+            font-weight: $font-weight--semibold;
+            color: $color--high-pure;
+            line-height: 1.5;
+        }
+    }
+
+    &__column:nth-child(2) {
+        margin-top: 30px;
+    }
+
+    .container {
+        padding: 54px 16px;
+    }
+
+    .post-header__separator {
+        border: unset;
+    }
+
+    .post-header__title {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        margin-top: 0;
+        text-align: unset;
+        color: $color--high-pure;
+        font-family: $font-family--heading;
+        font-size: $font-size--xx-large;
+        font-weight: $font-weight--bold;
+        vertical-align: middle;
+        text-transform: uppercase;
+
+        @include mobile {
+            align-items: center;
+            justify-content: center;
+        }
+    }
+
+    .post-content {
+        max-width: 1174px;
+        width: 100%;
+    }
+
+    .wp-block-columns {
+        gap: 30px;
+    }
+
+    .label-text {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: $gap--small;
+        font-family: $font-family--primary;
+        font-size: $font-size--large !important;
+        font-style: normal;
+        font-weight: $font-weight--regular;
+        line-height: 150%;
+        color: $color--high-pure;
+    }
+
+    .label-checkboxes {
+        margin: 25px 0;
+    }
+
+    .input-checkbox {
+        label {
+            display: flex;
+            align-items: center;
+            gap: $gap--small;
+        }
+    }
+
+    .wp-block-contact-form-7-contact-form-selector {
+        .wpcf7-form {
+            p {
+                text-align: left;
+            }
+        }
+        .wpcf7-list-item.first {
+            margin: 0 auto;
+        }
+
+        .input-text,
+        textarea {
+            width: 671px;
+        }
+
+        textarea {
+            min-height: 533px;
+            resize: vertical;
+        }
+
+        input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+            accent-color: $color--secondary-pure;
+        }
+
+        .custom-file-label > .wpcf7-form-control-wrap {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: $gap--small;
+            width: 235px;
+            height: 45px;
+            background-color: $color--high-pure;
+            box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.15);
+
+            &::before {
+                content: url('/wp-content/themes/observatorio-caso-braskem/assets/images/add-file-icon.svg');
+                padding-top: 12px;
+            }
+
+            &::after {
+                content: url('/wp-content/themes/observatorio-caso-braskem/assets/images/add-file-arrow-down.svg');
+            }
+        }
+
+        .add-file {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+        }
+
+        .file-feedback {
+            margin: 18px 0;
+
+            .file-list-title {
+                font-family: $font-family--primary;
+                font-size: $font-size--large;
+                font-style: normal;
+                font-weight: $font-weight--regular;
+                line-height: 150%;
+                color: $color--high-pure;
+                text-align: left;
+            }
+
+            .uploaded-files-list {
+                text-decoration: underline;
+                color: $color--high-pure;
+                text-underline-position: from-font;
+                font-size: $font-size--medium;
+                font-weight: $font-weight--regular;
+                font-style: normal;
+                line-height: 150%;
+                list-style: none;
+                padding: 0;
+                margin: 0;
+                max-height: 200px;
+                overflow-y: auto;
+
+                .file-item {
+                    display: flex;
+                    align-items: center;
+                    color: $color--high-pure;
+
+                    .remove-file {
+                        background: none;
+                        border: none;
+                        color: $color--high-pure;
+                        font-size: 19px;
+                        cursor: pointer;
+                        padding: 0 5px;
+                        line-height: 1;
+                    }
+                }
+            }
+        }
+
+        input[type="submit"] {
+            width: 235px;
+            height: 46px;
+            background-color: $color--high-pure;
+            color: $color--secondary-dark;
+        }
+
+        .recaptcha-privacy-policy {
+            justify-content: flex-start;
+            width: 100%;
+
+            .wpcf7-list-item {
+                margin: 0;
+
+                label {
+                    display: flex;
+                    justify-content: center;
+                    gap: $gap--small;
+                }
+            }
+
+            .g-recaptcha {
+                transform-origin: left center;
+            }
+
+            @include mobile {
+                flex-wrap: wrap;
+                align-items: flex-start;
+            }
+        }
+
+        .wpcf7-list-item-label {
+            color: $color--high-pure;
+        }
+
+        .submit-wrapper {
+            @include mobile {
+                margin: unset;
+            }
+        }
+
+        .submit {
+            text-align: center;
+        }
+    }
+}
