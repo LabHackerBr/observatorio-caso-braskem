@@ -7,7 +7,6 @@ document.addEventListener('DOMContentLoaded', function () {
             dots.classList.add("dots");
             wrapper.appendChild(dots);
             const glider = carousel._glider
-            console.log(dots)
             const options = {
                 slidesToShow: 1.4,
                 slidesToScroll: 1,
