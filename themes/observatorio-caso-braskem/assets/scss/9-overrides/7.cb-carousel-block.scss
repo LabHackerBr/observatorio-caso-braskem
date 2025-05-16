@@ -1,0 +1,30 @@
+.cb-carousel-block{
+    .cb-button-prev, .cb-button-next{
+        background-color: $color--secondary-pure;
+        width: 33px !important;
+        height: 33px !important;
+        border-radius: 2rem;
+
+        &::after{
+            content: url('#{$path--assets}/images/slider-arrow-white.svg');
+            padding-top: 3px;
+        }
+    }
+    .cb-button-next{
+        &::after{
+            transform: rotate(180deg);
+            padding-right: 4px;
+        }
+        @include mobile{
+            right: 0 !important;
+        }
+    }
+    .cb-button-prev{
+        @include mobile{
+            left: 0 !important;
+        }
+    }
+    .swiper{
+        margin-inline: $margin--medium;
+    }
+}
