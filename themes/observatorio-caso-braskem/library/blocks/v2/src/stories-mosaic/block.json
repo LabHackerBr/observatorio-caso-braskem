@@ -34,23 +34,6 @@
 			"type": "number",
 			"default": 2
 		},
-		"flickrAlbumId": {
-			"type": "string"
-		},
-		"flickrAPIKey": {
-			"type": "string"
-		},
-		"flickrByType": {
-			"type": "string",
-			"default": "user"
-		},
-		"flickrUserId": {
-			"type": "string"
-		},
-		"gridFormat": {
-			"type": "string",
-			"default": "columns"
-		},
 		"heading": {
 			"type": "string"
 		},
@@ -78,13 +61,6 @@
 			"type": "string",
 			"default": "date"
 		},
-		"playlistId": {
-			"type": "string"
-		},
-		"postsBySlide": {
-			"type": "number",
-			"default": 3
-		},
 		"postsToShow": {
 			"type": "number",
 			"default": 8
@@ -95,14 +71,6 @@
 		},
 		"queryTerms": {
 			"type": "array"
-		},
-		"showAsGrid": {
-			"type": "boolean",
-			"default": false
-		},
-		"showAvatar": {
-			"type": "boolean",
-			"default": false
 		},
 		"showAuthor": {
 			"type": "boolean",

@@ -7,11 +7,12 @@ function stories_mosaic_callback( $attributes ) {
         <div id="stories-modal">
             <div class="story-preview previous-story"></div>
             <button type="button" class="close-modal">
-                <svg class="hamburger" role="img" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                <svg role="img" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg">
                     <rect width="16" height="2" x="0" y="2"/>
                     <rect width="16" height="2" x="0" y="12"/>
                 </svg>
             </button>
+            <div class="story-preview next-story"></div>
         </div><?php
     });
 
@@ -239,15 +240,15 @@ function stories_mosaic_callback( $attributes ) {
 
     $heading = $attributes['heading'] ?? '';
 
-    if ( ! empty( $heading ) ) {
-        echo '<div class="stories-mosaic-block__heading">';
-            if ( ! empty( $link ) ) {
-                echo '<h2><a href="' . esc_url( $link ) . '">' . $heading . '</a></h2>';
-            } else {
-                echo '<h2>' . $heading . '</h2>';
-            }
-        echo '</div>';
-    }
+
+    echo '<div class="stories-mosaic-block__heading">';
+        if ( ! empty( $link ) ) {
+            echo '<h2><a href="' . esc_url( $link ) . '">' . $heading . '</a></h2>';
+        } else {
+            echo '<h2>' . $heading . '</h2>';
+        }
+    echo '</div>';
+
 
      // List of the posts to mount slider
 

@@ -1,26 +1,28 @@
-@import "../../node_modules/slick-carousel/slick/slick.scss";
 @import "../../shared/scss/mixins";
 
 .stories-mosaic-block {
-    // border-radius: 8px;
-    // padding: 15px;
-    // max-width: 75rem;
     min-width: 100vw;
     width: fit-content;
     display: flex;
-    gap: 1rem;
+    gap: .5rem;
     margin-inline-start: calc(50% - 50vw) !important;
-    padding-inline-start: 28%;
     min-height: fit-content;
     // max-height: 500px;
     overflow-y: hidden !important;
     overflow-x: auto;
-    cursor: grab;
+    cursor: default;
     scrollbar-width: none;
-    @media (max-width: 1800px) {
-        // min-width: 90vw;
-        padding-inline-start: 12%;
+
+    &__heading{
+        min-width: 320px;
+        @media (max-width: 1550px) {
+            min-width: 8%;
+        }
+        @media (max-width: 1360px) {
+            min-width: 4%;
+        }
     }
+
     .inner-msnry{
         min-width: 200vw;
         // max-width: 200vw;
@@ -41,8 +43,8 @@
         grid-template-columns: repeat( auto-fill, minmax( 200px, 1fr ) ); /* [2] Make columns adjust according to the available viewport */
         grid-auto-rows: 200px;
         margin-bottom: 30px;
-        gap: 1rem;
-        min-width:  102vw;
+        gap: .5rem;
+        min-width:  100vw;
         max-height: 100%;
         .grid-item{
             display: inline-block;
@@ -75,7 +77,6 @@
 
     .post {
         height: 100%;
-        // margin-bottom: 16px;
         overflow: hidden !important;
         &-content {
             display: none;
@@ -90,6 +91,39 @@
         }
     }
 
+}
+
+// Estilo do modal
+
+#stories-modal{
+    display: none;
+    inset: 0;
+    // justify-content: center;
+    position: fixed;
+    z-index: 100;
+
+    &.open{
+        display: flex;
+    }
+}
+
+.story-preview{
+    width: calc(50% - max(40vh,15vw));
+    align-items: center;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    z-index: 101;
+
+    &.previous-story{
+        left: 0;
+    }
+    &.next-story{
+        right: 0;
+    }
 }
 
 .stories-iframe{
@@ -115,17 +149,17 @@
     position: fixed;
     top: 40px;
     left: 40px;
-    z-index: 100;
+    z-index: 105;
     width: 32px;
     height: 32px;
     background-color: transparent;
     svg{
         fill: white;
         rect:nth-of-type(1) {
-            transform: rotate(45deg) translateY(5px);;
+            transform: rotate(45deg) translateX(4px) translateY(-1px);
         }
         rect:nth-of-type(2) {
-            transform: rotate(-45deg) translateY(-5px);;
+            transform: rotate(-45deg) translateX(-9px) translateY(-1px);
         }
     }
     &.open{

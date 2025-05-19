@@ -43,32 +43,21 @@ export default function Edit( { attributes, clientId, setAttributes } ) {
         blockId,
         blockModel,
         coAuthor,
-        columns,
         compare,
         contentBelow,
-        flickrAlbumId,
-        flickrAPIKey,
-        flickrByType,
-        flickrUserId,
-        gridFormat,
         heading,
         noCompare,
         noPostType,
         noQueryTerms,
         noTaxonomy,
         playlistId,
-        postsBySlide,
         postsToShow,
         postType,
         queryTerms,
-        showAsGrid,
         showAuthor,
-        showAvatar,
-        showChildren,
         showDate,
         showExcerpt,
         showTaxonomy,
-        showThumbnail,
         taxonomy,
         thumbnailFormat
     } = attributes
@@ -157,6 +146,8 @@ export default function Edit( { attributes, clientId, setAttributes } ) {
         setAttributes({ coAuthor: value })
     }
 
+    console.log(taxonomies);
+
     return (
         <>
             <InspectorControls>
@@ -187,14 +178,6 @@ export default function Edit( { attributes, clientId, setAttributes } ) {
                             value={ blockModel }
                             options={ [
                                 {
-                                    label: __( 'Collection', 'hacklabr' ),
-                                    value: "collection"
-                                },
-                                {
-                                    label: __( 'Columnists', 'hacklabr' ),
-                                    value: "columnists"
-                                },
-                                {
                                     label: __( 'Most read (Posts)', 'hacklabr' ),
                                     value: "most-read"
                                 },
@@ -215,25 +198,6 @@ export default function Edit( { attributes, clientId, setAttributes } ) {
                         />
                     </PanelRow>
 
-                    { ( blockModel !== 'numbered' ) && (
-                        <PanelRow>
-                            <ToggleControl
-                                label={ __( 'Show the post thumbnail?', 'hacklabr' ) }
-                                checked={ showThumbnail }
-                                onChange={ () => { setAttributes( { showThumbnail: ! showThumbnail } ) } }
-                            />
-                        </PanelRow>
-                    ) }
-
-                    { ( showThumbnail && blockModel !== 'numbered' ) && (
-                        <PanelRow>
-                            <ToggleControl
-                                label={ __( 'Use rounded thumbnail?', 'hacklabr' ) }
-                                checked={ thumbnailFormat }
-                                onChange={ () => { setAttributes( { thumbnailFormat: ! thumbnailFormat } ) } }
-                            />
-                        </PanelRow>
-                    ) }
 
                     { ( ! thumbnailFormat ) && (
                         <PanelRow>
@@ -245,58 +209,8 @@ export default function Edit( { attributes, clientId, setAttributes } ) {
                         </PanelRow>
                     ) }
 
-                    { ( showThumbnail && ( blockModel == 'post' || blockModel == 'most-read' ) ) && (
-                        <PanelRow>
-                            <ToggleControl
-                                label={ __( 'Use avatar as thumbnail?', 'hacklabr' ) }
-                                checked={ showAvatar }
-                                onChange={ () => { setAttributes( { showAvatar: ! showAvatar } ) } }
-                            />
-                        </PanelRow>
-                    ) }
-
                     { ( blockModel == 'post' || blockModel == 'numbered' || blockModel == 'columnists' || blockModel == 'most-read' ) && (
                         <>
-                            <PanelRow>
-                                <ToggleControl
-                                    label={ __( 'Show as a Grid?', 'hacklabr' ) }
-                                    checked={ showAsGrid }
-                                    onChange={ () => { setAttributes( { showAsGrid: ! showAsGrid } ) } }
-                                />
-                            </PanelRow>
-
-                            { ( showAsGrid ) && (
-                                <>
-                                    <PanelRow>
-                                        <SelectControl
-                                            label={ __( 'Grid format', 'hacklabr' ) }
-                                            value={ gridFormat }
-                                            options={ [
-                                                {
-                                                    label: __( 'Columns', 'hacklabr' ),
-                                                    value: "columns"
-                                                },
-                                                {
-                                                    label: __( 'Row', 'hacklabr' ),
-                                                    value: "row"
-                                                }
-                                            ]}
-                                            onChange={ ( value ) => { setAttributes( { gridFormat:  gridFormat === 'columns' ? 'row' : 'columns' } ) } }
-                                        />
-                                    </PanelRow>
-
-                                    <PanelRow>
-                                        <NumberControl
-                                            label={ __( 'Columns', 'hacklabr' ) }
-                                            value={ columns }
-                                            onChange={ ( value ) => { setAttributes( { columns: value } ) } }
-                                            min={ 1 }
-                                            max={ 4 }
-                                        />
-                                    </PanelRow>
-                                </>
-                            ) }
-
                             <PanelRow>
                                 <ToggleControl
                                     label={ __( 'Show the excerpt?', 'hacklabr' ) }
@@ -328,23 +242,12 @@ export default function Edit( { attributes, clientId, setAttributes } ) {
                     ) }
 
                     <PanelRow>
-                        <NumberControl
-                            label={ __( 'Posts by slide', 'hacklabr' ) }
-                            max={ showAsGrid? 16 : 5 }
-                            min={ 1 }
-                            onChange={ ( value ) => { setAttributes( { postsBySlide: value } ) } }
-                            step={ 1 }
-                            value={ postsBySlide }
-                        />
-                    </PanelRow>
-
-                    <PanelRow>
                         <RangeControl
                             label={ __( 'Total number of posts to display', 'hacklabr' ) }
                             value={ postsToShow }
                             onChange={ ( value ) => setAttributes( { postsToShow: value } ) }
-                            min={ 3 }
-                            max={ 99 }
+                            min={ 10 }
+                            max={ 20 }
                             step={ 1 }
                         />
                     </PanelRow>
@@ -365,72 +268,10 @@ export default function Edit( { attributes, clientId, setAttributes } ) {
                         </PanelRow>
                     ) }
 
-                    { ( blockModel == 'collection' ) && (
-                        <>
-                            <PanelRow>
-                                <TextControl
-                                    label={ __( 'Flickr API Key', 'hacklabr' ) }
-                                    value={ flickrAPIKey }
-                                    onChange={ ( value ) => { setAttributes( { flickrAPIKey: value } ) } }
-                                />
-                            </PanelRow>
-
-                            <PanelRow>
-                                <SelectControl
-                                    label={ __( 'Type of the content', 'hacklabr' ) }
-                                    value={ flickrByType }
-                                    options={[
-                                        {
-                                            label: __( 'Images by user', 'hacklabr' ),
-                                            value: "user"
-                                        },
-                                        {
-                                            label: __( 'Images by album', 'hacklabr' ),
-                                            value: "album"
-                                        }
-                                    ]}
-                                    onChange={ ( value ) => {
-                                        setAttributes( { flickrByType: value } )
-                                    } }
-                                />
-                            </PanelRow>
-
-                            <PanelRow>
-                                { ( flickrByType == 'album' ) && (
-                                    <TextControl
-                                        label={ __( 'Album ID', 'hacklabr' ) }
-                                        value={ flickrAlbumId }
-                                        onChange={ ( value ) => {
-                                            setAttributes( { flickrAlbumId: value } )
-                                        } }
-                                    />
-                                ) }
-
-                                { ( flickrByType == 'user' ) && (
-                                    <TextControl
-                                        label={ __( 'User ID', 'hacklabr' ) }
-                                        value={ flickrUserId }
-                                        onChange={ ( value ) => {
-                                            setAttributes( { flickrUserId: value } )
-                                        } }
-                                    />
-                                ) }
-                            </PanelRow>
-                        </>
-                    ) }
-
                     { ( blockModel == 'post' || blockModel == 'numbered' || blockModel == 'most-read' ) && (
                         <>
                             <PanelRow>
                                 <SelectPostType postType={ postType } onChangePostType={ onChangePostType } />
-                            </PanelRow>
-
-                            <PanelRow>
-                                <ToggleControl
-                                    label={ __( 'Show children items (if any)?', 'hacklabr' ) }
-                                    checked={ showChildren }
-                                    onChange={ () => { setAttributes( { showChildren: ! showChildren } ) } }
-                                />
                             </PanelRow>
 
                             <PanelRow>
@@ -562,12 +403,6 @@ export default function Edit( { attributes, clientId, setAttributes } ) {
                                 </PanelRow>
                             ) }
                         </>
-                    ) }
-
-                    { ( blockModel == 'columnists' ) && (
-                        <PanelRow>
-                            <h2>{ __( 'With this configuration the block will display Co-Authors', 'hacklabr' ) }</h2>
-                        </PanelRow>
                     ) }
                 </PanelBody>
             </InspectorControls>

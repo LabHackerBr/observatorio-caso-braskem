@@ -18,7 +18,6 @@
 	},
 	"dependencies": {
 		"dragscroll": "^0.0.8",
-		"masonry-layout": "^4.2.2",
 		"slick-carousel": "^1.8.1"
 	}
 }
