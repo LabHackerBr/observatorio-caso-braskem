@@ -1,5 +1,11 @@
 .main-header-lateral {
     box-shadow: $box-shadow--default;
+    @include mobile{
+        max-height: size(65);
+        >.container{
+            height: 100%;
+        }
+    }
 
     &__content {
         align-items: center;
@@ -7,11 +13,16 @@
         justify-content: space-between;
         min-height: size(80);
         padding: $padding--medium 0;
+        @include mobile{
+            min-height: size(65);
+            padding: 0;
+        }
     }
 
     &__toggle-menu {
         transition: $transition--default;
         display: none;
+        height: 1em;
 
         @include tablet{
             display: block;
@@ -132,11 +143,14 @@
         display: none;
         max-width: $grid--wide;
         margin-inline: auto;
+        background-color: transparent;
     }
 
     &__menu-mobile{
         background-color: $color--low-pure;
-        max-width: fit-content;
+        // max-width: fit-content;
+        width: 80%;
+        margin-inline: auto;
 
         ul, li{
             color: $color--high-light;
@@ -147,6 +161,7 @@
         li{
             padding: $padding--medium 0;
             border-bottom: solid 0.5px $color--high-light;
+            text-align: center;
         }
 
         ul{
@@ -185,25 +200,27 @@
     }
 
     &.scrolled{
-        transition: $transition--default;
-        max-height: 55px;
-        .main-header-lateral__toggle-menu{
-            display: block;
-        }
-        .main-header-lateral__desktop-content{
-            display: none;
-        }
-        .main-header-lateral__content{
+        @include desktop{
             transition: $transition--default;
-            min-height: 55px;
-            padding: 0;
-        }
-        .main-header-lateral__logo{
-            img{
+            max-height: 55px;
+            .main-header-lateral__toggle-menu{
+                display: block;
+            }
+            .main-header-lateral__desktop-content{
+                display: none;
+            }
+            .main-header-lateral__content{
                 transition: $transition--default;
-                height: 3rem;
-                @include mobile{
-                    height: 2rem;
+                min-height: 55px;
+                padding: 0;
+            }
+            .main-header-lateral__logo{
+                img{
+                    transition: $transition--default;
+                    height: 3rem;
+                    @include mobile{
+                        height: 2rem;
+                    }
                 }
             }
         }

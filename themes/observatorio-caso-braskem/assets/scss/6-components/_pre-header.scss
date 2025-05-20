@@ -1,10 +1,13 @@
 .pre-header {
     background-color: $color--primary-pure;
+    @include mobile{
+        display: none;
+    }
 
     &__content {
         align-items: center;
         display: flex;
-        justify-content: flex-end;
+        justify-content: space-between;
         min-height: 30px;
 
         .social-menu {
@@ -12,5 +15,41 @@
             color: $color--high-pure;
         }
 
+    }
+
+    &__select-language{
+        width: 15%;
+
+        .wpml-ls{
+            font-family: $font-family--primary;
+            color: $color--high-pure;
+            font-weight: $font-weight--bold;
+            text-align: center;
+            padding-inline: 0;
+            font-size: $font-size--small;
+
+            &-current-language{
+                font-size: $font-size--medium;
+                text-decoration-line: underline;
+                text-decoration-style: solid;
+                text-decoration-skip-ink: auto;
+                text-decoration-thickness: auto;
+                text-underline-offset: auto;
+                text-underline-position: from-font;
+            }
+
+            &-legacy-list-horizontal{
+                > ul{
+                    display: flex;
+                    justify-content: flex-end;
+
+                    :last-child{
+                        a{
+                            padding-inline-end: 0;
+                        }
+                    }
+                }
+            }
+        }
     }
 }

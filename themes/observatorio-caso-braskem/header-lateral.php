@@ -16,6 +16,11 @@
                 <div class="main-header__social-content">
                     <?= the_social_networks_menu(false); ?>
                 </div>
+                <div class="pre-header__select-language ">
+                    <div class="wpml-language-switcher">
+                        <?php do_action('wpml_add_language_selector');?>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -27,8 +32,8 @@
                     <svg class="hamburger" :class="{ 'hamburger--open': menuOpen }" role="img" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg">
                         <title>Exibir menu</title>
                         <rect width="16" height="2" x="0" y="2"/>
-                        <rect width="16" height="2" x="0" y="7"/>
-                        <rect width="16" height="2" x="0" y="12"/>
+                        <rect width="16" height="2" x="0" y="8"/>
+                        <rect width="16" height="2" x="0" y="14"/>
                     </svg>
                 </button>
 

@@ -35,7 +35,6 @@ document.addEventListener('DOMContentLoaded', function() {
             header.classList.remove("scrolled")
             isScrolled = false
         }
-        closeSubmenus()
     }, 200)
 
     document.addEventListener('wheel', detectScroll, { passive: true });
