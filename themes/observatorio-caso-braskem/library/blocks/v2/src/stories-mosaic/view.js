@@ -54,35 +54,38 @@ document.addEventListener("DOMContentLoaded", function() {
             const index = array.indexOf(link);
             let length = array.length;
             let previewLink = '';
+            let i = '';
+
+            modal.forEach(modal =>{
+                modal.classList.add('open');
+            })
 
             if(index > 0){
-                let i = index - 1;
+                i = index - 1;
                 previewLink = array[i];
                 generatePreview(previewLink, previousPreview);
+                if(index == (length - 1)){
+                    cleanPreview(nextPreview);
+                }
             }
             if(index < (length - 1)){
-                let i = index + 1;
-                console.log(i);
+                i = index + 1;
                 previewLink = array[i];
                 generatePreview(previewLink, nextPreview);
+                if(index == 0){
+                    cleanPreview(previousPreview);
+                }
             }
 
             closeButton.forEach(closeBtn =>{
                 setTimeout(function(){
                     closeBtn.classList.add('open');
-                }, 1000);
-            })
-
-            modal.forEach(modal =>{
-                setTimeout(function(){
-                    modal.classList.add('open');
-                }, 500);
+                }, 400);
             })
 
         }
 
         function generatePreview(link, element){
-
             const image = link.querySelectorAll('img');
             const src = image[0].getAttribute('src');
             const height = image[0].getBoundingClientRect().height;
@@ -98,20 +101,26 @@ document.addEventListener("DOMContentLoaded", function() {
                     elem.removeChild(elem.childNodes[0]);
                     setTimeout(function(){
                         elem.appendChild(preview);
-                    }, 1100);
+                    }, 400);
                 }
                 else{
                     setTimeout(function(){
                         elem.appendChild(preview);
-                    }, 1100);
+                    }, 400);
                 }
                 preview.addEventListener('click', (e) => {
                     e.preventDefault();
                     openModal(link);
                 })
-
             });
+        }
 
+        function cleanPreview(element){
+            element.forEach( elem =>{
+                if(elem.hasChildNodes()){
+                    elem.removeChild(elem.childNodes[0]);
+                }
+            });
         }
 
     })
