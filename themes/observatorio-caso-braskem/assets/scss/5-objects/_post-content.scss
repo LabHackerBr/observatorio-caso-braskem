@@ -46,6 +46,12 @@
             padding-inline: 0;
         }
     }
+
+    .alignfull{
+        >figcaption{
+            padding-inline: $padding--medium;
+        }
+    }
 }
 
 .home{
