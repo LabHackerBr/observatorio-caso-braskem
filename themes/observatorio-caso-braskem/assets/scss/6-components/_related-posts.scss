@@ -1,26 +1,81 @@
 .related-posts{
+    margin-bottom: 75px;
     &__title{
-        border-top: $border-width--small solid $color--high-dark;
         color: $color--primary-dark;
         font-weight: $font-weight--bold;
         margin-top: $margin--large;
-        padding-bottom: $padding--xx-large;
+        padding-bottom: $padding--x-large;
         padding-top: $padding--x-large;
+        text-transform: uppercase;
     }
 
-    &__content{
+    &__content {
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-columns: repeat(4, 1fr);
         gap: $gap--large;
+
+        @include mobile {
+            grid-template-columns: repeat(2, 1fr);
+        }
     }
 
     .post-card{
+        position: relative;
+
         &__author, &__date, &__excerpt{
             display: none;
         }
 
         &__title{
-            font-size: $font-size--x-large;
+            font-size: $font-size--medium;
+            text-transform: uppercase;
+        }
+
+        &__image {
+            position: relative;
+
+            img {
+                border-radius: unset;
+                width: 100%;
+                display: block;
+            }
+
+            &::after {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                height: 89%;
+                background: linear-gradient(180deg, rgba(0, 0, 0, 0.00) 11%, rgba(0, 0, 0, 0.85) 100%);
+                pointer-events: none;
+            }
+        }
+
+        &__content {
+            position: static;
+        }
+
+        &__category {
+            position: absolute;
+            top: 42%;
+            left: 8%;
+            z-index: 3;
+
+            .tag {
+                background-color: $color--secondary-dark;
+                max-width: 100%;
+                border: unset;
+                border-radius: unset;
+                color: $color--high-pure;
+                font-family: $font-family--heading;
+                font-size: $font-size--small;
+                font-style: normal;
+                font-weight: $font-weight--bold;
+                line-height: normal;
+                text-transform: uppercase;
+                text-align: center;
+            }
         }
     }
 }
