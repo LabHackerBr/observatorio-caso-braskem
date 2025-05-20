@@ -113,10 +113,10 @@
                 font-family: $font-family--primary;
                 display: flex;
                 gap: 2px;
-                font-size: 12px;
+                font-size: $font-size--small;
 
                 p{
-                    font-size: 12px;
+                    font-size: $font-size--small;
                     line-height: inherit;
                 }
 
