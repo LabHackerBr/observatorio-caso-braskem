@@ -10,7 +10,7 @@ if ( $projects && ! is_wp_error( $projects ) ) {
 
 $args = [
     'post_type'      => 'post',
-    'posts_per_page' => 3,
+    'posts_per_page' => 4,
     'post__not_in'   => [ $post_id ],
     'orderby'        => 'date',
     'order'          => 'DESC',
@@ -27,7 +27,7 @@ $related_posts = new WP_Query( $args );
 if ( $related_posts->have_posts() ) : ?>
 
 <div class="related-posts container container--wide">
-    <h2 class="related-posts__title"><?php _e('Leia também: ') ?></h2>
+    <h2 class="related-posts__title"><?php _e('Veja também: ') ?></h2>
         <div class="related-posts__content">
             <?php while( $related_posts->have_posts() ) :
                 $related_posts->the_post();
