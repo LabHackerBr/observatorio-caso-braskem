@@ -4,6 +4,7 @@
     min-width: 100vw;
     width: fit-content;
     display: flex;
+    flex-wrap: nowrap;
     gap: .5rem;
     margin-inline-start: calc(50% - 50vw) !important;
     min-height: fit-content;
