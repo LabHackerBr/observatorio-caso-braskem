@@ -8,7 +8,7 @@
         align-items: center;
         display: flex;
         justify-content: space-between;
-        min-height: 30px;
+        height: 30px;
 
         .social-menu {
             gap: $gap--medium;
@@ -17,7 +17,7 @@
 
     }
 
-    &__select-language{
+    &__language-selector{
         width: 15%;
 
         .wpml-ls{

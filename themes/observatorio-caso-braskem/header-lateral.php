@@ -16,7 +16,7 @@
                 <div class="main-header__social-content">
                     <?= the_social_networks_menu(false); ?>
                 </div>
-                <div class="pre-header__select-language ">
+                <div class="pre-header__language-selector">
                     <div class="wpml-language-switcher">
                         <?php do_action('wpml_add_language_selector');?>
                     </div>
@@ -25,7 +25,7 @@
         </div>
     </div>
 
-    <header x-data="{ menuOpen: false, searchOpen: false }" class="main-header main-header-lateral" :class="{ 'main-header-lateral--menu-open': menuOpen, 'main-header-lateral--search-open': searchOpen }">
+    <header x-data="{ menuOpen: false, searchOpen: false, lsOpen: false }" class="main-header main-header-lateral" :class="{ 'main-header-lateral--menu-open': menuOpen, 'main-header-lateral--search-open': searchOpen, 'main-header-lateral--ls-open': lsOpen }">
         <div class="container container--wide">
 			<div class="main-header-lateral__content">
                 <button type="button" class="main-header__toggle-menu main-header-lateral__toggle-menu" aria-label="<?= __('Toggle menu visibility', 'hacklabr') ?>" @click="menuOpen = !menuOpen">
@@ -50,7 +50,10 @@
                 <div class="main-header-lateral__search" x-init="$watch('searchOpen', (isOpen) => isOpen && document.querySelector('#search').focus())">
                     <?php get_search_form(); ?>
                     <button type="button" class="main-header__toggle-search main-header-lateral__toggle-search" aria-label="<?= __( 'Toggle search form visibility', 'hacklabr' ) ?>" @click="searchOpen = !searchOpen">
-                    <img src="<?= get_template_directory_uri() ?>/assets/images/search-icon.svg" width="20" alt="Search icon">
+                        <img src="<?= get_template_directory_uri() ?>/assets/images/search-icon.svg" width="20" alt="Search icon">
+                    </button>
+                    <button type="button" class="main-header__toggle-language main-header-lateral__toggle-language" aria-label="<?= __( 'Toggle language selector visibility', 'hacklabr' ) ?>" @click="lsOpen = !lsOpen">
+                        <img src="<?= get_template_directory_uri() ?>/assets/images/web-icon.svg" width="20" alt="Web icon">
                     </button>
                 </div>
 			</div>
@@ -62,9 +65,18 @@
 
         </div>
 
-        <div class="main-header-lateral__mobile-content">
-            <?= wp_nav_menu(['theme_location' => 'main-menu', 'container' => 'nav', 'menu_class' => 'menu', 'container_class' => 'main-header-lateral__menu-mobile']) ?>
+        <div class="main-header-lateral__scroll-content">
+            <div class="main-header-lateral__mobile-content">
+                <?= wp_nav_menu(['theme_location' => 'main-menu', 'container' => 'nav', 'menu_class' => 'menu', 'container_class' => 'main-header-lateral__menu-mobile']) ?>
+            </div>
+
+            <div class="main-header-lateral__language-selector">
+                <div class="wpml-language-switcher">
+                    <?php do_action('wpml_add_language_selector');?>
+                </div>
+            </div>
         </div>
+
 	</header>
 
 	<div id="app">

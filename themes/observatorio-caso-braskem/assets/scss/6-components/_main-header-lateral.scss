@@ -139,19 +139,34 @@
         }
     }
 
+    &__scroll-content{
+        display: flex;
+        max-width: $grid--wide;
+        width: 100%;
+        margin-inline: auto;
+        justify-content: space-between;
+        @include mobile{
+            flex-flow: column;
+        }
+    }
+
     &__mobile-content {
         display: none;
         max-width: $grid--wide;
-        margin-inline: auto;
         background-color: transparent;
+        @include mobile{
+            width: 100%;
+        }
     }
 
     &__menu-mobile{
         background-color: $color--low-pure;
-        // max-width: fit-content;
-        width: 80%;
-        margin-inline: auto;
-
+        max-width: fit-content;
+        @include mobile{
+            width: 80%;
+            max-width: unset;
+            margin-inline: auto;
+        }
         ul, li{
             color: $color--high-light;
             list-style: none;
@@ -161,7 +176,9 @@
         li{
             padding: $padding--medium 0;
             border-bottom: solid 0.5px $color--high-light;
-            text-align: center;
+            @include mobile{
+                text-align: center;
+            }
         }
 
         ul{
@@ -175,15 +192,94 @@
 
     }
 
-    &--menu-open {
+    &__toggle-language{
+        display: none;
+        background-color: transparent;
+        cursor: pointer;
+        transition: $transition--default;
+    }
 
+    &__language-selector{
+        align-self: flex-start;
+        display: none;
+
+        .wpml-language-switcher{
+            background-color: $color--high-light;
+
+            .wpml-ls{
+                padding: 0 $padding--small;
+                &-item{
+                    color: $color--primary-pure;
+                    line-height: 1.5;
+                    font-family: $font-family--primary;
+                    font-size: 16px;
+                }
+                &-current-language{
+                    font-size: 20px;
+                    font-weight: $font-weight--bold;
+                }
+                &-link{
+                    padding: $padding--small $padding--x-small;
+                }
+            }
+        }
+    }
+
+    &--ls-open{
+        .main-header-lateral__language-selector{
+            width: 100%;
+            display: flex;
+            justify-content: flex-end;
+        }
+    }
+
+    &--menu-open {
         .main-header-lateral__mobile-content {
             display: block;
+        }
+        @include mobile{
+            .main-header-lateral__language-selector{
+                display: flex;
+                width: 80%;
+                margin-inline: auto;
+
+                .wpml-language-switcher{
+                    width: 100%;
+                    background-color:  $color--primary-pure;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    gap: $gap--medium;
+
+                    &:before{
+                        display: block;
+                        content: url('#{$path--assets}/images/web-icon-white.svg');
+                        width: 20px;
+                        height: 20px;
+                    }
+                    .wpml-ls{
+                        > ul{
+                            display: flex;
+                            align-items: flex-end;
+                            gap: $gap--medium;
+                        }
+                        &-item{
+                            color: $color--high-light;
+                            font-size: 14px;
+                            font-weight: $font-weight--bold;
+                            font-family: $font-family--primary;
+                        }
+                        &-current-language{
+                            text-decoration: underline;
+                            font-size: 16px;
+                        }
+                    }
+                }
+            }
         }
     }
 
     &--search-open {
-
         .main-header-lateral__search form {
             display: block;
             position: absolute;
@@ -203,7 +299,7 @@
         @include desktop{
             transition: $transition--default;
             max-height: 55px;
-            .main-header-lateral__toggle-menu{
+            .main-header-lateral__toggle-menu, .main-header-lateral__toggle-language{
                 display: block;
             }
             .main-header-lateral__desktop-content{
