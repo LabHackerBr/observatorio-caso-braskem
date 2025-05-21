@@ -7,6 +7,10 @@
         padding-bottom: $padding--x-large;
         padding-top: $padding--x-large;
         text-transform: uppercase;
+
+        @include mobile {
+            margin-top: unset;
+        }
     }
 
     &__content {
@@ -16,6 +20,7 @@
 
         @include mobile {
             grid-template-columns: repeat(2, 1fr);
+            gap: $gap--small;
         }
     }
 
@@ -58,9 +63,14 @@
 
         &__category {
             position: absolute;
-            top: 42%;
-            left: 8%;
-            z-index: 3;
+            bottom: 15px;
+            left: 15px;
+            z-index: 10;
+            display: flex;
+            flex-wrap: wrap;
+            gap: $gap--x-small;
+            list-style: none;
+            padding: 0;
 
             .tag {
                 background-color: $color--secondary-dark;
