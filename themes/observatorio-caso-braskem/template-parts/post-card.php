@@ -25,9 +25,7 @@ $categories = get_the_category();
                 <img src="<?= get_stylesheet_directory_uri() ?>/assets/images/placeholder.png" alt="">
             <?php endif; ?>
         </a>
-    </header>
 
-    <main class="post-card__content">
         <?php if (!$hide_categories && !empty($categories)): ?>
             <div class="post-card__category">
                 <?php foreach ($categories as $category): ?>
@@ -37,7 +35,9 @@ $categories = get_the_category();
                 <?php endforeach; ?>
             </div>
         <?php endif; ?>
+    </header>
 
+    <main class="post-card__content">
         <h3 class="post-card__title">
             <a href="<?php the_permalink();?>"><?php the_title();?></a>
         </h3>
