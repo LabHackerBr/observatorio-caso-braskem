@@ -56,8 +56,8 @@
 
     &__image-size-full {
         @include mobile {
-            .wp-element-caption {
-                padding: 0 $padding--medium;
+            figcaption {
+                padding-inline: $padding--medium !important;
             }
         }
     }
@@ -67,6 +67,7 @@
         flex-direction: column;
         align-items: center;
         gap: $gap--medium;
+        padding-inline: $padding--medium;
 
         img {
             max-width: 60.625rem !important;
@@ -78,6 +79,8 @@
     }
 
     &__quote {
+        padding-inline: $padding--medium;
+
         p {
             max-width: 60.625rem !important;
             color: $color--primary-pure;
@@ -112,6 +115,19 @@
         @include mobile {
             .wp-block-group {
                 margin-left: $margin--medium !important;
+            }
+
+            .wp-block-heading {
+                color: $color--low-light;
+                font-family: $font-family--secondary;
+                font-size: $font-size--medium !important;
+                font-weight: 800;
+                line-height: 120.24%;
+                letter-spacing: 0.16px;
+            }
+
+            .is-layout-flex {
+                gap: $gap--medium;
             }
         }
     }
@@ -269,6 +285,10 @@
     .post-content {
         max-width: 50.125rem;
         padding-bottom: $padding--large;
+
+        .alignfull>figcaption {
+            padding-inline: unset;
+        }
     }
 
     .wp-block-separator {
@@ -333,11 +353,23 @@
         }
 
         .cb-button-prev {
-            left: 2%;
+            left: 1.5%;
+
+            @include mobile {
+                left: 4% !important;
+            }
         }
 
         .cb-button-next {
-            right: 88%;
+            right: 89.5%;
+
+            @include mobile {
+                right: 70% !important;
+            }
+        }
+
+        .cb-pagination {
+            display: none !important;
         }
 
         .wp-block-cover {
@@ -356,7 +388,7 @@
             bottom: 0;
             left: 0;
             width: 100%;
-            padding:22px 31px 13px 24px;
+            padding: 22px 31px 13px 24px;
             color: $color--high-pure;
             background-color: rgba(25, 30, 35, 0.8) !important;
             opacity: 1 !important;
