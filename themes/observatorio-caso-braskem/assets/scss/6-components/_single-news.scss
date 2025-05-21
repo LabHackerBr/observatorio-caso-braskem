@@ -184,6 +184,8 @@
     .post-header__tags {
         position: absolute;
         justify-content: flex-start;
+        gap: $gap--small;
+        flex-wrap: wrap;
         top: 30px;
         padding-left: 39px;
         z-index: 3;
