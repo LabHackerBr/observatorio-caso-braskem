@@ -1,0 +1,74 @@
+.mc4wp-form{
+    margin-block-start: 0 !important;
+    label[for="name"], label[for="email"]{
+        color: transparent;
+    }
+    #name, #email{
+        width: 100%;
+        height: 43px;
+        border-radius: 8px;
+        font-family: $font-family--helper;
+        padding: $padding--medium;
+        font-weight: $font-weight--regular;
+    }
+    p{
+        font-family: $font-family--helper;
+        padding: $padding--small 0;
+        @include mobile{
+            padding: 0;
+            margin-block-start: 0 !important;
+        }
+    }
+    input[type="submit"]{
+        height: 50px;
+        width: 40%;
+        background-color: $color--secondary-dark;
+        color: $color--high-light;
+        font-family: $font-family--heading;
+        text-transform: uppercase;
+        font-weight: $font-weight--bold;
+        border: none;
+        box-shadow: none;
+        clip-path: polygon(0 0, 100% 0, 97% 100%, 3% 100%);
+        @include mobile{
+            width: 80%;
+            margin-inline: auto;
+        }
+    }
+    .submit{
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: nowrap;
+        @include mobile{
+            flex-flow: column;
+            justify-content: center;
+        }
+    }
+    a{
+        color: $color--secondary-pure;
+        font-weight: $font-weight--bold;
+        text-decoration: none;
+    }
+    label{
+        font-weight: $font-weight--bold;
+    }
+    label[for="checkbox"]{
+        @include mobile{
+            display: block;
+            width: 80%;
+            margin-inline: auto;
+            margin-bottom: $margin--small;
+        }
+    }
+    .mc4wp-procaptcha{
+        @include mobile{
+            display: flex;
+            justify-content: center;
+        }
+    }
+}
+.newsletter-block-title{
+    @include mobile{
+        padding-left: 0 !important;
+    }
+}
