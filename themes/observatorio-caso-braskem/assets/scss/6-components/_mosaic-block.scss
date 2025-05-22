@@ -1,0 +1,15 @@
+.drag-for-more{
+    @include mobile{
+        gap: 0 !important;
+        justify-content: right;
+        p{
+            margin-block-start: 0 !important;
+        }
+        :first-child{
+            flex-basis: 75% !important;
+        }
+        :last-child{
+            flex-basis: 13% !important;
+        }
+    }
+}

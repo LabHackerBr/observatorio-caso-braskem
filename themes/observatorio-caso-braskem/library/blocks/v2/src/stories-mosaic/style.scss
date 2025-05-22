@@ -59,6 +59,10 @@
             max-width: fit-content;
             margin-right: 1rem;
         }
+        @media (max-width: 768px) {
+            min-width: 200vw;
+            grid-template-columns: repeat( auto-fill, minmax( 25vw, 1fr ) );
+        }
     }
 
     .post {
