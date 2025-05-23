@@ -36,9 +36,6 @@ function blocks_init() {
         ],
         'latest-vertical-posts' => [
             'render_callback' => 'hacklabr\v2\latest_vertical_posts_callback'
-        ],
-        'stories-mosaic' => [
-            'render_callback' => 'hacklabr\v2\stories_mosaic_callback'
         ]
     ];
 

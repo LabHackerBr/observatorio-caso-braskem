@@ -1,5 +1,4 @@
 <?php $show_taxonomy = isset( $args['attributes']['showTaxonomy'] ) ? $args['attributes']['showTaxonomy'] : false; ?>
->
 <?php $show_excerpt = isset( $args['attributes']['showExcerpt'] ) ? $args['attributes']['showExcerpt'] : false; ?>
 
 <a href="<?php echo get_permalink();?>">

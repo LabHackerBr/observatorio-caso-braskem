@@ -33,6 +33,7 @@ document.addEventListener("DOMContentLoaded", function () {
             dots: true,
             infinite: true,
             slidesToShow: parseInt(slidesToShow),
+            centerMode: true,
             responsive: [
                 {
                     breakpoint: 783,
@@ -40,6 +41,7 @@ document.addEventListener("DOMContentLoaded", function () {
                         appendArrows: arrows,
                         appendDots: dots,
                         slidesToShow: slidesToShowMobile,
+                        centerMode: false
                     }
                 }
             ]
