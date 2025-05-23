@@ -5,6 +5,10 @@
         gap: $gap--large;
         max-width: 60.625rem;
 
+        @include mobile {
+            margin-top: 6rem;
+        }
+
         .post-card {
             position: relative;
 
@@ -25,7 +29,8 @@
             &__image {
                 position: relative;
                 height: 230px;
-                width: 371px;
+                max-width: 371px;
+                width: 100%;
                 overflow: hidden;
 
                 img {
