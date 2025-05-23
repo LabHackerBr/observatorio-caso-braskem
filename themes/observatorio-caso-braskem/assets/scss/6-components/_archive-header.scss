@@ -1,16 +1,185 @@
 .archive-header {
+    &__background {
+        background-color: $color--primary-pure;
+        position: absolute;
+        left: 0;
+        width: 100%;
+        height: 232px;
+        z-index: 0;
 
-    &__title,
-    &__excerpt {
-        text-align: center;
+        @media (max-width: 1164px) {
+            height: 271px;
+        }
     }
+
+    &__content-overlay {
+        margin-bottom: 55px;
+        position: relative;
+        z-index: 1;
+        background: transparent;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: flex-end;
+        justify-content: space-between;
+        gap: 20px;
+        height: 232px;
+        padding-top: 56px;
+        padding-bottom: 52px;
+
+        @media (max-width: 1164px) {
+            padding-top: 40px;
+        }
+
+        .search-filter-form {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            padding-bottom: $padding--large;
+
+            .select-wrapper {
+                position: relative;
+                width: 235px;
+                height: 45px;
+                padding-left: 45px;
+                background-repeat: no-repeat;
+                background-position: left 10px center;
+                background-size: 16px 16px;
+                background-color: white;
+
+                &::after {
+                    content: "";
+                    position: absolute;
+                    top: 50%;
+                    right: 18px;
+                    transform: translateY(-50%);
+                    pointer-events: none;
+                    width: 12px;
+                    height: 6px;
+                    background-image: url("/wp-content/themes/observatorio-caso-braskem/assets/images/filter-arrow-down.svg");
+                }
+
+                &.filter-by-taxonomy-wrapper {
+                    background-image: url("/wp-content/themes/observatorio-caso-braskem/assets/images/icon-search-filter.svg");
+                }
+
+                &.organize-by-wrapper {
+                    background-image: url("/wp-content/themes/observatorio-caso-braskem/assets/images/icon-organize-by.svg");
+                }
+            }
+
+            .custom-select-with-icon {
+                width: 100%;
+                height: 100%;
+                padding-top: 8px;
+                padding-bottom: 8px;
+                padding-left: 0;
+                padding-right: 30px;
+                background-color: transparent;
+                border: none;
+                -webkit-appearance: none;
+                -moz-appearance: none;
+                appearance: none;
+                color: #333;
+                cursor: pointer;
+            }
+        }
+    }
+
+    &__title-container {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: flex-end;
+        justify-content: space-between;
+        gap: 100px;
+        width: 100%;
+
+        @media (max-width: 1164px) {
+            gap: 10px;
+            justify-content: center;
+        }
+    }
+
+    &__title {
+        h1 {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            font-family: $font-family--heading;
+            font-size: $font-size--xx-large;
+            font-weight: $font-weight--bold;
+            color: $color--high-pure;
+            text-transform: uppercase;
+            margin-bottom: $margin--large;
+
+            .exclamation-icon {
+                margin-right: 10px;
+            }
+
+            .search-page-results-count {
+                margin-left: 24px;
+                font-family: $font-family--secondary;
+                font-size: $font-size--large;
+                font-weight: $font-weight--semibold;
+                line-height: 120.24%;
+                letter-spacing: 0.2px;
+
+                @include mobile {
+                    margin-left: 33px;
+                }
+            }
+        }
+
+        .search-form-wrapper-on-archive {
+            position: relative;
+            display: flex;
+            width: 100%;
+            max-width: 570px;
+            margin-bottom: $margin--large;
+
+            .search-submit-icon {
+                position: absolute;
+                top: 47%;
+                right: 2%;
+                height: 100%;
+                width: 45px;
+                transform: translateY(-50%);
+                background-color: transparent;
+            }
+        }
+
+        .searchform {
+            width: 100%;
+
+            div > input[type="text"] {
+                width: 100%;
+                height: 45px;
+                border-radius: 20px;
+                border: none;
+                color: $color--low-light;
+                background-color: #D9D9D9;
+                font-size: $font-size--medium;
+                font-weight: $font-weight--regular;
+                line-height: 160%;
+                padding: 0 23px;
+            }
+
+            div > input[type="submit"] {
+                display: none;
+            }
+        }
+    }
+
+    .search-filters-toolbar {
+        padding-bottom: $padding--large;
+    }
+
 
     &__title *,
     &__excerpt *,
     &__infos *,
     &__results *,
     &__alert * {
-        margin-bottom: $margin--large;
+        // margin-bottom: $margin--large;
     }
 
 }
