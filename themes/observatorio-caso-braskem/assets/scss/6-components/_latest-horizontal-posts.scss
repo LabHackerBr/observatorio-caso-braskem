@@ -1,44 +1,10 @@
 .latest-horizontal-posts-block{
     max-width: $grid--wide !important;
     >.container{
+        margin-inline: 0;
         max-width: $grid--wide;
         padding: 0 0 $padding--x-large!important;
     }
-
-    &__heading{
-        color: $color--high-light;
-        font-weight: $font-weight--semibold;
-        >p{
-            font-size: 24px;
-        }
-        @include mobile{
-            text-align: left !important;
-            width: 95%;
-        }
-    }
-
-    &__content{
-        flex-basis: 33% !important;
-        justify-content: unset !important;
-        gap: $gap--large;
-    }
-
-    &__slides{
-        .slide{
-            margin-bottom: $margin--large !important;
-            margin-top: 0 !important;
-        }
-    }
-
-    &__footer{
-        padding-left: $padding--large;
-        @include mobile{
-            padding-left: 0;
-            bottom: -21rem;
-            width: 95%;
-        }
-    }
-
     &__dots{
         justify-content: center;
         width: 90%;
@@ -59,6 +25,10 @@
         }
     }
 
+    &__slides{
+        padding-inline: 0 !important;
+    }
+
     &__arrows{
         width: 90% !important;
         .slick-arrow{
@@ -68,6 +38,114 @@
         @include mobile{
             width: 95% !important;
             margin-inline: 0 !important ;
+        }
+    }
+
+    &__content{
+        min-height: unset !important;
+        max-height: fit-content;
+        flex-basis: 33% !important;
+        justify-content: unset !important;
+        gap: $gap--large;
+    }
+
+    &.model-post{
+        >.container{
+            @include mobile{
+                display: flex;
+                flex-flow: column-reverse;
+            }
+        }
+        .slick-slider{
+            max-width: 75rem;
+            margin-inline: auto;
+        }
+        .slick-slide{
+            height: 215px;
+            margin-inline: 8px !important;
+            max-width: 380px !important;
+            >div{
+                max-height: 100%;
+            }
+        }
+        .slide{
+            margin-bottom: 0 !important;
+            margin-top: 0 !important;
+            a{
+                text-decoration: none;
+            }
+        }
+
+        .latest-horizontal-posts-block__arrows, .latest-horizontal-posts-block__dots{
+            width: 100% !important;
+        }
+
+        .latest-horizontal-posts-block__footer{
+            top: -1rem;
+        }
+
+        .latest-horizontal-posts-block__content{
+            padding-inline: 2rem 0;
+        }
+
+        .post{
+            max-width: 380px;
+            &-thumbnail{
+                margin-inline: 0;
+                max-width: 380px;
+                aspect-ratio: 16 / 9;
+                img{
+                    object-fit: cover;
+                    border-radius: 0;
+                }
+            }
+            &-meta{
+                display: none;
+            }
+            &-title{
+                text-transform: uppercase;
+                text-decoration: none;
+                font-size: 20px;
+            }
+            &-content{
+                position: relative;
+                top: -2.5rem;
+                left: 1rem;
+            }
+        }
+    }
+}
+
+.latest-horizontal-posts-block.model-columnists{
+    >.container{
+
+    }
+    .latest-horizontal-posts-block__heading{
+        color: $color--high-light;
+        font-weight: $font-weight--semibold;
+        >p{
+            font-size: 24px;
+            color: $color--high-light;
+        }
+        @include mobile{
+            text-align: left !important;
+            width: 95%;
+        }
+    }
+
+    .latest-horizontal-posts-block__slides{
+        .slide{
+            margin-bottom: $margin--large !important;
+            margin-top: 0 !important;
+        }
+    }
+
+    .latest-horizontal-posts-block__footer{
+        padding-left: $padding--large;
+        @include mobile{
+            padding-left: 0;
+            bottom: -21rem;
+            width: 95%;
         }
     }
 
@@ -113,3 +191,4 @@
         }
     }
 }
+

@@ -1,0 +1,20 @@
+.maps-block{
+    .hacklabr-posts-grid-block{
+        .post-card{
+            &__image{
+                img{
+                    border-radius: 0;
+                }
+            }
+            &__title{
+                display: none;
+            }
+        }
+    }
+
+    .latest-horizontal-posts-block {
+        >.container{
+            flex-flow: column-reverse;
+        }
+    }
+}
