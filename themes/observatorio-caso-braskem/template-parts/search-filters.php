@@ -47,10 +47,10 @@
                     <?php
                     $current_orderby_get = isset( $_GET['orderby'] ) ? sanitize_text_field( $_GET['orderby'] ) : 'relevance';
                     $orderby_options = array(
-                        'date_desc' => __('Data (Mais recentes)', 'hacklabr'),
-                        'date_asc'  => __('Data (Mais antigos)', 'hacklabr'),
+                        'date_desc' => __('Mais recentes', 'hacklabr'),
+                        'date_asc'  => __('Mais antigos', 'hacklabr'),
                         'title_asc' => __('Título (A-Z)', 'hacklabr'),
-                        'title_desc'=> __('Título (Z-A)', 'hacklabr'),
+                        'title_asc'=> __('Alfabética', 'hacklabr'),
                     );
                     foreach ( $orderby_options as $value => $label ) {
                         echo '<option value="' . esc_attr( $value ) . '" ' . selected( $current_orderby_get, $value, false ) . '>' . esc_html( $label ) . '</option>';
