@@ -3,8 +3,8 @@
  * Template part para exibir os filtros da página de busca.
  */
 ?>
-<div class="search-filters-toolbar">
-    <form method="get" action="<?php echo esc_url( home_url( '/' ) ); ?>" class="search-filter-form">
+<div class="search-filters">
+    <form method="get" action="<?php echo esc_url( home_url( '/' ) ); ?>" class="search-filters__form">
         <input type="hidden" name="s" value="<?php echo get_search_query(); ?>">
         <?php
         foreach ( $_GET as $key => $value ) {
@@ -22,7 +22,7 @@
         }
         ?>
 
-        <div class="filter-control filter-by">
+        <div class="filter-control search-filters__filter-by">
             <label for="filter_by_taxonomy" class="screen-reader-text"><?php _e('Filtrar por:', 'hacklabr'); ?></label>
             <div class="select-wrapper filter-by-taxonomy-wrapper">
                 <select name="filter_by_taxonomy" id="filter_by_taxonomy" class="filter-by-taxonomy custom-select-with-icon" onchange="this.form.submit()">
@@ -39,7 +39,7 @@
             </div>
         </div>
 
-        <div class="filter-control organize-by">
+        <div class="filter-control search-filters__organize-by">
             <label for="organize_by" class="screen-reader-text"><?php _e('Organizar por:', 'hacklabr'); ?></label>
             <div class="select-wrapper organize-by-wrapper">
                 <select name="orderby" id="organize_by" class="organize-by custom-select-with-icon" onchange="this.form.submit()">
