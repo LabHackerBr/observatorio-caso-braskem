@@ -8,7 +8,7 @@ import { SelectPostType } from './SelectPostType';
 import { SelectTaxonomy } from './SelectTaxonomy';
 import { SelectTerms } from './SelectTerms';
 
-export function QueryPanel ({ attributes, setAttributes, title = __('Query', 'hacklabr') }) {
+export function QueryPanel ({ attributes, setAttributes, children = null, title = __('Query', 'hacklabr') }) {
     const { compare, noCompare, noPostType, noQueryTerms, noTaxonomy, order, orderBy, postType, queryTerms, showChildren, taxonomy } = attributes;
 
     const { data: postTypes } = useRestApi('hacklabr/v2/post_types');
@@ -114,6 +114,8 @@ export function QueryPanel ({ attributes, setAttributes, title = __('Query', 'ha
                     />
                 </PanelRow>
             ) : null}
+
+            {children}
         </PanelBody>
     );
 }
