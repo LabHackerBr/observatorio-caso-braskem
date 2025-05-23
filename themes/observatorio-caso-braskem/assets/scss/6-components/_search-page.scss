@@ -1,0 +1,15 @@
+body.search {
+    background-image: url("/wp-content/themes/observatorio-caso-braskem/assets/images/pattern-privacy-policy.svg");
+    background-repeat: repeat;
+    background-size: cover;
+}
+
+.search-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    > * {
+        width: 100%;
+    }
+}
