@@ -348,6 +348,15 @@ class Assets {
 				'global' => true,
 			],
 
+            'search-filters' => [
+                'file'   => 'search-filters.js', // Nome do seu arquivo JS
+                'global' => false, // Não é global, só para a página de busca
+                'admin'  => false, // Não é para o admin
+                'preload_callback' => function () { // Carregar condicionalmente
+                    return is_search(); // Só carrega se for uma página de busca
+                }
+            ],
+
 			'copy-url' => [
                 'file' => 'copy-url.js',
                 'global' => true,
