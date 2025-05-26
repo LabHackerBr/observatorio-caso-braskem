@@ -34,6 +34,8 @@ document.addEventListener("DOMContentLoaded", function () {
             infinite: true,
             slidesToShow: parseInt(slidesToShow),
             centerMode: true,
+            slidesToScroll: 1,
+            cssEase: 'linear',
             responsive: [
                 {
                     breakpoint: 783,
@@ -46,8 +48,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
             ]
         })
-
-
 
     }
     horizontalSliders.forEach(slider => {

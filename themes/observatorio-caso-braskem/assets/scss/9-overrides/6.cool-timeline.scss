@@ -26,6 +26,9 @@
             background-color: transparent !important;
             height: $margin--large !important;
             top: 50% !important;
+            @media (max-width: 1440px) {
+                background-size: contain;
+            }
             @include mobile{
                 background: url('#{$path--assets}/images/bg-tl-mobile.svg');
                 background-repeat: no-repeat;
@@ -44,8 +47,11 @@
             width: 2rem !important;
             height: 2rem !important;
             order: 2;
+            @media (max-width: 1439px) {
+                top: 52% !important;
+            }
             @include mobile{
-                top: 50% !important ;
+                top: 48% !important ;
             }
         }
 
@@ -56,10 +62,7 @@
         .ctl-story{
             .ctl-content{
                 justify-content: left !important;
-                // bottom: 20rem;
-                // margin-top: -75%;
                 overflow: visible !important;
-                //flex-wrap: nowrap !important;
 
                 .ctl-title, .ctl-description{
                     font-family: $font-family--secondary !important;
@@ -69,37 +72,56 @@
                         padding: $padding--small $padding--medium !important;
                     }
                 }
+                .ctl-title{
+                    padding-top: 0 !important;
+                    @include mobile{
+                        margin-top: 12px;
+                    }
+                }
                 .ctl-media{
-                    margin-bottom: 3rem;
+                    margin-bottom: 5rem;
                     width: 100% !important;
                     margin-inline: 0 !important;
                     max-height: 255px !important;
                     aspect-ratio: 7 / 5;
-                    padding: 0 !important;
+                    @media (max-width: 1439px) {
+                        margin-bottom: 3.3rem;
+                    }
                 }
             }
             &.even{
-                //flex-flow: column-reverse;
                 .ctl-content{
-                    // margin-top: -65%;
-                    // bottom: 40%;
+
                     .ctl-media{
                         order: 2 !important;
-                        // position: absolute;
-                        // top: 125%;
+                        padding-top: 0 !important;
+                        margin-bottom: 0;
                     }
                     .ctl-title{
                         order: 0 !important;
+                        @include mobile{
+                            margin-top: 0;
+                            padding-top: 0 !important;
+                        }
                     }
                     .ctl-description{
                         order: 1 !important;
-                        margin-bottom: 4rem !important;
+                        margin-bottom: 5rem !important;
+                        @media (max-width: 1439px) {
+                            margin-bottom: 3.3rem;
+                        }
+                        @include mobile{
+                            margin-bottom: 3rem !important;
+                        }
                     }
                 }
                 .ctl-icondot{
-                    top: 33% !important;
+                    top: 31% !important;
+                    @media (max-width: 1439px) {
+                        top: 41% !important;
+                    }
                     @include mobile{
-                        top: 42% !important;
+                        top: 43% !important;
                     }
                 }
 
@@ -108,7 +130,10 @@
         .ctl-button-next, .ctl-button-prev{
             border: none !important;
             background-color: $color--high-light !important;
-            top: 22% !important;
+            top: 25% !important;
+            @include mobile{
+                top: 22% !important;
+            }
         }
     }
 }
@@ -116,7 +141,10 @@
 .ctl-wrapper .cool-timeline-wrapper:not(.ctl-one-sided, .ctl-compact-wrapper) .ctl-story.even{
     margin-top: 0 !important;
     flex-flow: column;
-    bottom: 10%;
+    bottom: 8%;
+    @media (max-width: 1439px) {
+        bottom: 15%;
+    }
     @include mobile{
         bottom: 18%;
     }
@@ -124,7 +152,10 @@
 .ctl-wrapper .cool-timeline-wrapper:not(.ctl-one-sided, .ctl-compact-wrapper) .ctl-story.odd{
     margin-top: 0 !important;
     flex-flow: column;
-    bottom: 30%;
+    bottom: 38%;
+    @media (max-width: 1439px) {
+        bottom: 26%;
+    }
     @include mobile{
         bottom: 20%;
     }
@@ -139,4 +170,5 @@
 
 .ctl-wrapper .cool-timeline-wrapper:not(.dark-skin) .ctl-media img{
     padding-inline: 0 !important;
+    padding-top: 0 !important;
 }

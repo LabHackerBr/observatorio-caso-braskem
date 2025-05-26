@@ -8,8 +8,8 @@ function render_stories_mosaic_callback( $attributes ) {
             <div class="story-preview previous-story"></div>
             <button type="button" class="close-modal">
                 <svg role="img" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg">
-                    <rect width="16" height="2" x="0" y="2"/>
-                    <rect width="16" height="2" x="0" y="12"/>
+                    <rect width="16" height="2" x="0" y="0"/>
+                    <rect width="16" height="2" x="-8" y="8"/>
                 </svg>
             </button>
             <div class="story-preview next-story"></div>

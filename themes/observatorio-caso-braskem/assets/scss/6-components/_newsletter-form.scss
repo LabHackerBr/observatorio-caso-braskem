@@ -16,7 +16,6 @@
         padding: $padding--small 0;
         @include mobile{
             padding: 0;
-            margin-block-start: 0 !important;
         }
     }
     input[type="submit"]{
@@ -42,6 +41,7 @@
         @include mobile{
             flex-flow: column;
             justify-content: center;
+            margin-top: $margin--small;
         }
     }
     a{
