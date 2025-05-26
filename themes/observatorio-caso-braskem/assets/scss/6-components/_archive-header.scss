@@ -125,6 +125,14 @@
                 line-height: 160%;
                 padding-left: 20px;
                 padding-right: 50px;
+
+                &::-webkit-search-decoration,
+                &::-webkit-search-cancel-button,
+                &::-webkit-search-results-button,
+                &::-webkit-search-results-decoration {
+                    -webkit-appearance: none;
+                    display: none;
+                }
             }
         }
     }
