@@ -4,6 +4,7 @@
         grid-template-columns: 1fr;
         gap: $gap--large;
         max-width: 60.625rem;
+        margin-bottom: 55px;
 
         @include mobile {
             margin-top: 6rem;
@@ -75,6 +76,11 @@
             }
 
             &__author {
+                span {
+                    color: $color--low-dark;
+                    font-size: $font-size--small;
+                }
+
                 color: $color--secondary-dark;
                 font-size: $font-size--medium;
                 letter-spacing: 0.16px;

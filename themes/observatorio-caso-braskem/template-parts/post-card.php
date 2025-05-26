@@ -46,7 +46,7 @@ $categories = get_the_category();
         <div class="post-card__meta">
             <?php if (!$hide_author): ?>
             <div class="post-card__author">
-                <?php the_author(); ?>
+                <span><?php _e('Por', 'hacklabr') ?></span> <?php the_author(); ?>
             </div>
             <?php endif; ?>
 
