@@ -80,7 +80,7 @@ document.addEventListener("DOMContentLoaded", function() {
             closeButton.forEach(closeBtn =>{
                 setTimeout(function(){
                     closeBtn.classList.add('open');
-                }, 400);
+                }, 1000);
             })
 
         }
@@ -101,12 +101,12 @@ document.addEventListener("DOMContentLoaded", function() {
                     elem.removeChild(elem.childNodes[0]);
                     setTimeout(function(){
                         elem.appendChild(preview);
-                    }, 400);
+                    }, 1000);
                 }
                 else{
                     setTimeout(function(){
                         elem.appendChild(preview);
-                    }, 400);
+                    }, 1000);
                 }
                 preview.addEventListener('click', (e) => {
                     e.preventDefault();
