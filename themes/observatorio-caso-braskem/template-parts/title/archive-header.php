@@ -41,7 +41,7 @@ if ( is_search() ) {
                         <?php
                         get_search_form();
                         ?>
-                        <button type="submit" class="search-submit-icon" form="searchform">
+                        <button type="submit" class="search-submit-icon" form="main-search-page-form">
                             <img src="<?php echo get_template_directory_uri(); ?>/assets/images/search-icon-black.svg" alt="<?php esc_attr_e( 'Pesquisar', 'hacklabr' ); ?>">
                         </button>
                     </div>
