@@ -13,24 +13,9 @@
         .post-card {
             position: relative;
 
-            &--horizontal {
-                grid-template-columns: 371px 1fr;
-                gap: 30px;
-
-                @include mobile {
-                    grid-template-columns: 1fr;
-                }
-            }
-
-            &__title{
-                font-size: $font-size--medium;
-                text-transform: uppercase;
-            }
-
             &__image {
                 position: relative;
                 height: 230px;
-                max-width: 371px;
                 width: 100%;
                 overflow: hidden;
 
@@ -51,6 +36,32 @@
                     height: 89%;
                     background: linear-gradient(180deg, rgba(0, 0, 0, 0.00) 11%, rgba(0, 0, 0, 0.85) 100%);
                     pointer-events: none;
+                }
+            }
+
+            &__category {
+                position: absolute;
+                bottom: 15px;
+                left: 15px;
+                z-index: 10;
+                display: flex;
+                flex-wrap: wrap;
+                gap: $gap--x-small;
+                list-style: none;
+                padding: 0;
+
+                .tag {
+                    background-color: $color--secondary-dark;
+                    border: unset;
+                    border-radius: unset;
+                    color: $color--high-pure;
+                    font-family: $font-family--heading;
+                    font-size: $font-size--small;
+                    font-style: normal;
+                    font-weight: $font-weight--bold;
+                    line-height: normal;
+                    text-transform: uppercase;
+                    text-align: center;
                 }
             }
 
@@ -80,7 +91,6 @@
                     color: $color--low-dark;
                     font-size: $font-size--small;
                 }
-
                 color: $color--secondary-dark;
                 font-size: $font-size--medium;
                 letter-spacing: 0.16px;
@@ -97,35 +107,61 @@
                 font-weight: $font-weight--bold;
             }
 
-            &__category {
-                position: absolute;
-                bottom: 15px;
-                left: 15px;
-                z-index: 10;
-                display: flex;
-                flex-wrap: wrap;
-                gap: $gap--x-small;
-                list-style: none;
-                padding: 0;
+            &--horizontal {
+                @media (min-width: 769px) {
+                    display: grid;
+                    grid-template-columns: 371px 1fr;
+                    grid-template-rows: auto 1fr;
+                    gap: 0 $gap--large;
+                    align-items: start;
 
-                .tag {
-                    background-color: $color--secondary-dark;
-                    max-width: 100%;
-                    border: unset;
-                    border-radius: unset;
-                    color: $color--high-pure;
-                    font-family: $font-family--heading;
-                    font-size: $font-size--small;
-                    font-style: normal;
-                    font-weight: $font-weight--bold;
-                    line-height: normal;
-                    text-transform: uppercase;
-                    text-align: center;
+                    .post-card__image {
+                        display: contents;
+
+                        > a {
+                            grid-column: 1 / 2;
+                            grid-row: 1 / -1;
+                            display: block;
+                            height: 230px;
+                            width: 100%;
+                            overflow: hidden;
+
+                            &::after {
+                                content: '';
+                                position: absolute;
+                                bottom: 0;
+                                left: 0;
+                                right: 0;
+                                height: 89%;
+                                background: linear-gradient(180deg, rgba(0, 0, 0, 0.00) 11%, rgba(0, 0, 0, 0.85) 100%);
+                                pointer-events: none;
+                                max-width: 371px;
+                            }
+                        }
+
+                        &::after {
+                            display: none;
+                        }
+                    }
+
+                    .post-card__category {
+                        position: static;
+
+                        .tag {
+                            background-color: unset;
+                            color: $color--secondary-pure;
+                            padding: unset;
+                        }
+                    }
+                }
+
+                @include mobile {
+                    grid-template-columns: 1fr;
+                    gap: $gap--medium;
                 }
             }
         }
     }
-
 
     &__content:has(.no-post) {
         display: flex;
