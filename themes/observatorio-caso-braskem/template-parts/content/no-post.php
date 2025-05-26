@@ -14,7 +14,7 @@
         </div>
 
         <div class="no-post__button">
-            <a href="<?php echo home_url(); ?>" class="button">
+            <a href="<?php echo home_url(); ?>">
                 <?php _e( 'Voltar para home', 'hacklabr'); ?>
             </a>
         </div>
