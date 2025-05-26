@@ -49,7 +49,7 @@ if ( is_search() ) {
 
             </div>
 
-            <?php if ( is_search() && $wp_query->found_posts > 0 ) : ?>
+            <?php if ( is_search() ) : ?>
                 <?php get_template_part( 'template-parts/search-filters' ); ?>
             <?php endif; ?>
         </div>
