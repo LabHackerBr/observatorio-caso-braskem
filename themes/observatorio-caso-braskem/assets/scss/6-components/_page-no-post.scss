@@ -1,0 +1,50 @@
+.no-post {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &__wrapper {
+        h2 {
+            margin-bottom: 41px;
+            font-size: 36px;
+            font-family: $font-family--primary;
+            font-weight: 700;
+        }
+    }
+
+    &__content {
+        margin-bottom: 75px;
+
+        p {
+            font-size: $font-size--x-large;
+            font-family: $font-family--primary;
+            font-weight: 400;
+            line-height: 150%;
+        }
+    }
+
+    &__button {
+        font-family: $font-family--heading;
+        display: inline-block;
+        padding: 6px 47px;
+        background-color: $color--secondary-dark;
+        font-weight: 700;
+        text-transform: uppercase;
+        font-size: $font-size--large;
+        position: relative;
+
+        clip-path: polygon(
+            0% 0%,
+            100% 0%,
+            95% 100%,
+            5% 100%
+        );
+
+        a {
+            color: $color--high-pure;
+            text-decoration: none;
+        }
+    }
+}
+
+
