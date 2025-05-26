@@ -1,5 +1,10 @@
 .latest-horizontal-posts-block{
     max-width: $grid--wide !important;
+
+    @include mobile{
+        max-width: unset !important;
+        width: 100vw !important;
+    }
     >.container{
         margin-inline: 0;
         max-width: $grid--wide;
@@ -50,15 +55,29 @@
     }
 
     &.model-post{
+        @include mobile{
+            padding-inline: 0;
+            margin-inline-start: calc(50% - 50vw) !important;
+        }
+
         >.container{
             @include mobile{
                 display: flex;
-                flex-flow: column-reverse;
+                // flex-flow: column-reverse;
             }
         }
         .slick-slider{
             max-width: 75rem;
             margin-inline: auto;
+            @include mobile{
+                max-width: unset !important;
+                width: 90vw;
+                margin-inline: 0;
+
+                ::after, ::before{
+                    display: none;
+                }
+            }
         }
         .slick-slide{
             height: 215px;
@@ -66,11 +85,21 @@
             max-width: 380px !important;
             >div{
                 max-height: 100%;
+                @include mobile{
+                    width: 100%;
+                }
+            }
+            @include mobile{
+                max-width: 90% !important;
+                height: fit-content;
             }
         }
         .slide{
             margin-bottom: 0 !important;
             margin-top: 0 !important;
+            @include mobile{
+                width: 93vw !important;
+            }
             a{
                 text-decoration: none;
             }
@@ -86,10 +115,16 @@
 
         .latest-horizontal-posts-block__content{
             padding-inline: 2rem 0;
+            @include mobile{
+                padding-inline: 0;
+            }
         }
 
         .post{
             max-width: 380px;
+            @include mobile{
+                max-width: 100%;
+            }
             &-thumbnail{
                 margin-inline: 0;
                 max-width: 380px;
@@ -97,6 +132,10 @@
                 img{
                     object-fit: cover;
                     border-radius: 0;
+                }
+                @include mobile{
+                    max-width: 95vw;
+                    aspect-ratio: 1 / 1;
                 }
             }
             &-meta{
