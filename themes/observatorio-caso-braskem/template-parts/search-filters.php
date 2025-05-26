@@ -1,64 +1,111 @@
 <?php
 /**
- * Template part para exibir os filtros da página de busca.
+ * Template part para exibir os filtros da página de busca
  */
+
+$current_filter_val = isset($_GET['filter_by_taxonomy']) ? sanitize_text_field($_GET['filter_by_taxonomy']) : '';
+$all_categories = get_categories(array('hide_empty' => 1));
+
+$current_filter_button_label = __('FILTRAR POR', 'hacklabr');
+if ($current_filter_val === '') {
+    if (array_key_exists('filter_by_taxonomy', $_GET) && $_GET['filter_by_taxonomy'] === '') {
+        $current_filter_button_label = __('TODOS', 'hacklabr');
+    }
+} else {
+    foreach ($all_categories as $category_obj) {
+        if ('category:' . $category_obj->slug === $current_filter_val) {
+            $current_filter_button_label = esc_html(strtoupper($category_obj->name));
+            break;
+        }
+    }
+}
+
+$current_orderby_get = isset($_GET['orderby']) ? sanitize_text_field($_GET['orderby']) : 'relevance';
+$orderby_options_from_user = array(
+    'date_desc' => __('Mais recentes', 'hacklabr'),
+    'date_asc'  => __('Mais antigos', 'hacklabr'),
+    'title_asc' => __('Alfabética', 'hacklabr'),
+);
+
+$current_orderby_button_label = __('ORGANIZAR POR', 'hacklabr');
+if (isset($orderby_options_from_user[$current_orderby_get])) {
+    $current_orderby_button_label = esc_html(strtoupper($orderby_options_from_user[$current_orderby_get]));
+} elseif ($current_orderby_get === 'relevance' && array_key_exists('orderby', $_GET)) {
+    $current_orderby_button_label = __('ORGANIZAR POR', 'hacklabr');
+}
+
+$current_order_val = 'DESC';
+if (isset($_GET['order']) && in_array(strtoupper($_GET['order']), ['ASC', 'DESC'])) {
+    $current_order_val = strtoupper($_GET['order']);
+} elseif (strpos($current_orderby_get, '_asc') !== false) {
+    $current_order_val = 'ASC';
+} elseif (strpos($current_orderby_get, '_desc') !== false) {
+    $current_order_val = 'DESC';
+} elseif ($current_orderby_get === 'relevance' && !empty(get_search_query())) {
+    $current_order_val = 'DESC';
+}
+
 ?>
 <div class="search-filters">
-    <form method="get" action="<?php echo esc_url( home_url( '/' ) ); ?>" class="search-filters__form">
-        <input type="hidden" name="s" value="<?php echo get_search_query(); ?>">
+    <form method="get" action="<?php echo esc_url(home_url('/')); ?>" class="search-filters__form">
+        <input type="hidden" name="s" value="<?php echo esc_attr(get_search_query()); ?>">
         <?php
-        foreach ( $_GET as $key => $value ) {
-            if ( ! in_array( $key, array( 's', 'filter_by_taxonomy', 'orderby', 'order' ) ) ) {
+        foreach ($_GET as $key => $value) {
+            if (!in_array($key, array('s', 'filter_by_taxonomy', 'orderby', 'order'))) {
                 if (is_array($value)) {
                     foreach ($value as $v_item) {
                         if (is_scalar($v_item)) {
-                             echo '<input type="hidden" name="' . esc_attr( $key ) . '[]" value="' . esc_attr( $v_item ) . '">';
+                            echo '<input type="hidden" name="' . esc_attr($key) . '[]" value="' . esc_attr($v_item) . '">';
                         }
                     }
                 } elseif (is_scalar($value)) {
-                   echo '<input type="hidden" name="' . esc_attr( $key ) . '" value="' . esc_attr( $value ) . '">';
+                    echo '<input type="hidden" name="' . esc_attr($key) . '" value="' . esc_attr($value) . '">';
                 }
             }
         }
         ?>
 
-        <div class="filter-control search-filters__filter-by">
-            <label for="filter_by_taxonomy" class="screen-reader-text"><?php _e('Filtrar por:', 'hacklabr'); ?></label>
-            <div class="select-wrapper filter-by-taxonomy-wrapper">
-                <select name="filter_by_taxonomy" id="filter_by_taxonomy" class="filter-by-taxonomy custom-select-with-icon" onchange="this.form.submit()">
-                    <option value=""><?php _e('FILTRAR POR', 'hacklabr'); ?></option>
-                    <?php
-                    $current_filter_val = isset( $_GET['filter_by_taxonomy'] ) ? sanitize_text_field( $_GET['filter_by_taxonomy'] ) : '';
-                    $categories = get_categories( array( 'hide_empty' => 1 ) );
-                    foreach ( $categories as $category ) {
-                        $option_value = 'category:' . esc_attr( $category->slug );
-                        echo '<option value="' . $option_value . '" ' . selected( $current_filter_val, $option_value, false ) . '>' . esc_html( $category->name ) . '</option>';
-                    }
-                    ?>
-                </select>
-            </div>
+        <div class="filter-control search-filters__filter-by custom-dropdown-wrapper filter-by-taxonomy-wrapper">
+            <button type="button" class="custom-dropdown-trigger" data-placeholder="<?php echo esc_attr(__('FILTRAR POR', 'hacklabr')); ?>" aria-haspopup="listbox" aria-expanded="false">
+                <span class="custom-dropdown-icon filter-icon"></span>
+                <span class="custom-dropdown-label"><?php echo esc_html(strtoupper($current_filter_button_label)); ?></span>
+                <span class="custom-dropdown-arrow"></span>
+            </button>
+            <ul class="custom-dropdown-options" role="listbox" style="display: none;">
+                <?php
+                $label_todos = __('TODOS', 'hacklabr');
+                echo '<li role="option" data-value="" data-label="' . esc_attr(strtoupper($label_todos)) . '" class="' . ($current_filter_val === '' ? 'selected' : '') . '">' . esc_html(strtoupper($label_todos)) . '</li>';
+
+                foreach ($all_categories as $category) {
+                    $option_value = 'category:' . esc_attr($category->slug);
+                    $option_label = esc_html(strtoupper($category->name));
+                    echo '<li role="option" data-value="' . $option_value . '" data-label="' . $option_label . '" class="' . ($current_filter_val === $option_value ? 'selected' : '') . '">' . $option_label . '</li>';
+                }
+                ?>
+            </ul>
+            <input type="hidden" name="filter_by_taxonomy" id="hidden_filter_by_taxonomy" value="<?php echo esc_attr($current_filter_val); ?>">
         </div>
 
-        <div class="filter-control search-filters__organize-by">
-            <label for="organize_by" class="screen-reader-text"><?php _e('Organizar por:', 'hacklabr'); ?></label>
-            <div class="select-wrapper organize-by-wrapper">
-                <select name="orderby" id="organize_by" class="organize-by custom-select-with-icon" onchange="this.form.submit()">
-                    <option value="relevance"><?php _e('ORGANIZAR POR', 'hacklabr'); ?></option>
-                    <?php
-                    $current_orderby_get = isset( $_GET['orderby'] ) ? sanitize_text_field( $_GET['orderby'] ) : 'relevance';
-                    $orderby_options = array(
-                        'date_desc' => __('Mais recentes', 'hacklabr'),
-                        'date_asc'  => __('Mais antigos', 'hacklabr'),
-                        'title_asc' => __('Título (A-Z)', 'hacklabr'),
-                        'title_asc'=> __('Alfabética', 'hacklabr'),
-                    );
-                    foreach ( $orderby_options as $value => $label ) {
-                        echo '<option value="' . esc_attr( $value ) . '" ' . selected( $current_orderby_get, $value, false ) . '>' . esc_html( $label ) . '</option>';
-                    }
-                    ?>
-                </select>
-            </div>
-            <input type="hidden" name="order" id="hidden_order_input" value="<?php echo esc_attr( isset($_GET['order']) ? strtoupper(sanitize_text_field($_GET['order'])) : 'DESC' ); ?>">
+        <div class="filter-control search-filters__organize-by custom-dropdown-wrapper organize-by-wrapper">
+             <button type="button" class="custom-dropdown-trigger" data-placeholder="<?php echo esc_attr(__('ORGANIZAR POR', 'hacklabr')); ?>" aria-haspopup="listbox" aria-expanded="false">
+                <span class="custom-dropdown-icon organize-icon"></span>
+                <span class="custom-dropdown-label"><?php echo esc_html(strtoupper($current_orderby_button_label)); ?></span>
+                <span class="custom-dropdown-arrow"></span>
+            </button>
+            <ul class="custom-dropdown-options" role="listbox" style="display: none;">
+                <?php
+                 $label_relevance = __('ORGANIZAR POR', 'hacklabr');
+                 echo '<li role="option" data-value="relevance" data-label="' . esc_attr(strtoupper($label_relevance)) . '" class="' . ($current_orderby_get === 'relevance' ? 'selected' : '') . '">' . esc_html(strtoupper($label_relevance)) . '</li>';
+
+                foreach ($orderby_options_from_user as $value => $label) {
+                    $option_label = esc_html(strtoupper($label));
+                    echo '<li role="option" data-value="' . esc_attr($value) . '" data-label="' . $option_label . '" class="' . ($current_orderby_get === $value ? 'selected' : '') . '">' . $option_label . '</li>';
+                }
+                ?>
+            </ul>
+            <input type="hidden" name="orderby" id="hidden_orderby" value="<?php echo esc_attr($current_orderby_get); ?>">
+            <input type="hidden" name="order" id="hidden_order_input" value="<?php echo esc_attr($current_order_val); ?>">
         </div>
+        <noscript><button type="submit" class="button">Aplicar Filtros</button></noscript>
     </form>
 </div>
