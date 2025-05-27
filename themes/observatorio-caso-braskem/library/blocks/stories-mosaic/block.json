@@ -6,7 +6,7 @@
 	"title": "Mosaic Stories",
 	"category": "text",
 	"icon": "excerpt-view",
-	"description": "Exibe os últimos posts em formato de mosaico e com slider.",
+	"description": "Show the latestes webstories in a draggable mosaic.",
 	"example": {},
 	"supports": {
 		"html": false

@@ -9,7 +9,7 @@ $all_categories = get_categories(array('hide_empty' => 1));
 $current_filter_button_label = __('FILTER BY', 'hacklabr');
 if ($current_filter_val === '') {
     if (array_key_exists('filter_by_taxonomy', $_GET) && $_GET['filter_by_taxonomy'] === '') {
-        $current_filter_button_label = __('TODOS', 'hacklabr');
+        $current_filter_button_label = __('ALL', 'hacklabr');
     }
 } else {
     foreach ($all_categories as $category_obj) {
@@ -73,7 +73,7 @@ if (isset($_GET['order']) && in_array(strtoupper($_GET['order']), ['ASC', 'DESC'
             </button>
             <ul class="custom-dropdown-options" role="listbox" style="display: none;">
                 <?php
-                $label_todos = __('TODOS', 'hacklabr');
+                $label_todos = __('ALL', 'hacklabr');
                 echo '<li role="option" data-value="" data-label="' . esc_attr(strtoupper($label_todos)) . '" class="' . ($current_filter_val === '' ? 'selected' : '') . '">' . esc_html(strtoupper($label_todos)) . '</li>';
 
                 foreach ($all_categories as $category) {
