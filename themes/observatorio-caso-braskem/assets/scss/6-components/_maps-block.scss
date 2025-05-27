@@ -4,6 +4,9 @@
             &__image{
                 img{
                     border-radius: 0;
+                    @include mobile{
+                        aspect-ratio: 3 / 4;
+                    }
                 }
             }
             &__title{
@@ -15,6 +18,14 @@
     .latest-horizontal-posts-block {
         >.container{
             flex-flow: column-reverse;
+        }
+    }
+
+    p{
+        @include mobile{
+            font-size: 24px !important;
+            font-weight: $font-weight--bold;
+            margin-block-start: 0 !important;
         }
     }
 }

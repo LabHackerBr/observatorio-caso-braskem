@@ -51,7 +51,13 @@
                 top: 52% !important;
             }
             @include mobile{
-                top: 48% !important ;
+                top: 46% !important ;
+            }
+            @media (max-width: 335px) {
+                top: 43% !important ;
+            }
+            @media (max-width: 360px) {
+                top: 46% !important ;
             }
         }
 
@@ -60,6 +66,9 @@
         }
 
         .ctl-story{
+            @include mobile{
+                height: 450px !important;
+            }
             .ctl-content{
                 justify-content: left !important;
                 overflow: visible !important;
@@ -86,6 +95,9 @@
                     aspect-ratio: 7 / 5;
                     @media (max-width: 1439px) {
                         margin-bottom: 3.3rem;
+                    }
+                    @media (min-width: 360px) and (max-width: 768px) {
+                        width: 90% !important ;
                     }
                 }
             }
@@ -123,6 +135,12 @@
                     @include mobile{
                         top: 43% !important;
                     }
+                    @media (max-width: 335px) {
+                        top: 48% !important;
+                    }
+                    @media (max-width: 360px) {
+                        top: 47% !important ;
+                    }
                 }
 
             }
@@ -132,7 +150,18 @@
             background-color: $color--high-light !important;
             top: 25% !important;
             @include mobile{
-                top: 22% !important;
+                top: unset !important;
+                bottom: 22%;
+            }
+        }
+        .ctl-button-next{
+            @include mobile{
+                right: 0 !important;
+            }
+        }
+        .ctl-button-prev{
+            @include mobile{
+                left: 0 !important;
             }
         }
     }
@@ -148,6 +177,10 @@
     @include mobile{
         bottom: 18%;
     }
+    @media (max-width: 360px) {
+        bottom: 21%;
+    }
+
 }
 .ctl-wrapper .cool-timeline-wrapper:not(.ctl-one-sided, .ctl-compact-wrapper) .ctl-story.odd{
     margin-top: 0 !important;
@@ -158,6 +191,9 @@
     }
     @include mobile{
         bottom: 20%;
+    }
+    @media (max-width: 335px) {
+        bottom: 17%;
     }
 }
 .ctl-wrapper .ctl-horizontal-timeline:where(.ctl-default, .ctl-design-1) :where(.ctl-media, .swiper-wrapper.swiper-slide) img{

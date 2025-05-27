@@ -2,7 +2,14 @@
     display: flex;
     margin-top: $margin--large !important;
     gap: $gap--small;
+    align-items: center;
     &:not(.has-text-color){
         color: $color--high-pure;
+    }
+    @include mobile{
+        margin-block-end: $margin--medium !important;
+        img{
+            max-width: 22px;
+        }
     }
 }
