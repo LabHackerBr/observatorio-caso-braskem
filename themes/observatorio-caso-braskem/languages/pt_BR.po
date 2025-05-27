@@ -1,9 +1,10 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"Report-Msgid-Bugs-To: https://wordpress.org/support/theme/observatorio-caso-braskem\n"
-"POT-Creation-Date: 2024-06-10T12:35:29+00:00\n"
-"PO-Revision-Date: 2024-06-10 09:36-0300\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/theme/observatorio-caso-"
+"braskem\n"
+"POT-Creation-Date: 2025-05-27T18:16:14+00:00\n"
+"PO-Revision-Date: 2025-05-27 15:17-0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: pt_BR\n"
@@ -17,33 +18,53 @@ msgstr ""
 "X-Poedit-Basepath: .\n"
 
 #. Theme Name of the theme
+#: style.css
 msgid "hacklabr"
 msgstr "hacklabr"
 
 #. Theme URI of the theme
 #. Author URI of the theme
+#: style.css
 msgid "https://hacklab.com.br/"
 msgstr "https://hacklab.com.br/"
 
 #. Description of the theme
+#: style.css
 msgid "Base theme for developing new websites."
 msgstr "Tema base para desenvolvimento de novos sites."
 
 #. Author of the theme
+#: style.css
 msgid "Hacklab"
 msgstr "Hacklab"
 
-#: 404.php:4
-msgid "error"
-msgstr "erro"
+#: 404.php:5
+msgid "404"
+msgstr "404"
 
-#: 404.php:8
-msgid "Page not found"
-msgstr "Página não encontrada"
+#: 404.php:6
+msgid ":("
+msgstr ":("
 
-#: 404.php:9
-msgid "Return to home page"
-msgstr "Voltar para a página inicial"
+#: 404.php:13
+msgid "Oops"
+msgstr "Oops"
+
+#: 404.php:16
+msgid "We couldn't find the page you tried to access!"
+msgstr "Não conseguimos encontrar a página que você tentou acessar!"
+
+#: 404.php:19
+msgid ""
+"We couldn't find what you're looking for, type what you need in the search "
+"bar up there."
+msgstr ""
+"Não conseguimos encontrar o que você está procurando, digite o que você "
+"precisa na barra de pesquisa ali em cima."
+
+#: 404.php:21
+msgid "BACK TO HOMEPAGE"
+msgstr "VOLTAR PARA HOME"
 
 #. translators: %s: Post title.
 #: comments.php:28
@@ -75,13 +96,118 @@ msgstr "Mais novos &rarr;"
 msgid "Comments are disabled"
 msgstr "Os comentários estão desativados"
 
-#: header-lateral.php:33
+#: footer.php:11
+msgid "Terms of use"
+msgstr "Termos de uso"
+
+#: footer.php:12
+msgid "and"
+msgstr "e"
+
+#: footer.php:13
+msgid "Privacy Policy"
+msgstr "Política de Privacidade"
+
+#: header-lateral.php:31
 msgid "Toggle menu visibility"
 msgstr "Alternar visibilidade do menu"
 
-#: header-lateral.php:58
+#: header-lateral.php:52
 msgid "Toggle search form visibility"
 msgstr "Alternar a visibilidade do formulário de pesquisa"
+
+#: header-lateral.php:55
+msgid "Toggle language selector visibility"
+msgstr "Alternar a visibilidade do seletor de idiomas"
+
+#: library/blocks/stories-mosaic/stories-mosaic.php:81
+#: library/blocks/stories-mosaic/stories-mosaic.php:97
+#: library/blocks/v2/src/events-from-mapas-culturais/events-from-mapas-culturais.php:39
+#: library/blocks/v2/src/latest-horizontal-posts/latest-horizontal-posts.php:142
+#: library/blocks/v2/src/latest-horizontal-posts/latest-horizontal-posts.php:178
+#: library/blocks/v2/src/latest-vertical-posts/latest-vertical-posts.php:184
+#: library/blocks/v2/src/latest-vertical-posts/latest-vertical-posts.php:218
+#: library/blocks/v2/src/opportunities-from-mapas-culturais/opportunities-from-mapas-culturais.php:38
+msgid "No content found"
+msgstr "Nenhum conteúdo encontrado"
+
+#: library/blocks/stories-mosaic/template-parts/post.php:56
+#: library/blocks/v2/src/latest-horizontal-posts/template-parts/post.php:31
+#: library/blocks/v2/src/latest-vertical-posts/template-parts/post.php:56
+msgid "in"
+msgstr "em"
+
+#: library/blocks/stories-mosaic/template-parts/post.php:64
+#: library/blocks/v2/src/latest-vertical-posts/template-parts/post.php:64
+msgid "by"
+msgstr "por"
+
+#: library/blocks/v2/includes/api.php:224
+#: library/blocks/v2/includes/api.php:262
+#: library/blocks/v2/includes/api.php:439
+msgid "Select an option"
+msgstr "Selecione uma opção"
+
+#: library/blocks/v2/includes/helpers.php:169
+msgid "%s ago"
+msgstr "atrás"
+
+#: library/blocks/v2/includes/settings.php:16
+msgid "YouTube API Key"
+msgstr "Chave API do YouTube"
+
+#: library/blocks/v2/src/events-from-mapas-culturais/includes/helpers.php:89
+msgid "Today"
+msgstr "Hoje"
+
+#: library/blocks/v2/src/events-from-mapas-culturais/includes/helpers.php:93
+msgid "Tomorrow"
+msgstr "Amanhã"
+
+#: library/blocks/v2/src/events-from-mapas-culturais/includes/settings.php:13
+#: library/blocks/v2/src/events-from-mapas-culturais/includes/settings.php:32
+msgid "Configurações de integração com o Mapas Culturais"
+msgstr ""
+
+#: library/blocks/v2/src/events-from-mapas-culturais/includes/settings.php:14
+msgid "Mapas Culturais"
+msgstr ""
+
+#: library/blocks/v2/src/events-from-mapas-culturais/includes/settings.php:26
+msgid "Configurações salvas com sucesso!"
+msgstr ""
+
+#: library/blocks/v2/src/events-from-mapas-culturais/includes/settings.php:38
+msgid "Endereço da instalação do Mapas Culturais"
+msgstr ""
+
+#: library/blocks/v2/src/events-from-mapas-culturais/includes/settings.php:42
+msgid ""
+"Insira a URL da instalação do Mapas Culturais que deseja utilizar nas "
+"integrações."
+msgstr ""
+
+#: library/blocks/v2/src/events-from-mapas-culturais/includes/settings.php:46
+msgid "Salvar Configurações"
+msgstr ""
+
+#: library/blocks/v2/src/latest-horizontal-posts/latest-horizontal-posts.php:53
+#: library/blocks/v2/src/latest-vertical-posts/latest-vertical-posts.php:82
+msgid "Check the API Key, user or album ID"
+msgstr "Verifique a chave API, usuáriou o ID do álbum"
+
+#: library/blocks/v2/src/latest-horizontal-posts/latest-horizontal-posts.php:125
+#: library/blocks/v2/src/latest-vertical-posts/latest-vertical-posts.php:155
+msgid "This feature depends on the AjaxPageviews plugin."
+msgstr "Essa funcionalidade depende do plugin AjaxPageviews"
+
+#: library/blocks/v2/src/latest-horizontal-posts/latest-horizontal-posts.php:168
+msgid "Check the API Key"
+msgstr "Verifique a chave API"
+
+#: library/blocks/v2/src/latest-vertical-posts/latest-vertical-posts.php:207
+msgid "Check the API Key or playlist ID"
+msgstr "Verifique a chave API ou o ID da playlist"
 
 #: library/menus.php:6
 msgid "Main menu"
@@ -103,6 +229,43 @@ msgstr "Card horizontal"
 msgid "Vertical card"
 msgstr "Card vertical"
 
+#: library/settings.php:39
+msgid "YouTube Key"
+msgstr "Chave do YouTube"
+
+#: library/utils.php:244 library/utils.php:245 library/utils.php:249
+#: library/utils.php:255 library/utils.php:256
+msgid "News"
+msgstr "Notícias"
+
+#: library/utils.php:246 library/utils.php:247
+msgid "Add news"
+msgstr "Adicionar notícia"
+
+#: library/utils.php:248
+msgid "Edit news"
+msgstr "Editar notícia"
+
+#: library/utils.php:250
+msgid "View news"
+msgstr "Ver notícia"
+
+#: library/utils.php:251
+msgid "Search news"
+msgstr "Procurar notícias"
+
+#: library/utils.php:252
+msgid "No news found"
+msgstr "Nenhuma notícia encontrada"
+
+#: library/utils.php:253
+msgid "No news found in Trash"
+msgstr "Nenhuma notícia encontrada na lixeira"
+
+#: library/utils.php:254
+msgid "All news"
+msgstr "Todas as notícias"
+
 #. Template Name of the theme
 msgid "Page with anchors"
 msgstr "Página com âncoras"
@@ -111,11 +274,15 @@ msgstr "Página com âncoras"
 msgid "Sections"
 msgstr "Seções"
 
-#: single.php:30
-msgid "Published in "
-msgstr "Publicado em "
+#: searchform.php:11
+msgid "Search for:"
+msgstr "Procurar por:"
 
-#: single.php:35
+#: searchform.php:16
+msgid "Search term..."
+msgstr "Termo pesquisado..."
+
+#: single.php:48
 msgid "Published by "
 msgstr "Publicado por "
 
@@ -131,23 +298,76 @@ msgstr "Construtor de páginas sem título"
 msgid "results found"
 msgstr "resultados encontrados"
 
-#: template-parts/content/no-post.php:3
-msgid ""
-"Sorry, but nothing matched your search criteria. Please try again with some "
-"different keywords."
-msgstr ""
-"Desculpe, mas nada corresponde aos seus critérios de busca. Por favor, tente "
-"novamente com algumas palavras-chave diferentes."
+#: template-parts/content/no-post.php:4
+msgid "Nothing found"
+msgstr "Nada encontrado"
+
+#: template-parts/content/no-post.php:9
+msgid "Sorry, nothing matches your search terms."
+msgstr "Desculpe, nada corresponde aos seus termos de pesquisa."
+
+#: template-parts/content/no-post.php:12
+msgid "Try again with some different keywords."
+msgstr "Tente novamente com algumas palavras-chave diferentes."
+
+#: template-parts/content/no-post.php:18
+msgid "Back to homepage"
+msgstr "Voltar para a Home"
+
+#: template-parts/post-card.php:49
+msgid "By"
+msgstr "Por"
+
+#: template-parts/search-filters.php:9 template-parts/search-filters.php:69
+msgid "FILTER BY"
+msgstr "FILTRAR POR"
+
+#: template-parts/search-filters.php:12 template-parts/search-filters.php:76
+msgid "ALL"
+msgstr "TODOS"
+
+#: template-parts/search-filters.php:25
+msgid "Latests"
+msgstr "Mais recentes"
+
+#: template-parts/search-filters.php:26
+msgid "Oldestes"
+msgstr "Mais antigas"
+
+#: template-parts/search-filters.php:27
+msgid "Alphabetical"
+msgstr "Alfabética"
+
+#: template-parts/search-filters.php:30 template-parts/search-filters.php:34
+#: template-parts/search-filters.php:90 template-parts/search-filters.php:97
+msgid "ORDER BY"
+msgstr "ORDENAR POR"
 
 #: template-parts/share-links.php:2
 msgid "Share"
 msgstr "Compartilhar"
 
 #: template-parts/site-by-hacklab.php:2
-msgid "website by"
-msgstr "site por"
+msgid "Website by"
+msgstr "Site por"
 
-#: template-parts/title/archive-header.php:37
+#: template-parts/title/archive-header.php:10
+msgid "result"
+msgstr "resultado"
+
+#: template-parts/title/archive-header.php:10
+msgid "results"
+msgstr "resultados"
+
+#: template-parts/title/archive-header.php:14
+msgid "SEARCH RESULT"
+msgstr "RESULTADO DA PESQUISA"
+
+#: template-parts/title/archive-header.php:45
+msgid "Search"
+msgstr "Procurar"
+
+#: template-parts/title/archive-header.php:62
 msgid " Results Found"
 msgstr " Resultados Encontrados"
 
@@ -155,18 +375,43 @@ msgstr " Resultados Encontrados"
 msgid "Author: %s"
 msgstr "Autor:%s"
 
+#: assets/javascript/functionalities/gutenberg/icon.js:64
+#: dist/js/functionalities/gutenberg.js:29
+#: dist/js/functionalities/gutenberg.js:2510
+msgid "Iconify ID"
+msgstr "Iconify ID"
+
 #: dist/blocks/banner-with-image/editor.js:29
 #: dist/blocks/card-header/editor.js:19
 #: library/blocks/banner-with-image/editor.js:11
 #: library/blocks/card-header/editor.js:11
+#: dist/blocks/banner-with-image/editor.js:128
+#: dist/blocks/card-header/editor.js:115
 msgid "Header content"
 msgstr "Conteúdo do cabeçalho"
 
 #: dist/blocks/banner-with-image/editor.js:29
 #: dist/blocks/card-header/editor.js:19 dist/blocks/posts-grid/editor.js:19
+#: dist/blocks/stories-mosaic/editor.js:96
 #: library/blocks/banner-with-image/editor.js:25
 #: library/blocks/card-header/editor.js:38
 #: library/blocks/posts-grid/editor.js:22
+#: library/blocks/stories-mosaic/editor.js:59
+#: library/blocks/v2/build/events-from-mapas-culturais/index.js:74
+#: library/blocks/v2/build/latest-horizontal-posts/index.js:486
+#: library/blocks/v2/build/latest-vertical-posts/index.js:477
+#: library/blocks/v2/build/opportunities-from-mapas-culturais/index.js:74
+#: library/blocks/v2/src/events-from-mapas-culturais/edit.js:55
+#: library/blocks/v2/src/latest-horizontal-posts/edit.js:168
+#: library/blocks/v2/src/latest-vertical-posts/edit.js:165
+#: library/blocks/v2/src/opportunities-from-mapas-culturais/edit.js:55
+#: dist/blocks/banner-with-image/editor.js:142
+#: dist/blocks/card-header/editor.js:142 dist/blocks/posts-grid/editor.js:1826
+#: dist/blocks/stories-mosaic/editor.js:1614
+#: library/blocks/v2/build/events-from-mapas-culturais/index.js:55
+#: library/blocks/v2/build/latest-horizontal-posts/index.js:360
+#: library/blocks/v2/build/latest-vertical-posts/index.js:357
+#: library/blocks/v2/build/opportunities-from-mapas-culturais/index.js:55
 msgid "Layout"
 msgstr ""
 
@@ -175,182 +420,728 @@ msgstr ""
 #: dist/blocks/card-header/editor.js:29
 #: library/blocks/banner-with-image/editor.js:28
 #: library/blocks/shared/SelectImage.js:32
+#: dist/blocks/banner-with-image/editor.js:96
+#: dist/blocks/banner-with-image/editor.js:145
+#: dist/blocks/card-header/editor.js:83
 msgid "Image"
-msgstr ""
+msgstr "Imagem"
 
 #: dist/blocks/banner-with-image/editor.js:39
 #: dist/blocks/card-header/editor.js:29 library/blocks/shared/SelectImage.js:15
-#, fuzzy
-#| msgctxt "block title"
-#| msgid "Banner with image"
+#: dist/blocks/banner-with-image/editor.js:79
+#: dist/blocks/card-header/editor.js:66
 msgid "Change image"
-msgstr "Banner com imagem"
+msgstr "Trocar imagem"
 
 #: dist/blocks/banner-with-image/editor.js:39
 #: dist/blocks/card-header/editor.js:29 library/blocks/shared/SelectImage.js:18
+#: dist/blocks/banner-with-image/editor.js:82
+#: dist/blocks/card-header/editor.js:69
 msgid "Remove image"
-msgstr ""
+msgstr "Remover imagem"
 
 #: dist/blocks/banner-with-image/editor.js:39
 #: dist/blocks/card-header/editor.js:29 library/blocks/shared/SelectImage.js:24
+#: dist/blocks/banner-with-image/editor.js:88
+#: dist/blocks/card-header/editor.js:75
 msgid "Select image"
-msgstr ""
+msgstr "Selecionar imagem"
 
 #: dist/blocks/card-body/editor.js:19 library/blocks/card-body/editor.js:8
+#: dist/blocks/card-body/editor.js:58
 msgid "Body content"
 msgstr "Conteúdo do corpo"
 
 #: dist/blocks/card-header/editor.js:19 library/blocks/card-header/editor.js:41
+#: dist/blocks/card-header/editor.js:145
 msgid "Background image"
-msgstr ""
+msgstr "Imagem de fundo"
 
 #: dist/blocks/posts-grid/editor.js:19 library/blocks/posts-grid/editor.js:39
+#: dist/blocks/posts-grid/editor.js:1843
 msgid "Grid columns"
 msgstr "Colunas do grid"
 
 #: dist/blocks/posts-grid/editor.js:19 library/blocks/posts-grid/editor.js:48
+#: dist/blocks/posts-grid/editor.js:1852
 msgid "Grid rows"
 msgstr "Linhas do grid"
 
 #: dist/blocks/posts-grid/editor.js:19 library/blocks/posts-grid/editor.js:57
+#: dist/blocks/posts-grid/editor.js:1861
 msgid "Grid gap"
 msgstr "Espaçamento do grid"
 
 #: dist/blocks/posts-grid/editor.js:19 library/blocks/posts-grid/editor.js:65
+#: dist/blocks/posts-grid/editor.js:1869
 msgid "Hide author"
 msgstr "Ocultar autor"
 
 #: dist/blocks/posts-grid/editor.js:19 library/blocks/posts-grid/editor.js:73
+#: dist/blocks/posts-grid/editor.js:1877
 msgid "Hide categories"
 msgstr "Ocultar categorias"
 
 #: dist/blocks/posts-grid/editor.js:19 library/blocks/posts-grid/editor.js:81
+#: dist/blocks/posts-grid/editor.js:1885
 msgid "Hide date"
 msgstr "Ocultar data"
 
 #: dist/blocks/posts-grid/editor.js:19 library/blocks/posts-grid/editor.js:89
+#: dist/blocks/posts-grid/editor.js:1893
 msgid "Hide excerpt"
 msgstr "Ocultar resumo"
 
-#: dist/blocks/posts-grid/editor.js:30 library/blocks/shared/QueryPanel.js:11
+#: dist/blocks/posts-grid/editor.js:30 dist/blocks/stories-mosaic/editor.js:19
+#: library/blocks/shared/QueryPanel.js:11
+#: library/blocks/v2/build/latest-horizontal-posts/index.js:557
+#: library/blocks/v2/build/latest-vertical-posts/index.js:623
+#: library/blocks/v2/src/latest-horizontal-posts/edit.js:268
+#: library/blocks/v2/src/latest-vertical-posts/edit.js:355
+#: dist/blocks/posts-grid/editor.js:1498
+#: dist/blocks/stories-mosaic/editor.js:1444
+#: library/blocks/v2/build/latest-horizontal-posts/index.js:460
+#: library/blocks/v2/build/latest-vertical-posts/index.js:547
 msgid "Query"
 msgstr "Consulta"
 
-#: dist/blocks/posts-grid/editor.js:30 library/blocks/shared/QueryPanel.js:35
+#: dist/blocks/posts-grid/editor.js:30 dist/blocks/stories-mosaic/editor.js:19
+#: library/blocks/shared/QueryPanel.js:35 dist/blocks/posts-grid/editor.js:1522
+#: dist/blocks/stories-mosaic/editor.js:1468
 msgid "Show children posts?"
 msgstr "Mostar posts filhos?"
 
-#: dist/blocks/posts-grid/editor.js:30 library/blocks/shared/QueryPanel.js:79
+#: dist/blocks/posts-grid/editor.js:30 dist/blocks/stories-mosaic/editor.js:19
+#: library/blocks/shared/QueryPanel.js:79
+#: library/blocks/v2/build/latest-horizontal-posts/index.js:713
+#: library/blocks/v2/build/latest-vertical-posts/index.js:730
+#: library/blocks/v2/src/latest-horizontal-posts/edit.js:489
+#: library/blocks/v2/src/latest-vertical-posts/edit.js:513
+#: dist/blocks/posts-grid/editor.js:1566
+#: dist/blocks/stories-mosaic/editor.js:1512
+#: library/blocks/v2/build/latest-horizontal-posts/index.js:681
+#: library/blocks/v2/build/latest-vertical-posts/index.js:705
 msgid "Filter posts to not display"
 msgstr "Filtre as postagens para não serem exibidas"
 
 #: dist/blocks/posts-grid/editor.js:41
 #: library/blocks/shared/SelectCardModel.js:21
+#: dist/blocks/posts-grid/editor.js:1630
 msgid "Card model"
 msgstr "Modelo de card"
 
 #: dist/blocks/posts-grid/editor.js:41
 #: library/blocks/shared/SelectCardModel.js:26
+#: dist/blocks/posts-grid/editor.js:1635
 msgctxt "card"
 msgid "Default model"
 msgstr "Modelo padrão"
 
 #: dist/blocks/posts-grid/editor.js:52
 #: library/blocks/shared/SelectCardModifier.js:29
+#: dist/blocks/posts-grid/editor.js:1676
 msgid "Card modifier"
 msgstr "Modificador do card"
 
-#: dist/blocks/posts-grid/editor.js:63 library/blocks/shared/SelectCompare.js:5
+#: dist/blocks/posts-grid/editor.js:63 dist/blocks/stories-mosaic/editor.js:30
+#: library/blocks/shared/SelectCompare.js:5
+#: library/blocks/v2/build/latest-horizontal-posts/index.js:666
+#: library/blocks/v2/build/latest-horizontal-posts/index.js:733
+#: library/blocks/v2/build/latest-vertical-posts/index.js:700
+#: library/blocks/v2/build/latest-vertical-posts/index.js:750
+#: library/blocks/v2/src/latest-horizontal-posts/edit.js:423
+#: library/blocks/v2/src/latest-horizontal-posts/edit.js:527
+#: library/blocks/v2/src/latest-vertical-posts/edit.js:465
+#: library/blocks/v2/src/latest-vertical-posts/edit.js:551
+#: dist/blocks/posts-grid/editor.js:1341
+#: dist/blocks/stories-mosaic/editor.js:1289
+#: library/blocks/v2/build/latest-horizontal-posts/index.js:615
+#: library/blocks/v2/build/latest-horizontal-posts/index.js:719
+#: library/blocks/v2/build/latest-vertical-posts/index.js:657
+#: library/blocks/v2/build/latest-vertical-posts/index.js:743
 msgid "OR"
 msgstr "OU"
 
-#: dist/blocks/posts-grid/editor.js:63 library/blocks/shared/SelectCompare.js:6
+#: dist/blocks/posts-grid/editor.js:63 dist/blocks/stories-mosaic/editor.js:30
+#: library/blocks/shared/SelectCompare.js:6
+#: library/blocks/v2/build/latest-horizontal-posts/index.js:669
+#: library/blocks/v2/build/latest-horizontal-posts/index.js:736
+#: library/blocks/v2/build/latest-vertical-posts/index.js:703
+#: library/blocks/v2/build/latest-vertical-posts/index.js:753
+#: library/blocks/v2/src/latest-horizontal-posts/edit.js:427
+#: library/blocks/v2/src/latest-horizontal-posts/edit.js:531
+#: library/blocks/v2/src/latest-vertical-posts/edit.js:469
+#: library/blocks/v2/src/latest-vertical-posts/edit.js:555
+#: dist/blocks/posts-grid/editor.js:1342
+#: dist/blocks/stories-mosaic/editor.js:1290
+#: library/blocks/v2/build/latest-horizontal-posts/index.js:619
+#: library/blocks/v2/build/latest-horizontal-posts/index.js:723
+#: library/blocks/v2/build/latest-vertical-posts/index.js:661
+#: library/blocks/v2/build/latest-vertical-posts/index.js:747
 msgid "AND"
 msgstr "E"
 
-#: dist/blocks/posts-grid/editor.js:63 library/blocks/shared/SelectCompare.js:9
+#: dist/blocks/posts-grid/editor.js:63 dist/blocks/stories-mosaic/editor.js:30
+#: library/blocks/shared/SelectCompare.js:9
+#: library/blocks/v2/build/latest-horizontal-posts/index.js:663
+#: library/blocks/v2/build/latest-horizontal-posts/index.js:730
+#: library/blocks/v2/build/latest-vertical-posts/index.js:697
+#: library/blocks/v2/build/latest-vertical-posts/index.js:747
+#: library/blocks/v2/src/latest-horizontal-posts/edit.js:419
+#: library/blocks/v2/src/latest-horizontal-posts/edit.js:523
+#: library/blocks/v2/src/latest-vertical-posts/edit.js:461
+#: library/blocks/v2/src/latest-vertical-posts/edit.js:547
+#: dist/blocks/posts-grid/editor.js:1345
+#: dist/blocks/stories-mosaic/editor.js:1293
+#: library/blocks/v2/build/latest-horizontal-posts/index.js:611
+#: library/blocks/v2/build/latest-horizontal-posts/index.js:715
+#: library/blocks/v2/build/latest-vertical-posts/index.js:653
+#: library/blocks/v2/build/latest-vertical-posts/index.js:739
 msgid "Compare terms"
 msgstr "Comparar termos"
 
-#: dist/blocks/posts-grid/editor.js:74
+#: dist/blocks/posts-grid/editor.js:74 dist/blocks/stories-mosaic/editor.js:41
 #: library/blocks/shared/SelectPostType.js:21
-#, fuzzy
-#| msgid "No post type"
+#: dist/blocks/posts-grid/editor.js:1377
+#: dist/blocks/stories-mosaic/editor.js:1324
 msgid "Post type"
-msgstr "Nenhum tipo de postagem"
+msgstr "Tipo de postagem"
 
-#: dist/blocks/posts-grid/editor.js:74
+#: dist/blocks/posts-grid/editor.js:74 dist/blocks/stories-mosaic/editor.js:41
 #: library/blocks/shared/SelectPostType.js:26
+#: dist/blocks/posts-grid/editor.js:1382
+#: dist/blocks/stories-mosaic/editor.js:1329
 msgid "No post type"
 msgstr "Nenhum tipo de postagem"
 
 #: dist/blocks/posts-grid/editor.js:85 library/blocks/shared/SelectSize.js:7
+#: dist/blocks/posts-grid/editor.js:1739
 msgctxt "size"
 msgid "Large"
 msgstr "Grande"
 
 #: dist/blocks/posts-grid/editor.js:85 library/blocks/shared/SelectSize.js:8
+#: dist/blocks/posts-grid/editor.js:1740
 msgctxt "size"
 msgid "Medium"
 msgstr "Médio"
 
 #: dist/blocks/posts-grid/editor.js:85 library/blocks/shared/SelectSize.js:9
+#: dist/blocks/posts-grid/editor.js:1741
 msgctxt "size"
 msgid "Small"
 msgstr "Pequeno"
 
 #: dist/blocks/posts-grid/editor.js:85 library/blocks/shared/SelectSize.js:10
+#: dist/blocks/posts-grid/editor.js:1742
 msgctxt "size"
 msgid "Extra Large"
 msgstr "Muito Grande"
 
 #: dist/blocks/posts-grid/editor.js:85 library/blocks/shared/SelectSize.js:11
+#: dist/blocks/posts-grid/editor.js:1743
 msgctxt "size"
 msgid "Extra Small"
 msgstr "Muito Pequeno"
 
 #: dist/blocks/posts-grid/editor.js:85 library/blocks/shared/SelectSize.js:59
+#: dist/blocks/posts-grid/editor.js:1791
 msgid "Size"
 msgstr "Tamanho"
 
-#: dist/blocks/posts-grid/editor.js:96
+#: dist/blocks/posts-grid/editor.js:96 dist/blocks/stories-mosaic/editor.js:52
 #: library/blocks/shared/SelectTaxonomy.js:21
-#, fuzzy
-#| msgid "No taxonomy"
+#: dist/blocks/posts-grid/editor.js:1415
+#: dist/blocks/stories-mosaic/editor.js:1362
 msgid "Taxonomy"
-msgstr "Sem taxonomia"
+msgstr "Taxonomia"
 
-#: dist/blocks/posts-grid/editor.js:96
+#: dist/blocks/posts-grid/editor.js:96 dist/blocks/stories-mosaic/editor.js:52
 #: library/blocks/shared/SelectTaxonomy.js:26
+#: dist/blocks/posts-grid/editor.js:1420
+#: dist/blocks/stories-mosaic/editor.js:1367
 msgid "No taxonomy"
 msgstr "Sem taxonomia"
 
-#: dist/blocks/posts-grid/editor.js:107 library/blocks/shared/SelectTerms.js:9
+#: dist/blocks/posts-grid/editor.js:107 dist/blocks/stories-mosaic/editor.js:63
+#: library/blocks/shared/SelectTerms.js:9 dist/blocks/posts-grid/editor.js:1442
+#: dist/blocks/stories-mosaic/editor.js:1388
 msgid "Terms"
-msgstr ""
+msgstr "Termos"
 
 #: dist/blocks/read-more/editor.js:19 library/blocks/read-more/editor.js:14
+#: dist/blocks/read-more/editor.js:66
 msgid "Full text"
 msgstr "Texto completo"
 
 #: dist/blocks/read-more/editor.js:19 library/blocks/read-more/editor.js:34
+#: dist/blocks/read-more/editor.js:86
 msgid "Lines shown"
 msgstr "Linhas mostradas"
 
 #: dist/blocks/read-more/editor.js:19 dist/blocks/read-more/index.js:19
 #: library/blocks/read-more/editor.js:53 library/blocks/read-more/index.js:15
+#: dist/blocks/read-more/editor.js:105 dist/blocks/read-more/index.js:16
 msgid "Read less"
 msgstr "Leia menos"
 
 #: dist/blocks/read-more/editor.js:19 dist/blocks/read-more/index.js:19
 #: library/blocks/read-more/editor.js:53 library/blocks/read-more/editor.js:71
-#: library/blocks/read-more/index.js:12
+#: library/blocks/read-more/index.js:12 dist/blocks/read-more/editor.js:105
+#: dist/blocks/read-more/editor.js:123 dist/blocks/read-more/index.js:13
 msgid "Read more"
 msgstr "Leia mais"
 
-#: dist/js/functionalities/gutenberg.js:29
-msgid "Iconify ID"
-msgstr "Iconify ID"
+#: dist/blocks/stories-mosaic/editor.js:96
+#: library/blocks/stories-mosaic/editor.js:64
+#: library/blocks/v2/build/events-from-mapas-culturais/index.js:77
+#: library/blocks/v2/build/latest-horizontal-posts/index.js:489
+#: library/blocks/v2/build/latest-vertical-posts/index.js:480
+#: library/blocks/v2/build/opportunities-from-mapas-culturais/index.js:77
+#: library/blocks/v2/src/events-from-mapas-culturais/edit.js:60
+#: library/blocks/v2/src/latest-horizontal-posts/edit.js:173
+#: library/blocks/v2/src/latest-vertical-posts/edit.js:170
+#: library/blocks/v2/src/opportunities-from-mapas-culturais/edit.js:60
+#: dist/blocks/stories-mosaic/editor.js:1619
+#: library/blocks/v2/build/events-from-mapas-culturais/index.js:60
+#: library/blocks/v2/build/latest-horizontal-posts/index.js:365
+#: library/blocks/v2/build/latest-vertical-posts/index.js:362
+#: library/blocks/v2/build/opportunities-from-mapas-culturais/index.js:60
+msgid "Heading"
+msgstr "Cabeçalho"
+
+#: dist/blocks/stories-mosaic/editor.js:96
+#: library/blocks/stories-mosaic/editor.js:67
+#: library/blocks/v2/build/events-from-mapas-culturais/index.js:80
+#: library/blocks/v2/build/latest-horizontal-posts/index.js:492
+#: library/blocks/v2/build/latest-vertical-posts/index.js:483
+#: library/blocks/v2/build/opportunities-from-mapas-culturais/index.js:80
+#: library/blocks/v2/src/events-from-mapas-culturais/edit.js:63
+#: library/blocks/v2/src/latest-horizontal-posts/edit.js:176
+#: library/blocks/v2/src/latest-vertical-posts/edit.js:173
+#: library/blocks/v2/src/opportunities-from-mapas-culturais/edit.js:63
+#: dist/blocks/stories-mosaic/editor.js:1622
+#: library/blocks/v2/build/events-from-mapas-culturais/index.js:63
+#: library/blocks/v2/build/latest-horizontal-posts/index.js:368
+#: library/blocks/v2/build/latest-vertical-posts/index.js:365
+#: library/blocks/v2/build/opportunities-from-mapas-culturais/index.js:63
+msgid "The block title. Leave blank to not display"
+msgstr "O título do bloco. Deixe em branco para não exibir"
+
+#: dist/blocks/stories-mosaic/editor.js:96
+#: library/blocks/stories-mosaic/editor.js:80
+#: library/blocks/v2/build/latest-horizontal-posts/index.js:575
+#: library/blocks/v2/build/latest-horizontal-posts/index.js:677
+#: library/blocks/v2/build/latest-horizontal-posts/index.js:741
+#: library/blocks/v2/build/latest-vertical-posts/index.js:613
+#: library/blocks/v2/build/latest-vertical-posts/index.js:711
+#: library/blocks/v2/src/latest-horizontal-posts/edit.js:295
+#: library/blocks/v2/src/latest-horizontal-posts/edit.js:445
+#: library/blocks/v2/src/latest-horizontal-posts/edit.js:548
+#: library/blocks/v2/src/latest-vertical-posts/edit.js:343
+#: library/blocks/v2/src/latest-vertical-posts/edit.js:487
+#: dist/blocks/stories-mosaic/editor.js:1635
+#: library/blocks/v2/build/latest-horizontal-posts/index.js:487
+#: library/blocks/v2/build/latest-horizontal-posts/index.js:637
+#: library/blocks/v2/build/latest-horizontal-posts/index.js:740
+#: library/blocks/v2/build/latest-vertical-posts/index.js:535
+#: library/blocks/v2/build/latest-vertical-posts/index.js:679
+msgid "Total number of posts to display"
+msgstr "Número total de postagens a serem exibidas"
+
+#: library/blocks/v2/build/events-from-mapas-culturais/index.js:82
+#: library/blocks/v2/src/events-from-mapas-culturais/edit.js:71
+#: library/blocks/v2/build/events-from-mapas-culturais/index.js:71
+msgid "Events to display"
+msgstr "Events to display"
+
+#: library/blocks/v2/build/latest-horizontal-posts/index.js:106
+#: library/blocks/v2/build/latest-vertical-posts/index.js:106
+#: library/blocks/v2/shared/components/SelectGuestAuthor.js:31
+#: library/blocks/v2/build/latest-horizontal-posts/index.js:70
+#: library/blocks/v2/build/latest-vertical-posts/index.js:70
+msgid "Select author"
+msgstr "Selecionar autor"
+
+#: library/blocks/v2/build/latest-horizontal-posts/index.js:164
+#: library/blocks/v2/build/latest-vertical-posts/index.js:164
+#: library/blocks/v2/shared/components/SelectPostType.js:29
+#: library/blocks/v2/src/latest-horizontal-posts/components/SelectPostType.js:29
+#: library/blocks/v2/build/latest-horizontal-posts/index.js:106
+#: library/blocks/v2/build/latest-vertical-posts/index.js:106
+msgid "Select post type"
+msgstr "Selecionar tipo de postagem"
+
+#: library/blocks/v2/build/latest-horizontal-posts/index.js:240
+#: library/blocks/v2/build/latest-vertical-posts/index.js:240
+#: library/blocks/v2/shared/components/SelectTerms.js:54
+#: library/blocks/v2/build/latest-horizontal-posts/index.js:167
+#: library/blocks/v2/build/latest-vertical-posts/index.js:167
+msgid "Filter posts by terms"
+msgstr "Filtre as postagens por termos"
+
+#: library/blocks/v2/build/latest-horizontal-posts/index.js:499
+#: library/blocks/v2/src/latest-horizontal-posts/edit.js:189
+#: library/blocks/v2/build/latest-horizontal-posts/index.js:381
+msgid "Description"
+msgstr "Descrição"
+
+#: library/blocks/v2/build/latest-horizontal-posts/index.js:506
+#: library/blocks/v2/src/latest-horizontal-posts/edit.js:192
+#: library/blocks/v2/build/latest-horizontal-posts/index.js:384
+msgid "The block description. Leave blank to not display"
+msgstr "A descrição do bloco. Deixe em branco para não exibir"
+
+#: library/blocks/v2/build/latest-horizontal-posts/index.js:508
+#: library/blocks/v2/build/latest-vertical-posts/index.js:490
+#: library/blocks/v2/src/latest-horizontal-posts/edit.js:201
+#: library/blocks/v2/src/latest-vertical-posts/edit.js:186
+#: library/blocks/v2/build/latest-horizontal-posts/index.js:393
+#: library/blocks/v2/build/latest-vertical-posts/index.js:378
+msgid "Block model"
+msgstr "Modelo do bloco"
+
+#: library/blocks/v2/build/latest-horizontal-posts/index.js:511
+#: library/blocks/v2/src/latest-horizontal-posts/edit.js:205
+#: library/blocks/v2/build/latest-horizontal-posts/index.js:397
+msgid "Albums (Flickr)"
+msgstr "Álbuns (Flickr)"
+
+#: library/blocks/v2/build/latest-horizontal-posts/index.js:514
+#: library/blocks/v2/src/latest-horizontal-posts/edit.js:209
+#: library/blocks/v2/build/latest-horizontal-posts/index.js:401
+msgid "Photos (Flickr)"
+msgstr "Fotos (Flickr)"
+
+#: library/blocks/v2/build/latest-horizontal-posts/index.js:517
+#: library/blocks/v2/build/latest-vertical-posts/index.js:496
+#: library/blocks/v2/src/latest-horizontal-posts/edit.js:213
+#: library/blocks/v2/src/latest-vertical-posts/edit.js:194
+#: library/blocks/v2/build/latest-horizontal-posts/index.js:405
+#: library/blocks/v2/build/latest-vertical-posts/index.js:386
+msgid "Columnists"
+msgstr "Colunistas"
+
+#: library/blocks/v2/build/latest-horizontal-posts/index.js:520
+#: library/blocks/v2/build/latest-vertical-posts/index.js:499
+#: library/blocks/v2/src/latest-horizontal-posts/edit.js:217
+#: library/blocks/v2/src/latest-vertical-posts/edit.js:198
+#: library/blocks/v2/build/latest-horizontal-posts/index.js:409
+#: library/blocks/v2/build/latest-vertical-posts/index.js:390
+msgid "Most read (Posts)"
+msgstr "Mais lidas (Posts)"
+
+#: library/blocks/v2/build/latest-horizontal-posts/index.js:523
+#: library/blocks/v2/build/latest-vertical-posts/index.js:505
+#: library/blocks/v2/src/latest-horizontal-posts/edit.js:221
+#: library/blocks/v2/src/latest-vertical-posts/edit.js:206
+#: library/blocks/v2/build/latest-horizontal-posts/index.js:413
+#: library/blocks/v2/build/latest-vertical-posts/index.js:398
+msgid "Latest posts"
+msgstr "Últimas postagens"
+
+#: library/blocks/v2/build/latest-horizontal-posts/index.js:526
+#: library/blocks/v2/src/latest-horizontal-posts/edit.js:225
+#: library/blocks/v2/build/latest-horizontal-posts/index.js:417
+msgid "Videos (YouTube)"
+msgstr "Vídeos (YouTube)"
+
+#: library/blocks/v2/build/latest-horizontal-posts/index.js:531
+#: library/blocks/v2/src/latest-horizontal-posts/edit.js:235
+#: library/blocks/v2/build/latest-horizontal-posts/index.js:427
+msgid "Content position"
+msgstr "Posição do conteúdo"
+
+#: library/blocks/v2/build/latest-horizontal-posts/index.js:534
+#: library/blocks/v2/src/latest-horizontal-posts/edit.js:239
+#: library/blocks/v2/build/latest-horizontal-posts/index.js:431
+msgid "Left"
+msgstr "Esquerda"
+
+#: library/blocks/v2/build/latest-horizontal-posts/index.js:537
+#: library/blocks/v2/src/latest-horizontal-posts/edit.js:243
+#: library/blocks/v2/build/latest-horizontal-posts/index.js:435
+msgid "Right"
+msgstr "Direita"
+
+#: library/blocks/v2/build/latest-horizontal-posts/index.js:540
+#: library/blocks/v2/src/latest-horizontal-posts/edit.js:247
+#: library/blocks/v2/build/latest-horizontal-posts/index.js:439
+msgid "Full width"
+msgstr "Largura completa"
+
+#: library/blocks/v2/build/latest-horizontal-posts/index.js:545
+#: library/blocks/v2/src/latest-horizontal-posts/edit.js:257
+#: library/blocks/v2/build/latest-horizontal-posts/index.js:449
+msgid "Slides to show"
+msgstr "Número de slides para exibir"
+
+#: library/blocks/v2/build/latest-horizontal-posts/index.js:560
+#: library/blocks/v2/src/latest-horizontal-posts/edit.js:275
+#: library/blocks/v2/build/latest-horizontal-posts/index.js:467
+msgid "Type of the video"
+msgstr "Tipo de vídeo"
+
+#: library/blocks/v2/build/latest-horizontal-posts/index.js:563
+#: library/blocks/v2/src/latest-horizontal-posts/edit.js:279
+#: library/blocks/v2/build/latest-horizontal-posts/index.js:471
+msgid "By playlist"
+msgstr "Playlist por"
+
+#: library/blocks/v2/build/latest-horizontal-posts/index.js:566
+#: library/blocks/v2/src/latest-horizontal-posts/edit.js:283
+#: library/blocks/v2/build/latest-horizontal-posts/index.js:475
+msgid "By channel"
+msgstr "Canal por"
+
+#: library/blocks/v2/build/latest-horizontal-posts/index.js:584
+#: library/blocks/v2/src/latest-horizontal-posts/edit.js:307
+#: library/blocks/v2/build/latest-horizontal-posts/index.js:499
+msgid "YouTube playlist ID"
+msgstr "ID da playlist do YouTube"
+
+#: library/blocks/v2/build/latest-horizontal-posts/index.js:592
+#: library/blocks/v2/src/latest-horizontal-posts/edit.js:317
+#: library/blocks/v2/build/latest-horizontal-posts/index.js:509
+msgid "YouTube channel ID"
+msgstr "ID do Canal do YouTube"
+
+#: library/blocks/v2/build/latest-horizontal-posts/index.js:600
+#: library/blocks/v2/build/latest-vertical-posts/index.js:634
+#: library/blocks/v2/src/latest-horizontal-posts/edit.js:330
+#: library/blocks/v2/src/latest-vertical-posts/edit.js:372
+#: library/blocks/v2/build/latest-horizontal-posts/index.js:522
+#: library/blocks/v2/build/latest-vertical-posts/index.js:564
+msgid "Flickr API Key"
+msgstr ""
+
+#: library/blocks/v2/build/latest-horizontal-posts/index.js:608
+#: library/blocks/v2/build/latest-vertical-posts/index.js:642
+#: library/blocks/v2/src/latest-horizontal-posts/edit.js:339
+#: library/blocks/v2/src/latest-vertical-posts/edit.js:380
+#: library/blocks/v2/build/latest-horizontal-posts/index.js:531
+#: library/blocks/v2/build/latest-vertical-posts/index.js:572
+msgid "Type of the content"
+msgstr ""
+
+#: library/blocks/v2/build/latest-horizontal-posts/index.js:611
+#: library/blocks/v2/build/latest-vertical-posts/index.js:645
+#: library/blocks/v2/src/latest-horizontal-posts/edit.js:343
+#: library/blocks/v2/src/latest-vertical-posts/edit.js:384
+#: library/blocks/v2/build/latest-horizontal-posts/index.js:535
+#: library/blocks/v2/build/latest-vertical-posts/index.js:576
+msgid "Images by user"
+msgstr ""
+
+#: library/blocks/v2/build/latest-horizontal-posts/index.js:614
+#: library/blocks/v2/build/latest-vertical-posts/index.js:648
+#: library/blocks/v2/src/latest-horizontal-posts/edit.js:347
+#: library/blocks/v2/src/latest-vertical-posts/edit.js:388
+#: library/blocks/v2/build/latest-horizontal-posts/index.js:539
+#: library/blocks/v2/build/latest-vertical-posts/index.js:580
+msgid "Images by album"
+msgstr ""
+
+#: library/blocks/v2/build/latest-horizontal-posts/index.js:623
+#: library/blocks/v2/build/latest-vertical-posts/index.js:657
+#: library/blocks/v2/src/latest-horizontal-posts/edit.js:361
+#: library/blocks/v2/src/latest-vertical-posts/edit.js:401
+#: library/blocks/v2/build/latest-horizontal-posts/index.js:553
+#: library/blocks/v2/build/latest-vertical-posts/index.js:593
+msgid "Album ID"
+msgstr ""
+
+#: library/blocks/v2/build/latest-horizontal-posts/index.js:631
+#: library/blocks/v2/build/latest-vertical-posts/index.js:665
+#: library/blocks/v2/src/latest-horizontal-posts/edit.js:369
+#: library/blocks/v2/src/latest-vertical-posts/edit.js:411
+#: library/blocks/v2/build/latest-horizontal-posts/index.js:561
+#: library/blocks/v2/build/latest-vertical-posts/index.js:603
+msgid "User ID"
+msgstr ""
+
+#: library/blocks/v2/build/latest-horizontal-posts/index.js:642
+#: library/blocks/v2/build/latest-vertical-posts/index.js:676
+#: library/blocks/v2/src/latest-horizontal-posts/edit.js:388
+#: library/blocks/v2/src/latest-vertical-posts/edit.js:430
+#: library/blocks/v2/build/latest-horizontal-posts/index.js:580
+#: library/blocks/v2/build/latest-vertical-posts/index.js:622
+msgid "Show children items (if any)?"
+msgstr "Mostar posts filhos?"
+
+#: library/blocks/v2/build/latest-horizontal-posts/index.js:650
+#: library/blocks/v2/build/latest-horizontal-posts/index.js:717
+#: library/blocks/v2/build/latest-vertical-posts/index.js:684
+#: library/blocks/v2/build/latest-vertical-posts/index.js:734
+#: library/blocks/v2/src/latest-horizontal-posts/edit.js:396
+#: library/blocks/v2/src/latest-horizontal-posts/edit.js:499
+#: library/blocks/v2/src/latest-vertical-posts/edit.js:438
+#: library/blocks/v2/src/latest-vertical-posts/edit.js:523
+#: library/blocks/v2/build/latest-horizontal-posts/index.js:588
+#: library/blocks/v2/build/latest-horizontal-posts/index.js:691
+#: library/blocks/v2/build/latest-vertical-posts/index.js:630
+#: library/blocks/v2/build/latest-vertical-posts/index.js:715
+msgid "Taxonomy to filter"
+msgstr "Taxonomia para filtrar"
+
+#: library/blocks/v2/build/latest-horizontal-posts/index.js:657
+#: library/blocks/v2/build/latest-horizontal-posts/index.js:724
+#: library/blocks/v2/build/latest-vertical-posts/index.js:691
+#: library/blocks/v2/build/latest-vertical-posts/index.js:741
+#: library/blocks/v2/src/latest-horizontal-posts/edit.js:403
+#: library/blocks/v2/src/latest-horizontal-posts/edit.js:506
+#: library/blocks/v2/src/latest-vertical-posts/edit.js:445
+#: library/blocks/v2/src/latest-vertical-posts/edit.js:530
+#: library/blocks/v2/build/latest-horizontal-posts/index.js:595
+#: library/blocks/v2/build/latest-horizontal-posts/index.js:698
+#: library/blocks/v2/build/latest-vertical-posts/index.js:637
+#: library/blocks/v2/build/latest-vertical-posts/index.js:722
+msgid "Leave blank to not filter by taxonomy"
+msgstr "Deixe em branco para não filtrar por taxonomia"
+
+#: library/blocks/v2/build/latest-horizontal-posts/index.js:686
+#: library/blocks/v2/src/latest-horizontal-posts/edit.js:455
+#: library/blocks/v2/build/latest-horizontal-posts/index.js:647
+msgid "Offset"
+msgstr "Deslocamento"
+
+#: library/blocks/v2/build/latest-horizontal-posts/index.js:695
+#: library/blocks/v2/build/latest-vertical-posts/index.js:720
+#: library/blocks/v2/src/latest-horizontal-posts/edit.js:465
+#: library/blocks/v2/src/latest-vertical-posts/edit.js:498
+#: library/blocks/v2/build/latest-horizontal-posts/index.js:657
+#: library/blocks/v2/build/latest-vertical-posts/index.js:690
+msgid "Show taxonomy, which?"
+msgstr "Mostrar taxonomia, qual?"
+
+#: library/blocks/v2/build/latest-horizontal-posts/index.js:704
+#: library/blocks/v2/build/latest-vertical-posts/index.js:729
+#: library/blocks/v2/src/latest-horizontal-posts/edit.js:472
+#: library/blocks/v2/src/latest-vertical-posts/edit.js:505
+#: library/blocks/v2/build/latest-horizontal-posts/index.js:664
+#: library/blocks/v2/build/latest-vertical-posts/index.js:697
+msgid "Leave blank to not display any taxonomy"
+msgstr "Deixe em branco para não mostrar nenhuma taxonomia"
+
+#: library/blocks/v2/build/latest-horizontal-posts/index.js:706
+#: library/blocks/v2/src/latest-horizontal-posts/edit.js:481
+#: library/blocks/v2/build/latest-horizontal-posts/index.js:673
+msgid "Show excerpt?"
+msgstr "Mostrar resumo?"
+
+#: library/blocks/v2/build/latest-horizontal-posts/index.js:740
+#: library/blocks/v2/build/latest-vertical-posts/index.js:757
+#: library/blocks/v2/src/latest-horizontal-posts/edit.js:544
+#: library/blocks/v2/src/latest-vertical-posts/edit.js:569
+#: library/blocks/v2/build/latest-horizontal-posts/index.js:736
+#: library/blocks/v2/build/latest-vertical-posts/index.js:761
+msgid "With this configuration the block will display Co-Authors"
+msgstr "Com essa configuração o bloco vai exibir Autores Convidados"
+
+#: library/blocks/v2/build/latest-vertical-posts/index.js:493
+#: library/blocks/v2/src/latest-vertical-posts/edit.js:190
+#: library/blocks/v2/build/latest-vertical-posts/index.js:382
+msgid "Collection"
+msgstr "Coleção"
+
+#: library/blocks/v2/build/latest-vertical-posts/index.js:502
+#: library/blocks/v2/src/latest-vertical-posts/edit.js:202
+#: library/blocks/v2/build/latest-vertical-posts/index.js:394
+msgid "Numbered posts"
+msgstr "Postagens numeradas"
+
+#: library/blocks/v2/build/latest-vertical-posts/index.js:508
+#: library/blocks/v2/src/latest-vertical-posts/edit.js:210
+#: library/blocks/v2/build/latest-vertical-posts/index.js:402
+msgid "Videos"
+msgstr "Vídeos"
+
+#: library/blocks/v2/build/latest-vertical-posts/index.js:513
+#: library/blocks/v2/src/latest-vertical-posts/edit.js:221
+#: library/blocks/v2/build/latest-vertical-posts/index.js:413
+msgid "Show the post thumbnail?"
+msgstr "Mostrar a imagem destacada? "
+
+#: library/blocks/v2/build/latest-vertical-posts/index.js:521
+#: library/blocks/v2/src/latest-vertical-posts/edit.js:231
+#: library/blocks/v2/build/latest-vertical-posts/index.js:423
+msgid "Use rounded thumbnail?"
+msgstr "Usar imagem destacada arredondada? "
+
+#: library/blocks/v2/build/latest-vertical-posts/index.js:529
+#: library/blocks/v2/src/latest-vertical-posts/edit.js:241
+#: library/blocks/v2/build/latest-vertical-posts/index.js:433
+msgid "Show content below?"
+msgstr "Mostrar conteúdo abaixo?"
+
+#: library/blocks/v2/build/latest-vertical-posts/index.js:537
+#: library/blocks/v2/src/latest-vertical-posts/edit.js:251
+#: library/blocks/v2/build/latest-vertical-posts/index.js:443
+msgid "Use avatar as thumbnail?"
+msgstr "Usar avatar como imagem destacada? "
+
+#: library/blocks/v2/build/latest-vertical-posts/index.js:545
+#: library/blocks/v2/src/latest-vertical-posts/edit.js:262
+#: library/blocks/v2/build/latest-vertical-posts/index.js:454
+msgid "Show as a Grid?"
+msgstr "Mostrar como uma grade?"
+
+#: library/blocks/v2/build/latest-vertical-posts/index.js:553
+#: library/blocks/v2/src/latest-vertical-posts/edit.js:272
+#: library/blocks/v2/build/latest-vertical-posts/index.js:464
+msgid "Grid format"
+msgstr "Formato da grade"
+
+#: library/blocks/v2/build/latest-vertical-posts/index.js:556
+#: library/blocks/v2/build/latest-vertical-posts/index.js:568
+#: library/blocks/v2/src/latest-vertical-posts/edit.js:276
+#: library/blocks/v2/src/latest-vertical-posts/edit.js:290
+#: library/blocks/v2/build/latest-vertical-posts/index.js:468
+#: library/blocks/v2/build/latest-vertical-posts/index.js:482
+msgid "Columns"
+msgstr "Colunas"
+
+#: library/blocks/v2/build/latest-vertical-posts/index.js:559
+#: library/blocks/v2/src/latest-vertical-posts/edit.js:280
+#: library/blocks/v2/build/latest-vertical-posts/index.js:472
+msgid "Row"
+msgstr "Linha"
+
+#: library/blocks/v2/build/latest-vertical-posts/index.js:578
+#: library/blocks/v2/src/latest-vertical-posts/edit.js:302
+#: library/blocks/v2/build/latest-vertical-posts/index.js:494
+msgid "Show the excerpt?"
+msgstr "Mostrar resumo"
+
+#: library/blocks/v2/build/latest-vertical-posts/index.js:586
+#: library/blocks/v2/src/latest-vertical-posts/edit.js:314
+#: library/blocks/v2/build/latest-vertical-posts/index.js:506
+msgid "Show the post author?"
+msgstr "Mostrar o autor da postagem?"
+
+#: library/blocks/v2/build/latest-vertical-posts/index.js:594
+#: library/blocks/v2/src/latest-vertical-posts/edit.js:322
+#: library/blocks/v2/build/latest-vertical-posts/index.js:514
+msgid "Show the post date?"
+msgstr "Mostrar a data de publicação da postagem?"
+
+#: library/blocks/v2/build/latest-vertical-posts/index.js:602
+#: library/blocks/v2/src/latest-vertical-posts/edit.js:332
+#: library/blocks/v2/build/latest-vertical-posts/index.js:524
+msgid "Posts by slide"
+msgstr "Postagens por slide"
+
+#: library/blocks/v2/build/latest-vertical-posts/index.js:626
+#: library/blocks/v2/src/latest-vertical-posts/edit.js:361
+#: library/blocks/v2/build/latest-vertical-posts/index.js:553
+msgid "YouTube Playlist ID"
+msgstr ""
+
+#: library/blocks/v2/build/opportunities-from-mapas-culturais/index.js:82
+#: library/blocks/v2/src/opportunities-from-mapas-culturais/edit.js:71
+#: library/blocks/v2/build/opportunities-from-mapas-culturais/index.js:71
+msgid "Opportunities to display"
+msgstr "Oportunidades para exibir"
 
 #: library/blocks/banner-with-image/block.json
 msgctxt "block title"
@@ -412,6 +1203,75 @@ msgctxt "block description"
 msgid "A collapsible text paragraph with 'Read more' button"
 msgstr "Um parágrafo de texto recolhível com o botão \"Leia mais\""
 
+#: library/blocks/stories-mosaic/block.json
+msgctxt "block title"
+msgid "Mosaic Stories"
+msgstr "Mosaico de WebStories"
+
+#: library/blocks/stories-mosaic/block.json
+msgctxt "block description"
+msgid "Show the latestes webstories in a draggable mosaic."
+msgstr "Exibe os últimos webstories em um mosaico arrastável."
+
+#: library/blocks/v2/build/events-from-mapas-culturais/block.json
+#: library/blocks/v2/src/events-from-mapas-culturais/block.json
+msgctxt "block title"
+msgid "Eventos do Mapas Culturais"
+msgstr ""
+
+#: library/blocks/v2/build/events-from-mapas-culturais/block.json
+#: library/blocks/v2/src/events-from-mapas-culturais/block.json
+msgctxt "block description"
+msgid "Exibe os últimos eventos do Mapas Culturais."
+msgstr ""
+
+#: library/blocks/v2/build/latest-horizontal-posts/block.json
+#: library/blocks/v2/src/latest-horizontal-posts/block.json
+msgctxt "block title"
+msgid "Últimos posts (Horizontal)"
+msgstr ""
+
+#: library/blocks/v2/build/latest-horizontal-posts/block.json
+#: library/blocks/v2/src/latest-horizontal-posts/block.json
+msgctxt "block description"
+msgid ""
+"Exibe os últimos posts (e outros conteúdos) em formato horizontal com slider."
+msgstr ""
+
+#: library/blocks/v2/build/latest-vertical-posts/block.json
+#: library/blocks/v2/src/latest-vertical-posts/block.json
+msgctxt "block title"
+msgid "Últimos posts (Vertical)"
+msgstr ""
+
+#: library/blocks/v2/build/latest-vertical-posts/block.json
+#: library/blocks/v2/src/latest-vertical-posts/block.json
+msgctxt "block description"
+msgid "Exibe os últimos posts em formato vertical e com slider."
+msgstr ""
+
+#: library/blocks/v2/build/opportunities-from-mapas-culturais/block.json
+#: library/blocks/v2/src/opportunities-from-mapas-culturais/block.json
+msgctxt "block title"
+msgid "Oportunidades do Mapas Culturais"
+msgstr ""
+
+#: library/blocks/v2/build/opportunities-from-mapas-culturais/block.json
+#: library/blocks/v2/src/opportunities-from-mapas-culturais/block.json
+msgctxt "block description"
+msgid "Exibe as últimas Oportunidades do Mapas Culturais."
+msgstr ""
+
+#: library/blocks/video-playlist/block.json
+msgctxt "block title"
+msgid "Video Playlist"
+msgstr ""
+
+#: library/blocks/video-playlist/block.json
+msgctxt "block description"
+msgid "Displays videos from a YouTube channel or playlist."
+msgstr "Exibe vídeos de um canal ou playlist do YouTube"
+
 #: theme.json
 msgctxt "Color name"
 msgid "Primary pure"
@@ -441,21 +1301,6 @@ msgstr "Clara secundária"
 msgctxt "Color name"
 msgid "Secondary dark"
 msgstr "Escura secundária"
-
-#: theme.json
-msgctxt "Color name"
-msgid "Highlight pure"
-msgstr "Pura destaque"
-
-#: theme.json
-msgctxt "Color name"
-msgid "Highlight light"
-msgstr "Clara destaque"
-
-#: theme.json
-msgctxt "Color name"
-msgid "Highlight dark"
-msgstr "Escura destaque"
 
 #: theme.json
 msgctxt "Color name"
@@ -518,28 +1363,48 @@ msgid "Helper dark"
 msgstr "Escura ajuda"
 
 #: theme.json
+msgctxt "Color name"
+msgid "Highlight pure"
+msgstr "Pura destaque"
+
+#: theme.json
+msgctxt "Color name"
+msgid "Highlight light"
+msgstr "Clara destaque"
+
+#: theme.json
+msgctxt "Color name"
+msgid "Highlight dark"
+msgstr "Escura destaque"
+
+#: theme.json
 msgctxt "Font size name"
-msgid "Huge"
+msgid "Hero"
 msgstr "Enorme"
 
 #: theme.json
 msgctxt "Font size name"
-msgid "Extra big"
-msgstr "Muito grande"
+msgid "Extra Extra Extra Large"
+msgstr "Extra Extra Extra Grande"
 
 #: theme.json
 msgctxt "Font size name"
-msgid "Very large"
-msgstr "Muito grande"
+msgid "Extra Extra Large"
+msgstr "Extra Extra Grande"
 
 #: theme.json
 msgctxt "Font size name"
-msgid "Big"
+msgid "Extra Large"
+msgstr "Muito Grande"
+
+#: theme.json
+msgctxt "Font size name"
+msgid "Large"
 msgstr "Grande"
 
 #: theme.json
 msgctxt "Font size name"
-msgid "Average"
+msgid "Medium"
 msgstr "Médio"
 
 #: theme.json
@@ -549,8 +1414,8 @@ msgstr "Pequeno"
 
 #: theme.json
 msgctxt "Font size name"
-msgid "Too small"
-msgstr "Muito pequeno"
+msgid "Extra Small"
+msgstr "Muito Pequeno"
 
 #: theme.json
 msgctxt "Font family name"
@@ -559,10 +1424,62 @@ msgstr "Primária"
 
 #: theme.json
 msgctxt "Font family name"
-msgid "System"
-msgstr "Sistema"
+msgid "Secondary"
+msgstr "Secundária"
+
+#: theme.json
+msgctxt "Font family name"
+msgid "Helper"
+msgstr "Auxiliar"
 
 #: theme.json
 msgctxt "Font family name"
 msgid "Title"
 msgstr "Título"
+
+#~ msgid "Pesquisar"
+#~ msgstr "Search"
+
+#~ msgid "error"
+#~ msgstr "erro"
+
+#~ msgid "Page not found"
+#~ msgstr "Página não encontrada"
+
+#~ msgid "Published in "
+#~ msgstr "Publicado em "
+
+#~ msgid ""
+#~ "Sorry, but nothing matched your search criteria. Please try again with "
+#~ "some different keywords."
+#~ msgstr ""
+#~ "Desculpe, mas nada corresponde aos seus critérios de busca. Por favor, "
+#~ "tente novamente com algumas palavras-chave diferentes."
+
+#~ msgctxt "Font size name"
+#~ msgid "Huge"
+#~ msgstr "Enorme"
+
+#~ msgctxt "Font size name"
+#~ msgid "Extra big"
+#~ msgstr "Muito grande"
+
+#~ msgctxt "Font size name"
+#~ msgid "Very large"
+#~ msgstr "Muito grande"
+
+#~ msgctxt "Font size name"
+#~ msgid "Big"
+#~ msgstr "Grande"
+
+#~ msgctxt "Font size name"
+#~ msgid "Average"
+#~ msgstr "Médio"
+
+#~ msgctxt "Font size name"
+#~ msgid "Too small"
+#~ msgstr "Muito pequeno"
+
+#~ msgctxt "Font family name"
+#~ msgid "System"
+#~ msgstr "Sistema"
