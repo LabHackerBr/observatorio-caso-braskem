@@ -237,3 +237,23 @@ function archive_filter_posts( $query ) {
     }
 }
 add_action( 'pre_get_posts', 'archive_filter_posts' );
+
+function rename_post_object() {
+    global $wp_post_types;
+    $labels                     = &$wp_post_types['post']->labels;
+    $labels->name               = __( 'News', 'hacklabr' );
+    $labels->singular_name      = __( 'News', 'hacklabr' );
+    $labels->add_new            = __( 'Add news', 'hacklabr' );
+    $labels->add_new_item       = __( 'Add news', 'hacklabr' );
+    $labels->edit_item          = __( 'Edit news', 'hacklabr' );
+    $labels->new_item           = __( 'News', 'hacklabr' );
+    $labels->view_item          = __( 'View news', 'hacklabr' );
+    $labels->search_items       = __( 'Search news', 'hacklabr' );
+    $labels->not_found          = __( 'No news found', 'hacklabr' );
+    $labels->not_found_in_trash = __( 'No news found in Trash', 'hacklabr' );
+    $labels->all_items          = __( 'All news', 'hacklabr' );
+    $labels->menu_name          = __( 'News', 'hacklabr' );
+    $labels->name_admin_bar     = __( 'News', 'hacklabr' );
+}
+
+add_action( 'init', 'rename_post_object' );
