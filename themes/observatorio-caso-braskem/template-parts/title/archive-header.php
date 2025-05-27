@@ -7,11 +7,11 @@ $title = '';
 
 if ( is_search() ) {
     $count = (int) $wp_query->found_posts;
-    $results_text = ($count === 1) ? __('resultado', 'hacklabr') : __('resultados', 'hacklabr');
+    $results_text = ($count === 1) ? __('result', 'hacklabr') : __('results', 'hacklabr');
 
     $title = sprintf(
         '%s <span class="search-page-results-count">(%d %s)</span>',
-        __('RESULTADO DE BUSCA', 'hacklabr'),
+        __('SEARCH RESULT', 'hacklabr'),
         $count,
         $results_text
     );

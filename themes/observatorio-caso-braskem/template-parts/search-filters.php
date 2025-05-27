@@ -6,7 +6,7 @@
 $current_filter_val = isset($_GET['filter_by_taxonomy']) ? sanitize_text_field($_GET['filter_by_taxonomy']) : '';
 $all_categories = get_categories(array('hide_empty' => 1));
 
-$current_filter_button_label = __('FILTRAR POR', 'hacklabr');
+$current_filter_button_label = __('FILTER BY', 'hacklabr');
 if ($current_filter_val === '') {
     if (array_key_exists('filter_by_taxonomy', $_GET) && $_GET['filter_by_taxonomy'] === '') {
         $current_filter_button_label = __('TODOS', 'hacklabr');
@@ -22,16 +22,16 @@ if ($current_filter_val === '') {
 
 $current_orderby_get = isset($_GET['orderby']) ? sanitize_text_field($_GET['orderby']) : 'relevance';
 $orderby_options_from_user = array(
-    'date_desc' => __('Mais recentes', 'hacklabr'),
-    'date_asc'  => __('Mais antigos', 'hacklabr'),
-    'title_asc' => __('Alfabética', 'hacklabr'),
+    'date_desc' => __('Latests', 'hacklabr'),
+    'date_asc'  => __('Oldestes', 'hacklabr'),
+    'title_asc' => __('Alphabetical', 'hacklabr'),
 );
 
-$current_orderby_button_label = __('ORGANIZAR POR', 'hacklabr');
+$current_orderby_button_label = __('ORDER BY', 'hacklabr');
 if (isset($orderby_options_from_user[$current_orderby_get])) {
     $current_orderby_button_label = esc_html(strtoupper($orderby_options_from_user[$current_orderby_get]));
 } elseif ($current_orderby_get === 'relevance' && array_key_exists('orderby', $_GET)) {
-    $current_orderby_button_label = __('ORGANIZAR POR', 'hacklabr');
+    $current_orderby_button_label = __('ORDER BY', 'hacklabr');
 }
 
 $current_order_val = 'DESC';
@@ -66,7 +66,7 @@ if (isset($_GET['order']) && in_array(strtoupper($_GET['order']), ['ASC', 'DESC'
         ?>
 
         <div class="filter-control search-filters__filter-by custom-dropdown-wrapper filter-by-taxonomy-wrapper">
-            <button type="button" class="custom-dropdown-trigger" data-placeholder="<?php echo esc_attr(__('FILTRAR POR', 'hacklabr')); ?>" aria-haspopup="listbox" aria-expanded="false">
+            <button type="button" class="custom-dropdown-trigger" data-placeholder="<?php echo esc_attr(__('FILTER BY', 'hacklabr')); ?>" aria-haspopup="listbox" aria-expanded="false">
                 <span class="custom-dropdown-icon filter-icon"></span>
                 <span class="custom-dropdown-label"><?php echo esc_html(strtoupper($current_filter_button_label)); ?></span>
                 <span class="custom-dropdown-arrow"></span>
@@ -87,14 +87,14 @@ if (isset($_GET['order']) && in_array(strtoupper($_GET['order']), ['ASC', 'DESC'
         </div>
 
         <div class="filter-control search-filters__organize-by custom-dropdown-wrapper organize-by-wrapper">
-             <button type="button" class="custom-dropdown-trigger" data-placeholder="<?php echo esc_attr(__('ORGANIZAR POR', 'hacklabr')); ?>" aria-haspopup="listbox" aria-expanded="false">
+             <button type="button" class="custom-dropdown-trigger" data-placeholder="<?php echo esc_attr(__('ORDER BY', 'hacklabr')); ?>" aria-haspopup="listbox" aria-expanded="false">
                 <span class="custom-dropdown-icon organize-icon"></span>
                 <span class="custom-dropdown-label"><?php echo esc_html(strtoupper($current_orderby_button_label)); ?></span>
                 <span class="custom-dropdown-arrow"></span>
             </button>
             <ul class="custom-dropdown-options" role="listbox" style="display: none;">
                 <?php
-                 $label_relevance = __('ORGANIZAR POR', 'hacklabr');
+                 $label_relevance = __('ORDER BY', 'hacklabr');
                  echo '<li role="option" data-value="relevance" data-label="' . esc_attr(strtoupper($label_relevance)) . '" class="' . ($current_orderby_get === 'relevance' ? 'selected' : '') . '">' . esc_html(strtoupper($label_relevance)) . '</li>';
 
                 foreach ($orderby_options_from_user as $value => $label) {

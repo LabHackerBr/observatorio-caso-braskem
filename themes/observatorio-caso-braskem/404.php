@@ -13,12 +13,12 @@
                 <?php _e('Oops', 'hacklabr') ?>
                 <img src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/exclamation-point.png" alt="exclamation-point" class="exclamation-icon">
             </span>
-            <?php _e('Não encontramos a página que você tentou acessar!', 'hacklabr') ?>
+            <?php _e("We couldn't find the page you tried to access!", 'hacklabr') ?>
         </h2>
 
-        <p class="error-404__text"><?php _e('Não conseguimos encontrar o que você está procurando, digite o que você precisa na barra de pesquisa ali em cima.', 'hacklabr') ?></p>
+        <p class="error-404__text"><?php _e("We couldn't find what you're looking for, type what you need in the search bar up there.", 'hacklabr') ?></p>
 
-        <a href="<?php echo home_url(); ?>" class="error-404__button"><?php _e('VOLTAR PARA HOME', 'hacklabr') ?></a>
+        <a href="<?php echo home_url(); ?>" class="error-404__button"><?php _e('BACK TO HOMEPAGE', 'hacklabr') ?></a>
     </div>
 </div>
 
