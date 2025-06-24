@@ -79,7 +79,6 @@
                 'post_type'      => 'post',
                 'posts_per_page' => 6,
                 'paged'          => $paged,
-                'offset'         => ($paged - 1) * 6 + $offset,
                 'tax_query'      => $tax_query,
             ];
 
