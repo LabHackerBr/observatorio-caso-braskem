@@ -100,7 +100,6 @@
     </div>
 
     <?php
-    // Paginação do loop filtrado
     if ($filtered_query->max_num_pages > 1) {
         the_posts_pagination([
             'total'     => $filtered_query->max_num_pages,
