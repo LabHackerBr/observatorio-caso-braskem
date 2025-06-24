@@ -56,12 +56,12 @@
 
 .home{
     background-color: $color--primary-dark;
-    > #app{
-        background: url('#{$path--assets}/images/home/bg-home-red.svg');
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: cover;
-    }
+    // > #app{
+    //     background: url('#{$path--assets}/images/home/bg-home-red.svg');
+    //     background-repeat: no-repeat;
+    //     background-position: center;
+    //     background-size: cover;
+    // }
     .post-content{
         padding-top: 0;
         p{

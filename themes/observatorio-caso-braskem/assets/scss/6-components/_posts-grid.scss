@@ -170,3 +170,50 @@
         align-items: center;
     }
 }
+
+
+//Archive de Noticias
+
+.post-grid-latest-posts{
+    display:grid;
+    grid-template-columns: 2.03fr .97fr;
+    gap: $gap--large;
+    background-color: $color--high-pure;
+    margin-top: -4rem;
+
+    @include mobile{
+        grid-template-columns: 1fr;
+        margin-top: -2rem;
+
+    }
+    .post-grid-latest-posts__others{
+        display: flex;
+        flex-direction: column;
+        gap: $gap--large;
+        .post-card__title {
+            font-size: $font-size--medium;
+        }
+    }
+}
+
+.post-grid-filters{
+    display:grid;
+    grid-template-columns: 2.03fr .97fr;
+    gap: $gap--large;
+    @include mobile{
+        grid-template-columns: 1fr;
+        margin-top: 0rem;
+
+    }
+    .posts-grid {
+        &__content {
+            display:grid;
+            grid-template-columns: 1fr 1fr;
+            .post-card__excerpt{
+                display: none;
+            }
+
+        }
+
+    }
+}

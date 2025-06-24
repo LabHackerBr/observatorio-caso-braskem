@@ -137,6 +137,32 @@
         }
     }
 
+    &__infos{
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+        .filter-posts{
+            .filter-buttons{
+                gap: 1rem;
+                display: flex;
+                a{
+                    background-color: $color--secondary-dark;
+                    border: unset;
+                    border-radius: unset;
+                    color: $color--high-pure;
+                    font-family: $font-family--heading;
+                    font-size: $font-size--small;
+                    font-style: normal;
+                    font-weight: $font-weight--bold;
+                    line-height: normal;
+                    text-transform: uppercase;
+                    text-align: center;
+                    text-decoration: none;
+                    padding: .5rem 1rem;
+                }
+            }
+        }
+    }
+
     &__title *,
     &__excerpt *,
     &__infos *,
@@ -145,4 +171,22 @@
         // margin-bottom: $margin--large;
     }
 
+}
+
+.archive-title{
+    padding-top: 4rem;
+    padding-bottom: 8rem;
+    background-color: $color--primary-pure;
+    color: $color--high-pure;
+    h1{
+        font-size: 2rem;
+        display: flex;
+        align-items: center;
+        gap: .5rem;
+        &::before{
+            content: url('#{$path--assets}/images/exclamacao.png');
+            padding-top: 3px;
+        }
+
+    }
 }

@@ -43,30 +43,77 @@
     }
 
     &--cover {
+        position: relative;
 
-        @include mobile-up {
-            position: relative;
+        .post-card__content {
+            background: linear-gradient(180deg, rgba(0, 0, 0, 0) 50%, #000 100%);
+            bottom: 0;
+            color: $color--high-pure;
+            padding: $padding--medium;
+            position: absolute;
+            width: 100%;
+            border-radius: 0;
+        }
 
-            .post-card__content {
-                background: linear-gradient(180deg, rgba(0, 0, 0, 0) 50%, #000 100%);
-                bottom: 0;
+        .post-card__excerpt{
+            display: none;
+        }
+
+        .post-card__image{
+            display: flex;
+            flex-direction: column-reverse;
+            img{
+                border-radius: 0;
+            }
+        }
+
+        .post-card__category{
+            position:absolute;
+            top: 1rem;
+            left: 1rem;
+            .tag{
+                background-color: $color--secondary-dark;
+                border: unset;
+                border-radius: unset;
                 color: $color--high-pure;
-                padding: $padding--medium;
-                position: absolute;
-                width: 100%;
+                font-family: $font-family--heading;
+                font-size: $font-size--small;
+                font-style: normal;
+                font-weight: $font-weight--bold;
+                line-height: normal;
+                text-transform: uppercase;
+                text-align: center;
+                text-decoration: none;
+                padding: .5rem 1rem;
             }
+        }
 
-            .post-card__category {
+        .post-card__category {
 
-                .post-categories > li {
-                    border: solid $border-width--medium $color--high-pure;
+            .post-categories > li {
+                border: solid $border-width--medium $color--high-pure;
+                color: $color--high-pure;
+            }
+        }
+
+        .post-card__meta{
+            display: flex;
+            gap: 1rem;
+            .post-card__author{
+                span {
                     color: $color--high-pure;
+                    font-size: $font-size--small;
                 }
+                color: $color--secondary-light;
+                font-size: $font-size--medium;
+                letter-spacing: 0.16px;
             }
 
-            .post-card__title {
-                font-size: $font-size--xx-large;
-            }
+        }
+
+        .post-card__title {
+            font-size: $font-size--xx-large;
+            text-transform: uppercase;
         }
     }
 
