@@ -92,18 +92,6 @@
                 echo '<p>' . __('Nenhum post encontrado.', 'escola-de-dados') . '</p>';
             endif;
             ?>
-             <?php
-            // Paginação do loop filtrado
-            if ($filtered_query->max_num_pages > 1) {
-                the_posts_pagination([
-                    'total'     => $filtered_query->max_num_pages,
-                    'current'   => $paged,
-                    'prev_text' => __('<iconify-icon icon="iconamoon:arrow-left-2-bold"></iconify-icon>', 'hacklbr'),
-                    'next_text' => __('<iconify-icon icon="iconamoon:arrow-right-2-bold"></iconify-icon>', 'hacklbr'),
-                ]);
-            }
-            wp_reset_postdata();
-            ?>
         </main>
 
         <aside class="archive__sidebar">
@@ -111,7 +99,18 @@
         </aside>
     </div>
 
-
+    <?php
+    // Paginação do loop filtrado
+    if ($filtered_query->max_num_pages > 1) {
+        the_posts_pagination([
+            'total'     => $filtered_query->max_num_pages,
+            'current'   => $paged,
+            'prev_text' => __('<iconify-icon icon="iconamoon:arrow-left-2-bold"></iconify-icon>', 'hacklbr'),
+            'next_text' => __('<iconify-icon icon="iconamoon:arrow-right-2-bold"></iconify-icon>', 'hacklbr'),
+        ]);
+    }
+    wp_reset_postdata();
+    ?>
 
 </div><!-- /.container -->
 
