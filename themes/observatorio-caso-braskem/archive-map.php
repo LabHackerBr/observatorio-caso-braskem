@@ -5,7 +5,7 @@
         <?php
         $post_type = get_post_type();
 
-        if ( is_post_type_archive('storymap') ) {
+        if ( is_post_type_archive('map') ) {
             echo 'Mapas';
         }
 
