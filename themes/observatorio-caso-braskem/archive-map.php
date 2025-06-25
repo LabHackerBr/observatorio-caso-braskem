@@ -5,8 +5,8 @@
         <?php
         $post_type = get_post_type();
 
-        if ( is_home() ) {
-            echo 'Notícias';
+        if ( is_post_type_archive('storymap') ) {
+            echo 'Mapas';
         }
 
         ?>
@@ -20,7 +20,7 @@
         <div class="post-grid-latest-posts__featured">
             <?php
             $args_last = [
-                'post_type' => 'post',
+                'post_type' => 'storymap',
                 'posts_per_page' => 1,
                 'ignore_sticky_posts' => true,
                 'no_found_rows' => true
@@ -38,7 +38,7 @@
         <div class="post-grid-latest-posts__others">
             <?php
             $args_two_posts = [
-                'post_type' => 'post',
+                'post_type' => 'storymap',
                 'posts_per_page' => 2,
                 'offset' => 1,
                 'ignore_sticky_posts' => true,
@@ -77,7 +77,7 @@
             }
 
             $args_filtered = [
-                'post_type'      => 'post',
+                'post_type'      => 'storymap',
                 'posts_per_page' => 6,
                 'paged'          => $paged,
                 'tax_query'      => $tax_query,
