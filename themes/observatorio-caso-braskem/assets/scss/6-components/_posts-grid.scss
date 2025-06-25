@@ -226,7 +226,8 @@
     }
     .post-grid-latest-posts{
         .post-card__title {
-            display: none;
+            font-size: size(32);
+            text-transform: uppercase;
         }
     }
     .archive__sidebar{
@@ -251,8 +252,8 @@
         width: 100%;
     }
     .post-card--horizontal{
-        grid-template-columns: 1.2 .8fr;
-        gap: 2em;
+        grid-template-columns: 1.2fr .8fr;
+        gap: 2rem;
         .post-card__image{
             img{
                 aspect-ratio: 4 / 3;
@@ -266,5 +267,8 @@
         img{
             border-radius: 0;
         }
+    }
+    .pagination {
+        padding-bottom: 6rem;
     }
 }
