@@ -6,6 +6,10 @@
     }
 }
 .fade-cover-down{
+    padding: 0 !important;
+    #sb_instagram{
+        max-width: 100% !important;
+    }
     .wp-block-cover__background{
         opacity: 1 !important;
         background-color: transparent !important;
