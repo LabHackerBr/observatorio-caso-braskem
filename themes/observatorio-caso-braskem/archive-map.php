@@ -46,7 +46,7 @@
 
             $args_posts = [
                 'post_type'           => 'storymap',
-                'posts_per_page'      => 6,
+                'posts_per_page'      => 4,
                 'paged'               => $paged,
                 'post__not_in'        => $featured_id ? [$featured_id] : [],
                 'ignore_sticky_posts' => true,
