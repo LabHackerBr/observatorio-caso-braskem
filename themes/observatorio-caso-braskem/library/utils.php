@@ -257,3 +257,19 @@ function rename_post_object() {
 }
 
 add_action( 'init', 'rename_post_object' );
+
+function override_storymap_template($template) {
+	global $post;
+
+	if (is_singular('storymap')) {
+		return get_stylesheet_directory() . '/single-storymap.php';
+	}
+
+    if(is_singular('map')) {
+        return get_stylesheet_directory() . '/single-map.php';
+    }
+
+	return $template;
+}
+
+add_filter('single_template', 'override_storymap_template', 20, 1);

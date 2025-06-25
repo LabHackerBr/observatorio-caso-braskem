@@ -1,0 +1,126 @@
+.custom-storymap-header{
+    background-color: $color--primary-pure;
+    h2{
+        color: $color--high-pure;
+        text-transform: uppercase;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: $padding--medium 0;
+        &::before{
+            content: url('#{$path--assets}/images/exclamacao.png');
+            padding-top: 3px;
+        }
+    }
+}
+
+.story-map {
+
+    .storymap-features {
+        width: 100% !important;
+        max-width: 1170px !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        padding-top: 25vh !important;
+        @media(max-width: 782px){
+            position: relative !important;
+            top: -15vh !important;
+        }
+        @media(max-width: 567px){
+            top: -20vh !important;
+        }
+
+        @media(max-width: 493px){
+            top: -25vh !important;
+        }
+        @media(max-width: 375px){
+            top: -30vh !important;
+        }
+
+        @media(max-width: 360px){
+            top: -13vh !important;
+        }
+
+        :nth-child(2n){
+            margin-left: auto !important;
+        }
+        @media(max-width: 1199px) {
+            padding: 0rem .5rem !important;
+        }
+        .step {
+            border-radius: 0 !important;
+            box-shadow: none !important;
+            @media(min-width: 992px) {
+                width: 40% !important;
+            }
+            .light{
+                border-radius: 0 !important;
+                box-shadow: none !important;
+                border-top: 1.7rem solid $color--secondary-pure;
+                padding: size(60) size(36)!important;
+                @media(max-width: 781px) {
+                    padding: size(25) size(16) !important;
+                }
+            }
+            .title {
+
+                p{
+                    color: $color--low-pure !important;
+                    font-family: $font-family--primary;
+                    font-size: $font-size--large;
+                    margin-top: 0;
+                    margin-bottom: $font-size--medium;
+                    text-transform: uppercase;
+                    font-weight: $font-weight--bold;
+                    @media(max-width: 767px){
+                        text-transform: none;
+                        font-size: size(22);
+                    }
+                }
+            }
+
+            .slide-description {
+
+                p{
+                    line-height: 160%;
+                    font-size: size(20) !important;
+                }
+                p:blank {
+                    display: none;
+                }
+            }
+        }
+        .step.active {
+            @media(min-width: 992px) {
+                width: 40% !important;
+            }
+        }
+
+        .navigate-button-display{
+            text-transform: none;
+            font-size: 1rem !important;
+            font-weight: $font-weight--regular !important
+        }
+    }
+
+    .navigate-button-display {
+        height: size(44);
+        text-transform: none;
+    }
+}
+
+.single-storymap{
+    footer{
+        display: inherit;
+        @media(max-width: 767px){
+            padding-top: 0 !important;
+        }
+        .wp-block-cover.newsletter{
+            margin-top: 0;
+        }
+        .main-footer__widgets{
+            padding-top: 0 !important;
+            padding-left: 0 !important;
+        }
+    }
+}
