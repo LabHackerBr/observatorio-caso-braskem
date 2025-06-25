@@ -218,6 +218,19 @@
     }
 }
 
+.blog{
+    .archive__sidebar{
+        .before-sidebar-default:nth-of-type(1){
+            .wp-block-group{
+                .wp-block-group{
+                    margin-top: 0 !important;
+                    margin-bottom: 2rem !important;
+                }
+            }
+        }
+    }
+}
+
 //Archive de storymaps
 
 .post-type-archive-map{
