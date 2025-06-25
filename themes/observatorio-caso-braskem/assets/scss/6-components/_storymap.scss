@@ -17,14 +17,14 @@
 .story-map {
 
     .storymap-header {
-        background: #383c40 !important;
-        opacity:95% !important;
+        background: #000!important;
+        opacity:65% !important;
         width: 100% !important;
         border-radius: 0 !important;
         padding: 3rem 0 !important;
         margin-bottom: 50px !important;
         position: absolute;
-        top: -100vh;
+        top: 0vh;
         @media(max-width: 767px){
             padding: 1rem 1rem 3rem !important;
         }
@@ -114,7 +114,7 @@
         max-width: 1170px !important;
         margin-left: auto !important;
         margin-right: auto !important;
-        padding-top: 25vh !important;
+        padding-top: 90vh !important;
         @media(max-width: 782px){
             position: relative !important;
             top: -15vh !important;
