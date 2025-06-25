@@ -16,6 +16,99 @@
 
 .story-map {
 
+    .storymap-header {
+        background: #383c40 !important;
+        opacity:95% !important;
+        width: 100% !important;
+        border-radius: 0 !important;
+        padding: 3rem 0 !important;
+        margin-bottom: 50px !important;
+        position: absolute;
+        top: -100vh;
+        @media(max-width: 767px){
+            padding: 1rem 1rem 3rem !important;
+        }
+
+        .storymap-page-title {
+            filter: none !important;
+            font-size:size(48) !important;
+            color: $color--high-pure !important;
+            max-width: size(770);
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 3rem;
+            margin-bottom: 1rem;
+            @media(max-width: 767px){
+                font-size:size(20) !important;
+                margin-top: 0 !important;
+                text-transform: uppercase;
+                margin-top: 1.8rem !important;
+            }
+        }
+
+        .post-info {
+            text-transform: uppercase;
+            filter: none !important;
+            font-weight: $font-weight--bold;
+            max-width: size(770);
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 4rem;
+            p{
+                color: $color--high-pure !important;
+                @media(max-width: 767px){
+                    font-size:size(12) !important;
+                }
+                a {
+                    text-decoration: none;
+                    color: $color--high-pure !important;
+                    @media(max-width: 767px){
+                        font-size:size(12) !important;
+                    }
+                }
+            }
+        }
+
+        .storymap-description{
+            filter: none !important;
+            font-family: $font-family--primary !important;
+            color: $color--high-pure;
+            font-size: size(32);
+            max-width: size(770);
+            margin-left: auto;
+            margin-right: auto;
+            p{
+                font-family: $font-family--primary !important;
+                color: $color--high-pure !important;
+                font-size: $font-size--large !important;
+                font-weight: $font-weight--regular !important;
+                @media(max-width: 767px){
+                    font-size:size(14) !important;
+                    line-height: 160%;
+                    font-weight: $font-weight--light !important;
+                }
+            }
+        }
+
+        .storymap-start-button {
+            height: size(44);
+            text-transform: none;
+            font-size: 1rem !important;
+            font-weight: $font-weight--regular !important;
+            background-color: $color--primary-light;
+            color: $color--high-pure !important;
+            border: 4px;
+
+        }
+
+        .skip-intro-link {
+            display: none;
+            // margin: $font-size--medium 0 $font-size--large;
+            // font-weight: $font-weight--regular !important;
+            // font-family: $font-family--primary !important;
+        }
+    }
+
     .storymap-features {
         width: 100% !important;
         max-width: 1170px !important;

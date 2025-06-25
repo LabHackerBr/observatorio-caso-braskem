@@ -183,6 +183,7 @@
         display: flex;
         align-items: center;
         gap: .5rem;
+        text-transform: uppercase;
         &::before{
             content: url('#{$path--assets}/images/exclamacao.png');
             padding-top: 3px;
