@@ -107,6 +107,9 @@
 
         .latest-horizontal-posts-block__arrows, .latest-horizontal-posts-block__dots{
             width: 130% !important;
+            @include mobile{
+                width: 100% !important;
+            }
         }
 
         .latest-horizontal-posts-block__footer{
@@ -116,6 +119,7 @@
         .latest-horizontal-posts-block__content{
             @include mobile{
                 padding-inline: 0;
+                width: 70%;
             }
         }
 
@@ -144,11 +148,21 @@
                 text-transform: uppercase;
                 text-decoration: none;
                 font-size: 20px;
+                position: relative;
+                bottom: 0;
+                left: 1rem;
+                justify-self: flex-end;
+
             }
             &-content{
+                display: flex;
+                flex-flow: column;
+                justify-content: flex-end;
                 position: relative;
-                top: -2.5rem;
-                left: 1rem;
+                bottom: 3.4rem;
+                left: 0;
+                height: 55px;
+                background: linear-gradient(0deg,rgba(51, 9, 6, 0.85) 0%, rgba(51, 9, 6, 0.4) 70%, rgba(99, 15, 5, 0) 100%);
             }
         }
     }
