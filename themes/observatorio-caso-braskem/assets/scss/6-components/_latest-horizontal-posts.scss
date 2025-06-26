@@ -106,7 +106,7 @@
         }
 
         .latest-horizontal-posts-block__arrows, .latest-horizontal-posts-block__dots{
-            width: 100% !important;
+            width: 130% !important;
         }
 
         .latest-horizontal-posts-block__footer{
@@ -114,7 +114,6 @@
         }
 
         .latest-horizontal-posts-block__content{
-            padding-inline: 2rem 0;
             @include mobile{
                 padding-inline: 0;
             }
