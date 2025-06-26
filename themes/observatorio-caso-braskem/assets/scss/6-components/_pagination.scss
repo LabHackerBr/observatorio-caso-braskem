@@ -34,3 +34,20 @@
         }
     }
 }
+
+.post-type-archive-map{
+    .pagination{
+        margin: 0rem auto;
+        &__previous,
+        &__next {
+            background-color: $color--high-pure;
+        }
+
+        &__number {
+            color: $color--high-pure;
+            &--current {
+                background-color: $color--secondary-pure;
+            }
+        }
+    }
+}
