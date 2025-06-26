@@ -198,6 +198,9 @@
             content: url('#{$path--assets}/images/exclamacao.png');
             padding-top: 3px;
         }
+        @include mobile{
+            font-size: size(20);
+        }
 
     }
 }
