@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
     let allFiles = [];
-    const fileInput = document.getElementById('custom-file-upload');
+    const fileInput = document.querySelectorAll('.add-file');
     const fileList = document.querySelector('.uploaded-files-list');
 
     if (!fileInput || !fileList) return;
@@ -31,27 +31,30 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    fileInput.addEventListener('change', function() {
-        if (this.files.length > 0) {
-            Array.from(this.files).forEach(newFile => {
-                const fileExists = allFiles.some(existingFile =>
-                    existingFile.name === newFile.name &&
-                    existingFile.size === newFile.size &&
-                    existingFile.lastModified === newFile.lastModified
-                );
+    fileInput.forEach((fileInput) => {
+        console.log(fileInput);
+        fileInput.addEventListener('change', function() {
+            if (this.files.length > 0) {
+                Array.from(this.files).forEach(newFile => {
+                    const fileExists = allFiles.some(existingFile =>
+                        existingFile.name === newFile.name &&
+                        existingFile.size === newFile.size &&
+                        existingFile.lastModified === newFile.lastModified
+                    );
 
-                if (!fileExists) {
-                    allFiles.push(newFile);
-                }
-            });
+                    if (!fileExists) {
+                        allFiles.push(newFile);
+                    }
+                });
 
-            updateFileList();
+                updateFileList();
 
-            const dataTransfer = new DataTransfer();
-            allFiles.forEach(file => dataTransfer.items.add(file));
-            fileInput.files = dataTransfer.files;
-        }
-    });
+                const dataTransfer = new DataTransfer();
+                allFiles.forEach(file => dataTransfer.items.add(file));
+                fileInput.files = dataTransfer.files;
+            }
+        });
+    })
 
     fileList.addEventListener('click', function(e) {
         const removeBtn = e.target.closest('.remove-file');
