@@ -367,6 +367,14 @@
                 grid-template-columns: 1fr;
                 gap: 1rem;
             }
+            .post-card__title{
+                a{
+                    @include mobile{
+                        font-size: size(20);
+                    }
+                }
+
+            }
         }
     }
     .archive__sidebar-desktop{

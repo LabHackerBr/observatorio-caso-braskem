@@ -1,5 +1,9 @@
 .custom-storymap-header{
     background-color: $color--primary-pure;
+    @include mobile{
+        background-color: #490806;
+    }
+
     h2{
         color: $color--high-pure;
         text-transform: uppercase;
@@ -7,6 +11,10 @@
         align-items: center;
         justify-content: center;
         padding: $padding--medium 0;
+        @include mobile{
+            font-size: size(20);
+            padding: size(37) 0;
+        }
         &::before{
             content: url('#{$path--assets}/images/exclamacao.png');
             padding-top: 3px;
@@ -18,7 +26,7 @@
 
     .storymap-header {
         background: #000!important;
-        opacity:65% !important;
+        opacity: 90% !important;
         width: 100% !important;
         border-radius: 0 !important;
         padding: 3rem 0 !important;
@@ -53,7 +61,7 @@
             max-width: size(770);
             margin-left: auto;
             margin-right: auto;
-            margin-bottom: 4rem;
+            margin-bottom: 3rem;
             p{
                 color: $color--high-pure !important;
                 @media(max-width: 767px){
@@ -99,7 +107,8 @@
             color: $color--high-pure !important;
             border: 4px;
             border-radius: 4px;
-
+            margin-top: 6rem;
+            margin-bottom: 3rem;
         }
 
         .skip-intro-link {
@@ -115,7 +124,11 @@
         max-width: 1170px !important;
         margin-left: auto !important;
         margin-right: auto !important;
-        padding-top: 90vh !important;
+        padding-top: 110vh !important;
+        @include mobile{
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
 
         :nth-child(2n){
             margin-left: auto !important;
@@ -156,8 +169,12 @@
             .slide-description {
 
                 p{
-                    line-height: 160%;
+                    line-height: 29px;
                     font-size: size(20) !important;
+                    @include mobile{
+                        font-size: size(16) !important;
+                        line-height: 23.2px;
+                    }
                 }
                 p:blank {
                     display: none;
@@ -181,6 +198,10 @@
         height: size(44);
         text-transform: none;
     }
+}
+
+.story-map .step>div {
+    opacity: 1 !important;
 }
 
 .single-storymap{
