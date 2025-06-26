@@ -1,4 +1,5 @@
 .more-button{
+    margin-block-start: 0;
     .wp-block-button{
         &__link{
             padding: $padding--x-small $padding--x-large;
@@ -9,6 +10,10 @@
                 font-size: $font-size--medium !important;
             }
         }
+    }
+    &.tl-btn{
+        position: relative;
+        bottom: 3rem;
     }
 }
 
