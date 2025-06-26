@@ -13,12 +13,15 @@
     scrollbar-width: none;
 
     &__heading{
-        min-width: 320px;
+        min-width: 335px;
         @media (max-width: 1550px) {
             min-width: 8%;
         }
-        @media (max-width: 1360px) {
+        @media (max-width: 1370px) {
             min-width: 4%;
+        }
+        @media (max-width: 1280px) {
+            min-width: 2%;
         }
     }
 
