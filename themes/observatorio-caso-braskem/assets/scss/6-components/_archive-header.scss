@@ -140,11 +140,20 @@
     &__infos{
         margin-top: 2rem;
         margin-bottom: 2rem;
+        @include mobile{
+            margin-top: 1.2rem    ;
+            margin-bottom: -4.5rem;
+        }
         .filter-posts{
             .filter-buttons{
                 gap: 1rem;
                 display: flex;
                 flex-wrap: wrap;
+                @include mobile{
+                    flex-wrap: nowrap;
+                    overflow-x: scroll;
+                    white-space: nowrap;
+                }
                 a{
                     background-color: $color--secondary-dark;
                     border: unset;

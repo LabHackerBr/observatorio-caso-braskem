@@ -63,7 +63,7 @@
             ?>
         </main>
 
-        <aside class="archive__sidebar">
+        <aside class="archive__sidebar-desktop">
             <?php dynamic_sidebar('sidebar-default'); ?>
         </aside>
     </div>
@@ -74,6 +74,10 @@
         'next_text' => __('<iconify-icon icon="iconamoon:arrow-right-2-bold"></iconify-icon>', 'hacklbr'),
     ]);
     ?>
+
+        <aside class="archive__sidebar-mobile">
+            <?php dynamic_sidebar('sidebar-default'); ?>
+        </aside>
 
 </div><!-- /.container -->
 
