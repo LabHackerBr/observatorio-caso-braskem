@@ -41,6 +41,17 @@
         &__previous,
         &__next {
             background-color: $color--high-pure;
+            iconify-icon{
+                color: $color--secondary-pure;
+                font-size: size(20);
+                svg{
+                    path{
+                        stroke{
+                            color: $color--secondary-pure;
+                        }
+                    }
+                }
+            }
         }
 
         &__number {
