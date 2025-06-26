@@ -41,7 +41,7 @@
             @media(max-width: 767px){
                 font-size:size(20) !important;
                 margin-top: 0 !important;
-                text-transform: uppercase;
+
                 margin-top: 1.8rem !important;
             }
         }
@@ -83,9 +83,9 @@
                 font-size: $font-size--large !important;
                 font-weight: $font-weight--regular !important;
                 @media(max-width: 767px){
-                    font-size:size(14) !important;
-                    line-height: 160%;
-                    font-weight: $font-weight--light !important;
+                    font-size:size(20) !important;
+                    line-height: 32px;
+
                 }
             }
         }
@@ -98,6 +98,7 @@
             background-color: $color--primary-light;
             color: $color--high-pure !important;
             border: 4px;
+            border-radius: 4px;
 
         }
 
@@ -115,31 +116,11 @@
         margin-left: auto !important;
         margin-right: auto !important;
         padding-top: 90vh !important;
-        @media(max-width: 782px){
-            position: relative !important;
-            top: -15vh !important;
-        }
-        @media(max-width: 567px){
-            top: -20vh !important;
-        }
-
-        @media(max-width: 493px){
-            top: -25vh !important;
-        }
-        @media(max-width: 375px){
-            top: -30vh !important;
-        }
-
-        @media(max-width: 360px){
-            top: -13vh !important;
-        }
 
         :nth-child(2n){
             margin-left: auto !important;
         }
-        @media(max-width: 1199px) {
-            padding: 0rem .5rem !important;
-        }
+
         .step {
             border-radius: 0 !important;
             box-shadow: none !important;
