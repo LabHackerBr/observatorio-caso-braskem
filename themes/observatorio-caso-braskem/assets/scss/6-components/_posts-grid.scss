@@ -300,6 +300,7 @@
         }
     }
     .archive__sidebar-mobile{
+        margin-top: -2rem;
         @media(min-width: 783px){
             display: none;
         }
@@ -337,9 +338,6 @@
             margin: 1rem auto 0;
         }
     }
-    .archive__sidebar-mobile{
-        margin-top: -2rem;
-    }
 }
 
 //Archive de storymaps
@@ -355,6 +353,9 @@
         }
     }
     .archive__sidebar-desktop{
+        @media(max-width: 782px){
+            display: none;
+        }
         .before-sidebar-default:nth-of-type(1){
             display: none;
         }
@@ -400,5 +401,10 @@
     }
     .pagination {
         padding-bottom: 6rem;
+    }
+    .archive__sidebar-mobile{
+        @media(min-width: 783px){
+            display: none;
+        }
     }
 }
