@@ -220,6 +220,14 @@
 
         }
 
+
+
+    }
+
+    .post-card__title{
+        @include mobile{
+            font-size: 1rem !important;
+        }
     }
 }
 
@@ -297,6 +305,9 @@
     .post-card--horizontal{
         grid-template-columns: 2.03fr .97fr;
         gap: 2rem;
+        @include mobile{
+            grid-template-columns: 1fr;
+        }
     }
     .post-card__meta{
         display: none;

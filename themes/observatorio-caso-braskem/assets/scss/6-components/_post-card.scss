@@ -114,6 +114,10 @@
         .post-card__title {
             font-size: $font-size--xx-large;
             text-transform: uppercase;
+            @include mobile{
+                font-size: 1.5rem;
+
+            }
         }
     }
 

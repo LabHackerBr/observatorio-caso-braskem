@@ -61,19 +61,23 @@
                 echo '<p>' . __('Nenhum post encontrado.', 'escola-de-dados') . '</p>';
             endif;
             ?>
+
+        <?php
+        the_posts_pagination([
+            'prev_text' => __('<iconify-icon icon="iconamoon:arrow-left-2-bold"></iconify-icon>', 'hacklbr'),
+            'next_text' => __('<iconify-icon icon="iconamoon:arrow-right-2-bold"></iconify-icon>', 'hacklbr'),
+        ]);
+        ?>
         </main>
+
+
 
         <aside class="archive__sidebar">
             <?php dynamic_sidebar('sidebar-default'); ?>
         </aside>
     </div>
 
-    <?php
-    the_posts_pagination([
-        'prev_text' => __('<iconify-icon icon="iconamoon:arrow-left-2-bold"></iconify-icon>', 'hacklbr'),
-        'next_text' => __('<iconify-icon icon="iconamoon:arrow-right-2-bold"></iconify-icon>', 'hacklbr'),
-    ]);
-    ?>
+
 
 </div><!-- /.container -->
 
