@@ -55,7 +55,7 @@
             $posts_query = new WP_Query($args_posts);
             if ($posts_query->have_posts()) :
                 while ($posts_query->have_posts()) : $posts_query->the_post();
-                    get_template_part('template-parts/post-card', 'vertical');
+                    get_template_part('template-parts/post-card', 'cover');
                 endwhile;
             else :
                 echo '<p>' . __('Nenhum post encontrado.', 'escola-de-dados') . '</p>';
