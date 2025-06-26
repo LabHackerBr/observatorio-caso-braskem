@@ -75,9 +75,9 @@ function latest_horizontal_posts_callback( $attributes ) {
 
         $cached_posts = false;
 
-        if ( ! is_admin() && ( ! defined( 'REST_REQUEST' ) || ! REST_REQUEST ) ) {
-            $cached_posts = get_transient( $cache_key );
-        }
+        // if ( ! is_admin() && ( ! defined( 'REST_REQUEST' ) || ! REST_REQUEST ) ) {
+        //     $cached_posts = get_transient( $cache_key );
+        // }
 
         if ( false === $cached_posts ) {
             $post__not_in = array_merge( $latest_blocks_posts_ids, array_keys( $newspack_blocks_post_id ) );
