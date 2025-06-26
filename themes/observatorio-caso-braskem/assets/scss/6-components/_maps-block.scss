@@ -18,6 +18,7 @@
     .latest-horizontal-posts-block {
         >.container{
             flex-flow: column-reverse;
+            padding-bottom: $padding--small !important;
         }
     }
 
@@ -26,6 +27,13 @@
             font-size: 24px !important;
             font-weight: $font-weight--bold;
             margin-block-start: 0 !important;
+        }
+    }
+
+    .more-button{
+        padding-left: $padding--large;
+        @include mobile{
+            padding-left: 0;
         }
     }
 }

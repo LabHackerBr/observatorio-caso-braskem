@@ -42,9 +42,9 @@ function render_stories_mosaic_callback( $attributes ) {
         $cache_key = 'hacklabr_vertical_' . $attributes_hash;
         $cached_posts = false;
 
-        if ( ! is_admin() && ( ! defined( 'REST_REQUEST' ) || ! REST_REQUEST ) ) {
-            $cached_posts = get_transient( $cache_key );
-        }
+        // if ( ! is_admin() && ( ! defined( 'REST_REQUEST' ) || ! REST_REQUEST ) ) {
+        //     $cached_posts = get_transient( $cache_key );
+        // }
 
         if ( is_archive() || false === $cached_posts ) {
             $post__not_in = [];

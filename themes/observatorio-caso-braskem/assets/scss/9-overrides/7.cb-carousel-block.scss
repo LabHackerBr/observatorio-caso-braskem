@@ -26,5 +26,8 @@
     }
     .swiper{
         margin-inline: $margin--medium;
+        &-wrapper{
+            align-items: center;
+        }
     }
 }

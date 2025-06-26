@@ -130,7 +130,7 @@
                 .ctl-icondot{
                     top: 31% !important;
                     @media (max-width: 1439px) {
-                        top: 41% !important;
+                        top: 43% !important;
                     }
                     @include mobile{
                         top: 43% !important;
@@ -172,7 +172,7 @@
     flex-flow: column;
     bottom: 8%;
     @media (max-width: 1439px) {
-        bottom: 15%;
+        bottom: 18%;
     }
     @include mobile{
         bottom: 18%;
@@ -187,7 +187,7 @@
     flex-flow: column;
     bottom: 38%;
     @media (max-width: 1439px) {
-        bottom: 26%;
+        bottom: 23%;
     }
     @include mobile{
         bottom: 20%;
