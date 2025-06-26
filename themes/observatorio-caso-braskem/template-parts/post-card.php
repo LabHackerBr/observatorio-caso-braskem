@@ -35,9 +35,20 @@ $categories = get_the_category();
                 <?php endforeach; ?>
             </div>
         <?php endif; ?>
+
     </header>
 
     <main class="post-card__content">
+
+        <?php if (is_home() && !$hide_categories && !empty($categories)): ?>
+            <div class="post-card-news__category">
+                <?php foreach ($categories as $category): ?>
+                    <a class="tag tag--solid tag--category-<?= $category->slug ?>" href="<?= get_term_link($category, 'category') ?>">
+                        <?= $category->name ?>
+                    </a>
+                <?php endforeach; ?>
+            </div>
+        <?php endif; ?>
         <h3 class="post-card__title">
             <a href="<?php the_permalink();?>"><?php the_title();?></a>
         </h3>

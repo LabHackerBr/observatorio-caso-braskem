@@ -60,17 +60,18 @@
         }
 
         .post-card__image{
-            display: flex;
-            flex-direction: column-reverse;
+
             img{
                 border-radius: 0;
             }
+            .post-card__category{
+                display: none;
+            }
         }
 
-        .post-card__category{
-            position:absolute;
-            top: 1rem;
-            left: 1rem;
+        .post-card__category,
+        .post-card-news__category{
+
             .tag{
                 background-color: $color--secondary-dark;
                 border: unset;
