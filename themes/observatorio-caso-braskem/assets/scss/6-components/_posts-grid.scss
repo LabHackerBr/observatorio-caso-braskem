@@ -186,6 +186,11 @@
         margin-top: -2rem;
 
     }
+    .post-grid-latest-posts__featured{
+        img{
+            aspect-ratio: 16 / 9.28;
+        }
+    }
     .post-grid-latest-posts__others{
         display: flex;
         flex-direction: column;
@@ -229,6 +234,31 @@
             }
         }
     }
+    .his-sub{
+        .wp-block-group{
+            padding-top: 4rem !important;
+        }
+        img{
+            margin-bottom: 2rem;
+        }
+        p:nth-of-type(1){
+            font-size: size(20) !important;
+            margin-bottom: 3rem;
+        }
+        a{
+            text-decoration: none;
+            border: 1px solid $color--high-pure;
+            padding: .3rem 1.5rem;
+            font-size: size(20) !important;
+        }
+    }
+    .cpi-braskem{
+        padding: 3rem 0;
+
+        p{
+            font-size: size(24) !important;
+        }
+    }
 }
 
 //Archive de storymaps
@@ -265,13 +295,8 @@
         width: 100%;
     }
     .post-card--horizontal{
-        grid-template-columns: 1.2fr .8fr;
+        grid-template-columns: 2.03fr .97fr;
         gap: 2rem;
-        .post-card__image{
-            img{
-                aspect-ratio: 4 / 3;
-            }
-        }
     }
     .post-card__meta{
         display: none;
@@ -279,6 +304,7 @@
     .post-card__image{
         img{
             border-radius: 0;
+            aspect-ratio: 16 / 9;
         }
     }
     .pagination {
