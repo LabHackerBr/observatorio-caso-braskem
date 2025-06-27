@@ -262,6 +262,9 @@
                     display: none;
                 }
             }
+            .post-card-bilioteca__meta{
+                display: none;
+            }
             .post-card__excerpt{
                 display: none;
             }
@@ -393,6 +396,9 @@
             text-transform: uppercase;
         }
     }
+    .post-card-bilioteca__meta{
+        display: none;
+    }
     .post-grid-filters{
         .posts-grid__content{
             @include mobile{
@@ -406,6 +412,9 @@
                     }
                 }
 
+            }
+            .post-card-bilioteca__meta{
+                display: none;
             }
         }
     }
