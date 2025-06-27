@@ -371,8 +371,13 @@
 .post-type-archive-map{
     #app{
         background: #5E0E04;
-        background: linear-gradient(180deg,rgba(94, 14, 4, 1) 0%, rgba(39, 8, 6, 1) 100%);    }
+        background: linear-gradient(180deg,rgba(94, 14, 4, 1) 0%, rgba(39, 8, 6, 1) 100%);
+        @include mobile{
+            padding-bottom: size(40);
+        }
+    }
     .archive-title{
+        background-color: transparent;
         @include mobile{
             padding-top: 2rem;
             padding-bottom: 4rem;
@@ -455,6 +460,9 @@
     }
     .cpi-braskem{
         padding: 3rem 0;
+        @include mobile{
+            margin-top: 32px;
+        }
 
         p{
             font-size: size(24) !important;
