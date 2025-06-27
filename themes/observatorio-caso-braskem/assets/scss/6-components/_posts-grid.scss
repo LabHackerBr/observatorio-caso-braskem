@@ -306,28 +306,54 @@
         }
     }
     .his-sub{
+        padding-bottom: 1rem;
+
         .wp-block-group{
             padding-top: 4rem !important;
+            padding-bottom: 0 !important;
+            @include mobile{
+                display: grid;
+                grid-template-columns: .8fr 1.2fr;
+                gap: 2rem;
+                margin-bottom: 1.5rem !important;
+                padding-top: 2rem !important;
+            }
         }
         img{
             margin-bottom: 2rem;
+            @include mobile{
+                margin-bottom: 0;
+            }
         }
         p:nth-of-type(1){
             font-size: size(20) !important;
             margin-bottom: 3rem;
+            @include mobile{
+                font-size: size(14) !important;
+                text-align: end !important;
+                margin-bottom: 0rem;
+                margin-top: 1rem;
+            }
         }
         a{
             text-decoration: none;
             border: 1px solid $color--high-pure;
             padding: .3rem 1.5rem;
             font-size: size(20) !important;
+            text-transform: uppercase;
+            @include mobile{
+                display: flex;
+               margin-left: auto;
+               margin-right: auto;
+                width: fit-content;
+                font-size: size(14) !important;
+            }
+
         }
     }
     .cpi-braskem{
         padding: 3rem 0;
-        @include mobile{
-            margin-top: -2rem;
-        }
+        margin-top: 2rem;
 
         p{
             font-size: size(24) !important;
