@@ -369,9 +369,9 @@
 //Archive de storymaps
 
 .post-type-archive-map{
-    #app, .post-grid-latest-posts{
-        background-color: $color--primary-pure;
-    }
+    #app{
+        background: #5E0E04;
+        background: linear-gradient(180deg,rgba(94, 14, 4, 1) 0%, rgba(39, 8, 6, 1) 100%);    }
     .archive-title{
         @include mobile{
             padding-top: 2rem;
@@ -379,6 +379,7 @@
         }
     }
     .post-grid-latest-posts{
+        background-color: transparent;
         @include mobile{
             margin-bottom: -3rem !important;
         }
