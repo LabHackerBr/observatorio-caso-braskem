@@ -273,3 +273,10 @@ function override_storymap_template($template) {
 }
 
 add_filter('single_template', 'override_storymap_template', 20, 1);
+
+function set_biblioteca_posts_per_page( $query ) {
+    if ( ! is_admin() && $query->is_main_query() && is_post_type_archive( 'biblioteca' ) ) {
+        $query->set( 'posts_per_page', 9 );
+    }
+}
+add_action( 'pre_get_posts', 'set_biblioteca_posts_per_page' );

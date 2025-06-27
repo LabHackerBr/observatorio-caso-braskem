@@ -487,3 +487,63 @@
         position: absolute;
     }
 }
+
+// archive de bilbioteca
+
+.post-type-archive-biblioteca{
+    .archive-title{
+        margin-bottom: $margin--large;
+    }
+    .posts-grid__content{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: $gap--large;
+        max-width: 100%;
+        @include tablet{
+            grid-template-columns: 1fr 1fr;
+        }
+        @include mobile{
+            grid-template-columns: 1fr;
+
+        }
+        .post-card--vertical{
+            box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.15);
+            padding: 1rem;
+            .post-card__image{
+                height: size(180);
+                @include mobile{
+                    height: size(160);
+                }
+                .post-card-bilioteca__meta{
+                    position: relative;
+                    color: $color--high-pure;
+                    right: 1rem;
+                    top: -2rem;
+                    z-index: 10;
+                    .post-card__date{
+                        display: flex;
+                        justify-content: flex-end;
+                    }
+                }
+            }
+            .post-card__title{
+                font-size: size(16);
+                a{
+                    font-size: size(16);
+                    color: #111;
+                }
+            }
+            .post-card__excerpt{
+                font-size: size(14);
+                font-weight: $font-weight--regular;
+                color: #222;
+            }
+            .post-card__meta{
+                order: 3;
+                .post-card__date{
+                    display: none;
+                }
+            }
+        }
+    }
+}
