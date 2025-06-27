@@ -158,18 +158,19 @@
                 }
             }
             .title {
-
+                font-family: 'Jost', sans-serif !important;
+                text-transform: uppercase !important;
                 p{
                     color: $color--low-pure !important;
-                    font-family: $font-family--primary;
+                    font-family: 'Jost', sans-serif !important;
                     font-size: $font-size--large;
                     margin-top: 0;
                     margin-bottom: $font-size--medium;
-                    text-transform: uppercase;
+                    text-transform: uppercase !important;
                     font-weight: $font-weight--bold;
                     @media(max-width: 767px){
-                        text-transform: none;
-                        font-size: size(22);
+                        text-transform: uppercase !important;
+                        font-size: size(20);
                     }
                 }
             }
@@ -179,6 +180,7 @@
                 p{
                     line-height: 29px;
                     font-size: size(20) !important;
+                    color: $color--low-light !important;
                     @include mobile{
                         font-size: size(16) !important;
                         line-height: 23.2px;
