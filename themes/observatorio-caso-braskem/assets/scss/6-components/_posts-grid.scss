@@ -357,6 +357,9 @@
     .cpi-braskem{
         padding: 3rem 0;
         margin-top: 2rem;
+        @include mobile{
+            padding: 3rem 0 4.5rem;
+        }
 
         p{
             font-size: size(24) !important;
