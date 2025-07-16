@@ -5,10 +5,9 @@
  */
 $title = '';
 
+$count = (int) $wp_query->found_posts;
+$results_text = ($count === 1) ? __('result', 'hacklabr') : __('results', 'hacklabr');
 if ( is_search() ) {
-    $count = (int) $wp_query->found_posts;
-    $results_text = ($count === 1) ? __('result', 'hacklabr') : __('results', 'hacklabr');
-
     $title = sprintf(
         '%s <span class="search-page-results-count">(%d %s)</span>',
         __('SEARCH RESULT', 'hacklabr'),
@@ -16,8 +15,16 @@ if ( is_search() ) {
         $results_text
     );
 
-} elseif ( is_category() ) {
-    $title = single_cat_title( '', false );
+} elseif ( is_category() || is_tag() || is_tax() ) {
+    $title = sprintf(
+        '%s <span class="search-page-results-count">(%d %s)</span>',
+        __('SEARCH TERM', 'hacklabr'),
+        $count,
+        $results_text
+    );
+} elseif ( is_archive() ) {
+    $title = get_the_archive_title();
+
 } else {
     $title = get_the_title();
 }
@@ -36,7 +43,7 @@ if ( is_search() ) {
                     <?php echo apply_filters( 'the_title' , $title ); ?>
                 </h1>
 
-                <?php if ( is_search() ) : ?>
+                <?php if ( is_search() || ( is_category() ) || ( is_tag() ) || ( is_tax() ) ) : ?>
                     <div class="search-form-wrapper-on-archive">
                         <?php
                         get_search_form();
@@ -49,9 +56,13 @@ if ( is_search() ) {
 
             </div>
 
-            <?php if ( is_search() ) : ?>
-                <?php get_template_part( 'template-parts/search-filters' ); ?>
-            <?php endif; ?>
+            <?php
+            if ( is_search() ) {
+                get_template_part( 'template-parts/search-filters' );
+            } elseif ( is_category() || is_tag() || is_tax() ) {
+                get_template_part( 'template-parts/archive-term-filter' );
+            }
+            ?>
         </div>
 
         <div class="archive-header__excerpt">

@@ -36,7 +36,7 @@ $categories = get_the_category();
             </div>
         <?php endif; ?>
 
-        <?php if (is_post_type_archive('biblioteca') || !$hide_date): ?>
+        <?php if (is_post_type_archive('biblioteca') ): ?>
         <div class="post-card-bilioteca__meta">
 
             <?php if (!$hide_date): ?>
