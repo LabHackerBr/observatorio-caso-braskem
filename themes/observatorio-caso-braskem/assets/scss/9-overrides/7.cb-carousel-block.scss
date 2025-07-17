@@ -9,6 +9,9 @@
             content: url('#{$path--assets}/images/slider-arrow-white.svg');
             padding-top: 3px;
         }
+        &:hover{
+            background-color: $color--secondary-dark;
+        }
     }
     .cb-button-next{
         &::after{

@@ -17,6 +17,8 @@
     .ctl-horizontal-timeline{
         @include mobile{
             height: 500px !important;
+            margin-inline: 0 !important;
+            width: 100% !important ;
         }
         .ctl-h-line{
             background: url('#{$path--assets}/images/bg-tl-horizontal.svg');
@@ -38,7 +40,7 @@
         }
         .ctl-icondot {
             position: absolute !important;
-            top: 61% !important;
+            top: 60% !important;
             background-color: transparent !important;
             background: url('#{$path--assets}/images/icon-dot-tl.svg') !important;
             background-repeat: no-repeat !important;
@@ -48,7 +50,7 @@
             height: 2rem !important;
             order: 2;
             @media (max-width: 1439px) {
-                top: 52% !important;
+                top: 60% !important;
             }
             @include mobile{
                 top: 46% !important ;
@@ -57,7 +59,7 @@
                 top: 43% !important ;
             }
             @media (max-width: 360px) {
-                top: 46% !important ;
+                top: 52% !important ;
             }
         }
 
@@ -66,7 +68,9 @@
         }
 
         .ctl-story{
+            width: 385px !important;
             @include mobile{
+                width: 100% !important;
                 height: 450px !important;
             }
             .ctl-content{
@@ -79,6 +83,9 @@
                     width: fit-content !important;
                     @include mobile{
                         padding: $padding--small $padding--medium !important;
+                    }
+                    >p{
+                        font-size: 20px;
                     }
                 }
                 .ctl-title{
@@ -108,6 +115,9 @@
                         order: 2 !important;
                         padding-top: 0 !important;
                         margin-bottom: 0;
+                        @include mobile{
+                            margin-top: $margin--medium;
+                        }
                     }
                     .ctl-title{
                         order: 0 !important;
@@ -128,9 +138,9 @@
                     }
                 }
                 .ctl-icondot{
-                    top: 31% !important;
+                    top: 38% !important;
                     @media (max-width: 1439px) {
-                        top: 43% !important;
+                        top: 40% !important;
                     }
                     @include mobile{
                         top: 43% !important;
@@ -139,7 +149,7 @@
                         top: 48% !important;
                     }
                     @media (max-width: 360px) {
-                        top: 47% !important ;
+                        top: 52% !important ;
                     }
                 }
 
@@ -148,10 +158,11 @@
         .ctl-button-next, .ctl-button-prev{
             border: none !important;
             background-color: $color--high-light !important;
-            top: 25% !important;
+            top: 23% !important;
+
             @include mobile{
                 top: unset !important;
-                bottom: 22%;
+                bottom: 12%;
             }
         }
         .ctl-button-next{
@@ -170,30 +181,30 @@
 .ctl-wrapper .cool-timeline-wrapper:not(.ctl-one-sided, .ctl-compact-wrapper) .ctl-story.even{
     margin-top: 0 !important;
     flex-flow: column;
-    bottom: 8%;
+    bottom: 15%;
     @media (max-width: 1439px) {
-        bottom: 18%;
+        bottom: 17%;
     }
     @include mobile{
         bottom: 18%;
     }
     @media (max-width: 360px) {
-        bottom: 21%;
+        bottom: 25%;
     }
 
 }
 .ctl-wrapper .cool-timeline-wrapper:not(.ctl-one-sided, .ctl-compact-wrapper) .ctl-story.odd{
     margin-top: 0 !important;
     flex-flow: column;
-    bottom: 38%;
+    bottom: 37%;
     @media (max-width: 1439px) {
-        bottom: 23%;
+        bottom: 33%;
     }
     @include mobile{
-        bottom: 20%;
+        bottom: 24%;
     }
     @media (max-width: 335px) {
-        bottom: 17%;
+        bottom: 22%;
     }
 }
 .ctl-wrapper .ctl-horizontal-timeline:where(.ctl-default, .ctl-design-1) :where(.ctl-media, .swiper-wrapper.swiper-slide) img{

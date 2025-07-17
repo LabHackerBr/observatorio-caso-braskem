@@ -269,11 +269,13 @@
                 text-indent: -9999px;
                 transition: all 0.2s ease-in-out;
                 width: 30px;
-                transform: rotate(180deg);
+                // transform: rotate(180deg);
                 padding-right: 2px;
 
+                &.slick-prev{
+                    transform: rotate(180deg);
+                }
                 &.slick-next {
-                    transform: rotate(360deg);
                     padding-right: 0;
                     background-position: center;
                 }

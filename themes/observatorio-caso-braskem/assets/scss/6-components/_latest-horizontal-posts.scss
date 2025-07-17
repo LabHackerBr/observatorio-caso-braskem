@@ -39,6 +39,21 @@
         .slick-arrow{
             background-color: $color--high-light !important;
             opacity: 1 !important;
+            transition: transform 0ms ease-in-out !important;
+
+
+            &:hover{
+                background-color: $color--secondary-dark !important;
+                background-image: url("#{$path--assets}/images/slider-arrow-white.svg") !important;
+                transform: rotate(0deg) !important;
+
+                &.slick-prev{
+                    // transform: rotate(360deg) !important;
+                }
+                &.slick-next{
+                    transform: rotate(180deg) !important;
+                }
+            }
         }
         @include mobile{
             width: 95% !important;
@@ -63,7 +78,6 @@
         >.container{
             @include mobile{
                 display: flex;
-                // flex-flow: column-reverse;
             }
         }
         .slick-slider{
@@ -114,6 +128,10 @@
 
         .latest-horizontal-posts-block__footer{
             top: -1rem;
+            display: flex;
+            flex-flow: column;
+            align-items: center;
+            padding-left: $padding--large;
         }
 
         .latest-horizontal-posts-block__content{
