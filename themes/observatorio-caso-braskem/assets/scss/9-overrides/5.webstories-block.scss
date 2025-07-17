@@ -3,6 +3,13 @@
 
 }
 .web-stories-list{
+    &__carousel{
+        min-width: 100% !important;
+        max-width: unset !important;
+        width: 100% !important;
+        display: block !important;
+        // overflow-x: visible !important;
+    }
     &__inner-wrapper {
         max-width: 100% !important;
     }
@@ -30,11 +37,17 @@
         background: transparent !important;
 
     }
+    .glider-track{
+        display: flex !important;
+    }
     .glider-next, .glider-prev{
         background-image: url('#{$path--assets}/images/slider-arrow.svg') !important;
         background-color: $color--high-pure !important;
         height: 33px !important;
         width: 33px !important;
+        // display: block !important;
+        position: absolute;
+        z-index: 10;
         &:hover, &:focus{
             filter: none !important;
         }
@@ -62,7 +75,8 @@
         position: relative;
         top: 4rem;
         background-color: transparent;
-
+        margin-inline: auto;
+        z-index: 9;
         .glider-dot, .dot{
             cursor: pointer;
             display: block;
@@ -85,21 +99,31 @@
 }
 
 .web-stories-list.is-carousel .web-stories-list__carousel::scroll-button(left), .web-stories-list__carousel::scroll-button(right){
-    top: 105% !important;
-    opacity: 1 !important;
+    top: 106% !important;
     background-color: transparent !important;
     content: url('#{$path--assets}/images/arrow-right.svg') !important;
 
     &:hover{
-        content: url('#{$path--assets}/images/arrow-right-light.svg') !important;
+        content: url('#{$path--assets}/images/arrow-right-dark.svg') !important;
         filter: none !important;
+    }
+    &:focus-visible{
+        outline: none !important;
+    }
+    &:disabled{
+        opacity: 0.5 !important;
     }
 }
 
 .web-stories-list.is-carousel .web-stories-list__carousel::scroll-button(left){
     left: 40% !important;
+    @include mobile{
+        left: 5% !important;
+    }
 }
 .web-stories-list.is-carousel .web-stories-list__carousel::scroll-button(right){
     right: 40% !important;
-
+    @include mobile{
+        right: 5% !important;
+    }
 }

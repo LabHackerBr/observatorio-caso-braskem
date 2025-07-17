@@ -383,7 +383,9 @@ class Assets {
             'webstories-slider' => [
                 'file' => 'webstories-slider.js',
                 'pre-load' => true,
-                'global' => true,
+                'preload_callback' => function () {
+					return is_front_page();
+				}
 			],
  		];
 

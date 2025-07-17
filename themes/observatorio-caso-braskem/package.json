@@ -23,6 +23,7 @@
     "alpinejs": "^3.13.10",
     "clsx": "^2.1.1",
     "dragscroll": "^0.0.8",
+    "glider-js": "^1.7.9",
     "iconify-icon": "^2.1.0",
     "swr": "^2.2.5",
     "tiny-slider": "^2.9.4"
