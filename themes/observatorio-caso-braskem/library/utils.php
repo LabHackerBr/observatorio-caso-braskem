@@ -280,3 +280,10 @@ function set_biblioteca_posts_per_page( $query ) {
     }
 }
 add_action( 'pre_get_posts', 'set_biblioteca_posts_per_page' );
+
+function set_author_posts_per_page( $query ) {
+    if ( ! is_admin() && $query->is_main_query() && is_author() ) {
+        $query->set( 'posts_per_page', 4 );
+    }
+}
+add_action( 'pre_get_posts', 'set_author_posts_per_page' );

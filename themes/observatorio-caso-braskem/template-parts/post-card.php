@@ -74,7 +74,13 @@ $categories = get_the_category();
 
             <?php if (!$hide_date): ?>
             <time class="post-card__date">
-                <?php echo get_the_date(); ?>
+                <?php
+                if ( is_author() ) {
+                    echo get_the_date( 'd \d\e F \d\e Y' );
+                } else {
+                    echo get_the_date();
+                }
+                ?>
             </time>
             <?php endif; ?>
         </div>
