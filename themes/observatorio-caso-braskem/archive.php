@@ -8,7 +8,7 @@ $excluded_ids = [];
         $post_type = get_post_type();
 
         if ( is_home() ) {
-            echo 'Notícias';
+            _e( 'News', 'hacklabr' );
         }
 
         ?>

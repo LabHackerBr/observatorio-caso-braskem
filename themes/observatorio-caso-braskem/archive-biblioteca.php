@@ -7,7 +7,7 @@ get_header(); ?>
             $post_type = get_post_type();
 
             if ( is_post_type_archive('biblioteca') ) {
-                echo 'Biblioteca';
+                _e( 'Library', 'hacklabr' );
             }
 
             ?>

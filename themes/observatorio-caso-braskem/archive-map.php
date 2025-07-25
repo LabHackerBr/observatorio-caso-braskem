@@ -4,7 +4,7 @@
     <h1 class="container container--wide">
         <?php
         if (is_post_type_archive('map')) {
-            echo 'Mapas';
+            _e('Maps', 'hacklabr');
         }
         ?>
     </h1>
