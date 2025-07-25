@@ -23,7 +23,7 @@ if ($current_filter_val === '') {
 $current_orderby_get = isset($_GET['orderby']) ? sanitize_text_field($_GET['orderby']) : 'relevance';
 $orderby_options_from_user = array(
     'date_desc' => __('Latests', 'hacklabr'),
-    'date_asc'  => __('Oldestes', 'hacklabr'),
+    'date_asc'  => __('Oldests', 'hacklabr'),
     'title_asc' => __('Alphabetical', 'hacklabr'),
 );
 
