@@ -182,17 +182,24 @@
 
 }
 
-.archive-title{
+.archive-header-bibliioteca{
     padding-top: 4rem;
     padding-bottom: 8rem;
     background-color: $color--primary-pure;
     color: $color--high-pure;
+
+    &__search-filter{
+        display: flex;
+        justify-content: space-between;
+    }
+
     h1{
         font-size: 2rem;
         display: flex;
         align-items: center;
         gap: .5rem;
         text-transform: uppercase;
+        color: $color--high-pure;
         &::before{
             content: url('#{$path--assets}/images/exclamacao.png');
             padding-top: 3px;

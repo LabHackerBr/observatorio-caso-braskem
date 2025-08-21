@@ -287,3 +287,35 @@ function set_author_posts_per_page( $query ) {
     }
 }
 add_action( 'pre_get_posts', 'set_author_posts_per_page' );
+
+function hacklabr_biblioteca_filters( $query ) {
+    if ( ! is_admin() && $query->is_main_query() && is_post_type_archive('biblioteca') ) {
+
+        $query->set('post_type', 'biblioteca');
+
+        $meta_query = array();
+
+        // Busca textual
+        if ( isset($_GET['biblioteca_search']) && ! empty($_GET['biblioteca_search']) ) {
+            $query->set('s', sanitize_text_field($_GET['biblioteca_search']));
+        }
+
+        // Filtro por ano
+        if ( isset($_GET['biblioteca_ano']) && ! empty($_GET['biblioteca_ano']) ) {
+            $ano = sanitize_text_field($_GET['biblioteca_ano']);
+            $meta_query[] = array(
+                'key'     => 'ano',
+                'value'   => $ano,
+                'compare' => 'LIKE'
+            );
+        }
+
+        if ( ! empty($meta_query) ) {
+            $query->set('meta_query', $meta_query);
+        }
+
+
+    }
+}
+add_action('pre_get_posts', 'hacklabr_biblioteca_filters');
+
