@@ -289,38 +289,49 @@ function set_author_posts_per_page( $query ) {
 add_action( 'pre_get_posts', 'set_author_posts_per_page' );
 
 add_action('pre_get_posts', function($query) {
-    if ( is_admin() || !$query->is_main_query() ) return;
+    if (is_admin() || !$query->is_main_query()) return;
 
-    if( is_post_type_archive('biblioteca') || is_tax(['instancia','tipo_de_midia','tipo_documento']) ) {
+    if (is_post_type_archive('biblioteca')) {
 
-        $tax_query = [];
+        $meta_query = [];
+        $tax_query  = [];
 
-        if ( ! empty($_GET['biblioteca_coautor']) ) {
-            $ga = get_page_by_path( sanitize_text_field($_GET['biblioteca_coautor']), OBJECT, 'guest-author' );
-            if ( $ga ) {
+        // Filtro ano
+        if (!empty($_GET['biblioteca_ano'])) {
+            $meta_query[] = [
+                'key'     => 'ano',
+                'value'   => sanitize_text_field($_GET['biblioteca_ano']),
+                'compare' => 'LIKE',
+            ];
+        }
+
+        // Filtro co-author convidado
+        if (!empty($_GET['biblioteca_coautor'])) {
+            $ga = get_page_by_path(sanitize_text_field($_GET['biblioteca_coautor']), OBJECT, 'guest-author');
+            if ($ga) {
                 $tax_query[] = [
-                    'taxonomy' => 'author',
+                    'taxonomy' => 'author', // taxonomia do Co-Authors Plus
                     'field'    => 'slug',
-                    'terms'    => sanitize_text_field($_GET['biblioteca_coautor']),
+                    'terms'    => $ga->post_name,
                 ];
             }
         }
 
-        // FILTRO POR INSTÂNCIA
-        if (!empty($_GET['biblioteca_instancia'])) {
-            $tax_query[] = [
-                'taxonomy' => 'instancia', // ajuste pro slug correto da taxonomia
-                'field'    => 'slug',
-                'terms'    => sanitize_text_field($_GET['biblioteca_instancia']),
+        // Filtro mídia (Pods Relationship)
+        if (!empty($_GET['biblioteca_midia'])) {
+            $meta_query[] = [
+                'key'     => 'tipo_de_midia',
+                'value'   => sanitize_text_field($_GET['biblioteca_midia']),
+                'compare' => 'LIKE',
             ];
         }
 
-        // FILTRO POR TIPO DE MÍDIA
-        if (!empty($_GET['biblioteca_midia'])) {
-            $tax_query[] = [
-                'taxonomy' => 'tipo_de_midia', // ajuste pro slug correto da taxonomia
-                'field'    => 'slug',
-                'terms'    => sanitize_text_field($_GET['biblioteca_midia']),
+        // Filtro instância (Pods Relationship)
+        if (!empty($_GET['biblioteca_instancia'])) {
+            $meta_query[] = [
+                'key'     => 'instancia',
+                'value'   => sanitize_text_field($_GET['biblioteca_instancia']),
+                'compare' => 'LIKE',
             ];
         }
 
@@ -330,24 +341,6 @@ add_action('pre_get_posts', function($query) {
                 'field'    => 'slug',
                 'terms'    => sanitize_text_field($_GET['biblioteca_tipo_documento']),
             ];
-        }
-
-        if ( $tax_query ) {
-            $query->set('tax_query', array_merge(['relation' => 'AND'], $tax_query));
-        }
-
-        // filtro de search
-        if ( ! empty($_GET['biblioteca_search']) ) {
-            $query->set('s', sanitize_text_field($_GET['biblioteca_search']));
-        }
-
-        // filtro por ano (meta)
-        if ( ! empty($_GET['biblioteca_ano']) ) {
-            $query->set('meta_query', [[
-                'key'     => 'ano',
-                'value'   => sanitize_text_field($_GET['biblioteca_ano']),
-                'compare' => 'LIKE',
-            ]]);
         }
 
         // Novo filtro: relacionado_cpi
@@ -362,6 +355,23 @@ add_action('pre_get_posts', function($query) {
             ];
             $query->set('meta_query', $meta_query);
         }
+
+        // aplica meta_query
+        if (!empty($meta_query)) {
+            $query->set('meta_query', $meta_query);
+        }
+
+        // aplica tax_query
+        if (!empty($tax_query)) {
+            $query->set('tax_query', array_merge(['relation' => 'AND'], $tax_query));
+        }
+
+        // pesquisa de texto
+        if (!empty($_GET['biblioteca_search'])) {
+            $query->set('s', sanitize_text_field($_GET['biblioteca_search']));
+        }
+
+        $query->set('post_type', 'biblioteca');
     }
 });
 

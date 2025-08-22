@@ -214,7 +214,7 @@
 </div>
 
 <!-- FILTROS ATIVOS -->
-<div class="archive-active-filters">
+<div class="archive-active-filters container container--wide">
     <?php $has_filters = false; ?>
 
     <?php

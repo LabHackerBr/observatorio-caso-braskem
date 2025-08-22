@@ -238,24 +238,31 @@
             }
 
             ul{
-                padding: $padding--medium $padding--large;
+                padding: $padding--small 0;
                 li{
                     list-style: none;
                     text-transform: uppercase;
-                    border-bottom: 1px solid $color--high-pure;
-                    padding: .5rem 0;
+                    padding: 0;
                     a{
                         text-decoration: none;
+                        display: flex;
+                        width: 100%;
+                        border-bottom: 1px solid $color--high-pure;
+                        padding: $padding--x-small $padding--large;
                     }
-                }
-                li.actve{
-                    background-color: #d9d9d9;
-                    border-bottom: none;
                 }
             }
         }
         details[open]{
             background-color: $color--low-pure;
+            li{
+                a.active{
+                    background-color: #d9d9d9;
+                    border-bottom: none;
+                    color: $color--low-pure;
+                }
+
+            }
         }
     }
 }
