@@ -288,34 +288,84 @@ function set_author_posts_per_page( $query ) {
 }
 add_action( 'pre_get_posts', 'set_author_posts_per_page' );
 
-function hacklabr_biblioteca_filters( $query ) {
-    if ( ! is_admin() && $query->is_main_query() && is_post_type_archive('biblioteca') ) {
+add_action('pre_get_posts', function($query) {
+    if ( is_admin() || !$query->is_main_query() ) return;
 
-        $query->set('post_type', 'biblioteca');
+    if( is_post_type_archive('biblioteca') || is_tax(['instancia','tipo_de_midia','tipo_documento']) ) {
 
-        $meta_query = array();
+        $tax_query = [];
 
-        // Busca textual
-        if ( isset($_GET['biblioteca_search']) && ! empty($_GET['biblioteca_search']) ) {
+        if ( ! empty($_GET['biblioteca_coautor']) ) {
+            $ga = get_page_by_path( sanitize_text_field($_GET['biblioteca_coautor']), OBJECT, 'guest-author' );
+            if ( $ga ) {
+                $tax_query[] = [
+                    'taxonomy' => 'author',
+                    'field'    => 'slug',
+                    'terms'    => sanitize_text_field($_GET['biblioteca_coautor']),
+                ];
+            }
+        }
+
+        // FILTRO POR INSTÂNCIA
+        if (!empty($_GET['biblioteca_instancia'])) {
+            $tax_query[] = [
+                'taxonomy' => 'instancia', // ajuste pro slug correto da taxonomia
+                'field'    => 'slug',
+                'terms'    => sanitize_text_field($_GET['biblioteca_instancia']),
+            ];
+        }
+
+        // FILTRO POR TIPO DE MÍDIA
+        if (!empty($_GET['biblioteca_midia'])) {
+            $tax_query[] = [
+                'taxonomy' => 'tipo_de_midia', // ajuste pro slug correto da taxonomia
+                'field'    => 'slug',
+                'terms'    => sanitize_text_field($_GET['biblioteca_midia']),
+            ];
+        }
+
+        if ( ! empty($_GET['biblioteca_tipo_documento']) ) {
+            $tax_query[] = [
+                'taxonomy' => 'tipo_documento',
+                'field'    => 'slug',
+                'terms'    => sanitize_text_field($_GET['biblioteca_tipo_documento']),
+            ];
+        }
+
+        if ( $tax_query ) {
+            $query->set('tax_query', array_merge(['relation' => 'AND'], $tax_query));
+        }
+
+        // filtro de search
+        if ( ! empty($_GET['biblioteca_search']) ) {
             $query->set('s', sanitize_text_field($_GET['biblioteca_search']));
         }
 
-        // Filtro por ano
-        if ( isset($_GET['biblioteca_ano']) && ! empty($_GET['biblioteca_ano']) ) {
-            $ano = sanitize_text_field($_GET['biblioteca_ano']);
-            $meta_query[] = array(
+        // filtro por ano (meta)
+        if ( ! empty($_GET['biblioteca_ano']) ) {
+            $query->set('meta_query', [[
                 'key'     => 'ano',
-                'value'   => $ano,
-                'compare' => 'LIKE'
-            );
+                'value'   => sanitize_text_field($_GET['biblioteca_ano']),
+                'compare' => 'LIKE',
+            ]]);
         }
 
-        if ( ! empty($meta_query) ) {
+        // Novo filtro: relacionado_cpi
+        if (isset($_GET['relacionado_cpi'])) {
+            $relacionado = $_GET['relacionado_cpi'] === '1' ? 1 : 0;
+            $meta_query = $query->get('meta_query') ?: [];
+            $meta_query[] = [
+                'key'     => 'relacionado_cpi',  // slug do campo PODS
+                'value'   => $relacionado,
+                'compare' => '=',
+                'type'    => 'NUMERIC',
+            ];
             $query->set('meta_query', $meta_query);
         }
-
-
     }
-}
-add_action('pre_get_posts', 'hacklabr_biblioteca_filters');
+});
+
+
+
+
 
