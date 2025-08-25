@@ -202,6 +202,12 @@
             </ul>
         </details>
     </div>
+</div>
+
+</div>
+
+<!-- FILTROS ATIVOS -->
+<div class="archive-active-filters container container--wide">
 
     <div class="archive-filters__checkbox">
         <label>
@@ -209,55 +215,55 @@
             <?php _e('Only documents related to the CPI','hacklabr');?>
         </label>
     </div>
-</div>
+    <div class="actve-terms">
+        <?php $has_filters = false; ?>
 
-</div>
+        <?php
+        $filters = [
+            'biblioteca_search'   => __('Search', 'hacklabr'),
+            'biblioteca_ano'      => __('Year', 'hacklabr'),
+            'biblioteca_coautor'  => __('Co-author', 'hacklabr'),
+            'biblioteca_midia'    => __('Media', 'hacklabr'),
+            'biblioteca_instancia'=> __('Instance', 'hacklabr'),
+            'biblioteca_tipo_documento'=> __('Document type', 'hacklabr')
+        ];
 
-<!-- FILTROS ATIVOS -->
-<div class="archive-active-filters container container--wide">
-    <?php $has_filters = false; ?>
+        foreach ($filters as $key => $label) :
+            if (!empty($_GET[$key])) :
+                $has_filters = true;
+                $value = $_GET[$key];
 
-    <?php
-    $filters = [
-        'biblioteca_search'   => __('Search', 'hacklabr'),
-        'biblioteca_ano'      => __('Year', 'hacklabr'),
-        'biblioteca_coautor'  => __('Co-author', 'hacklabr'),
-        'biblioteca_midia'    => __('Media', 'hacklabr'),
-        'biblioteca_instancia'=> __('Instance', 'hacklabr'),
-        'biblioteca_tipo_documento'=> __('Document type', 'hacklabr')
-    ];
+                // co-author mostra nome
+                if ($key === 'biblioteca_coautor') {
+                    $ga = get_page_by_path(sanitize_text_field($value), OBJECT, 'guest-author');
+                    $value = $ga ? $ga->post_title : $value;
+                }
 
-    foreach ($filters as $key => $label) :
-        if (!empty($_GET[$key])) :
-            $has_filters = true;
-            $value = $_GET[$key];
-
-            // co-author mostra nome
-            if ($key === 'biblioteca_coautor') {
-                $ga = get_page_by_path(sanitize_text_field($value), OBJECT, 'guest-author');
-                $value = $ga ? $ga->post_title : $value;
-            }
-
-            // tipo_documento mostra nome
-            if ($key === 'biblioteca_tipo_documento') {
-                $term = get_term_by('slug', $value, 'tipo_documento');
-                $value = $term ? $term->name : $value;
-            }
-            ?>
-            <span class="active-filter">
-                <?php printf('%s: %s', esc_html($label), esc_html($value)); ?>
-                <?php
-                $args = $_GET;
-                unset($args[$key], $args['paged']);
+                // tipo_documento mostra nome
+                if ($key === 'biblioteca_tipo_documento') {
+                    $term = get_term_by('slug', $value, 'tipo_documento');
+                    $value = $term ? $term->name : $value;
+                }
                 ?>
-                <a href="<?php echo esc_url(add_query_arg($args, get_post_type_archive_link('biblioteca'))); ?>" class="clear-filter">×</a>
-            </span>
-        <?php endif;
-    endforeach;
-    ?>
+                <span class="active-filter">
+                    <?php echo esc_html($value); ?>
+                    <?php
+                    $args = $_GET;
+                    unset($args[$key], $args['paged']);
+                    ?>
+                    <a href="<?php echo esc_url(add_query_arg($args, get_post_type_archive_link('biblioteca'))); ?>" class="clear-filter">×</a>
+                </span>
+            <?php endif;
+        endforeach;
+        ?>
+
+    </div>
 
     <?php if ($has_filters) : ?>
         <span class="active-filter clear-all">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="17" viewBox="0 0 16 17" fill="none">
+                <path d="M1.66289 0C0.264458 0 -0.512583 1.66926 0.382709 2.78157L5.2773 8.86261V16.4333C5.2773 16.6404 5.3873 16.831 5.56415 16.9304C5.74103 17.0299 5.9566 17.0222 6.12636 16.9106L10.4685 14.0546C10.6269 13.9504 10.7227 13.7705 10.7227 13.5773V8.86261L15.6173 2.78157C16.5126 1.66926 15.7355 0 14.3371 0H1.66289Z" fill="white"/>
+            </svg>
             <a href="<?php echo esc_url(get_post_type_archive_link('biblioteca')); ?>">
                 <?php _e('Clear all filters', 'hacklabr'); ?>
             </a>

@@ -513,8 +513,11 @@
         grid-template-columns: 1fr 1fr 1fr;
         gap: $gap--large;
         max-width: 100%;
+        padding-top: $padding--x-large;
         @include tablet{
             grid-template-columns: 1fr 1fr;
+            margin-top: 3rem;
+            padding-top: 0;
         }
         @include mobile{
             grid-template-columns: 1fr;
