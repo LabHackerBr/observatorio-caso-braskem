@@ -308,6 +308,11 @@
         details[open]{
             background-color: $color--low-pure;
             summary{
+                .filter-title{
+                    svg{
+                        transform: none;
+                    }
+                }
                 svg{
                     transform: rotate(180deg);
                 }
@@ -321,6 +326,13 @@
 
             }
         }
+        .filter-ano{
+            ul{
+                li:last-child{
+                    display: none;
+                }
+            }
+        }
     }
     .archive-active-filters{
         @include tablet{
@@ -329,8 +341,9 @@
         }
         .archive-filters__checkbox{
             margin-top: 1.5rem;
+            margin-bottom: 1rem;
+
             @include tablet{
-                margin-top: 0rem;
                 order: 3;
             }
             label{
@@ -346,7 +359,7 @@
         .actve-terms{
             display: flex;
             gap: 1rem;
-            margin: 1.5rem 0;
+            margin: 0;
             flex-wrap: wrap;
             @include tablet{
                 order: 2;
@@ -374,10 +387,12 @@
             text-decoration: underline;
             font-weight: $font-weight--regular;
             padding-left: 0;
+            margin-top: 1rem;
             @include tablet{
                 order: 1;
                 justify-content: center;
                 margin-top: 1rem;
+                margin-bottom: 1rem;
             }
         }
     }

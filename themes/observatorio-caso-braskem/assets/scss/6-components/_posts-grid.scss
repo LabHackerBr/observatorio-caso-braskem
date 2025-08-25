@@ -523,6 +523,9 @@
             grid-template-columns: 1fr;
 
         }
+        .no-results{
+            font-size: size(24);
+        }
         .post-card--vertical{
             box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.15);
             padding: 1rem;
