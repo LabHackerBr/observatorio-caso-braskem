@@ -202,12 +202,6 @@
             </ul>
         </details>
     </div>
-</div>
-
-</div>
-
-<!-- FILTROS ATIVOS -->
-<div class="archive-active-filters container container--wide">
 
     <div class="archive-filters__checkbox">
         <label>
@@ -215,48 +209,53 @@
             <?php _e('Only documents related to the CPI','hacklabr');?>
         </label>
     </div>
+</div>
+
+</div>
+
+<!-- FILTROS ATIVOS -->
+<div class="archive-active-filters container container--wide">
     <div class="actve-terms">
-        <?php $has_filters = false; ?>
+    <?php $has_filters = false; ?>
 
-        <?php
-        $filters = [
-            'biblioteca_search'   => __('Search', 'hacklabr'),
-            'biblioteca_ano'      => __('Year', 'hacklabr'),
-            'biblioteca_coautor'  => __('Co-author', 'hacklabr'),
-            'biblioteca_midia'    => __('Media', 'hacklabr'),
-            'biblioteca_instancia'=> __('Instance', 'hacklabr'),
-            'biblioteca_tipo_documento'=> __('Document type', 'hacklabr')
-        ];
+    <?php
+    $filters = [
+        'biblioteca_search'   => __('Search', 'hacklabr'),
+        'biblioteca_ano'      => __('Year', 'hacklabr'),
+        'biblioteca_coautor'  => __('Co-author', 'hacklabr'),
+        'biblioteca_midia'    => __('Media', 'hacklabr'),
+        'biblioteca_instancia'=> __('Instance', 'hacklabr'),
+        'biblioteca_tipo_documento'=> __('Document type', 'hacklabr')
+    ];
 
-        foreach ($filters as $key => $label) :
-            if (!empty($_GET[$key])) :
-                $has_filters = true;
-                $value = $_GET[$key];
+    foreach ($filters as $key => $label) :
+        if (!empty($_GET[$key])) :
+            $has_filters = true;
+            $value = $_GET[$key];
 
-                // co-author mostra nome
-                if ($key === 'biblioteca_coautor') {
-                    $ga = get_page_by_path(sanitize_text_field($value), OBJECT, 'guest-author');
-                    $value = $ga ? $ga->post_title : $value;
-                }
+            // co-author mostra nome
+            if ($key === 'biblioteca_coautor') {
+                $ga = get_page_by_path(sanitize_text_field($value), OBJECT, 'guest-author');
+                $value = $ga ? $ga->post_title : $value;
+            }
 
-                // tipo_documento mostra nome
-                if ($key === 'biblioteca_tipo_documento') {
-                    $term = get_term_by('slug', $value, 'tipo_documento');
-                    $value = $term ? $term->name : $value;
-                }
+            // tipo_documento mostra nome
+            if ($key === 'biblioteca_tipo_documento') {
+                $term = get_term_by('slug', $value, 'tipo_documento');
+                $value = $term ? $term->name : $value;
+            }
+            ?>
+            <span class="active-filter">
+                <?php echo esc_html($value); ?>
+                <?php
+                $args = $_GET;
+                unset($args[$key], $args['paged']);
                 ?>
-                <span class="active-filter">
-                    <?php echo esc_html($value); ?>
-                    <?php
-                    $args = $_GET;
-                    unset($args[$key], $args['paged']);
-                    ?>
-                    <a href="<?php echo esc_url(add_query_arg($args, get_post_type_archive_link('biblioteca'))); ?>" class="clear-filter">×</a>
-                </span>
-            <?php endif;
-        endforeach;
-        ?>
-
+                <a href="<?php echo esc_url(add_query_arg($args, get_post_type_archive_link('biblioteca'))); ?>" class="clear-filter">×</a>
+            </span>
+        <?php endif;
+    endforeach;
+    ?>
     </div>
 
     <?php if ($has_filters) : ?>
@@ -269,6 +268,7 @@
             </a>
         </span>
     <?php endif; ?>
+
 </div>
 <script>
 document.addEventListener('DOMContentLoaded', function() {

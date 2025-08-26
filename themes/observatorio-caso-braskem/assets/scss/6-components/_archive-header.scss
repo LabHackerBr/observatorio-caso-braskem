@@ -333,28 +333,36 @@
                 }
             }
         }
+
+    }
+    .archive-filters__checkbox{
+        margin-top: 1.5rem;
+        margin-bottom: 1rem;
+
+        label{
+            text-transform: uppercase;
+            font-family: "Sofia Sans", sans-serif;
+            display: flex;
+            align-items: center;
+            gap: size(3);
+
+            @include tablet{
+                font-size: size(16);
+                justify-content: center;
+
+            }
+            input{
+                position: relative;
+                top: size(-2);
+            }
+        }
+
     }
     .archive-active-filters{
+
         @include tablet{
             display: flex;
             flex-direction: column;
-        }
-        .archive-filters__checkbox{
-            margin-top: 1.5rem;
-            margin-bottom: 1rem;
-
-            @include tablet{
-                order: 3;
-            }
-            label{
-                text-transform: uppercase;
-                font-family: "Sofia Sans", sans-serif;
-
-                @include tablet{
-                    font-size: size(16);
-                }
-            }
-
         }
         .actve-terms{
             display: flex;
@@ -362,7 +370,7 @@
             margin: 0;
             flex-wrap: wrap;
             @include tablet{
-                order: 2;
+                order: 1;
             }
         }
         .active-filter{
@@ -389,7 +397,7 @@
             padding-left: 0;
             margin-top: 1rem;
             @include tablet{
-                order: 1;
+                order: 2;
                 justify-content: center;
                 margin-top: 1rem;
                 margin-bottom: 1rem;
