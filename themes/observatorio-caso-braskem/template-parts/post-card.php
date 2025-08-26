@@ -67,9 +67,16 @@ $categories = get_the_category();
         <?php if (!$hide_author || !$hide_date): ?>
         <div class="post-card__meta">
             <?php if (!$hide_author): ?>
-            <div class="post-card__author">
-                <span><?php _e('By', 'hacklabr') ?></span> <?php the_author(); ?>
-            </div>
+                <div class="post-card__author">
+                    <span><?php _e('By', 'hacklabr') ?></span>
+                    <?php
+                        if ( get_post_type() === 'biblioteca' && function_exists('coauthors') ) {
+                            coauthors(', ');
+                        } else {
+                            the_author();
+                        }
+                    ?>
+                </div>
             <?php endif; ?>
 
             <?php if (!$hide_date): ?>
