@@ -1,6 +1,5 @@
 <div class="archive-filters">
     <div class="archive-filters__selects">
-        <!-- FILTRO: ANO -->
         <details class="filter-ano" <?php echo !empty($_GET['biblioteca_ano']) ? 'open' : ''; ?>>
             <summary>
                 <div class="filter-title">
@@ -62,7 +61,6 @@
             </ul>
         </details>
 
-        <!-- FILTRO: CO-AUTHORS -->
         <details class="filter-authors" <?php echo !empty($_GET['biblioteca_coautor']) ? 'open' : ''; ?>>
             <summary>
             <div class="filter-title">
@@ -100,7 +98,6 @@
             </ul>
         </details>
 
-        <!-- FILTRO: TIPO DE MÍDIA -->
         <details class="filter-midia" <?php echo !empty($_GET['biblioteca_midia']) ? 'open' : ''; ?>>
             <summary>
             <div class="filter-title">
@@ -132,7 +129,6 @@
             </ul>
         </details>
 
-        <!-- FILTRO: INSTÂNCIA -->
         <details class="filter-instancia" <?php echo !empty($_GET['biblioteca_instancia']) ? 'open' : ''; ?>>
             <summary>
             <div class="filter-title">
@@ -167,7 +163,6 @@
             </ul>
         </details>
 
-        <!-- FILTRO: TIPO DE DOCUMENTO -->
         <details class="filter-tipo-documento" <?php echo !empty($_GET['biblioteca_tipo_documento']) ? 'open' : ''; ?>>
             <summary>
             <div class="filter-title">
@@ -213,7 +208,6 @@
 
 </div>
 
-<!-- FILTROS ATIVOS -->
 <div class="archive-active-filters container container--wide">
     <div class="actve-terms">
     <?php $has_filters = false; ?>
@@ -233,13 +227,11 @@
             $has_filters = true;
             $value = $_GET[$key];
 
-            // co-author mostra nome
             if ($key === 'biblioteca_coautor') {
                 $ga = get_page_by_path(sanitize_text_field($value), OBJECT, 'guest-author');
                 $value = $ga ? $ga->post_title : $value;
             }
 
-            // tipo_documento mostra nome
             if ($key === 'biblioteca_tipo_documento') {
                 $term = get_term_by('slug', $value, 'tipo_documento');
                 $value = $term ? $term->name : $value;
@@ -261,7 +253,7 @@
     <?php if ($has_filters) : ?>
         <span class="active-filter clear-all">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="17" viewBox="0 0 16 17" fill="none">
-                <path d="M1.66289 0C0.264458 0 -0.512583 1.66926 0.382709 2.78157L5.2773 8.86261V16.4333C5.2773 16.6404 5.3873 16.831 5.56415 16.9304C5.74103 17.0299 5.9566 17.0222 6.12636 16.9106L10.4685 14.0546C10.6269 13.9504 10.7227 13.7705 10.7227 13.5773V8.86261L15.6173 2.78157C16.5126 1.66926 15.7355 0 14.3371 0H1.66289Z" fill="white"/>
+                    <path d="M1.66289 0C0.264458 0 -0.512583 1.66926 0.382709 2.78157L5.2773 8.86261V16.4333C5.2773 16.6404 5.3873 16.831 5.56415 16.9304C5.74103 17.0299 5.9566 17.0222 6.12636 16.9106L10.4685 14.0546C10.6269 13.9504 10.7227 13.7705 10.7227 13.5773V8.86261L15.6173 2.78157C16.5126 1.66926 15.7355 0 14.3371 0H1.66289Z" fill="white"/>
             </svg>
             <a href="<?php echo esc_url(get_post_type_archive_link('biblioteca')); ?>">
                 <?php _e('Clear all filters', 'hacklabr'); ?>

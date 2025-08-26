@@ -558,6 +558,11 @@
                 font-weight: $font-weight--regular;
                 color: #222;
             }
+            .post-card__author{
+                span{
+                    display: none;
+                }
+            }
             .post-card__meta{
                 order: 3;
                 .post-card__date{
