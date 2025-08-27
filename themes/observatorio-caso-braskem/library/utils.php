@@ -335,11 +335,11 @@ add_action('pre_get_posts', function($query) {
             ];
         }
 
-        if ( ! empty($_GET['biblioteca_tipo_documento']) ) {
+        if ( ! empty($_GET['biblioteca_classe']) ) {
             $tax_query[] = [
-                'taxonomy' => 'tipo_documento',
+                'taxonomy' => 'classe',
                 'field'    => 'slug',
-                'terms'    => sanitize_text_field($_GET['biblioteca_tipo_documento']),
+                'terms'    => sanitize_text_field($_GET['biblioteca_classe']),
             ];
         }
 

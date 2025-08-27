@@ -163,7 +163,7 @@
             </ul>
         </details>
 
-        <details class="filter-tipo-documento" <?php echo !empty($_GET['biblioteca_tipo_documento']) ? 'open' : ''; ?>>
+        <details class="filter-classe" <?php echo !empty($_GET['biblioteca_classe']) ? 'open' : ''; ?>>
             <summary>
             <div class="filter-title">
                 <svg xmlns="http://www.w3.org/2000/svg" width="32" height="24" viewBox="0 0 32 24" fill="none">
@@ -178,15 +178,15 @@
             <ul>
                 <?php
                 $tipos = get_terms([
-                    'taxonomy'   => 'tipo_documento',
+                    'taxonomy'   => 'classe',
                     'hide_empty' => true,
                 ]);
                 foreach ($tipos as $tipo) :
                     $args = $_GET;
-                    $args['biblioteca_tipo_documento'] = $tipo->slug;
+                    $args['biblioteca_classe'] = $tipo->slug;
                     unset($args['paged']);
                     $link = add_query_arg($args, get_post_type_archive_link('biblioteca'));
-                    $selected = (($_GET['biblioteca_tipo_documento'] ?? '') === $tipo->slug);
+                    $selected = (($_GET['biblioteca_classe'] ?? '') === $tipo->slug);
                 ?>
                     <li>
                         <a href="<?php echo esc_url($link); ?>" class="<?php echo $selected ? 'active' : ''; ?>">
@@ -219,7 +219,7 @@
         'biblioteca_coautor'  => __('Co-author', 'hacklabr'),
         'biblioteca_midia'    => __('Media', 'hacklabr'),
         'biblioteca_instancia'=> __('Instance', 'hacklabr'),
-        'biblioteca_tipo_documento'=> __('Document type', 'hacklabr')
+        'biblioteca_classe'=> __('Class', 'hacklabr')
     ];
 
     foreach ($filters as $key => $label) :
@@ -232,8 +232,8 @@
                 $value = $ga ? $ga->post_title : $value;
             }
 
-            if ($key === 'biblioteca_tipo_documento') {
-                $term = get_term_by('slug', $value, 'tipo_documento');
+            if ($key === 'biblioteca_classe') {
+                $term = get_term_by('slug', $value, 'classe');
                 $value = $term ? $term->name : $value;
             }
             ?>
