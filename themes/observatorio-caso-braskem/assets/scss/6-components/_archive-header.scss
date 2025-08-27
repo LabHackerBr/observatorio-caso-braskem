@@ -226,6 +226,9 @@
         form{
             display: flex;
             align-items: center;
+            @include mobile{
+                justify-content: center;
+            }
             &:focus-visible{
                 outline: none !important;
             }

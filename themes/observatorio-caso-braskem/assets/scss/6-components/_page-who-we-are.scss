@@ -1,23 +1,30 @@
 .who-we-are {
-    position: relative;
+    // position: relative;
+    // &::before {
+    //     content: "";
+    //     position: absolute;
+    //     top: 0;
+    //     left: 0;
+    //     width: 100%;
+    //     height: 100%;
+    //     background-image: url("/wp-content/themes/observatorio-caso-braskem/assets/images/bg-who-we-are.svg");
+    //     background-repeat: repeat;
+    //     background-position: center;
+    //     background-size: cover;
+    //     opacity: 1;
+    //     z-index: 0;
+    // }
 
-    &::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-image: url("/wp-content/themes/observatorio-caso-braskem/assets/images/bg-who-we-are.svg");
-        background-repeat: repeat;
-        background-position: center;
-        background-size: cover;
-        opacity: 1;
-        z-index: 0;
-    }
+    background: #200202 !important;
+    background: linear-gradient(180deg,rgba(32, 2, 2, 1) 0%, rgba(73, 8, 6, 1) 50%, rgba(32, 2, 2, 1) 100%) !important;
 
     &__team {
         gap: $gap--small !important;
+        max-width: size(257);
+        @include mobile{
+            max-width: size(157);
+
+        }
         p {
             font-family: $font-family--secondary !important;
         }
@@ -33,6 +40,9 @@
 
     &__content {
         gap: $gap--xx-large !important;
+        @include mobile{
+            gap: 1rem !important;
+        }
     }
 
     .post-header__title {
@@ -62,7 +72,26 @@
     }
 
     .container {
-        padding: 102px 16px 67px;
+        padding: 1rem 1rem 4rem;
+    }
+    .wp-block-cover{
+        @include mobile{
+            padding-top: 2rem !important;
+            padding-bottom: 2rem !important;
+
+        }
+    }
+
+    .the-team{
+        gap: 0;
+        @include mobile{
+            gap: 1rem;
+        }
+        .wp-block-column{
+            .wp-block-group{
+                gap: size(16);
+            }
+        }
     }
 
     .post-content {
