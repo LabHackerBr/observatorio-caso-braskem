@@ -53,7 +53,7 @@
 
 .page-cpi{
     .cpi-header{
-        background-color: $color--helper-pure;
+        background-color: $color--primary-pure;
         .container--full{
             width: 100%;
         }
@@ -70,7 +70,8 @@
         text-align: left;
         z-index: 2;
         margin-top: 0;
-        padding-top: 2rem;
+        padding-top: 3.5rem;
+        padding-bottom: 3.5rem;
 
         @include mobile {
             font-size: $font-size--large;

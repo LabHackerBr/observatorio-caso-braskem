@@ -77,10 +77,15 @@
         margin-inline: initial;
         max-width: size(1200);
         margin-inline: auto;
+        p:nth-last-of-type(1){
+            font-size: size(20) !important;
+        }
     }
     .latest-horizontal-posts-block{
         margin-left: auto;
         margin-right: auto;
+        padding-top: 3rem;
+        margin-bottom: 0;
         &__heading{
             color: $color--primary-pure;
             font-size: size(24);
