@@ -50,3 +50,41 @@
         }
     }
 }
+
+.page-cpi{
+    .cpi-header{
+        background-color: $color--helper-pure;
+        .container--full{
+            width: 100%;
+        }
+    }
+    .post-header__title {
+        position: relative;
+        color: $color--high-pure;
+        display: flex;
+        gap: 6px;
+        font-size: $font-size--xx-large;
+        font-weight: $font-weight--bold;
+        text-transform: uppercase;
+        font-family: $font-family--heading;
+        text-align: left;
+        z-index: 2;
+        margin-top: 0;
+        padding-top: 2rem;
+
+        @include mobile {
+            font-size: $font-size--large;
+            align-items: center;
+            gap: $gap--medium;
+        }
+    }
+
+    .post-header__separator {
+        margin-bottom: unset;
+        border: unset;
+        max-width: size(1200);
+        margin-inline: auto;
+    }
+
+
+}

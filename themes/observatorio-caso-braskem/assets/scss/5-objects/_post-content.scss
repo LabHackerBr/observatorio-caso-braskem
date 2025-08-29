@@ -71,3 +71,45 @@
         }
     }
 }
+
+.page-cpi{
+    .post-content{
+        margin-inline: initial;
+        max-width: size(1200);
+        margin-inline: auto;
+    }
+    .latest-horizontal-posts-block{
+        margin-left: auto;
+        margin-right: auto;
+        &__heading{
+            color: $color--primary-pure;
+            font-size: size(24);
+            text-transform: uppercase;
+            p{
+                color: $color--low-pure;
+                font-size: size(16);
+                text-transform: none;
+                font-family: 'Sofia San', sans-serif;
+                max-width: size(270);
+            }
+        }
+        .post-title{
+            font-size: size(16) !important;
+        }
+    }
+    .latest-horizontal-posts-block.model-post .post-content{
+        height: auto;
+        background: none;
+        bottom: 1rem;
+    }
+    .latest-horizontal-posts-block__footer{
+        padding-left: 0 !important;
+    }
+    .latest-horizontal-posts-block.model-post .latest-horizontal-posts-block__arrows{
+        width: 90% !important;
+        padding-left: 0 !important;
+    }
+    .sharedaddy{
+        display: none;
+    }
+}
