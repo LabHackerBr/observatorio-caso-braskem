@@ -118,3 +118,69 @@
         display: none;
     }
 }
+
+.page-linha-do-tempo{
+    .post-content {
+        margin-inline: initial;
+        max-width: size(1180);
+        margin-inline: auto;
+        .sharedaddy,
+        .timeline-year,
+        .ctl-navigation-items,
+        .ctl-arrow,
+        .story-date{
+            display: none !important;
+        }
+        .ctl-start, .ctl-end{
+            background-color: transparent !important;
+        }
+        .ctl-timeline{
+            &::before{
+                content: url('#{$path--assets}/images/rachadura-time-line.png') !important;
+                border: none !important;
+                position: relative;
+                left: calc(45% - var(--ctw-line-width) / 2) !important;
+                background-color: transparent !important;
+            }
+        }
+        .ctl-story{
+            width: 100% !important;
+            margin-bottom: 3rem !important;
+            .ctl-content{
+                justify-content: space-between;
+                .ctl-media{
+                    max-width: size(430) !important;
+                    width: 100% !important;
+                }
+                .ctl-description{
+                    max-width: size(500) !important;
+                    width: 100% !important;
+                }
+            }
+            .ctl-icondot{
+                left: 47% !important;
+                top: 50% !important;
+            }
+        }
+        .ctl-title{
+            background: transparent !important;
+        }
+
+
+        // filhos ímpares
+        // .ctl-timeline > .ctl-story:nth-of-type(odd) {
+        //     background: #f0f0f0;
+        // }
+
+        // filhos pares
+        .ctl-timeline > .ctl-story:nth-of-type(even) {
+
+            .ctl-content{
+                flex-direction: row-reverse;
+                .ctl-description{
+                    text-align: right !important;
+                }
+            }
+        }
+    }
+}

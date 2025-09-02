@@ -86,6 +86,14 @@
         max-width: size(1200);
         margin-inline: auto;
     }
+}
 
+.page-linha-do-tempo{
+    .post-header__separator {
+        margin-bottom: unset;
+        border: unset;
+        max-width: size(1200);
+        margin-inline: auto;
+    }
 
 }
