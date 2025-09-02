@@ -334,6 +334,15 @@
             }
         }
 
+        .filter-classe,
+        .filter-ano,
+        .filter-authors{
+            ul{
+                max-height: size(160);
+                overflow-y: scroll;
+            }
+        }
+
     }
     .archive-filters__checkbox{
         margin-top: 1.5rem;
