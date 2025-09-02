@@ -1,6 +1,6 @@
 <div class="archive-filters">
     <div class="archive-filters__selects">
-        <details class="filter-ano" <?php echo !empty($_GET['biblioteca_ano']) ? 'open' : ''; ?>>
+        <details class="filter-ano">
             <summary>
                 <div class="filter-title">
                 <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 26 26" fill="none">
@@ -67,7 +67,7 @@
             </ul>
         </details>
 
-        <details class="filter-authors" <?php echo !empty($_GET['biblioteca_coautor']) ? 'open' : ''; ?>>
+        <details class="filter-authors">
             <summary>
             <div class="filter-title">
                 <svg xmlns="http://www.w3.org/2000/svg" width="25" height="29" viewBox="0 0 25 29" fill="none">
@@ -115,7 +115,7 @@
             </ul>
         </details>
 
-        <details class="filter-midia" <?php echo !empty($_GET['biblioteca_midia']) ? 'open' : ''; ?>>
+        <details class="filter-midia">
             <summary>
             <div class="filter-title">
                 <svg xmlns="http://www.w3.org/2000/svg" width="23" height="22" viewBox="0 0 23 22" fill="none">
@@ -153,7 +153,7 @@
             </ul>
         </details>
 
-        <details class="filter-instancia" <?php echo !empty($_GET['biblioteca_instancia']) ? 'open' : ''; ?>>
+        <details class="filter-instancia">
             <summary>
             <div class="filter-title">
                 <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" viewBox="0 0 23 23" fill="none">
@@ -194,7 +194,7 @@
             </ul>
         </details>
 
-        <details class="filter-classe" <?php echo !empty($_GET['biblioteca_classe']) ? 'open' : ''; ?>>
+        <details class="filter-classe">
             <summary>
             <div class="filter-title">
                 <svg xmlns="http://www.w3.org/2000/svg" width="32" height="24" viewBox="0 0 32 24" fill="none">
@@ -335,6 +335,13 @@ document.addEventListener("DOMContentLoaded", function() {
         });
       }
     });
+
+    filter.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", function() {
+        filter.removeAttribute("open");
+      });
+    });
   });
 });
 </script>
+

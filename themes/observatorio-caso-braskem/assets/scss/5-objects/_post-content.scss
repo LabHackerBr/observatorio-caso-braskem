@@ -184,3 +184,15 @@
         }
     }
 }
+
+.single-biblioteca{
+    #app{
+        .single{
+            display: flex;
+            gap: 2rem;
+            max-width: size(1170);
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+}
