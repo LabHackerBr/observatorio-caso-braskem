@@ -67,63 +67,55 @@
             </ul>
         </details>
 
-        <?php
-        $posts = get_posts([
-            'post_type'      => 'biblioteca',
-            'posts_per_page' => -1,
-            'post_status'    => 'publish',
-        ]);
-
-        $unique_authors = [];
-
-        foreach ($posts as $p) {
-            $coauthors = get_coauthors($p->ID);
-            foreach ($coauthors as $author) {
-                if ($author->type === 'guest-author' && !isset($unique_authors[$author->user_nicename])) {
-                    $unique_authors[$author->user_nicename] = $author;
-                }
-            }
-        }
-
-        usort($unique_authors, function($a, $b) {
-            return strcmp($a->display_name, $b->display_name);
-        });
-        ?>
-
         <details class="filter-authors">
             <summary>
-                <div class="filter-title">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="29" viewBox="0 0 25 29" fill="none">
-                        <path fill-rule="evenodd" clip-rule="evenodd" d="M2.23464 20.0947L1.08397 22.3977C1.05214 22.4705 1.02654 22.5327 1.01082 22.5852L0.644275 24.4899C0.631663 24.6471 0.818015 24.7213 0.911041 24.5984L2.35229 23.0092L2.34499 23.0075C2.39611 22.9511 2.44339 22.8778 2.49843 22.7703L3.55825 20.7667C3.55825 20.7667 7.96683 20.09 10.7452 19.1639C13.5272 18.2385 17.7509 12.7283 17.7509 12.7283L14.3193 12.6465L18.3098 11.3791C18.7145 11.2508 18.977 10.9383 19.2853 10.5762L24.5281 4.40904C4.15214 1.57073 1.09658 17.657 2.23464 20.0947ZM4.66406 18.2895L3.53196 19.0729C5.86703 13.4386 12.5997 6.75312 20.3963 5.8604C9.43391 9.43935 4.67738 18.2646 4.66406 18.2895Z" fill="#222222"/>
-                    </svg>
-                    <?php
-                    if ( ! empty($_GET['biblioteca_coautor']) ) {
-                        $author_post = get_page_by_path( sanitize_text_field($_GET['biblioteca_coautor']), OBJECT, 'guest-author' );
-                        if ( $author_post ) {
-                            echo esc_html($author_post->post_title);
-                        } else {
-                            echo esc_html($_GET['biblioteca_coautor']);
-                        }
+            <div class="filter-title">
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="29" viewBox="0 0 25 29" fill="none">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M2.23464 20.0947L1.08397 22.3977C1.05214 22.4705 1.02654 22.5327 1.01082 22.5852L0.644275 24.4899C0.631663 24.6471 0.818015 24.7213 0.911041 24.5984L2.35229 23.0092L2.34499 23.0075C2.39611 22.9511 2.44339 22.8778 2.49843 22.7703L3.55825 20.7667C3.55825 20.7667 7.96683 20.09 10.7452 19.1639C13.5272 18.2385 17.7509 12.7283 17.7509 12.7283L14.3193 12.6465L18.3098 11.3791C18.7145 11.2508 18.977 10.9383 19.2853 10.5762L24.5281 4.40904C4.15214 1.57073 1.09658 17.657 2.23464 20.0947ZM4.66406 18.2895L3.53196 19.0729C5.86703 13.4386 12.5997 6.75312 20.3963 5.8604C9.43391 9.43935 4.67738 18.2646 4.66406 18.2895Z" fill="#222222"/>
+                </svg>
+                <?php
+                   if ( ! empty($_GET['biblioteca_coautor']) ) {
+                    $author_post = get_page_by_path( sanitize_text_field($_GET['biblioteca_coautor']), OBJECT, 'guest-author' );
+                    if ( $author_post ) {
+                        echo esc_html($author_post->post_title);
                     } else {
-                        _e('Authorship', 'hacklabr');
+                        echo esc_html($_GET['biblioteca_coautor']);
                     }
-                    ?>
-                </div>
+                } else {
+                    _e('Authorship', 'hacklabr');
+                }
+                ?>
+            </div>
                 <svg xmlns="http://www.w3.org/2000/svg" width="11" height="6" viewBox="0 0 11 6" fill="none">
                     <path d="M5.49416 5.6028C5.29621 5.81693 4.95777 5.81693 4.75983 5.6028L0.35666 0.839397C0.0606761 0.519197 0.287779 -1.20697e-07 0.723824 -7.90303e-08L9.53016 7.6246e-07C9.9662 8.04126e-07 10.1933 0.519198 9.89732 0.839398L5.49416 5.6028Z" fill="#222222"/>
                 </svg>
             </summary>
             <ul>
-                <?php foreach ($unique_authors as $ga) :
+            <?php
+                $guest_authors = get_posts([
+                    'post_type'      => 'guest-author',
+                    'posts_per_page' => -1,
+                    'orderby'        => 'title',
+                    'order'          => 'ASC',
+                ]);
+
+                $unique_authors = [];
+                foreach ($guest_authors as $ga) {
+                    if (!isset($unique_authors[$ga->post_title])) {
+                        $unique_authors[$ga->post_title] = $ga;
+                    }
+                }
+
+                foreach ($unique_authors as $ga) :
                     $args = $_GET;
-                    $args['biblioteca_coautor'] = $ga->user_nicename;
+                    $args['biblioteca_coautor'] = $ga->post_name;
                     unset($args['paged']);
                     $link = add_query_arg($args, get_post_type_archive_link('biblioteca'));
-                    $selected = (($_GET['biblioteca_coautor'] ?? '') === $ga->user_nicename);
+                    $selected = (($_GET['biblioteca_coautor'] ?? '') === $ga->post_name);
                 ?>
                     <li>
                         <a href="<?php echo esc_url($link); ?>" class="<?php echo $selected ? 'active' : ''; ?>">
-                            <?php echo esc_html($ga->display_name); ?>
+                            <?php echo esc_html($ga->post_title); ?>
                         </a>
                     </li>
                 <?php endforeach; ?>
