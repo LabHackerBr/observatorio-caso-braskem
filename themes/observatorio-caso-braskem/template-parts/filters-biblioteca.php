@@ -91,7 +91,7 @@
                 </svg>
             </summary>
             <ul>
-                <?php
+            <?php
                 $guest_authors = get_posts([
                     'post_type'      => 'guest-author',
                     'posts_per_page' => -1,
@@ -99,7 +99,14 @@
                     'order'          => 'ASC',
                 ]);
 
-                foreach ($guest_authors as $ga) :
+                $unique_authors = [];
+                foreach ($guest_authors as $ga) {
+                    if (!isset($unique_authors[$ga->post_title])) {
+                        $unique_authors[$ga->post_title] = $ga;
+                    }
+                }
+
+                foreach ($unique_authors as $ga) :
                     $args = $_GET;
                     $args['biblioteca_coautor'] = $ga->post_name;
                     unset($args['paged']);

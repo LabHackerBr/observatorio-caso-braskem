@@ -186,13 +186,26 @@
 }
 
 .single-biblioteca{
+    &::before{
+        display: none;
+    }
     #app{
-        .single{
+        .biblioteca-content{
             display: flex;
             gap: 2rem;
             max-width: size(1170);
             margin-left: auto;
             margin-right: auto;
+            .post-content{
+                .image-gallery.hacklab-block.fullscreen{
+                    position: relative;
+                    max-width: size(1170) !important;
+                    @include mobile{
+                        max-width: 100% !important;
+
+                    }
+                }
+            }
         }
     }
 }
