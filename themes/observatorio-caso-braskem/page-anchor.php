@@ -8,7 +8,7 @@ get_header(); ?>
     <div class="container">
         <?php get_template_part( 'template-parts/title/default' ); ?>
         <div class="row">
-            <div class=" sidebarpage">
+            <div class="sidebarpage">
                 <p class="anchor-title"><?= __( 'Sections', 'hacklabr' ) ?></p>
                 <ul id="anchors"></ul>
             </div>
