@@ -2,9 +2,17 @@
     display: flex;
     gap: $gap--small;
     font-size: $font-size--small;
+    flex-direction: column;
+    position: fixed;
+    width: fit-content;
+    gap: 2rem;
+    margin-top: 3rem;
+    margin-left: 2rem;
 
-    &__icons {
-        display: flex;
-        gap: $gap--medium;
-    }
+   .twitter-btn{
+    background-color: $color--primary-pure;
+    padding: .4rem;
+    border-radius: $border-radius--round;
+    width: fit-content;
+   }
 }

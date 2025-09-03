@@ -25,17 +25,17 @@ $excerpt = !empty( $post->post_excerpt ) ? wp_kses_post( $post->post_excerpt ) :
         <div class="post-header__author">
             <div class="post-header__published-container">
             <?php
-                $coauthors = get_coauthors(); // retorna todos os autores (users + guest-authors)
+                $coauthors = get_coauthors();
                 foreach ( $coauthors as $author ) :
-                    $avatar = get_avatar_url( $author->ID, ['size' => 96] ); // pega o avatar
-                    $name   = $author->display_name; // nome público
-                    $link   = get_author_posts_url( $author->ID, $author->user_nicename ); // link p/ página do autor
+                    $avatar = get_avatar_url( $author->ID, ['size' => 96] );
+                    $name   = $author->display_name;
+                    $link   = get_author_posts_url( $author->ID, $author->user_nicename );
                 ?>
                     <div class="post-header__published-container">
                         <img class="post-header__author-image" src="<?= esc_url($avatar) ?>" alt="<?= esc_attr($name) ?>"/>
                         <div class="post-header__author-published-date">
                             <p class="post-header__author-name">
-                                <?php _e('Published by ', 'hacklabr') ?>
+                                <?php _e('By ', 'hacklabr') ?>
                                 <a href="<?= esc_url($link) ?>"><?= esc_html($name) ?></a>
                             </p>
                             <p class="post-header__date"><?= get_the_date("j/m/Y")?></p>
