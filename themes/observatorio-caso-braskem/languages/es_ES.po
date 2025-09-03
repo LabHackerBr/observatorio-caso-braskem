@@ -1,21 +1,21 @@
+# Copyright (C) 2025 Hacklab
+# This file is distributed under the GNU General Public License v2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: \n"
+"Project-Id-Version: hacklabr 0.10.8\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/observatorio-caso-"
 "braskem\n"
 "POT-Creation-Date: 2025-09-03T12:06:10+00:00\n"
-"PO-Revision-Date: 2025-09-03 09:10-0300\n"
+"PO-Revision-Date: 2025-09-03 09:30-0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
-"Language: pt_BR\n"
+"Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Domain: hacklabr\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 3.0.1\n"
 "X-Domain: hacklabr\n"
-"X-Poedit-Basepath: .\n"
 
 #. Theme Name of the theme
 #: style.css
@@ -31,7 +31,7 @@ msgstr "https://hacklab.com.br/"
 #. Description of the theme
 #: style.css
 msgid "Base theme for developing new websites."
-msgstr "Tema base para desenvolvimento de novos sites."
+msgstr ""
 
 #. Author of the theme
 #: style.css
@@ -48,98 +48,98 @@ msgstr ":("
 
 #: 404.php:13
 msgid "Oops"
-msgstr "Oops"
+msgstr "Ups"
 
 #: 404.php:16
 msgid "We couldn't find the page you tried to access!"
-msgstr "Não conseguimos encontrar a página que você tentou acessar!"
+msgstr "¡No pudimos encontrar la página a la que intentabas acceder!"
 
 #: 404.php:19
 msgid ""
 "We couldn't find what you're looking for, type what you need in the search "
 "bar up there."
 msgstr ""
-"Não conseguimos encontrar o que você está procurando, digite o que você "
-"precisa na barra de pesquisa ali em cima."
+"No pudimos encontrar lo que estás buscando, escribe lo que necesitas en la "
+"barra de búsqueda de arriba."
 
 #: 404.php:21
 msgid "BACK TO HOMEPAGE"
-msgstr "VOLTAR PARA HOME"
+msgstr "VOLVER A LA PÁGINA DE INICIO"
 
 #: archive-biblioteca.php:11
 msgid "Library"
-msgstr ""
+msgstr "Biblioteca"
 
 #: archive-biblioteca.php:18
 msgid "Quick search..."
-msgstr ""
+msgstr "Búsqueda rápida..."
 
 #: archive-biblioteca.php:36
 msgid "No results found."
-msgstr "Nenhum resultado encontrado."
+msgstr "No se encontraron resultados."
 
 #: archive-map.php:7
 msgid "Maps"
-msgstr ""
+msgstr "Mapas"
 
 #: archive.php:11 library/utils.php:244 library/utils.php:245
 #: library/utils.php:249 library/utils.php:255 library/utils.php:256
 msgid "News"
-msgstr "Notícias"
+msgstr "Noticias"
 
 #. translators: %s: Post title.
 #: comments.php:28
 msgctxt "comments title"
 msgid "One thought on &ldquo;%s&rdquo;"
-msgstr "Um comentário em  &ldquo;%s&rdquo;"
+msgstr ""
 
 #. translators: 1: Number of comments, 2: Post title.
 #: comments.php:32
 msgctxt "comments title"
 msgid "%1$s thought on &ldquo;%2$s&rdquo;"
 msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
-msgstr[0] "%1$s comentário em &ldquo;%2$s&rdquo;"
-msgstr[1] "%1$s comentários em &ldquo;%2$s&rdquo;"
+msgstr[0] ""
+msgstr[1] ""
 
 #: comments.php:61
 msgid "Comment navigation"
-msgstr "Navegação de comentários"
+msgstr ""
 
 #: comments.php:62
 msgid "&larr; Older"
-msgstr "&larr; Mais antigos"
+msgstr ""
 
 #: comments.php:63
 msgid "Newest &rarr;"
-msgstr "Mais novos &rarr;"
+msgstr ""
 
 #: comments.php:68
 msgid "Comments are disabled"
-msgstr "Os comentários estão desativados"
+msgstr ""
 
 #: footer.php:11
 msgid "Terms of use"
-msgstr "Termos de uso"
+msgstr "Condiciones de uso"
 
 #: footer.php:12
 msgid "and"
-msgstr "e"
+msgstr "y"
 
 #: footer.php:13
 msgid "Privacy Policy"
-msgstr "Política de Privacidade"
+msgstr "política de privacidad "
 
 #: header-lateral.php:31
 msgid "Toggle menu visibility"
-msgstr "Alternar visibilidade do menu"
+msgstr "Activar o desactivar la visibilidad del menú"
 
 #: header-lateral.php:52
 msgid "Toggle search form visibility"
-msgstr "Alternar a visibilidade do formulário de pesquisa"
+msgstr "Activar o desactivar la visibilidad del formulario de búsqueda"
 
 #: header-lateral.php:55
 msgid "Toggle language selector visibility"
-msgstr "Alternar a visibilidade do seletor de idiomas"
+msgstr "Activar o desactivar la visibilidad del selector de idioma"
 
 #: library/blocks/stories-mosaic/stories-mosaic.php:81
 #: library/blocks/stories-mosaic/stories-mosaic.php:97
@@ -150,13 +150,13 @@ msgstr "Alternar a visibilidade do seletor de idiomas"
 #: library/blocks/v2/src/latest-vertical-posts/latest-vertical-posts.php:218
 #: library/blocks/v2/src/opportunities-from-mapas-culturais/opportunities-from-mapas-culturais.php:38
 msgid "No content found"
-msgstr "Nenhum conteúdo encontrado"
+msgstr "No se encontró contenido"
 
 #: library/blocks/stories-mosaic/template-parts/post.php:56
 #: library/blocks/v2/src/latest-horizontal-posts/template-parts/post.php:31
 #: library/blocks/v2/src/latest-vertical-posts/template-parts/post.php:56
 msgid "in"
-msgstr "em"
+msgstr "en"
 
 #: library/blocks/stories-mosaic/template-parts/post.php:64
 #: library/blocks/v2/src/latest-vertical-posts/template-parts/post.php:64
@@ -167,113 +167,113 @@ msgstr "por"
 #: library/blocks/v2/includes/api.php:262
 #: library/blocks/v2/includes/api.php:439
 msgid "Select an option"
-msgstr "Selecione uma opção"
+msgstr "Seleccione una opción"
 
 #: library/blocks/v2/includes/helpers.php:169
 msgid "%s ago"
-msgstr "atrás"
+msgstr ""
 
 #: library/blocks/v2/includes/settings.php:16
 msgid "YouTube API Key"
-msgstr "Chave API do YouTube"
+msgstr ""
 
 #: library/blocks/v2/src/events-from-mapas-culturais/includes/helpers.php:41
 msgid "Today"
-msgstr "Hoje"
+msgstr "Hoy"
 
 #: library/blocks/v2/src/events-from-mapas-culturais/includes/helpers.php:45
 msgid "Tomorrow"
-msgstr "Amanhã"
+msgstr "Mañana"
 
 #: library/blocks/v2/src/latest-horizontal-posts/latest-horizontal-posts.php:53
 #: library/blocks/v2/src/latest-vertical-posts/latest-vertical-posts.php:82
 msgid "Check the API Key, user or album ID"
-msgstr "Verifique a chave API, usuáriou o ID do álbum"
+msgstr ""
 
 #: library/blocks/v2/src/latest-horizontal-posts/latest-horizontal-posts.php:125
 #: library/blocks/v2/src/latest-vertical-posts/latest-vertical-posts.php:155
 msgid "This feature depends on the AjaxPageviews plugin."
-msgstr "Essa funcionalidade depende do plugin AjaxPageviews"
+msgstr ""
 
 #: library/blocks/v2/src/latest-horizontal-posts/latest-horizontal-posts.php:168
 msgid "Check the API Key"
-msgstr "Verifique a chave API"
+msgstr ""
 
 #: library/blocks/v2/src/latest-vertical-posts/latest-vertical-posts.php:207
 msgid "Check the API Key or playlist ID"
-msgstr "Verifique a chave API ou o ID da playlist"
+msgstr ""
 
 #: library/menus.php:6
 msgid "Main menu"
-msgstr "Menu principal"
+msgstr "Menú principal"
 
 #: library/menus.php:7
 msgid "Social networks"
-msgstr "Redes sociais"
+msgstr "Redes sociales"
 
 #: library/settings.php:13
 msgid "Cover card"
-msgstr "Card cobertura"
+msgstr ""
 
 #: library/settings.php:17
 msgid "Horizontal card"
-msgstr "Card horizontal"
+msgstr ""
 
 #: library/settings.php:21
 msgid "Vertical card"
-msgstr "Card vertical"
+msgstr ""
 
 #: library/settings.php:39
 msgid "YouTube Key"
-msgstr "Chave do YouTube"
+msgstr ""
 
 #: library/utils.php:246 library/utils.php:247
 msgid "Add news"
-msgstr "Adicionar notícia"
+msgstr ""
 
 #: library/utils.php:248
 msgid "Edit news"
-msgstr "Editar notícia"
+msgstr ""
 
 #: library/utils.php:250
 msgid "View news"
-msgstr "Ver notícia"
+msgstr ""
 
 #: library/utils.php:251
 msgid "Search news"
-msgstr "Procurar notícias"
+msgstr ""
 
 #: library/utils.php:252
 msgid "No news found"
-msgstr "Nenhuma notícia encontrada"
+msgstr ""
 
 #: library/utils.php:253
 msgid "No news found in Trash"
-msgstr "Nenhuma notícia encontrada na lixeira"
+msgstr ""
 
 #: library/utils.php:254
 msgid "All news"
-msgstr "Todas as notícias"
+msgstr ""
 
 #. Template Name of the theme
 msgid "Page with anchors"
-msgstr "Página com âncoras"
+msgstr "Página con anclas"
 
 #: page-anchor.php:12
 msgid "Sections"
-msgstr "Seções"
+msgstr "Secciones"
 
 #: searchform.php:11
 msgid "Search for:"
-msgstr "Procurar por:"
+msgstr "Buscar:"
 
 #: searchform.php:16
 msgid "Search term..."
-msgstr "Termo pesquisado..."
+msgstr "Término de búsqueda..."
 
 #: single-biblioteca.php:38
 msgid "By "
-msgstr "Por"
+msgstr "Por "
 
 #: single.php:48
 msgid "Published by "
@@ -281,11 +281,11 @@ msgstr "Publicado por "
 
 #. Template Name of the theme
 msgid "Component Inventory"
-msgstr "Inventário de Componentes"
+msgstr "Inventario de componentes"
 
 #. Template Name of the theme
 msgid "Untitled pagebuilder"
-msgstr "Construtor de páginas sem título"
+msgstr ""
 
 #: template-parts/archive-term-filter.php:9
 #: template-parts/archive-term-filter.php:68
@@ -297,22 +297,22 @@ msgstr "FILTRAR POR"
 #: template-parts/archive-term-filter.php:75
 #: template-parts/search-filters.php:12 template-parts/search-filters.php:76
 msgid "ALL"
-msgstr "TODOS"
+msgstr "TODO"
 
 #: template-parts/archive-term-filter.php:25
 #: template-parts/search-filters.php:25
 msgid "Latests"
-msgstr "Mais recentes"
+msgstr "Más reciente"
 
 #: template-parts/archive-term-filter.php:26
 #: template-parts/search-filters.php:26
 msgid "Oldests"
-msgstr "Mais antigas"
+msgstr "Más antiguos"
 
 #: template-parts/archive-term-filter.php:27
 #: template-parts/search-filters.php:27
 msgid "Alphabetical"
-msgstr "Alfabética"
+msgstr "Alfabético"
 
 #: template-parts/archive-term-filter.php:30
 #: template-parts/archive-term-filter.php:34
@@ -329,19 +329,19 @@ msgstr "resultados encontrados"
 
 #: template-parts/content/no-post.php:4
 msgid "Nothing found"
-msgstr "Nada encontrado"
+msgstr "No se encontró nada"
 
 #: template-parts/content/no-post.php:9
 msgid "Sorry, nothing matches your search terms."
-msgstr "Desculpe, nada corresponde aos seus termos de pesquisa."
+msgstr "Lo sentimos, nada coincide con tus términos de búsqueda."
 
 #: template-parts/content/no-post.php:12
 msgid "Try again with some different keywords."
-msgstr "Tente novamente com algumas palavras-chave diferentes."
+msgstr "Inténtalo de nuevo con algunas palabras clave diferentes."
 
 #: template-parts/content/no-post.php:18
 msgid "Back to homepage"
-msgstr "Voltar para a Home"
+msgstr "Volver a la página de inicio"
 
 #: template-parts/filter-posts.php:21
 msgid "Todos"
@@ -350,11 +350,11 @@ msgstr ""
 #: template-parts/filters-biblioteca.php:25
 #: template-parts/filters-biblioteca.php:262
 msgid "Year"
-msgstr ""
+msgstr "Año"
 
 #: template-parts/filters-biblioteca.php:85
 msgid "Authorship"
-msgstr "Autoria"
+msgstr "Paternidad literaria"
 
 #: template-parts/filters-biblioteca.php:135
 msgid "Media type"
@@ -377,19 +377,19 @@ msgstr ""
 #: template-parts/filters-biblioteca.php:261
 #: template-parts/title/archive-header.php:52
 msgid "Search"
-msgstr "Procurar"
+msgstr "Buscar"
 
 #: template-parts/filters-biblioteca.php:263
 msgid "Co-author"
-msgstr "Co-autor"
+msgstr ""
 
 #: template-parts/filters-biblioteca.php:264
 msgid "Media"
-msgstr "Mídia"
+msgstr ""
 
 #: template-parts/filters-biblioteca.php:303
 msgid "Clear all filters"
-msgstr ""
+msgstr "Borrar todos los filtros"
 
 #: template-parts/post-card.php:102
 msgid "By"
@@ -397,7 +397,7 @@ msgstr "Por"
 
 #: template-parts/site-by-hacklab.php:2
 msgid "Website by"
-msgstr "Site por"
+msgstr "Sitio web por"
 
 #: template-parts/title/archive-header.php:9
 msgid "result"
@@ -409,19 +409,19 @@ msgstr "resultados"
 
 #: template-parts/title/archive-header.php:13
 msgid "SEARCH RESULT"
-msgstr "RESULTADO DA PESQUISA"
+msgstr "RESULTADO DE LA BÚSQUEDA"
 
 #: template-parts/title/archive-header.php:21
 msgid "SEARCH TERM"
-msgstr "TERMO BUSCADO"
+msgstr "TÉRMINO DE BÚSQUEDA"
 
 #: template-parts/title/archive-header.php:73
 msgid " Results Found"
-msgstr " Resultados Encontrados"
+msgstr "Resultados encontrados "
 
 #: template-parts/title/author.php:6
 msgid "Author: %s"
-msgstr "Autor:%s"
+msgstr ""
 
 #: dist/blocks/banner-with-image/editor.js:29
 #: dist/blocks/card-header/editor.js:19
@@ -430,7 +430,7 @@ msgstr "Autor:%s"
 #: dist/blocks/banner-with-image/editor.js:128
 #: dist/blocks/card-header/editor.js:115
 msgid "Header content"
-msgstr "Conteúdo do cabeçalho"
+msgstr ""
 
 #: dist/blocks/banner-with-image/editor.js:29
 #: dist/blocks/card-header/editor.js:19 dist/blocks/posts-grid/editor.js:19
@@ -466,53 +466,53 @@ msgstr ""
 #: dist/blocks/banner-with-image/editor.js:145
 #: dist/blocks/card-header/editor.js:83
 msgid "Image"
-msgstr "Imagem"
+msgstr "Imagen"
 
 #: dist/blocks/banner-with-image/editor.js:39
 #: dist/blocks/card-header/editor.js:29 library/blocks/shared/SelectImage.js:15
 #: dist/blocks/banner-with-image/editor.js:79
 #: dist/blocks/card-header/editor.js:66
 msgid "Change image"
-msgstr "Trocar imagem"
+msgstr "Cambiar imagen"
 
 #: dist/blocks/banner-with-image/editor.js:39
 #: dist/blocks/card-header/editor.js:29 library/blocks/shared/SelectImage.js:18
 #: dist/blocks/banner-with-image/editor.js:82
 #: dist/blocks/card-header/editor.js:69
 msgid "Remove image"
-msgstr "Remover imagem"
+msgstr "Eliminar imagen"
 
 #: dist/blocks/banner-with-image/editor.js:39
 #: dist/blocks/card-header/editor.js:29 library/blocks/shared/SelectImage.js:24
 #: dist/blocks/banner-with-image/editor.js:88
 #: dist/blocks/card-header/editor.js:75
 msgid "Select image"
-msgstr "Selecionar imagem"
+msgstr "Seleccionar imagen"
 
 #: dist/blocks/card-body/editor.js:19 library/blocks/card-body/editor.js:8
 #: dist/blocks/card-body/editor.js:58
 msgid "Body content"
-msgstr "Conteúdo do corpo"
+msgstr "Contenido del cuerpo"
 
 #: dist/blocks/card-header/editor.js:19 library/blocks/card-header/editor.js:41
 #: dist/blocks/card-header/editor.js:145
 msgid "Background image"
-msgstr "Imagem de fundo"
+msgstr "Imagen de fondo"
 
 #: dist/blocks/posts-grid/editor.js:19 library/blocks/posts-grid/editor.js:39
 #: dist/blocks/posts-grid/editor.js:1843
 msgid "Grid columns"
-msgstr "Colunas do grid"
+msgstr "Columnas de cuadrícula"
 
 #: dist/blocks/posts-grid/editor.js:19 library/blocks/posts-grid/editor.js:48
 #: dist/blocks/posts-grid/editor.js:1852
 msgid "Grid rows"
-msgstr "Linhas do grid"
+msgstr "Filas de cuadrícula"
 
 #: dist/blocks/posts-grid/editor.js:19 library/blocks/posts-grid/editor.js:57
 #: dist/blocks/posts-grid/editor.js:1861
 msgid "Grid gap"
-msgstr "Espaçamento do grid"
+msgstr "Brecha de rejilla"
 
 #: dist/blocks/posts-grid/editor.js:19 library/blocks/posts-grid/editor.js:65
 #: dist/blocks/posts-grid/editor.js:1869
@@ -522,17 +522,17 @@ msgstr "Ocultar autor"
 #: dist/blocks/posts-grid/editor.js:19 library/blocks/posts-grid/editor.js:73
 #: dist/blocks/posts-grid/editor.js:1877
 msgid "Hide categories"
-msgstr "Ocultar categorias"
+msgstr "Ocultar categorías"
 
 #: dist/blocks/posts-grid/editor.js:19 library/blocks/posts-grid/editor.js:81
 #: dist/blocks/posts-grid/editor.js:1885
 msgid "Hide date"
-msgstr "Ocultar data"
+msgstr "Ocultar fecha"
 
 #: dist/blocks/posts-grid/editor.js:19 library/blocks/posts-grid/editor.js:89
 #: dist/blocks/posts-grid/editor.js:1893
 msgid "Hide excerpt"
-msgstr "Ocultar resumo"
+msgstr "Ocultar extracto"
 
 #: dist/blocks/posts-grid/editor.js:30 dist/blocks/stories-mosaic/editor.js:19
 #: library/blocks/shared/QueryPanel.js:11
@@ -551,7 +551,7 @@ msgstr "Consulta"
 #: library/blocks/shared/QueryPanel.js:35 dist/blocks/posts-grid/editor.js:1522
 #: dist/blocks/stories-mosaic/editor.js:1468
 msgid "Show children posts?"
-msgstr "Mostar posts filhos?"
+msgstr "¿Mostrar publicaciones de niños?"
 
 #: dist/blocks/posts-grid/editor.js:30 dist/blocks/stories-mosaic/editor.js:19
 #: library/blocks/shared/QueryPanel.js:79
@@ -564,26 +564,26 @@ msgstr "Mostar posts filhos?"
 #: library/blocks/v2/build/latest-horizontal-posts/index.js:681
 #: library/blocks/v2/build/latest-vertical-posts/index.js:705
 msgid "Filter posts to not display"
-msgstr "Filtre as postagens para não serem exibidas"
+msgstr "Filtrar publicaciones para no mostrarlas"
 
 #: dist/blocks/posts-grid/editor.js:41
 #: library/blocks/shared/SelectCardModel.js:21
 #: dist/blocks/posts-grid/editor.js:1630
 msgid "Card model"
-msgstr "Modelo de card"
+msgstr ""
 
 #: dist/blocks/posts-grid/editor.js:41
 #: library/blocks/shared/SelectCardModel.js:26
 #: dist/blocks/posts-grid/editor.js:1635
 msgctxt "card"
 msgid "Default model"
-msgstr "Modelo padrão"
+msgstr ""
 
 #: dist/blocks/posts-grid/editor.js:52
 #: library/blocks/shared/SelectCardModifier.js:29
 #: dist/blocks/posts-grid/editor.js:1676
 msgid "Card modifier"
-msgstr "Modificador do card"
+msgstr ""
 
 #: dist/blocks/posts-grid/editor.js:63 dist/blocks/stories-mosaic/editor.js:30
 #: library/blocks/shared/SelectCompare.js:5
@@ -602,7 +602,7 @@ msgstr "Modificador do card"
 #: library/blocks/v2/build/latest-vertical-posts/index.js:657
 #: library/blocks/v2/build/latest-vertical-posts/index.js:743
 msgid "OR"
-msgstr "OU"
+msgstr "O"
 
 #: dist/blocks/posts-grid/editor.js:63 dist/blocks/stories-mosaic/editor.js:30
 #: library/blocks/shared/SelectCompare.js:6
@@ -621,7 +621,7 @@ msgstr "OU"
 #: library/blocks/v2/build/latest-vertical-posts/index.js:661
 #: library/blocks/v2/build/latest-vertical-posts/index.js:747
 msgid "AND"
-msgstr "E"
+msgstr "Y"
 
 #: dist/blocks/posts-grid/editor.js:63 dist/blocks/stories-mosaic/editor.js:30
 #: library/blocks/shared/SelectCompare.js:9
@@ -640,99 +640,99 @@ msgstr "E"
 #: library/blocks/v2/build/latest-vertical-posts/index.js:653
 #: library/blocks/v2/build/latest-vertical-posts/index.js:739
 msgid "Compare terms"
-msgstr "Comparar termos"
+msgstr ""
 
 #: dist/blocks/posts-grid/editor.js:74 dist/blocks/stories-mosaic/editor.js:41
 #: library/blocks/shared/SelectPostType.js:21
 #: dist/blocks/posts-grid/editor.js:1377
 #: dist/blocks/stories-mosaic/editor.js:1324
 msgid "Post type"
-msgstr "Tipo de postagem"
+msgstr ""
 
 #: dist/blocks/posts-grid/editor.js:74 dist/blocks/stories-mosaic/editor.js:41
 #: library/blocks/shared/SelectPostType.js:26
 #: dist/blocks/posts-grid/editor.js:1382
 #: dist/blocks/stories-mosaic/editor.js:1329
 msgid "No post type"
-msgstr "Nenhum tipo de postagem"
+msgstr ""
 
 #: dist/blocks/posts-grid/editor.js:85 library/blocks/shared/SelectSize.js:7
 #: dist/blocks/posts-grid/editor.js:1739
 msgctxt "size"
 msgid "Large"
-msgstr "Grande"
+msgstr ""
 
 #: dist/blocks/posts-grid/editor.js:85 library/blocks/shared/SelectSize.js:8
 #: dist/blocks/posts-grid/editor.js:1740
 msgctxt "size"
 msgid "Medium"
-msgstr "Médio"
+msgstr ""
 
 #: dist/blocks/posts-grid/editor.js:85 library/blocks/shared/SelectSize.js:9
 #: dist/blocks/posts-grid/editor.js:1741
 msgctxt "size"
 msgid "Small"
-msgstr "Pequeno"
+msgstr ""
 
 #: dist/blocks/posts-grid/editor.js:85 library/blocks/shared/SelectSize.js:10
 #: dist/blocks/posts-grid/editor.js:1742
 msgctxt "size"
 msgid "Extra Large"
-msgstr "Muito Grande"
+msgstr ""
 
 #: dist/blocks/posts-grid/editor.js:85 library/blocks/shared/SelectSize.js:11
 #: dist/blocks/posts-grid/editor.js:1743
 msgctxt "size"
 msgid "Extra Small"
-msgstr "Muito Pequeno"
+msgstr ""
 
 #: dist/blocks/posts-grid/editor.js:85 library/blocks/shared/SelectSize.js:59
 #: dist/blocks/posts-grid/editor.js:1791
 msgid "Size"
-msgstr "Tamanho"
+msgstr ""
 
 #: dist/blocks/posts-grid/editor.js:96 dist/blocks/stories-mosaic/editor.js:52
 #: library/blocks/shared/SelectTaxonomy.js:21
 #: dist/blocks/posts-grid/editor.js:1415
 #: dist/blocks/stories-mosaic/editor.js:1362
 msgid "Taxonomy"
-msgstr "Taxonomia"
+msgstr ""
 
 #: dist/blocks/posts-grid/editor.js:96 dist/blocks/stories-mosaic/editor.js:52
 #: library/blocks/shared/SelectTaxonomy.js:26
 #: dist/blocks/posts-grid/editor.js:1420
 #: dist/blocks/stories-mosaic/editor.js:1367
 msgid "No taxonomy"
-msgstr "Sem taxonomia"
+msgstr ""
 
 #: dist/blocks/posts-grid/editor.js:107 dist/blocks/stories-mosaic/editor.js:63
 #: library/blocks/shared/SelectTerms.js:9 dist/blocks/posts-grid/editor.js:1442
 #: dist/blocks/stories-mosaic/editor.js:1388
 msgid "Terms"
-msgstr "Termos"
+msgstr ""
 
 #: dist/blocks/read-more/editor.js:19 library/blocks/read-more/editor.js:14
 #: dist/blocks/read-more/editor.js:66
 msgid "Full text"
-msgstr "Texto completo"
+msgstr ""
 
 #: dist/blocks/read-more/editor.js:19 library/blocks/read-more/editor.js:34
 #: dist/blocks/read-more/editor.js:86
 msgid "Lines shown"
-msgstr "Linhas mostradas"
+msgstr ""
 
 #: dist/blocks/read-more/editor.js:19 dist/blocks/read-more/index.js:19
 #: library/blocks/read-more/editor.js:53 library/blocks/read-more/index.js:15
 #: dist/blocks/read-more/editor.js:105 dist/blocks/read-more/index.js:16
 msgid "Read less"
-msgstr "Leia menos"
+msgstr ""
 
 #: dist/blocks/read-more/editor.js:19 dist/blocks/read-more/index.js:19
 #: library/blocks/read-more/editor.js:53 library/blocks/read-more/editor.js:71
 #: library/blocks/read-more/index.js:12 dist/blocks/read-more/editor.js:105
 #: dist/blocks/read-more/editor.js:123 dist/blocks/read-more/index.js:13
 msgid "Read more"
-msgstr "Leia mais"
+msgstr ""
 
 #: dist/blocks/stories-mosaic/editor.js:96
 #: library/blocks/stories-mosaic/editor.js:64
@@ -750,7 +750,7 @@ msgstr "Leia mais"
 #: library/blocks/v2/build/latest-vertical-posts/index.js:362
 #: library/blocks/v2/build/opportunities-from-mapas-culturais/index.js:60
 msgid "Heading"
-msgstr "Cabeçalho"
+msgstr ""
 
 #: dist/blocks/stories-mosaic/editor.js:96
 #: library/blocks/stories-mosaic/editor.js:67
@@ -768,7 +768,7 @@ msgstr "Cabeçalho"
 #: library/blocks/v2/build/latest-vertical-posts/index.js:365
 #: library/blocks/v2/build/opportunities-from-mapas-culturais/index.js:63
 msgid "The block title. Leave blank to not display"
-msgstr "O título do bloco. Deixe em branco para não exibir"
+msgstr ""
 
 #: dist/blocks/stories-mosaic/editor.js:96
 #: library/blocks/stories-mosaic/editor.js:80
@@ -789,18 +789,18 @@ msgstr "O título do bloco. Deixe em branco para não exibir"
 #: library/blocks/v2/build/latest-vertical-posts/index.js:535
 #: library/blocks/v2/build/latest-vertical-posts/index.js:679
 msgid "Total number of posts to display"
-msgstr "Número total de postagens a serem exibidas"
+msgstr ""
 
 #: dist/js/functionalities/gutenberg.js:29
 #: dist/js/functionalities/gutenberg.js:2510
 msgid "Iconify ID"
-msgstr "Iconify ID"
+msgstr ""
 
 #: library/blocks/v2/build/events-from-mapas-culturais/index.js:82
 #: library/blocks/v2/src/events-from-mapas-culturais/edit.js:71
 #: library/blocks/v2/build/events-from-mapas-culturais/index.js:71
 msgid "Events to display"
-msgstr "Events to display"
+msgstr ""
 
 #: library/blocks/v2/build/latest-horizontal-posts/index.js:106
 #: library/blocks/v2/build/latest-vertical-posts/index.js:106
@@ -808,7 +808,7 @@ msgstr "Events to display"
 #: library/blocks/v2/build/latest-horizontal-posts/index.js:70
 #: library/blocks/v2/build/latest-vertical-posts/index.js:70
 msgid "Select author"
-msgstr "Selecionar autor"
+msgstr ""
 
 #: library/blocks/v2/build/latest-horizontal-posts/index.js:164
 #: library/blocks/v2/build/latest-vertical-posts/index.js:164
@@ -817,7 +817,7 @@ msgstr "Selecionar autor"
 #: library/blocks/v2/build/latest-horizontal-posts/index.js:106
 #: library/blocks/v2/build/latest-vertical-posts/index.js:106
 msgid "Select post type"
-msgstr "Selecionar tipo de postagem"
+msgstr ""
 
 #: library/blocks/v2/build/latest-horizontal-posts/index.js:240
 #: library/blocks/v2/build/latest-vertical-posts/index.js:240
@@ -825,19 +825,19 @@ msgstr "Selecionar tipo de postagem"
 #: library/blocks/v2/build/latest-horizontal-posts/index.js:167
 #: library/blocks/v2/build/latest-vertical-posts/index.js:167
 msgid "Filter posts by terms"
-msgstr "Filtre as postagens por termos"
+msgstr ""
 
 #: library/blocks/v2/build/latest-horizontal-posts/index.js:499
 #: library/blocks/v2/src/latest-horizontal-posts/edit.js:189
 #: library/blocks/v2/build/latest-horizontal-posts/index.js:381
 msgid "Description"
-msgstr "Descrição"
+msgstr ""
 
 #: library/blocks/v2/build/latest-horizontal-posts/index.js:506
 #: library/blocks/v2/src/latest-horizontal-posts/edit.js:192
 #: library/blocks/v2/build/latest-horizontal-posts/index.js:384
 msgid "The block description. Leave blank to not display"
-msgstr "A descrição do bloco. Deixe em branco para não exibir"
+msgstr ""
 
 #: library/blocks/v2/build/latest-horizontal-posts/index.js:508
 #: library/blocks/v2/build/latest-vertical-posts/index.js:490
@@ -846,19 +846,19 @@ msgstr "A descrição do bloco. Deixe em branco para não exibir"
 #: library/blocks/v2/build/latest-horizontal-posts/index.js:393
 #: library/blocks/v2/build/latest-vertical-posts/index.js:378
 msgid "Block model"
-msgstr "Modelo do bloco"
+msgstr ""
 
 #: library/blocks/v2/build/latest-horizontal-posts/index.js:511
 #: library/blocks/v2/src/latest-horizontal-posts/edit.js:205
 #: library/blocks/v2/build/latest-horizontal-posts/index.js:397
 msgid "Albums (Flickr)"
-msgstr "Álbuns (Flickr)"
+msgstr ""
 
 #: library/blocks/v2/build/latest-horizontal-posts/index.js:514
 #: library/blocks/v2/src/latest-horizontal-posts/edit.js:209
 #: library/blocks/v2/build/latest-horizontal-posts/index.js:401
 msgid "Photos (Flickr)"
-msgstr "Fotos (Flickr)"
+msgstr ""
 
 #: library/blocks/v2/build/latest-horizontal-posts/index.js:517
 #: library/blocks/v2/build/latest-vertical-posts/index.js:496
@@ -867,7 +867,7 @@ msgstr "Fotos (Flickr)"
 #: library/blocks/v2/build/latest-horizontal-posts/index.js:405
 #: library/blocks/v2/build/latest-vertical-posts/index.js:386
 msgid "Columnists"
-msgstr "Colunistas"
+msgstr ""
 
 #: library/blocks/v2/build/latest-horizontal-posts/index.js:520
 #: library/blocks/v2/build/latest-vertical-posts/index.js:499
@@ -876,7 +876,7 @@ msgstr "Colunistas"
 #: library/blocks/v2/build/latest-horizontal-posts/index.js:409
 #: library/blocks/v2/build/latest-vertical-posts/index.js:390
 msgid "Most read (Posts)"
-msgstr "Mais lidas (Posts)"
+msgstr ""
 
 #: library/blocks/v2/build/latest-horizontal-posts/index.js:523
 #: library/blocks/v2/build/latest-vertical-posts/index.js:505
@@ -885,73 +885,73 @@ msgstr "Mais lidas (Posts)"
 #: library/blocks/v2/build/latest-horizontal-posts/index.js:413
 #: library/blocks/v2/build/latest-vertical-posts/index.js:398
 msgid "Latest posts"
-msgstr "Últimas postagens"
+msgstr ""
 
 #: library/blocks/v2/build/latest-horizontal-posts/index.js:526
 #: library/blocks/v2/src/latest-horizontal-posts/edit.js:225
 #: library/blocks/v2/build/latest-horizontal-posts/index.js:417
 msgid "Videos (YouTube)"
-msgstr "Vídeos (YouTube)"
+msgstr ""
 
 #: library/blocks/v2/build/latest-horizontal-posts/index.js:531
 #: library/blocks/v2/src/latest-horizontal-posts/edit.js:235
 #: library/blocks/v2/build/latest-horizontal-posts/index.js:427
 msgid "Content position"
-msgstr "Posição do conteúdo"
+msgstr ""
 
 #: library/blocks/v2/build/latest-horizontal-posts/index.js:534
 #: library/blocks/v2/src/latest-horizontal-posts/edit.js:239
 #: library/blocks/v2/build/latest-horizontal-posts/index.js:431
 msgid "Left"
-msgstr "Esquerda"
+msgstr ""
 
 #: library/blocks/v2/build/latest-horizontal-posts/index.js:537
 #: library/blocks/v2/src/latest-horizontal-posts/edit.js:243
 #: library/blocks/v2/build/latest-horizontal-posts/index.js:435
 msgid "Right"
-msgstr "Direita"
+msgstr ""
 
 #: library/blocks/v2/build/latest-horizontal-posts/index.js:540
 #: library/blocks/v2/src/latest-horizontal-posts/edit.js:247
 #: library/blocks/v2/build/latest-horizontal-posts/index.js:439
 msgid "Full width"
-msgstr "Largura completa"
+msgstr ""
 
 #: library/blocks/v2/build/latest-horizontal-posts/index.js:545
 #: library/blocks/v2/src/latest-horizontal-posts/edit.js:257
 #: library/blocks/v2/build/latest-horizontal-posts/index.js:449
 msgid "Slides to show"
-msgstr "Número de slides para exibir"
+msgstr ""
 
 #: library/blocks/v2/build/latest-horizontal-posts/index.js:560
 #: library/blocks/v2/src/latest-horizontal-posts/edit.js:275
 #: library/blocks/v2/build/latest-horizontal-posts/index.js:467
 msgid "Type of the video"
-msgstr "Tipo de vídeo"
+msgstr ""
 
 #: library/blocks/v2/build/latest-horizontal-posts/index.js:563
 #: library/blocks/v2/src/latest-horizontal-posts/edit.js:279
 #: library/blocks/v2/build/latest-horizontal-posts/index.js:471
 msgid "By playlist"
-msgstr "Playlist por"
+msgstr ""
 
 #: library/blocks/v2/build/latest-horizontal-posts/index.js:566
 #: library/blocks/v2/src/latest-horizontal-posts/edit.js:283
 #: library/blocks/v2/build/latest-horizontal-posts/index.js:475
 msgid "By channel"
-msgstr "Canal por"
+msgstr ""
 
 #: library/blocks/v2/build/latest-horizontal-posts/index.js:584
 #: library/blocks/v2/src/latest-horizontal-posts/edit.js:307
 #: library/blocks/v2/build/latest-horizontal-posts/index.js:499
 msgid "YouTube playlist ID"
-msgstr "ID da playlist do YouTube"
+msgstr ""
 
 #: library/blocks/v2/build/latest-horizontal-posts/index.js:592
 #: library/blocks/v2/src/latest-horizontal-posts/edit.js:317
 #: library/blocks/v2/build/latest-horizontal-posts/index.js:509
 msgid "YouTube channel ID"
-msgstr "ID do Canal do YouTube"
+msgstr ""
 
 #: library/blocks/v2/build/latest-horizontal-posts/index.js:600
 #: library/blocks/v2/build/latest-vertical-posts/index.js:634
@@ -1014,7 +1014,7 @@ msgstr ""
 #: library/blocks/v2/build/latest-horizontal-posts/index.js:580
 #: library/blocks/v2/build/latest-vertical-posts/index.js:622
 msgid "Show children items (if any)?"
-msgstr "Mostar posts filhos?"
+msgstr ""
 
 #: library/blocks/v2/build/latest-horizontal-posts/index.js:650
 #: library/blocks/v2/build/latest-horizontal-posts/index.js:717
@@ -1029,7 +1029,7 @@ msgstr "Mostar posts filhos?"
 #: library/blocks/v2/build/latest-vertical-posts/index.js:630
 #: library/blocks/v2/build/latest-vertical-posts/index.js:715
 msgid "Taxonomy to filter"
-msgstr "Taxonomia para filtrar"
+msgstr ""
 
 #: library/blocks/v2/build/latest-horizontal-posts/index.js:657
 #: library/blocks/v2/build/latest-horizontal-posts/index.js:724
@@ -1044,13 +1044,13 @@ msgstr "Taxonomia para filtrar"
 #: library/blocks/v2/build/latest-vertical-posts/index.js:637
 #: library/blocks/v2/build/latest-vertical-posts/index.js:722
 msgid "Leave blank to not filter by taxonomy"
-msgstr "Deixe em branco para não filtrar por taxonomia"
+msgstr ""
 
 #: library/blocks/v2/build/latest-horizontal-posts/index.js:686
 #: library/blocks/v2/src/latest-horizontal-posts/edit.js:455
 #: library/blocks/v2/build/latest-horizontal-posts/index.js:647
 msgid "Offset"
-msgstr "Deslocamento"
+msgstr ""
 
 #: library/blocks/v2/build/latest-horizontal-posts/index.js:695
 #: library/blocks/v2/build/latest-vertical-posts/index.js:720
@@ -1059,7 +1059,7 @@ msgstr "Deslocamento"
 #: library/blocks/v2/build/latest-horizontal-posts/index.js:657
 #: library/blocks/v2/build/latest-vertical-posts/index.js:690
 msgid "Show taxonomy, which?"
-msgstr "Mostrar taxonomia, qual?"
+msgstr ""
 
 #: library/blocks/v2/build/latest-horizontal-posts/index.js:704
 #: library/blocks/v2/build/latest-vertical-posts/index.js:729
@@ -1068,13 +1068,13 @@ msgstr "Mostrar taxonomia, qual?"
 #: library/blocks/v2/build/latest-horizontal-posts/index.js:664
 #: library/blocks/v2/build/latest-vertical-posts/index.js:697
 msgid "Leave blank to not display any taxonomy"
-msgstr "Deixe em branco para não mostrar nenhuma taxonomia"
+msgstr ""
 
 #: library/blocks/v2/build/latest-horizontal-posts/index.js:706
 #: library/blocks/v2/src/latest-horizontal-posts/edit.js:481
 #: library/blocks/v2/build/latest-horizontal-posts/index.js:673
 msgid "Show excerpt?"
-msgstr "Mostrar resumo?"
+msgstr ""
 
 #: library/blocks/v2/build/latest-horizontal-posts/index.js:740
 #: library/blocks/v2/build/latest-vertical-posts/index.js:757
@@ -1083,61 +1083,61 @@ msgstr "Mostrar resumo?"
 #: library/blocks/v2/build/latest-horizontal-posts/index.js:736
 #: library/blocks/v2/build/latest-vertical-posts/index.js:761
 msgid "With this configuration the block will display Co-Authors"
-msgstr "Com essa configuração o bloco vai exibir Autores Convidados"
+msgstr ""
 
 #: library/blocks/v2/build/latest-vertical-posts/index.js:493
 #: library/blocks/v2/src/latest-vertical-posts/edit.js:190
 #: library/blocks/v2/build/latest-vertical-posts/index.js:382
 msgid "Collection"
-msgstr "Coleção"
+msgstr ""
 
 #: library/blocks/v2/build/latest-vertical-posts/index.js:502
 #: library/blocks/v2/src/latest-vertical-posts/edit.js:202
 #: library/blocks/v2/build/latest-vertical-posts/index.js:394
 msgid "Numbered posts"
-msgstr "Postagens numeradas"
+msgstr ""
 
 #: library/blocks/v2/build/latest-vertical-posts/index.js:508
 #: library/blocks/v2/src/latest-vertical-posts/edit.js:210
 #: library/blocks/v2/build/latest-vertical-posts/index.js:402
 msgid "Videos"
-msgstr "Vídeos"
+msgstr ""
 
 #: library/blocks/v2/build/latest-vertical-posts/index.js:513
 #: library/blocks/v2/src/latest-vertical-posts/edit.js:221
 #: library/blocks/v2/build/latest-vertical-posts/index.js:413
 msgid "Show the post thumbnail?"
-msgstr "Mostrar a imagem destacada? "
+msgstr ""
 
 #: library/blocks/v2/build/latest-vertical-posts/index.js:521
 #: library/blocks/v2/src/latest-vertical-posts/edit.js:231
 #: library/blocks/v2/build/latest-vertical-posts/index.js:423
 msgid "Use rounded thumbnail?"
-msgstr "Usar imagem destacada arredondada? "
+msgstr ""
 
 #: library/blocks/v2/build/latest-vertical-posts/index.js:529
 #: library/blocks/v2/src/latest-vertical-posts/edit.js:241
 #: library/blocks/v2/build/latest-vertical-posts/index.js:433
 msgid "Show content below?"
-msgstr "Mostrar conteúdo abaixo?"
+msgstr ""
 
 #: library/blocks/v2/build/latest-vertical-posts/index.js:537
 #: library/blocks/v2/src/latest-vertical-posts/edit.js:251
 #: library/blocks/v2/build/latest-vertical-posts/index.js:443
 msgid "Use avatar as thumbnail?"
-msgstr "Usar avatar como imagem destacada? "
+msgstr ""
 
 #: library/blocks/v2/build/latest-vertical-posts/index.js:545
 #: library/blocks/v2/src/latest-vertical-posts/edit.js:262
 #: library/blocks/v2/build/latest-vertical-posts/index.js:454
 msgid "Show as a Grid?"
-msgstr "Mostrar como uma grade?"
+msgstr ""
 
 #: library/blocks/v2/build/latest-vertical-posts/index.js:553
 #: library/blocks/v2/src/latest-vertical-posts/edit.js:272
 #: library/blocks/v2/build/latest-vertical-posts/index.js:464
 msgid "Grid format"
-msgstr "Formato da grade"
+msgstr ""
 
 #: library/blocks/v2/build/latest-vertical-posts/index.js:556
 #: library/blocks/v2/build/latest-vertical-posts/index.js:568
@@ -1146,37 +1146,37 @@ msgstr "Formato da grade"
 #: library/blocks/v2/build/latest-vertical-posts/index.js:468
 #: library/blocks/v2/build/latest-vertical-posts/index.js:482
 msgid "Columns"
-msgstr "Colunas"
+msgstr ""
 
 #: library/blocks/v2/build/latest-vertical-posts/index.js:559
 #: library/blocks/v2/src/latest-vertical-posts/edit.js:280
 #: library/blocks/v2/build/latest-vertical-posts/index.js:472
 msgid "Row"
-msgstr "Linha"
+msgstr ""
 
 #: library/blocks/v2/build/latest-vertical-posts/index.js:578
 #: library/blocks/v2/src/latest-vertical-posts/edit.js:302
 #: library/blocks/v2/build/latest-vertical-posts/index.js:494
 msgid "Show the excerpt?"
-msgstr "Mostrar resumo"
+msgstr ""
 
 #: library/blocks/v2/build/latest-vertical-posts/index.js:586
 #: library/blocks/v2/src/latest-vertical-posts/edit.js:314
 #: library/blocks/v2/build/latest-vertical-posts/index.js:506
 msgid "Show the post author?"
-msgstr "Mostrar o autor da postagem?"
+msgstr ""
 
 #: library/blocks/v2/build/latest-vertical-posts/index.js:594
 #: library/blocks/v2/src/latest-vertical-posts/edit.js:322
 #: library/blocks/v2/build/latest-vertical-posts/index.js:514
 msgid "Show the post date?"
-msgstr "Mostrar a data de publicação da postagem?"
+msgstr ""
 
 #: library/blocks/v2/build/latest-vertical-posts/index.js:602
 #: library/blocks/v2/src/latest-vertical-posts/edit.js:332
 #: library/blocks/v2/build/latest-vertical-posts/index.js:524
 msgid "Posts by slide"
-msgstr "Postagens por slide"
+msgstr ""
 
 #: library/blocks/v2/build/latest-vertical-posts/index.js:626
 #: library/blocks/v2/src/latest-vertical-posts/edit.js:361
@@ -1188,77 +1188,77 @@ msgstr ""
 #: library/blocks/v2/src/opportunities-from-mapas-culturais/edit.js:71
 #: library/blocks/v2/build/opportunities-from-mapas-culturais/index.js:71
 msgid "Opportunities to display"
-msgstr "Oportunidades para exibir"
+msgstr ""
 
 #: library/blocks/banner-with-image/block.json
 msgctxt "block title"
 msgid "Banner with image"
-msgstr "Banner com imagem"
+msgstr ""
 
 #: library/blocks/banner-with-image/block.json
 msgctxt "block description"
 msgid "A banner with image and text side-by-side"
-msgstr "Um banner com imagem e texto lado a lado"
+msgstr ""
 
 #: library/blocks/card-body/block.json
 msgctxt "block title"
 msgid "Card body"
-msgstr "Corpo do card"
+msgstr ""
 
 #: library/blocks/card-body/block.json
 msgctxt "block description"
 msgid "The body of a generic card"
-msgstr "O corpo de um card genérico"
+msgstr ""
 
 #: library/blocks/card-header/block.json
 msgctxt "block title"
 msgid "Card header"
-msgstr "Cabeçalho do card"
+msgstr ""
 
 #: library/blocks/card-header/block.json
 msgctxt "block description"
 msgid "The header of a generic card"
-msgstr "O cabeçalho de um card genérico"
+msgstr ""
 
 #: library/blocks/card/block.json
 msgctxt "block title"
 msgid "Card"
-msgstr "Card"
+msgstr ""
 
 #: library/blocks/card/block.json
 msgctxt "block description"
 msgid "A generic card"
-msgstr "Um card genérico"
+msgstr ""
 
 #: library/blocks/posts-grid/block.json
 msgctxt "block title"
 msgid "Posts grid"
-msgstr "Grid de posts"
+msgstr ""
 
 #: library/blocks/posts-grid/block.json
 msgctxt "block description"
 msgid "Display post cards on a grid"
-msgstr "Exibir cards em um grid"
+msgstr ""
 
 #: library/blocks/read-more/block.json
 msgctxt "block title"
 msgid "Read more"
-msgstr "Leia mais"
+msgstr ""
 
 #: library/blocks/read-more/block.json
 msgctxt "block description"
 msgid "A collapsible text paragraph with 'Read more' button"
-msgstr "Um parágrafo de texto recolhível com o botão \"Leia mais\""
+msgstr ""
 
 #: library/blocks/stories-mosaic/block.json
 msgctxt "block title"
 msgid "Mosaic Stories"
-msgstr "Mosaico de WebStories"
+msgstr ""
 
 #: library/blocks/stories-mosaic/block.json
 msgctxt "block description"
 msgid "Show the latestes webstories in a draggable mosaic."
-msgstr "Exibe os últimos webstories em um mosaico arrastável."
+msgstr ""
 
 #: library/blocks/v2/build/events-from-mapas-culturais/block.json
 #: library/blocks/v2/src/events-from-mapas-culturais/block.json
@@ -1317,219 +1317,169 @@ msgstr ""
 #: library/blocks/video-playlist/block.json
 msgctxt "block description"
 msgid "Displays videos from a YouTube channel or playlist."
-msgstr "Exibe vídeos de um canal ou playlist do YouTube"
+msgstr ""
 
 #: theme.json
 msgctxt "Color name"
 msgid "Primary pure"
-msgstr "Pura primária"
+msgstr ""
 
 #: theme.json
 msgctxt "Color name"
 msgid "Primary light"
-msgstr "Clara primária"
+msgstr ""
 
 #: theme.json
 msgctxt "Color name"
 msgid "Primary dark"
-msgstr "Escura primária"
+msgstr ""
 
 #: theme.json
 msgctxt "Color name"
 msgid "Secondary pure"
-msgstr "Pura secundária"
+msgstr ""
 
 #: theme.json
 msgctxt "Color name"
 msgid "Secondary light"
-msgstr "Clara secundária"
+msgstr ""
 
 #: theme.json
 msgctxt "Color name"
 msgid "Secondary dark"
-msgstr "Escura secundária"
+msgstr ""
 
 #: theme.json
 msgctxt "Color name"
 msgid "Low Pure"
-msgstr "Pura baixa"
+msgstr ""
 
 #: theme.json
 msgctxt "Color name"
 msgid "Low light"
-msgstr "Clara baixa"
+msgstr ""
 
 #: theme.json
 msgctxt "Color name"
 msgid "Low dark"
-msgstr "Escura baixa"
+msgstr ""
 
 #: theme.json
 msgctxt "Color name"
 msgid "High pure"
-msgstr "Pura alta"
+msgstr ""
 
 #: theme.json
 msgctxt "Color name"
 msgid "High light"
-msgstr "Clara alta"
+msgstr ""
 
 #: theme.json
 msgctxt "Color name"
 msgid "High dark"
-msgstr "Escura alta"
+msgstr ""
 
 #: theme.json
 msgctxt "Color name"
 msgid "Warning pure"
-msgstr "Pura aviso"
+msgstr ""
 
 #: theme.json
 msgctxt "Color name"
 msgid "Warning light"
-msgstr "Clara aviso"
+msgstr ""
 
 #: theme.json
 msgctxt "Color name"
 msgid "Warning dark"
-msgstr "Escura aviso"
+msgstr ""
 
 #: theme.json
 msgctxt "Color name"
 msgid "Helper pure"
-msgstr "Pura ajuda"
+msgstr ""
 
 #: theme.json
 msgctxt "Color name"
 msgid "Helper light"
-msgstr "Clara ajuda"
+msgstr ""
 
 #: theme.json
 msgctxt "Color name"
 msgid "Helper dark"
-msgstr "Escura ajuda"
+msgstr ""
 
 #: theme.json
 msgctxt "Color name"
 msgid "Highlight pure"
-msgstr "Pura destaque"
+msgstr ""
 
 #: theme.json
 msgctxt "Color name"
 msgid "Highlight light"
-msgstr "Clara destaque"
+msgstr ""
 
 #: theme.json
 msgctxt "Color name"
 msgid "Highlight dark"
-msgstr "Escura destaque"
+msgstr ""
 
 #: theme.json
 msgctxt "Font size name"
 msgid "Hero"
-msgstr "Enorme"
+msgstr ""
 
 #: theme.json
 msgctxt "Font size name"
 msgid "Extra Extra Extra Large"
-msgstr "Extra Extra Extra Grande"
+msgstr ""
 
 #: theme.json
 msgctxt "Font size name"
 msgid "Extra Extra Large"
-msgstr "Extra Extra Grande"
+msgstr ""
 
 #: theme.json
 msgctxt "Font size name"
 msgid "Extra Large"
-msgstr "Muito Grande"
+msgstr ""
 
 #: theme.json
 msgctxt "Font size name"
 msgid "Large"
-msgstr "Grande"
+msgstr ""
 
 #: theme.json
 msgctxt "Font size name"
 msgid "Medium"
-msgstr "Médio"
+msgstr ""
 
 #: theme.json
 msgctxt "Font size name"
 msgid "Small"
-msgstr "Pequeno"
+msgstr ""
 
 #: theme.json
 msgctxt "Font size name"
 msgid "Extra Small"
-msgstr "Muito Pequeno"
+msgstr ""
 
 #: theme.json
 msgctxt "Font family name"
 msgid "Primary"
-msgstr "Primária"
+msgstr ""
 
 #: theme.json
 msgctxt "Font family name"
 msgid "Secondary"
-msgstr "Secundária"
+msgstr ""
 
 #: theme.json
 msgctxt "Font family name"
 msgid "Helper"
-msgstr "Auxiliar"
+msgstr ""
 
 #: theme.json
 msgctxt "Font family name"
 msgid "Title"
-msgstr "Título"
-
-#~ msgid "Share"
-#~ msgstr "Compartilhar"
-
-#~ msgid "Pesquisar"
-#~ msgstr "Search"
-
-#~ msgid "error"
-#~ msgstr "erro"
-
-#~ msgid "Page not found"
-#~ msgstr "Página não encontrada"
-
-#~ msgid "Published in "
-#~ msgstr "Publicado em "
-
-#~ msgid ""
-#~ "Sorry, but nothing matched your search criteria. Please try again with "
-#~ "some different keywords."
-#~ msgstr ""
-#~ "Desculpe, mas nada corresponde aos seus critérios de busca. Por favor, "
-#~ "tente novamente com algumas palavras-chave diferentes."
-
-#~ msgctxt "Font size name"
-#~ msgid "Huge"
-#~ msgstr "Enorme"
-
-#~ msgctxt "Font size name"
-#~ msgid "Extra big"
-#~ msgstr "Muito grande"
-
-#~ msgctxt "Font size name"
-#~ msgid "Very large"
-#~ msgstr "Muito grande"
-
-#~ msgctxt "Font size name"
-#~ msgid "Big"
-#~ msgstr "Grande"
-
-#~ msgctxt "Font size name"
-#~ msgid "Average"
-#~ msgstr "Médio"
-
-#~ msgctxt "Font size name"
-#~ msgid "Too small"
-#~ msgstr "Muito pequeno"
-
-#~ msgctxt "Font family name"
-#~ msgid "System"
-#~ msgstr "Sistema"
+msgstr ""
