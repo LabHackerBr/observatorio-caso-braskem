@@ -67,6 +67,9 @@
 }
 
 .wp-block-file{
+    // padding: 1rem;
+    // box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.15);
+
     a:nth-of-type(1){
         display: none;
     }
@@ -98,4 +101,10 @@
             top: size(4);
         }
     }
+}
+
+.wp-block-embed-youtube{
+    padding: 1rem;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.15);
+    margin-top: 0 !important;
 }

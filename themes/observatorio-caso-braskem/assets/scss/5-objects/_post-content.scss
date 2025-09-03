@@ -196,10 +196,22 @@
             max-width: size(1170);
             margin-left: auto;
             margin-right: auto;
+            padding-top: 1rem;
+            @include mobile{
+                flex-direction: column;
+            }
             .post-content{
+                .image-gallery.hacklab-block{
+                    background-color: $color--high-pure !important;
+
+                    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.15);
+                }
                 .image-gallery.hacklab-block.fullscreen{
                     position: relative;
                     max-width: size(1170) !important;
+                    max-height: 540px !important;
+                    padding: 0;
+                    box-shadow: none !important;
                     @include mobile{
                         max-width: 100% !important;
 
@@ -211,6 +223,16 @@
                     text-decoration: none;
                 }
             }
+        }
+        .post-header__midia-label{
+            font-size: size(20);
+            font-weight: $font-weight--bold;
+        }
+        .post-header__excerpt{
+            margin-bottom: 0;
+        }
+        .post-header__author{
+            border-top: none;
         }
     }
 }

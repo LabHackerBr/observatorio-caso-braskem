@@ -6,12 +6,11 @@
     position: fixed;
     width: fit-content;
     gap: 2rem;
-    margin-top: 3rem;
     margin-left: 2rem;
 
    .twitter-btn{
     background-color: $color--primary-pure;
-    padding: .4rem;
+    padding: .5rem .4rem;
     border-radius: $border-radius--round;
     width: fit-content;
    }

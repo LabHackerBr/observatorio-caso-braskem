@@ -89,3 +89,53 @@
         }
     }
 }
+
+.single-biblioteca{
+    .related-posts{
+        border-top: 1px solid #000;
+    }
+    .related-posts__title{
+        margin-top: 0;
+    }
+    .related-posts__content {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: $gap--large;
+
+        @include tablet {
+            grid-template-columns: repeat(2, 1fr);
+            gap: $gap--small;
+        }
+        @include mobile {
+            grid-template-columns: 1fr  ;
+            gap: $gap--small;
+        }
+        .post-card{
+            padding: size(14);
+            box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.15);
+        }
+        .post-card__category{
+            display: none;
+        }
+        .post-card__author{
+            display: inherit;
+            align-self: start;
+            color: $color--secondary-dark;
+            span{
+                display: none;
+            }
+        }
+        .post-card__excerpt{
+            display: inherit;
+            order: 2;
+        }
+        .post-card__meta{
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            order:3;
+        }
+
+
+    }
+}

@@ -18,6 +18,40 @@ $excerpt = !empty( $post->post_excerpt ) ? wp_kses_post( $post->post_excerpt ) :
 
         <h1 class="post-header__title"> <?php the_title(); ?> </h1>
 
+        <?php
+            $raw_value = get_post_meta( get_the_ID(), 'tipo_de_midia', true );
+
+            $values = is_array($raw_value) ? $raw_value : ( $raw_value ? [ $raw_value ] : [] );
+            $slugs  = [];
+
+            foreach ( $values as $v ) {
+                if ( is_array($v) ) {
+                    if ( isset($v['slug']) )        $slugs[] = sanitize_title($v['slug']);
+                    elseif ( isset($v['post_name']) ) $slugs[] = sanitize_title($v['post_name']);
+                    elseif ( isset($v['name']) )      $slugs[] = sanitize_title($v['name']);
+                } else {
+                    $slugs[] = sanitize_title( (string) $v );
+                }
+            }
+            $slugs = array_unique($slugs);
+
+            $labels = [
+                'texto'  => __('In this Text:', 'hacklabr'),
+                'video'  => __('In this Video:', 'hacklabr'),
+                'imagem' => __('In this Gallery:', 'hacklabr'),
+                // 'audio'  => __('Neste Áudio:', 'hacklabr'),
+            ];
+
+            $label_to_print = null;
+            foreach ( $slugs as $s ) {
+                if ( isset($labels[$s]) ) { $label_to_print = $labels[$s]; break; }
+            }
+
+            if ( $label_to_print ) {
+                echo '<span class="post-header__midia-label">' . esc_html($label_to_print) . '</span>';
+            }
+            ?>
+
         <?php if( $excerpt ) : ?>
             <p class="post-header__excerpt"><?= get_the_excerpt() ?></p>
         <?php endif; ?>
@@ -46,13 +80,8 @@ $excerpt = !empty( $post->post_excerpt ) ? wp_kses_post( $post->post_excerpt ) :
         </div>
     </header>
 
-
-
 </div>
 
 <?php get_template_part('template-parts/content/related-posts') ?>
-
-
-
 
 <?php get_footer();

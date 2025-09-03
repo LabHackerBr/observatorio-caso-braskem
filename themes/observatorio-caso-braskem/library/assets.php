@@ -348,6 +348,13 @@ class Assets {
 				'global' => true,
 			],
 
+            'share-links' => [
+				'file'   => 'share-links.js',
+				'preload_callback' => function () {
+                    return is_singular() ;
+                }
+			],
+
             'search-filters' => [
                 'file'   => 'search-filters.js',
                 'global' => false,
