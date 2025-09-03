@@ -4,7 +4,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/observatorio-caso-"
 "braskem\n"
 "POT-Creation-Date: 2025-09-03T12:06:10+00:00\n"
-"PO-Revision-Date: 2025-09-03 09:10-0300\n"
+"PO-Revision-Date: 2025-09-03 10:07-0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: pt_BR\n"
@@ -193,7 +193,7 @@ msgstr "Verifique a chave API, usuáriou o ID do álbum"
 #: library/blocks/v2/src/latest-horizontal-posts/latest-horizontal-posts.php:125
 #: library/blocks/v2/src/latest-vertical-posts/latest-vertical-posts.php:155
 msgid "This feature depends on the AjaxPageviews plugin."
-msgstr "Essa funcionalidade depende do plugin AjaxPageviews"
+msgstr "Essa funcionalidade depende do plugin AjaxPageviews."
 
 #: library/blocks/v2/src/latest-horizontal-posts/latest-horizontal-posts.php:168
 msgid "Check the API Key"
@@ -389,7 +389,7 @@ msgstr "Mídia"
 
 #: template-parts/filters-biblioteca.php:303
 msgid "Clear all filters"
-msgstr ""
+msgstr "Limpar filtros"
 
 #: template-parts/post-card.php:102
 msgid "By"
