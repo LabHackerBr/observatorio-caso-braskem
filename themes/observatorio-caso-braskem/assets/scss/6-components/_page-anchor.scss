@@ -1,0 +1,30 @@
+.page-template-page-anchor{
+    .index-wrapper{
+        .c-title{
+            >.container{
+                padding-inline: 0;
+            }
+        }
+        .container{
+            max-width: $grid--wide;
+        }
+        .row{
+            display: grid;
+            grid-template-columns: 35% 65%;
+            gap: $gap--large;
+            .sidebarpage{
+                #anchors{
+                    list-style: none;
+                    padding: 0;
+                    li{
+                        a{
+                            text-decoration: none;
+                            text-transform: uppercase;
+                        }
+                    }
+                }
+            }
+        }
+
+    }
+}
