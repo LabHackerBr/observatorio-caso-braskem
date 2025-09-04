@@ -201,6 +201,16 @@
                 flex-direction: column;
             }
             .post-content{
+                .wp-block-post-title{
+                    color: $color--primary-pure;
+                    font-size: size(20);
+                    font-style: normal;
+                    font-weight: 700;
+                    text-transform: uppercase;
+                    @media(min-width: 783px){
+                        display: none;
+                    }
+                }
                 .image-gallery.hacklab-block{
                     background-color: $color--high-pure !important;
 
@@ -247,6 +257,12 @@
             }
 
         }
+        .post-header__title{
+            color: $color--primary-pure;
+            @media(max-width: 782px){
+                display: none;
+            }
+        }
         .post-header__midia-label{
             font-size: size(20);
             font-weight: $font-weight--bold;
@@ -260,6 +276,15 @@
         .post-header__author-name{
             a{
                 text-decoration: none;
+            }
+        }
+        .share-links-post-content{
+            margin-top: 2rem;
+            display: flex;
+            gap: 1rem;
+            span{
+                font-size: size(20);
+                text-transform: uppercase;
             }
         }
     }

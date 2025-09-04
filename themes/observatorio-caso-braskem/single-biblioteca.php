@@ -78,6 +78,10 @@ $excerpt = !empty( $post->post_excerpt ) ? wp_kses_post( $post->post_excerpt ) :
                 <?php endforeach; ?>
             </div>
         </div>
+        <div class="share-links-post-content">
+            <span><?php _e('Share', 'hacklabr') ?></span>
+            <?php echo do_shortcode('[addtoany]'); ?>
+        </div>
     </header>
 
 </div>
