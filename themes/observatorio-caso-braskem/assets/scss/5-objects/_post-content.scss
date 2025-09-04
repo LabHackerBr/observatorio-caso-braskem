@@ -218,11 +218,34 @@
                     }
                 }
             }
-            .post-header__author-name{
-                a{
-                    text-decoration: none;
+            .wp-block-button__link{
+                display: flex;
+                width: fit-content;
+                background-color: $color--secondary-dark;
+                color: $color--high-pure;
+                gap: 1rem;
+                font-size: size(20);
+                text-transform: uppercase;
+                border-radius: 0;
+                font-weight: $font-weight--bold;
+                padding: size(4) size(40);
+                font-family: "Jost", sans-serif !important;
+                margin-top: 2rem;
+
+                clip-path: polygon(
+                    0 0,
+                    100% 0,
+                    calc(100% - 5px) 100%,
+                    5px 100%
+                );
+
+                &::before{
+                    content: url('#{$path--assets}/images/btn-download-biblioteca.png');
+                    position: relative;
+                    top: size(4);
                 }
             }
+
         }
         .post-header__midia-label{
             font-size: size(20);
@@ -234,5 +257,11 @@
         .post-header__author{
             border-top: none;
         }
+        .post-header__author-name{
+            a{
+                text-decoration: none;
+            }
+        }
     }
+
 }

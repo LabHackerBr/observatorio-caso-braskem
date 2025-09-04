@@ -7,6 +7,10 @@
     width: fit-content;
     gap: 2rem;
     margin-left: 2rem;
+    @include mobile{
+        display: none;
+    }
+
 
    .twitter-btn{
     background-color: $color--primary-pure;
