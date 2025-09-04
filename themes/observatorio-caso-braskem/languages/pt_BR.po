@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/observatorio-caso-"
 "braskem\n"
-"POT-Creation-Date: 2025-09-03T12:06:10+00:00\n"
-"PO-Revision-Date: 2025-09-03 10:07-0300\n"
+"POT-Creation-Date: 2025-09-04T11:32:36+00:00\n"
+"PO-Revision-Date: 2025-09-04 08:35-0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: pt_BR\n"
@@ -68,11 +68,11 @@ msgstr "VOLTAR PARA HOME"
 
 #: archive-biblioteca.php:11
 msgid "Library"
-msgstr ""
+msgstr "Biblioteca"
 
 #: archive-biblioteca.php:18
 msgid "Quick search..."
-msgstr ""
+msgstr "Busca rápida..."
 
 #: archive-biblioteca.php:36
 msgid "No results found."
@@ -80,7 +80,7 @@ msgstr "Nenhum resultado encontrado."
 
 #: archive-map.php:7
 msgid "Maps"
-msgstr ""
+msgstr "Mapas"
 
 #: archive.php:11 library/utils.php:244 library/utils.php:245
 #: library/utils.php:249 library/utils.php:255 library/utils.php:256
@@ -271,9 +271,21 @@ msgstr "Procurar por:"
 msgid "Search term..."
 msgstr "Termo pesquisado..."
 
-#: single-biblioteca.php:38
+#: single-biblioteca.php:39
+msgid "In this Text:"
+msgstr "Neste texto:"
+
+#: single-biblioteca.php:40
+msgid "In this Video:"
+msgstr "Neste vídeo:"
+
+#: single-biblioteca.php:41
+msgid "In this Gallery:"
+msgstr "Nesta galeria:"
+
+#: single-biblioteca.php:72
 msgid "By "
-msgstr "Por"
+msgstr "Por "
 
 #: single.php:48
 msgid "Published by "
@@ -343,6 +355,14 @@ msgstr "Tente novamente com algumas palavras-chave diferentes."
 msgid "Back to homepage"
 msgstr "Voltar para a Home"
 
+#: template-parts/content/related-posts.php:43
+msgid "Related content: "
+msgstr "Conteúdo relacionado: "
+
+#: template-parts/content/related-posts.php:45
+msgid "See also: "
+msgstr "Veja também: "
+
 #: template-parts/filter-posts.php:21
 msgid "Todos"
 msgstr ""
@@ -350,7 +370,7 @@ msgstr ""
 #: template-parts/filters-biblioteca.php:25
 #: template-parts/filters-biblioteca.php:262
 msgid "Year"
-msgstr ""
+msgstr "Ano"
 
 #: template-parts/filters-biblioteca.php:85
 msgid "Authorship"
@@ -358,7 +378,7 @@ msgstr "Autoria"
 
 #: template-parts/filters-biblioteca.php:135
 msgid "Media type"
-msgstr ""
+msgstr "Tipo de mídia"
 
 #: template-parts/filters-biblioteca.php:176
 #: template-parts/filters-biblioteca.php:265
@@ -372,7 +392,7 @@ msgstr ""
 
 #: template-parts/filters-biblioteca.php:248
 msgid "Only documents related to the CPI"
-msgstr ""
+msgstr "Apenas documentos relacionados à CPI"
 
 #: template-parts/filters-biblioteca.php:261
 #: template-parts/title/archive-header.php:52
@@ -1107,13 +1127,13 @@ msgstr "Vídeos"
 #: library/blocks/v2/src/latest-vertical-posts/edit.js:221
 #: library/blocks/v2/build/latest-vertical-posts/index.js:413
 msgid "Show the post thumbnail?"
-msgstr "Mostrar a imagem destacada? "
+msgstr "Mostrar a imagem destacada?"
 
 #: library/blocks/v2/build/latest-vertical-posts/index.js:521
 #: library/blocks/v2/src/latest-vertical-posts/edit.js:231
 #: library/blocks/v2/build/latest-vertical-posts/index.js:423
 msgid "Use rounded thumbnail?"
-msgstr "Usar imagem destacada arredondada? "
+msgstr "Usar imagem destacada arredondada?"
 
 #: library/blocks/v2/build/latest-vertical-posts/index.js:529
 #: library/blocks/v2/src/latest-vertical-posts/edit.js:241
@@ -1125,7 +1145,7 @@ msgstr "Mostrar conteúdo abaixo?"
 #: library/blocks/v2/src/latest-vertical-posts/edit.js:251
 #: library/blocks/v2/build/latest-vertical-posts/index.js:443
 msgid "Use avatar as thumbnail?"
-msgstr "Usar avatar como imagem destacada? "
+msgstr "Usar avatar como imagem destacada?"
 
 #: library/blocks/v2/build/latest-vertical-posts/index.js:545
 #: library/blocks/v2/src/latest-vertical-posts/edit.js:262
@@ -1158,7 +1178,7 @@ msgstr "Linha"
 #: library/blocks/v2/src/latest-vertical-posts/edit.js:302
 #: library/blocks/v2/build/latest-vertical-posts/index.js:494
 msgid "Show the excerpt?"
-msgstr "Mostrar resumo"
+msgstr "Mostrar resumo?"
 
 #: library/blocks/v2/build/latest-vertical-posts/index.js:586
 #: library/blocks/v2/src/latest-vertical-posts/edit.js:314
@@ -1317,7 +1337,7 @@ msgstr ""
 #: library/blocks/video-playlist/block.json
 msgctxt "block description"
 msgid "Displays videos from a YouTube channel or playlist."
-msgstr "Exibe vídeos de um canal ou playlist do YouTube"
+msgstr "Exibe vídeos de um canal ou playlist do YouTube."
 
 #: theme.json
 msgctxt "Color name"
