@@ -182,6 +182,31 @@
 
 }
 
+.blog{
+    .archive-title{
+        margin-bottom: 1rem;
+        background-color: $color--primary-pure;
+        padding: 4rem 0 7.5rem;
+        @include mobile{
+            padding: 2rem 0 4.5rem;
+        }
+        h1{
+            color: $color--high-pure;
+            font-family: 'Jost', sans-serif;
+            font-size: 2rem;
+            font-weight: 700;
+            line-height: normal;
+            text-transform: uppercase;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            @include mobile{
+                font-size: size(20);
+            }
+        }
+    }
+}
+
 .archive-header-bibliioteca{
     padding-top: 4rem;
     padding-bottom: 2rem;
@@ -284,7 +309,15 @@
                 .filter-title{
                     align-items: center;
                     display: flex;
-                    gap: $gap--small;
+                    gap: $gap--medium;
+                    font-size: size(15);
+                    font-weight: $font-weight--bold;
+                    position: relative;
+                    top: size(2);
+                }
+                svg{
+                    position: relative;
+                    top: size(-1);
                 }
                 &::marker{
                     display: none !important;
@@ -305,6 +338,8 @@
                         width: 100%;
                         border-bottom: 1px solid $color--high-pure;
                         padding: $padding--x-small $padding--large;
+                        font-size: size(15);
+                        font-weight: $font-weight--bold;
                     }
                 }
             }
@@ -392,9 +427,8 @@
             font-weight: 700;
             font-size: size(15);
             text-transform: uppercase;
-            padding: size(2) size(10);
+            padding: size(4) size(13) 0;
             display: flex;
-            align-items: center;
             gap: .5rem;
             a{
                 text-decoration: none;
@@ -414,6 +448,10 @@
                 justify-content: center;
                 margin-top: 1rem;
                 margin-bottom: 1rem;
+            }
+            svg{
+                position: relative;
+                top: size(6);
             }
         }
     }

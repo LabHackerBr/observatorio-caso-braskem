@@ -375,6 +375,22 @@ add_action('pre_get_posts', function($query) {
     }
 });
 
+/**
+ * Limita o tamanho do excerpt na archive de biblioteca
+ */
+function limitar_excerpt_biblioteca( $excerpt ) {
+    if ( is_post_type_archive( 'biblioteca' ) ) {
+        $excerpt = wp_strip_all_tags( $excerpt );
+
+        if ( mb_strlen( $excerpt ) > 100 ) {
+            $excerpt = mb_substr( $excerpt, 0, 200 ) . '...';
+        }
+    }
+
+    return $excerpt;
+}
+add_filter( 'get_the_excerpt', 'limitar_excerpt_biblioteca' );
+
 
 
 

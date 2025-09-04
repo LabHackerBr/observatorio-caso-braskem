@@ -4,6 +4,8 @@ $excluded_ids = [];
 
 <div class="archive-title">
     <h1 class="container container--wide">
+        <img src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/exclamation-point.png" alt="exclamation-point" class="exclamation-icon">
+
         <?php
         $post_type = get_post_type();
 

@@ -287,7 +287,12 @@
                 $args = $_GET;
                 unset($args[$key], $args['paged']);
                 ?>
-                <a href="<?php echo esc_url(add_query_arg($args, get_post_type_archive_link('biblioteca'))); ?>" class="clear-filter">×</a>
+                <a href="<?php echo esc_url(add_query_arg($args, get_post_type_archive_link('biblioteca'))); ?>" class="clear-filter">
+                <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 19 19" fill="none">
+                    <path d="M4.60156 4.59204L13.794 13.7844" stroke="#630F05" stroke-width="2" stroke-linecap="round"/>
+                    <path d="M13.793 4.59961L4.60058 13.792" stroke="#630F05" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+                </a>
             </span>
         <?php endif;
     endforeach;
