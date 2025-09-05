@@ -205,6 +205,9 @@
             .post-content{
                 padding-left: 0;
                 padding-right: 0;
+                @include mobile{
+                    padding: 0 .5rem;
+                }
                 .wp-block-post-title{
                     color: $color--primary-pure;
                     font-size: size(20);
@@ -228,38 +231,9 @@
                     box-shadow: none !important;
                     @include mobile{
                         max-width: 100% !important;
-
                     }
                 }
             }
-            .wp-block-button__link{
-                display: flex;
-                width: fit-content;
-                background-color: $color--secondary-dark;
-                color: $color--high-pure;
-                gap: 1rem;
-                font-size: size(20);
-                text-transform: uppercase;
-                border-radius: 0;
-                font-weight: $font-weight--bold;
-                padding: size(4) size(40);
-                font-family: "Jost", sans-serif !important;
-                margin-top: 2rem;
-
-                clip-path: polygon(
-                    0 0,
-                    100% 0,
-                    calc(100% - 5px) 100%,
-                    5px 100%
-                );
-
-                &::before{
-                    content: url('#{$path--assets}/images/btn-download-biblioteca.png');
-                    position: relative;
-                    top: size(4);
-                }
-            }
-
         }
         .post-header{
             @include mobile{
