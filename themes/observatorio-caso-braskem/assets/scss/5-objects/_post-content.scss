@@ -312,54 +312,55 @@
             margin-top: 2rem;
             display: flex;
             gap: 1rem;
-            background-color: $color--secondary-dark;
-            color: $color--high-pure;
-            gap: 1rem;
-            font-size: size(20);
-            text-transform: uppercase;
-            border-radius: 0;
-            font-weight: $font-weight--bold;
-            padding: size(4) size(40);
-            font-family: "Jost", sans-serif !important;
-            align-items: center;
-            flex-direction: row-reverse;
-            width: fit-content;
-            margin-right: auto;
-            clip-path: polygon(
-                0 0,
-                100% 0,
-                calc(100% - 5px) 100%,
-                5px 100%
-            );
-            span{
-                font-size: size(20);
-                text-transform: uppercase;
-            }
+
             .addtoany_shortcode{
+                @include mobile{
+                    margin: 0 auto 2rem;
+                }
                 a{
-                    img{
-                        position: relative !important;
-                        top: size(-2) !important;
+                    display: flex;
+                    gap: 1rem;
+                    text-decoration: none;
+                    align-items: center;
+                    font-size: size(20);
+                    text-transform: uppercase;
+                    &::after{
+                        content: url('#{$path--assets}/images/btn-share.png');
+                        position: relative;
+                        top: size(4);
+                    }
+                    span{
+                        display: none !important;
+                    }
+                    @include mobile{
+                        justify-content: center;
+                        display: flex;
+                        flex-direction: row-reverse;
+                        width: fit-content;
+                        background-color: $color--secondary-dark;
+                        color: $color--high-pure;
+                        gap: 1rem;
+                        font-size: size(20);
+                        text-transform: uppercase;
+                        border-radius: 0;
+                        font-weight: $font-weight--bold;
+                        padding: size(4) size(40);
+
+                        clip-path: polygon(
+                            0 0,
+                            100% 0,
+                            calc(100% - 5px) 100%,
+                            5px 100%
+                        );
+                        &::after{
+                            content: url('#{$path--assets}/images/btn-share-white.png');
+                            position: relative;
+                            top: size(4);
+                        }
                     }
                 }
             }
-            @include mobile{
-                margin-left: auto;
-                margin-right: auto;
-                width: fit-content;
-                background-color: $color--secondary-dark;
-                color: $color--high-pure;
-                gap: 1rem;
-                font-size: size(20);
-                text-transform: uppercase;
-                border-radius: 0;
-                font-weight: $font-weight--bold;
-                padding: size(4) size(40);
-                font-family: "Jost", sans-serif !important;
-                align-items: center;
-                flex-direction: row-reverse;
-                margin-bottom: 3rem;
-            }
+
         }
     }
 }
