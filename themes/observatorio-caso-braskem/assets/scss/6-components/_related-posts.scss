@@ -114,6 +114,10 @@
             padding: size(14);
             box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.15);
         }
+        .post-card__content{
+            min-height: size(240) !important;
+            justify-content: space-between !important;
+        }
         .post-card__category{
             display: none;
         }
@@ -128,6 +132,8 @@
         .post-card__excerpt{
             display: inherit;
             order: 2;
+            font-size: size(14);
+            margin-top: 1rem;
         }
         .post-card__meta{
             display: flex;
