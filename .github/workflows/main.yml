@@ -8,8 +8,8 @@ on:
       - '*'
 env:
   THEME_NAME: observatorio-caso-braskem
-  CURL_URL: https://helmtestec1.hacklab.com.br/
-  DEPLOY: 0
+  CURL_URL: https://observatoriobraskem.hacklab.com.br/
+  DEPLOY: 1
 
 jobs:
   build_assets:
