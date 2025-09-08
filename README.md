@@ -89,6 +89,19 @@ Há uma série de scripts úteis na pasta `dev-scripts`:
 
 Acesse http://localhost para ver o site.
 
+## Release no ambiente de staging/produção
+Para o release no ambiente de staging/produção, utilizamos CI/CD através do plugin GitUpdater.
+Após fazer o commit de suas alterações e alterar a versão do tema no style.css, faça o merge da branch de desenvolvimento na branch main e crie a tag correspondente na main.
+
+Observações: 
+- A tag e a versão do tema no style.css devem ser iguais
+- A tag deve ser feita na branch Main, lembre-se de fazer a mesclagem da branch de develop nela antes de iniciar o release.
+
+Comandos para criação da tag:
+- Exemplo: versão do tema 0.1.2
+`git tag -a 0.1.2 -m "v0.1.2"`
+`git push origin refs/tags/0.1.2`
+
 ### Importar um dump de banco de dados
 
 Se você tem um dump de banco de dados `.sql` ou `.sql.gz`, para importá-lo em sua versão local, copie o arquivo para `compose/local/mariadb/data` e execute:
@@ -180,7 +193,6 @@ Para que a estrutura dos arquivos do repositório siga esse padrão você deve e
 - substitui em massa a string observatorio-caso-braskem pelo novo nome
 - cria o link simbolico entre /themes/novo-nome/style.css e /style.css
 - altera a versão do tema para 0.1
-
 
 ### outras alterações:
 - a variável CURL_URL no arquivo .github/workflows/main.yml com a URL do ambiente a ser atualizado (o plugin git-updater deve estar instalado e o tema adicionado na aba additions)
