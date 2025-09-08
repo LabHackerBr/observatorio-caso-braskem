@@ -227,6 +227,33 @@
                     @include mobile{
                         max-width: 100% !important;
                     }
+                    .image-gallery-wrapper{
+                        justify-content: flex-start;
+                    }
+                    .gallery-grid{
+                        .sss{
+
+                            .sssnext{
+                                background: url('#{$path--assets}/images/arrow-right.svg') no-repeat;
+                                height: 100%;
+                                margin: 0;
+                                position: absolute;
+                                top: 45%;
+                                right: -1%;
+                            }
+                            .sssprev{
+                                background: url('#{$path--assets}/images/arrow-right.svg') no-repeat;
+                                transform: rotate(180deg);height: 100%;
+                                margin: 0;
+                                position: absolute;
+                                top: -45% !important;
+                                left: -1%;
+                            }
+                        }
+                    }
+                    .dots-wrapper{
+                        display: none;
+                    }
                 }
             }
         }

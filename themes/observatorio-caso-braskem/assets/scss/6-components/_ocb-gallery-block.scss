@@ -1,16 +1,35 @@
 .image-gallery.hacklab-block{
+    padding: 1rem;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.15);
+    background-color: $color--high-pure !important;
     .image-gallery-wrapper{
         height: size(360);
-        background-color: $color--high-pure !important;
+        background-color: $color--high-pure;
+        .header{
+            .actions{
+                align-items: center;
+                right: .5rem;
+                top: .5rem;
+            }
+        }
         .gallery-grid{
             .sss{
                 position: relative;
+                .gallery-item-container{
+                    .image-meta{
+                        .image-description,
+                        i{
+                            display: none;
+                        }
+                    }
+                }
                 .sssnext{
                     background: url('#{$path--assets}/images/arrow-right.svg') no-repeat;
                     height: 100%;
                     margin: 0;
                     position: absolute;
                     top: 45%;
+                    right: -2%;
                 }
                 .sssprev{
                     background: url('#{$path--assets}/images/arrow-right.svg') no-repeat;
@@ -18,11 +37,12 @@
                     margin: 0;
                     position: absolute;
                     top: -45% !important;
+                    left: -2%;
                 }
             }
         }
         .dots-wrapper{
-            bottom: size(0) !important;
+            bottom: size(16) !important;
             .dot.active{
                 background-color: #22b573 !important;
             }
@@ -33,4 +53,23 @@
     }
 }
 
+.image-gallery.hacklab-block.grid-display{
+    .image-gallery-wrapper{
+        background-color: #666 !important;
+        padding: 5px 21px 21px !important;
+        .gallery-grid{
+            margin-top: 3rem;
+        }
+    }
+}
 
+.image-gallery.hacklab-block.grid-display.fullscreen{
+    .image-gallery-wrapper{
+        .gallery-grid{
+            margin-top: 4rem;
+        }
+    }
+    &::before{
+        background-color: #666 !important;
+    }
+}
