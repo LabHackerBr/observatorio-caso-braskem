@@ -218,11 +218,6 @@
                         display: none;
                     }
                 }
-                .image-gallery.hacklab-block{
-                    background-color: $color--high-pure !important;
-
-                    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.15);
-                }
                 .image-gallery.hacklab-block.fullscreen{
                     position: relative;
                     max-width: size(1170) !important;

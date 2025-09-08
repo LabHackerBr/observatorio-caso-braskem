@@ -1,0 +1,36 @@
+.image-gallery.hacklab-block{
+    .image-gallery-wrapper{
+        height: size(360);
+        background-color: $color--high-pure !important;
+        .gallery-grid{
+            .sss{
+                position: relative;
+                .sssnext{
+                    background: url('#{$path--assets}/images/arrow-right.svg') no-repeat;
+                    height: 100%;
+                    margin: 0;
+                    position: absolute;
+                    top: 45%;
+                }
+                .sssprev{
+                    background: url('#{$path--assets}/images/arrow-right.svg') no-repeat;
+                    transform: rotate(180deg);height: 100%;
+                    margin: 0;
+                    position: absolute;
+                    top: -45% !important;
+                }
+            }
+        }
+        .dots-wrapper{
+            bottom: size(0) !important;
+            .dot.active{
+                background-color: #22b573 !important;
+            }
+            .dot{
+                background-color: $color--low-light !important;
+            }
+        }
+    }
+}
+
+
