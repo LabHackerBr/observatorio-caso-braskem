@@ -104,11 +104,11 @@
 
         @include tablet {
             grid-template-columns: repeat(2, 1fr);
-            gap: $gap--small;
+            gap: size(25);
         }
         @include mobile {
             grid-template-columns: 1fr  ;
-            gap: $gap--small;
+            gap: size(25);
         }
         .post-card{
             padding: size(14);
@@ -117,6 +117,10 @@
         .post-card__content{
             min-height: size(240) !important;
             justify-content: space-between !important;
+            @include tablet{
+                min-height: auto !important;
+
+            }
         }
         .post-card__category{
             display: none;
@@ -134,6 +138,9 @@
             order: 2;
             font-size: size(14);
             margin-top: 1rem;
+            @include tablet{
+                display: none;
+            }
         }
         .post-card__meta{
             display: flex;

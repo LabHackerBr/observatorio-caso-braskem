@@ -214,6 +214,9 @@
                     font-style: normal;
                     font-weight: 700;
                     text-transform: uppercase;
+                    margin: 2.2rem 0 1.5rem;
+                    padding-left: .8rem;
+
                     @media(min-width: 783px){
                         display: none;
                     }
@@ -259,7 +262,8 @@
         }
         .post-header{
             @include mobile{
-                padding-top: 0;
+                padding-top: 1rem;
+
             }
         }
         .post-header__title{
