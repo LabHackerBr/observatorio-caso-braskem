@@ -268,6 +268,7 @@
                 }
                 @include tablet{
                     width: size(328);
+                    padding: .78rem 1rem .7rem 1.5rem;
                 }
             }
             button{
@@ -275,9 +276,10 @@
                 background-color: #d9d9d9;
                 padding: .6rem 1rem;
                 font-size: size(30);
-                iconify-icon{
+                @include tablet{
+                    padding: .7rem 1rem .65rem;
                     position: relative;
-                    top: size(2);
+                    right: 1px;
                 }
             }
         }
