@@ -214,7 +214,7 @@
     color: $color--high-pure;
     @include mobile{
         padding-top: 2.5rem;
-        padding-bottom: 1rem;
+        padding-bottom: 1.5rem;
     }
 
     &__search-filter{
@@ -273,7 +273,7 @@
             button{
                 border-radius: 0 $border-radius--round $border-radius--round 0;
                 background-color: #d9d9d9;
-                padding: 0rem 1rem;
+                padding: .6rem 1rem;
                 font-size: size(30);
                 iconify-icon{
                     position: relative;
@@ -321,9 +321,11 @@
                 }
                 &::marker{
                     display: none !important;
-
                 }
+            }
 
+            summary::-webkit-details-marker{
+                display: none !important;
             }
 
             ul{
@@ -418,7 +420,7 @@
             margin: 0;
             flex-wrap: wrap;
             @include tablet{
-                order: 1;
+                order: 2;
             }
         }
         .active-filter{
@@ -444,14 +446,19 @@
             padding-left: 0;
             margin-top: 1rem;
             @include tablet{
-                order: 2;
+                order: 1;
                 justify-content: center;
-                margin-top: 1rem;
+                margin-top: 0;
                 margin-bottom: 1rem;
+                font-size: size(16);
             }
             svg{
                 position: relative;
                 top: size(6);
+                @include tablet{
+                    top: size(2);
+
+                }
             }
         }
     }

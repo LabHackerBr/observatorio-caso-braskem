@@ -549,6 +549,10 @@
             .post-card__content{
                 min-height: size(240) !important;
                 justify-content: space-between !important;
+                @include tablet{
+                    min-height: auto !important;
+
+                }
             }
             .post-card__title{
                 font-size: size(16);
@@ -562,6 +566,9 @@
                 font-weight: $font-weight--regular;
                 color: #222;
                 margin-top: .5rem;
+                @include tablet{
+                    display: none;
+                }
             }
             .post-card__author{
                 span{
