@@ -415,4 +415,34 @@
             letter-spacing: 0.48px;
         }
     }
+
+    section.post-authors{
+        padding-left: 0;
+        padding-right: 0;
+        .post-author__avatar{
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+            img{
+                height: size(62);
+                width: size(62);
+                border-radius: 50%;
+            }
+            .post-author__name{
+                color: $color--low-pure;
+                font-family: "Sofia Sans Condensed", sans-serif !important;
+                font-size: size(24);
+                font-weight: 800;
+                letter-spacing: 0.24px;
+                a{
+                    text-decoration: none;
+                }
+            }
+
+        }
+        .post-author__info{
+            margin-top: 1.5rem;
+
+        }
+    }
 }

@@ -68,6 +68,35 @@ $excerpt = !empty( $post->post_excerpt ) ? wp_kses_post( $post->post_excerpt ) :
         <main class="post-content container">
             <?php the_content() ?>
         </main>
+
+        <?php
+            $coauthors = get_coauthors();
+            if ( $coauthors ) : ?>
+            <section class="post-authors container">
+                <?php foreach ( $coauthors as $author ) :
+                    $name  = $author->display_name;
+                    $link  = get_author_posts_url( $author->ID, $author->user_nicename );
+                ?>
+                    <div class="post-author">
+                        <div class="post-author__avatar">
+                            <?php echo coauthors_get_avatar( $author, 96 ); ?>
+                            <h3 class="post-author__name">
+                                <a href="<?= esc_url($link) ?>"><?= esc_html($name) ?></a>
+                            </h3>
+                        </div>
+                        <div class="post-author__info">
+
+                            <?php if ( !empty($author->description) ) : ?>
+                                <p class="post-author__bio">
+                                    <?= esc_html( $author->description ); ?>
+                                </p>
+                            <?php endif; ?>
+                        </div>
+                    </div>
+                <?php endforeach; ?>
+            </section>
+        <?php endif; ?>
+
     </div>
 </div>
 

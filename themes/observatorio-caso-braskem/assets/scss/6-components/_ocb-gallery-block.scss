@@ -8,11 +8,23 @@
     .image-gallery-wrapper{
         height: size(410);
         background-color: $color--high-pure;
+        @include mobile{
+            height: size(306);
+        }
         .header{
             .actions{
                 align-items: center;
                 right: .5rem;
                 top: .5rem;
+                @include mobile{
+                    right: 1rem;
+                    top: 1rem;
+                }
+                button[action=fullscreen]{
+                    @include mobile{
+                        display: none;
+                    }
+                }
             }
         }
         .gallery-grid{
@@ -23,6 +35,9 @@
                     height: size(400) !important;
                     .gallery-item{
                         height: size(300) !important;
+                        @include mobile{
+                            height: size(205) !important;
+                        }
                     }
                     .image-meta{
                         background-color: transparent !important;
@@ -32,9 +47,9 @@
                         padding-left: 0 !important;
                         padding-right: 0 !important;
                         padding-bottom: .5rem !important;
-                        @media(max-width: 500px){
-                            position: relative;
-                            top: size(115);
+                        @include mobile{
+                            position: absolute !important;
+                            top: size(140);
                         }
                         .image-description,
                         i{
@@ -59,6 +74,10 @@
                     position: absolute;
                     top: 33.5%;
                     right: -2%;
+                    @include mobile{
+                        top: 23.5%;
+                        right: -4%;
+                    }
                 }
                 .sssprev{
                     background: url('#{$path--assets}/images/arrow-right.svg') no-repeat;
@@ -67,6 +86,10 @@
                     position: absolute;
                     top: -58% !important;
                     left: -2%;
+                    @include mobile{
+                        top: -68% !important;
+                        left: -4%;
+                    }
                 }
             }
         }
@@ -74,6 +97,9 @@
             bottom: 4rem !important;
             position:  relative !important;
             margin-left: 0.3rem !important;
+            @include mobile{
+                bottom: 10.5rem !important;
+            }
             .dot.active{
                 background-color: #22b573 !important;
             }
@@ -95,7 +121,11 @@
         .sss{
             .gallery-item-container{
                 height: auto !important;
-
+                .gallery-item{
+                    @include mobile{
+                        height: size(90) !important;
+                    }
+                }
             }
         }
     }
