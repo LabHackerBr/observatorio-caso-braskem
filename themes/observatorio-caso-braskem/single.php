@@ -91,6 +91,22 @@ $excerpt = !empty( $post->post_excerpt ) ? wp_kses_post( $post->post_excerpt ) :
                                     <?= esc_html( $author->description ); ?>
                                 </p>
                             <?php endif; ?>
+                            <?php
+                                $bio_extra_en = get_post_meta($author_id, 'biographical_information', true);
+                                $bio_extra_es = get_post_meta($author_id, 'informacion_biografica', true);
+
+                                if ($bio_extra_en) {
+                                    echo '<div class="author-bio-widget__extra">';
+                                    echo wpautop($bio_extra_en);
+                                    echo '</div>';
+                                }
+
+                                if ($bio_extra_es) {
+                                    echo '<div class="author-bio-widget__extra">';
+                                    echo wpautop($bio_extra_es);
+                                    echo '</div>';
+                                }
+                            ?>
                         </div>
                     </div>
                 <?php endforeach; ?>

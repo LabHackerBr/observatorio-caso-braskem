@@ -2,6 +2,8 @@
 
 <div class="archive-title">
     <h1 class="container container--wide">
+        <img src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/exclamation-point.png" alt="exclamation-point" class="exclamation-icon">
+
         <?php
         if (is_post_type_archive('map')) {
             _e('Maps', 'hacklabr');

@@ -56,9 +56,26 @@ foreach ($social_network_keys as $key) {
                     <?php if ($author_description) : ?>
                         <div class="author-bio-widget">
                             <div class="author-bio-widget__about">
-                                <h3 class="widget-title">Sobre o autor</h3>
+                                <h3 class="widget-title"><?php _e('About the author', 'hacklabr') ?></h3>
                                 <div class="author-bio-widget__content">
                                     <?php echo wpautop($author_description); ?>
+
+                                    <?php
+                                    $bio_extra_en = get_post_meta($author_id, 'biographical_information', true);
+                                    $bio_extra_es = get_post_meta($author_id, 'informacion_biografica', true);
+
+                                    if ($bio_extra_en) {
+                                        echo '<div class="author-bio-widget__extra">';
+                                        echo wpautop($bio_extra_en);
+                                        echo '</div>';
+                                    }
+
+                                    if ($bio_extra_es) {
+                                        echo '<div class="author-bio-widget__extra">';
+                                        echo wpautop($bio_extra_es);
+                                        echo '</div>';
+                                    }
+                                    ?>
                                 </div>
                             </div>
 
