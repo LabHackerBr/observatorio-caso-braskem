@@ -3,7 +3,7 @@
     box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.15);
     background-color: $color--high-pure !important;
     .image-gallery-wrapper{
-        height: size(360);
+        height: size(410);
         background-color: $color--high-pure;
         .header{
             .actions{
@@ -16,10 +16,29 @@
             .sss{
                 position: relative;
                 .gallery-item-container{
+
+                    height: size(400) !important;
+                    .gallery-item{
+                        height: size(300) !important;
+                    }
                     .image-meta{
+                        background-color: transparent !important;
+                        color: $color--low-pure !important;
+                        text-align: center !important;
+                        justify-content: center !important;
+                        padding-left: 0 !important;
+                        padding-right: 0 !important;
+                        padding-bottom: .5rem !important;
                         .image-description,
                         i{
                             display: none;
+                        }
+                        .image-credit{
+                            opacity: 1 !important;
+                            text-align: center !important;
+                            span{
+                                font-weight: $font-weight--regular !important;
+                            }
                         }
                     }
                 }
@@ -28,7 +47,7 @@
                     height: 100%;
                     margin: 0;
                     position: absolute;
-                    top: 45%;
+                    top: 33.5%;
                     right: -2%;
                 }
                 .sssprev{
@@ -36,18 +55,21 @@
                     transform: rotate(180deg);height: 100%;
                     margin: 0;
                     position: absolute;
-                    top: -45% !important;
+                    top: -58% !important;
                     left: -2%;
                 }
             }
         }
         .dots-wrapper{
-            bottom: size(16) !important;
+            bottom: 4rem !important;
+            position:  relative !important;
+            margin-left: 0.3rem !important;
             .dot.active{
                 background-color: #22b573 !important;
             }
             .dot{
                 background-color: $color--low-light !important;
+                opacity: 1 !important;
             }
         }
     }
@@ -59,6 +81,12 @@
         padding: 5px 21px 21px !important;
         .gallery-grid{
             margin-top: 3rem;
+        }
+        .sss{
+            .gallery-item-container{
+                height: auto !important;
+
+            }
         }
     }
 }

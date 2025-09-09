@@ -235,7 +235,12 @@
                     }
                     .gallery-grid{
                         .sss{
-
+                            .gallery-item-container{
+                                height: auto !important;
+                            }
+                            .gallery-item{
+                                height: 100% !important;
+                            }
                             .sssnext{
                                 background: url('#{$path--assets}/images/arrow-right.svg') no-repeat;
                                 height: 100%;
