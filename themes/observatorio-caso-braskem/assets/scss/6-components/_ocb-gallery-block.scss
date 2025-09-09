@@ -2,6 +2,9 @@
     padding: 1rem;
     box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.15);
     background-color: $color--high-pure !important;
+    @include mobile{
+        margin-bottom: 2rem !important;
+    }
     .image-gallery-wrapper{
         height: size(410);
         background-color: $color--high-pure;
@@ -29,6 +32,10 @@
                         padding-left: 0 !important;
                         padding-right: 0 !important;
                         padding-bottom: .5rem !important;
+                        @media(max-width: 500px){
+                            position: relative;
+                            top: size(115);
+                        }
                         .image-description,
                         i{
                             display: none;
@@ -36,6 +43,9 @@
                         .image-credit{
                             opacity: 1 !important;
                             text-align: center !important;
+                            @media(max-width: 500px){
+                                display: inherit;
+                            }
                             span{
                                 font-weight: $font-weight--regular !important;
                             }

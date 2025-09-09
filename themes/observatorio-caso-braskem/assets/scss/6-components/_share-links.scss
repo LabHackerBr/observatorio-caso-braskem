@@ -6,8 +6,26 @@
     position: fixed;
     width: fit-content;
     gap: 2rem;
-    margin-left: 2rem;
-    @include mobile{
+    left: 2%;
+    @media(min-width: 1400px){
+        left: 5%;
+    }
+    @media(min-width: 1600px){
+        left: 10%;
+    }
+
+    @media(min-width: 1750px){
+        left: 12%;
+    }
+
+    @media(min-width: 1850px){
+        left: 15%;
+    }
+    @media(min-width: 1950px){
+        left: 20%;
+    }
+
+    @media(max-width: 1320px){
         display: none;
     }
 

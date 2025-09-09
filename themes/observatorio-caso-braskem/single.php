@@ -10,7 +10,7 @@ $excerpt = !empty( $post->post_excerpt ) ? wp_kses_post( $post->post_excerpt ) :
 ?>
 
 <div class="single">
-    <div class="single__background"></div>
+    <!-- <div class="single__background"></div> -->
 
     <div class="single__content-overlay">
         <header class="post-header container">
@@ -43,11 +43,24 @@ $excerpt = !empty( $post->post_excerpt ) ? wp_kses_post( $post->post_excerpt ) :
 
             <div class="post-header__author">
                 <div class="post-header__published-container">
-                    <img class="post-header__author-image" src="<?= get_avatar_url(get_the_author_meta('ID')) ?>" alt="<?= get_the_author() ?>"/>
-                    <div class="post-header__author-published-date">
-                        <p class="post-header__author-name"><?php _e('Published by ', 'hacklabr') ?><?= get_the_author() ?></p>
-                        <p class="post-header__date"><?= get_the_date("j/m/Y")?></p>
-                    </div>
+                    <?php
+                    $coauthors = get_coauthors();
+                    foreach ( $coauthors as $author ) :
+                        $avatar = get_avatar_url( $author->ID, ['size' => 96] );
+                        $name   = $author->display_name;
+                        $link   = get_author_posts_url( $author->ID, $author->user_nicename );
+                    ?>
+                        <div class="post-header__published-container">
+                            <img class="post-header__author-image" src="<?= esc_url($avatar) ?>" alt="<?= esc_attr($name) ?>"/>
+                            <div class="post-header__author-published-date">
+                                <p class="post-header__author-name">
+                                    <?php _e('By ', 'hacklabr') ?>
+                                    <a href="<?= esc_url($link) ?>"><?= esc_html($name) ?></a>
+                                </p>
+                                <p class="post-header__date"><?= get_the_date("j/m/Y")?></p>
+                            </div>
+                        </div>
+                    <?php endforeach; ?>
                 </div>
             </div>
         </header>

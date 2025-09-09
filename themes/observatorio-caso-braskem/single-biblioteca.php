@@ -81,6 +81,7 @@ $excerpt = !empty( $post->post_excerpt ) ? wp_kses_post( $post->post_excerpt ) :
         <div class="share-links-post-content">
             <?php echo do_shortcode('[addtoany]'); ?>
         </div>
+        <hr>
     </header>
 
 </div>

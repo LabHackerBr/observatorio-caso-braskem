@@ -201,6 +201,8 @@
             @include mobile{
                 flex-direction: column;
                 gap: 0;
+                padding-bottom: 0;
+                margin-bottom: 0    ;
             }
             .post-content{
                 padding-left: 0;
@@ -237,6 +239,11 @@
                         .sss{
                             .gallery-item-container{
                                 height: auto !important;
+                                .image-meta{
+                                    background-color: rgba(25, 30, 35, .8) !important;
+                                    color: $color--high-pure !important;
+                                    padding-bottom: 1rem !important;
+                                }
                             }
                             .gallery-item{
                                 height: 100% !important;
@@ -269,6 +276,13 @@
             @include mobile{
                 padding-top: 1rem;
 
+            }
+            hr{
+                margin-top: 1rem;
+                border-top: 1px solid #000;
+                @media(min-width: 783px){
+                    display: none;
+                }
             }
         }
         .post-header__title{

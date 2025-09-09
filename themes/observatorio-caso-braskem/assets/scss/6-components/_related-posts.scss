@@ -93,9 +93,14 @@
 .single-biblioteca{
     .related-posts{
         border-top: 1px solid #000;
+        @include mobile{
+            border-top: none;
+            margin-bottom: 2rem;
+        }
     }
     .related-posts__title{
         margin-top: 0;
+        color: #630F05 !important;
     }
     .related-posts__content {
         display: grid;
@@ -120,6 +125,14 @@
             @include tablet{
                 min-height: auto !important;
 
+            }
+        }
+        .post-card__title{
+            a{
+                color: $color--low-dark;
+            }
+            @include mobile{
+                font-size: size(14) !important;
             }
         }
         .post-card__category{
