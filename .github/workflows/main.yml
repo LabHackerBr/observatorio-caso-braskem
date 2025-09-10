@@ -33,6 +33,16 @@ jobs:
         run: ls -lhtra themes/${{ env.THEME_NAME }}
       - name: Remove node_modules directory
         run: rm -rf themes/${{ env.THEME_NAME }}/node_modules
+      - name: Remove build directory (blocks)
+        run: rm -rf themes/${{ env.THEME_NAME }}/library/blocks/v2/build/*
+        name: Remove lock (blocks)
+        run: rm -rf themes/${{ env.THEME_NAME }}/library/blocks/v2/package-lock.json
+      - name: Remove node_modules (blocks)
+        run: rm -rf themes/${{ env.THEME_NAME }}/library/blocks/v2/node_modules
+      - name: Install npm packages (blocks)
+        run: npm --prefix themes/${{ env.THEME_NAME }}/library/blocks/v2 install
+      - name: Run production build (blocks)
+        run: npm --prefix themes/${{ env.THEME_NAME }}/library/blocks/v2 run build
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
