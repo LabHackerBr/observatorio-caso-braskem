@@ -35,7 +35,7 @@ jobs:
         run: rm -rf themes/${{ env.THEME_NAME }}/node_modules
       - name: Remove build directory (blocks)
         run: rm -rf themes/${{ env.THEME_NAME }}/library/blocks/v2/build/*
-        name: Remove blocks lock
+      - name: Remove blocks lock
         run: rm -rf themes/${{ env.THEME_NAME }}/library/blocks/v2/package-lock.json
       - name: Remove blocks node_modules
         run: rm -rf themes/${{ env.THEME_NAME }}/library/blocks/v2/node_modules
