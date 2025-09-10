@@ -223,13 +223,29 @@
 
 // Página Linha do tempo
 .page-linha-do-tempo{
+    .who-we-are{
+    background: #630f05 !important;
+    background: linear-gradient(180deg,rgba(73, 8, 6, 1) 0%, rgba(32, 2, 2, 1) 50%) !important;
+        .container{
+            @include mobile {
+                padding-bottom: 3rem !important;
+            }
+        }
+    }
     .post-header__title{
         margin-top: 3rem;
+        @include mobile{
+            margin-top: 1.5rem;
+
+        }
     }
     .post-content {
         margin-inline: initial;
         max-width: size(1200);
         margin-inline: auto;
+        @include mobile{
+            padding-top: 1rem;
+        }
         .sharedaddy,
         .timeline-year,
         .ctl-navigation-items,
@@ -241,6 +257,18 @@
         .cool-timeline-wrapper{
             padding: 0;
         }
+
+        .ctl-wrapper{
+            @include mobile {
+                margin-bottom: 0 !important;
+            }
+        }
+
+        .ctl-labels{
+            @media(max-width: 767px){
+                margin: 0px 0px 0px 0px !important;
+            }
+        }
         .ctl-start, .ctl-end{
             background-color: transparent !important;
         }
@@ -251,14 +279,34 @@
                 position: relative;
                 left: calc(45% - var(--ctw-line-width) / 2) !important;
                 background-color: transparent !important;
+                @media(max-width: 1199px){
+                    left: 1rem !important;
+                    content: url('#{$path--assets}/images/rachadura-mobile.png') !important;
+                }
             }
         }
         .ctl-story{
             width: 100% !important;
-            margin-bottom: 3rem !important;
+            margin-bottom: 5rem !important;
+            @media(max-width: 1199px){
+
+                margin-bottom: 0rem !important;
+                padding-left: 6rem !important;
+                float: left !important;
+
+            }
+            @include mobile{
+
+                margin-bottom: 0rem !important;
+                padding-left: 4rem !important;
+            }
             .ctl-content{
                 justify-content: space-between;
                 position: relative;
+                @media(max-width: 1199px){
+                    flex-direction: column;
+                }
+
                 .ctl-media{
                     max-width: size(430) !important;
                     width: 100% !important;
@@ -271,6 +319,12 @@
                     font-weight: 600;
                     line-height: 120.24%; /* 38.477px */
                     letter-spacing: 0.32px;
+                    @media(max-width: 1199px){
+                        padding-left: 0;
+                        font-size: size(24) !important;
+                        font-weight: 700 !important;
+
+                    }
                 }
                 .ctl-description{
                     max-width: size(500) !important;
@@ -278,17 +332,41 @@
                     padding-top: 3rem;
                     padding-left: 0;
                     padding-right: 0;
+                    @include mobile {
+                        padding-top: 1rem;
+                    }
                     p{
                         font-size: size(32) !important;
                         font-weight: 600 !important;
                         letter-spacing: 0.32px;
                         font-family: "Sofia Sans Condensed", sans-serif !important;
+                        @media(max-width: 1199px){
+                            font-size: size(20) !important;
+                            font-weight: 700 !important;
+                        }
                     }
                 }
             }
             .ctl-icondot{
+                background-color: transparent !important;
+                background: url('#{$path--assets}/images/icon-dot-tl.svg') !important;
+                background-repeat: no-repeat !important;
+                background-position: center !important;
+                background-size: contain !important;
+                width: 2rem !important;
+                height: 2rem !important;
                 left: 47% !important;
                 top: 50% !important;
+                @media (max-width: 1199px){
+                    left: 2% !important;
+                    top: 2% !important;
+                }
+            }
+        }
+
+        .ctl-wrapper .ctl-vertical-wrapper .ctl-inner-line, .ctl-wrapper .ctl-vertical-wrapper .ctl-timeline:before{
+            @media(max-width: 767px){
+                left: -1rem !important;
             }
         }
 
@@ -297,9 +375,19 @@
             .ctl-content{
                 .ctl-media{
                     margin-top: -6rem;
+                    margin-left: size(67);
+                    @media(max-width: 1199px){
+                        margin-top: 0;
+                        margin-left: 0;
+                    }
+
                 }
                 .ctl-title{
-                    left: size(583);
+                    left: size(651);
+                    @media(max-width: 1199px){
+                        left: 0;
+                        position: relative;
+                    }
                 }
             }
         }
@@ -309,12 +397,29 @@
 
             .ctl-content{
                 flex-direction: row-reverse;
+                @media(max-width: 1199px){
+                    flex-direction: column;
+                }
+                .ctl-media{
+                    margin-right: size(72);
+                    @media(max-width: 1199px){
+                        margin-right: 0;
+                    }
+                }
                 .ctl-title{
-                    left: size(287);
+                    left: size(305);
+                    @media(max-width: 1199px){
+                        left: 0;
+                        position: relative;
+                    }
                 }
                 .ctl-description{
-                    text-align: right !important;
                     padding-top: 3rem;
+                    text-align: right;
+                    @include mobile{
+                        padding-top: 1rem;
+                        text-align: left;
+                    }
                 }
             }
         }
