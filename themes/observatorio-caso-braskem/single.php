@@ -97,13 +97,13 @@ $excerpt = !empty( $post->post_excerpt ) ? wp_kses_post( $post->post_excerpt ) :
                                     $bio_extra_es = get_post_meta($author_id, 'informacion_biografica', true);
 
                                     if ($bio_extra_en) {
-                                        echo '<div class="author-bio-widget__extra">';
+                                        echo '<div class="author-bio-widget__extra-en">';
                                         echo wpautop($bio_extra_en);
                                         echo '</div>';
                                     }
 
                                     if ($bio_extra_es) {
-                                        echo '<div class="author-bio-widget__extra">';
+                                        echo '<div class="author-bio-widget__extra-es">';
                                         echo wpautop($bio_extra_es);
                                         echo '</div>';
                                     }

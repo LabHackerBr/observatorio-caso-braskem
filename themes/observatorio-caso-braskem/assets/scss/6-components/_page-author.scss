@@ -216,3 +216,24 @@ body.author {
         }
     }
 }
+
+html[lang="pt-br"]{
+    .author-bio-widget__extra-en,
+    .author-bio-widget__extra-es{
+        display: none;
+    }
+}
+
+html[lang="en-US"]{
+    .post-author__bio,
+    .author-bio-widget__extra-es{
+        display: none;
+    }
+}
+
+html[lang="es-ES"]{
+    .author-bio-widget__extra-en,
+    .post-author__bio{
+        display: none;
+    }
+}
