@@ -1,3 +1,4 @@
+// Bloco da home
 .ctl-wrapper{
     max-width: unset !important;
     padding-inline: $padding--large;
@@ -218,4 +219,104 @@
 .ctl-wrapper .cool-timeline-wrapper:not(.dark-skin) .ctl-media img{
     padding-inline: 0 !important;
     padding-top: 0 !important;
+}
+
+// Página Linha do tempo
+.page-linha-do-tempo{
+    .post-header__title{
+        margin-top: 3rem;
+    }
+    .post-content {
+        margin-inline: initial;
+        max-width: size(1200);
+        margin-inline: auto;
+        .sharedaddy,
+        .timeline-year,
+        .ctl-navigation-items,
+        .ctl-arrow,
+        .story-date{
+            display: none !important;
+        }
+        .ctl-wrapper,
+        .cool-timeline-wrapper{
+            padding: 0;
+        }
+        .ctl-start, .ctl-end{
+            background-color: transparent !important;
+        }
+        .ctl-timeline{
+            &::before{
+                content: url('#{$path--assets}/images/rachadura-time-line.png') !important;
+                border: none !important;
+                position: relative;
+                left: calc(45% - var(--ctw-line-width) / 2) !important;
+                background-color: transparent !important;
+            }
+        }
+        .ctl-story{
+            width: 100% !important;
+            margin-bottom: 3rem !important;
+            .ctl-content{
+                justify-content: space-between;
+                position: relative;
+                .ctl-media{
+                    max-width: size(430) !important;
+                    width: 100% !important;
+                }
+                .ctl-title{
+                    background: transparent !important;
+                    position: absolute;
+                    font-family: "Sofia Sans Condensed", sans-serif !important;
+                    font-size: 2rem !important;
+                    font-weight: 600;
+                    line-height: 120.24%; /* 38.477px */
+                    letter-spacing: 0.32px;
+                }
+                .ctl-description{
+                    max-width: size(500) !important;
+                    width: 100% !important;
+                    padding-top: 3rem;
+                    padding-left: 0;
+                    padding-right: 0;
+                    p{
+                        font-size: size(32) !important;
+                        font-weight: 600 !important;
+                        letter-spacing: 0.32px;
+                        font-family: "Sofia Sans Condensed", sans-serif !important;
+                    }
+                }
+            }
+            .ctl-icondot{
+                left: 47% !important;
+                top: 50% !important;
+            }
+        }
+
+        // filhos ímpares
+        .ctl-timeline > .ctl-story:nth-of-type(odd) {
+            .ctl-content{
+                .ctl-media{
+                    margin-top: -6rem;
+                }
+                .ctl-title{
+                    left: size(583);
+                }
+            }
+        }
+
+        // filhos pares
+        .ctl-timeline > .ctl-story:nth-of-type(even) {
+
+            .ctl-content{
+                flex-direction: row-reverse;
+                .ctl-title{
+                    left: size(287);
+                }
+                .ctl-description{
+                    text-align: right !important;
+                    padding-top: 3rem;
+                }
+            }
+        }
+    }
 }
