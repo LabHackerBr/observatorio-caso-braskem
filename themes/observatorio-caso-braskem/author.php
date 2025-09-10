@@ -58,7 +58,11 @@ foreach ($social_network_keys as $key) {
                             <div class="author-bio-widget__about">
                                 <h3 class="widget-title"><?php _e('About the author', 'hacklabr') ?></h3>
                                 <div class="author-bio-widget__content">
-                                    <?php echo wpautop($author_description); ?>
+                                    <?php if ( !empty($author->description) ) : ?>
+                                        <p class="post-author__bio">
+                                            <?= esc_html( $author->description ); ?>
+                                        </p>
+                                    <?php endif; ?>
 
                                     <?php
                                     $bio_extra_en = get_post_meta($author_id, 'biographical_information', true);
