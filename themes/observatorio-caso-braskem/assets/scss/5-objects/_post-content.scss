@@ -219,6 +219,10 @@
             }
             .slick-list{
                 padding: 0 1rem !important;
+                @include mobile {
+                    padding: 0 .6rem !important;
+
+                }
 
             }
             .slick-slide{
@@ -242,6 +246,9 @@
                     flex-direction: column-reverse;
                     bottom: 4rem !important;
                     gap: 1.5rem;
+                    @include mobile{
+                        gap: 1rem;
+                    }
                     .post-meta{
                         display: flex;
                         flex-direction: column-reverse;
@@ -345,6 +352,7 @@
                         }
                         .embed-template-block{
                             p{
+                                padding-top: 0 !important;
                                 padding-left: 0 !important;
                                 strong{
                                     font-size: size(16) !important;
