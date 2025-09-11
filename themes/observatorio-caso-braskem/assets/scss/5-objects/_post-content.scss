@@ -218,7 +218,7 @@
                 top: size(-100);
             }
             .slick-list{
-                padding: 0 0 !important;
+                padding: 0 1rem !important;
 
             }
             .slick-slide{
@@ -330,33 +330,47 @@
                 @include mobile{
                     padding: 0 1rem;
                 }
-            }
-            .sidebar-itens{
-                scrollbar-color: $color--high-pure $color--low-light !important;
-                @include mobile{
-                    flex-direction: column;
-                    padding-right: 1rem;
-                }
-                button{
-                    @include mobile{
-                        width: 100% !important;
+                .sidebar-itens{
+                    scrollbar-color: $color--high-pure $color--low-light !important;
+                    @media(max-width: 992px){
+                        overflow-x: hidden !important;
                     }
-                    .embed-template-block{
-
+                    @include mobile{
+                        flex-direction: column;
+                        padding-right: 1rem;
+                    }
+                    button{
                         @include mobile{
-                            display: grid;
-                            grid-template-areas:
-                                "a b"
-                                "a c";
-                                margin-bottom: 1rem !important;
+                            width: 100% !important;
                         }
-                        &::before{
-                            display: none;
-                        }
-                        .wp-block-embed{
+                        .embed-template-block{
+                            p{
+                                padding-left: 0 !important;
+                                strong{
+                                    font-size: size(16) !important;
+                                }
+                            }
+                            p:nth-last-of-type(1){
+                                font-size: size(14) !important;
+                                text-transform: uppercase !important;
+
+                            }
                             @include mobile{
-                                width: size(124);
-                                height: size(68);
+                                display: grid;
+                                grid-template-areas:
+                                    "a b"
+                                    "a c";
+                                margin-bottom: 1rem !important;
+                                grid-template-columns: 3fr 7fr;
+                            }
+                            &::before{
+                                display: none;
+                            }
+                            .wp-block-embed{
+                                @include mobile{
+                                    width: size(124);
+                                    height: size(68);
+                                }
                             }
                         }
                     }
