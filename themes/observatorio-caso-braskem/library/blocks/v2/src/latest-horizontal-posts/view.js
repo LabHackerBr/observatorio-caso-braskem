@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const arrowsMobile = slider.querySelector('.medium-only .latest-horizontal-posts-block__arrows')
         const dotsMobile = slider.querySelector('.medium-only .latest-horizontal-posts-block__dots')
 
-        let slidesToShowMobile = 1
+        let slidesToShowMobile = 2
         if (slider.classList.contains('model-specials') || slider.classList.contains('model-most-read')) {
             slidesToShowMobile = 2
         } else if (slider.classList.contains('model-collection') || slider.classList.contains('model-albums')) {
@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", function () {
             infinite: true,
             slidesToShow: parseInt(slidesToShow),
             centerMode: true,
-            slidesToScroll: 1,
+            slidesToScroll: 2,
             cssEase: 'linear',
             responsive: [
                 {

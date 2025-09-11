@@ -162,17 +162,8 @@ function get_primary_term( $post_id, $taxonomy, $force_primary = false ) {
  * @param string $date_format Formato da data, padrão 'd M Y'
  * @return string A data formatada
 */
-function get_the_time_ago( $date_format = 'd M Y' ) {
-
-    if ( get_the_time( 'U' ) >= strtotime( '-1 week' ) ) {
-        return sprintf(
-            esc_html__( '%s ago', 'hacklabr' ),
-            human_time_diff( get_the_time( 'U' ), current_time( 'timestamp' ) )
-        );
-    } else {
-        return get_the_date( $date_format );
-    }
-
+function get_the_time_ago( $date_format = 'd/m/Y' ) {
+    return get_the_date( $date_format );
 }
 
 if ( function_exists( 'get_coauthors' ) && ! function_exists( 'get_list_coauthors' ) ) {
