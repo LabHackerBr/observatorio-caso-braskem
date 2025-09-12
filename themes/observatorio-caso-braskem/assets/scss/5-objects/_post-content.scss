@@ -83,9 +83,13 @@
             margin-left: auto;
             margin-right: auto;
             padding-left: 0 !important;
-            @media(max-width: 1199px){
+            @include mobile{
+                font-size: size(16) !important;
                 padding-left: 1rem !important;
                 padding-right: 1rem !important;
+                letter-spacing: 0.16px !important;
+                line-height: size(24);
+                font-family: 'Sofia Sans', sans-serif !important;
             }
         }
     }
@@ -99,8 +103,14 @@
             padding-left: 1rem;
             padding-right: 1rem;
         }
+        @include mobile{
+            max-height: size(605);
+        }
     }
     .wp-block-group:nth-of-type(1){
+        @include mobile{
+            padding-top: 2rem;
+        }
         .latest-horizontal-posts-block{
 
             .post-meta{
@@ -114,13 +124,14 @@
 
     .ocb-pdf-btn{
         position: relative;
-        padding-left: 1.5rem;
+        padding-left: 2.5rem;
         top: size(-170);
         width: fit-content;
         @include mobile{
             padding-left: 0;
             margin-left: auto !important;
             margin-right: auto !important;
+            top: size(-290);
 
         }
         .wp-block-button__link{
@@ -150,6 +161,10 @@
             color: $color--primary-pure;
             h2{
                 font-size: size(24);
+                @include mobile{
+                    font-size: size(20);
+
+                }
             }
             p:nth-last-of-type(1){
                 color: $color--low-pure;
@@ -171,8 +186,11 @@
             top: size(8) !important;
             left: -10px;
             @include mobile{
-                top: size(200) !important;
+                top: size(215) !important;
                 left: 0;
+                margin-left: auto;
+                margin-right: auto;
+                width: 300px;
             }
         }
         &__arrows{
@@ -193,6 +211,11 @@
             position: relative;
             top: size(52);
             .slick-dots{
+                position: relative;
+                left: .6rem;
+                @include mobile{
+                    left: 0;
+                }
                 li{
                     height: size(12) !important;
                     width: size(12) !important;
@@ -320,6 +343,10 @@
 
     .wp-block-group:nth-of-type(3){
         padding: 3rem 0;
+        @include mobile{
+            margin-top: 1.5rem;
+            padding: 1.7rem 0 3rem;
+        }
         .wp-block-heading{
             font-size: size(24);
             text-transform: uppercase;
@@ -330,11 +357,15 @@
         }
     }
     .video-gallery-block{
+        @include mobile{
+            margin-top: 1rem;
+        }
         .video-gallery-wrapper{
             grid-template-columns: 1.15fr .85fr;
             .scroll-ratio{
-                height: auto;
+                height: size(350);
                 @include mobile{
+                    height: auto;
                     padding: 0 1rem;
                 }
                 .sidebar-itens{
@@ -386,6 +417,11 @@
             }
         }
     }
+}
+
+.page-cpi .latest-horizontal-posts-block.model-post .latest-horizontal-posts-block__arrows{
+    width: 100% !important;
+    margin-left: 1.3rem;
 }
 
 .single-biblioteca{
