@@ -3,8 +3,8 @@
     "settings": {
         "appearanceTools": true,
         "color": {
-            "custom": false,
-            "customGradient": false,
+            "custom": true,
+            "customGradient": true,
             "gradients": [],
             "link": false,
             "palette": [
