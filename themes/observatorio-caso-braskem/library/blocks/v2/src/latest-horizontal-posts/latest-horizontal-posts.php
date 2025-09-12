@@ -63,10 +63,36 @@ function latest_horizontal_posts_callback( $attributes ) {
         }
     }
 
-    if ( $block_model == 'columnists' ) {
-        // Co Authors
-        require_once get_stylesheet_directory() . '/library/blocks/v2/includes/columnists.php';
-        $has_content = columnists_get_contents( $attributes );
+    if ( $block_model === 'columnists' ) {
+        $coauthors_nicenames = ! empty( $attributes['coAuthor'] ) ? (array) $attributes['coAuthor'] : [];
+
+        if ( empty( $coauthors_nicenames ) ) {
+            $all_coauthors = get_posts([
+                'post_type'      => 'guest-author',
+                'posts_per_page' => -1,
+                'orderby'        => 'title',
+                'order'          => 'ASC',
+            ]);
+
+            $coauthors_nicenames = array_map(function($post) {
+                return $post->post_name;
+            }, $all_coauthors);
+        }
+
+        $coauthors_ids = [];
+        foreach ( $coauthors_nicenames as $nicename ) {
+            $post_obj = get_page_by_path( $nicename, OBJECT, 'guest-author' );
+            if ( $post_obj ) {
+                $post_count = count_guest_author_posts( $post_obj->post_name, 'post' );
+                if ( $post_count > 0 ) {
+                    $coauthors_ids[] = $post_obj->ID;
+                }
+            }
+        }
+
+        $coauthors_ids = array_unique( $coauthors_ids );
+
+        $has_content = $coauthors_ids;
     }
 
     if ( $block_model == 'most-read' || $block_model == 'post' ) {
