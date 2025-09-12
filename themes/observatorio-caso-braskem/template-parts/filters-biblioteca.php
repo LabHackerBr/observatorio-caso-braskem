@@ -74,12 +74,14 @@
                     <path fill-rule="evenodd" clip-rule="evenodd" d="M2.23464 20.0947L1.08397 22.3977C1.05214 22.4705 1.02654 22.5327 1.01082 22.5852L0.644275 24.4899C0.631663 24.6471 0.818015 24.7213 0.911041 24.5984L2.35229 23.0092L2.34499 23.0075C2.39611 22.9511 2.44339 22.8778 2.49843 22.7703L3.55825 20.7667C3.55825 20.7667 7.96683 20.09 10.7452 19.1639C13.5272 18.2385 17.7509 12.7283 17.7509 12.7283L14.3193 12.6465L18.3098 11.3791C18.7145 11.2508 18.977 10.9383 19.2853 10.5762L24.5281 4.40904C4.15214 1.57073 1.09658 17.657 2.23464 20.0947ZM4.66406 18.2895L3.53196 19.0729C5.86703 13.4386 12.5997 6.75312 20.3963 5.8604C9.43391 9.43935 4.67738 18.2646 4.66406 18.2895Z" fill="#222222"/>
                 </svg>
                 <?php
-                   if ( ! empty($_GET['biblioteca_coautor']) ) {
-                    $author_post = get_page_by_path( sanitize_text_field($_GET['biblioteca_coautor']), OBJECT, 'guest-author' );
-                    if ( $author_post ) {
-                        echo esc_html($author_post->post_title);
+                if ( ! empty($_GET['biblioteca_coautor']) ) {
+                    $selected_slug = sanitize_text_field($_GET['biblioteca_coautor']);
+                    $term = get_term_by('slug', $selected_slug, 'author');
+
+                    if ($term && ! is_wp_error($term)) {
+                        echo esc_html($term->name);
                     } else {
-                        echo esc_html($_GET['biblioteca_coautor']);
+                        echo esc_html($selected_slug); // fallback
                     }
                 } else {
                     _e('Authorship', 'hacklabr');
@@ -92,33 +94,31 @@
             </summary>
             <ul>
             <?php
-                $guest_authors = get_posts([
-                    'post_type'      => 'guest-author',
+            $guest_authors = get_terms([
+                'taxonomy'   => 'author',
+                'hide_empty' => true, // só traz quem tem posts
+                'orderby'    => 'name',
+                'order'      => 'ASC',
+                'object_ids' => get_posts([
+                    'post_type'      => 'biblioteca',
                     'posts_per_page' => -1,
-                    'orderby'        => 'title',
-                    'order'          => 'ASC',
-                ]);
+                    'fields'         => 'ids',
+                ]),
+            ]);
 
-                $unique_authors = [];
-                foreach ($guest_authors as $ga) {
-                    if (!isset($unique_authors[$ga->post_title])) {
-                        $unique_authors[$ga->post_title] = $ga;
-                    }
-                }
-
-                foreach ($unique_authors as $ga) :
-                    $args = $_GET;
-                    $args['biblioteca_coautor'] = $ga->post_name;
-                    unset($args['paged']);
-                    $link = add_query_arg($args, get_post_type_archive_link('biblioteca'));
-                    $selected = (($_GET['biblioteca_coautor'] ?? '') === $ga->post_name);
-                ?>
-                    <li>
-                        <a href="<?php echo esc_url($link); ?>" class="<?php echo $selected ? 'active' : ''; ?>">
-                            <?php echo esc_html($ga->post_title); ?>
-                        </a>
-                    </li>
-                <?php endforeach; ?>
+            foreach ($guest_authors as $ga) :
+                $args = $_GET;
+                $args['biblioteca_coautor'] = $ga->slug;
+                unset($args['paged']);
+                $link = add_query_arg($args, get_post_type_archive_link('biblioteca'));
+                $selected = (($_GET['biblioteca_coautor'] ?? '') === $ga->slug);
+            ?>
+                <li>
+                    <a href="<?php echo esc_url($link); ?>" class="<?php echo $selected ? 'active' : ''; ?>">
+                        <?php echo esc_html($ga->name); ?>
+                    </a>
+                </li>
+            <?php endforeach; ?>
             </ul>
         </details>
 
