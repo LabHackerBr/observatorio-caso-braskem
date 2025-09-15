@@ -8,6 +8,8 @@
             font-weight: $font-weight--bold;
             @include mobile{
                 font-size: $font-size--medium !important;
+                padding: $padding--x-small $padding--medium;
+                width: size(326) !important;
             }
         }
     }

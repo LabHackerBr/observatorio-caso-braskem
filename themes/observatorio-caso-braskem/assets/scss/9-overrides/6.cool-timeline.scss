@@ -163,7 +163,7 @@
 
             @include mobile{
                 top: unset !important;
-                bottom: 12%;
+                bottom: 21%;
             }
         }
         .ctl-button-next{
@@ -219,6 +219,10 @@
 .ctl-wrapper .cool-timeline-wrapper:not(.dark-skin) .ctl-media img{
     padding-inline: 0 !important;
     padding-top: 0 !important;
+}
+
+.ctl-wrapper{
+    margin-bottom: -5rem !important;
 }
 
 // Página Linha do tempo

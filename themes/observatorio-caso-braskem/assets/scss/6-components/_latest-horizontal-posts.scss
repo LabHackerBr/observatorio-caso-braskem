@@ -107,6 +107,17 @@
                 max-width: 90% !important;
                 height: fit-content;
             }
+            .post{
+                @include mobile{
+                    max-width: size(161) !important;
+                }
+            }
+            .post-thumbnail{
+
+                @include mobile{
+                    max-width: size(161) !important;
+                }
+            }
         }
         .slide{
             margin-bottom: 0 !important;
@@ -132,6 +143,11 @@
             flex-flow: column;
             align-items: center;
             padding-left: $padding--large;
+            @include mobile{
+                padding-left: 0;
+                width: size(300);
+                margin-left: size(-25);
+            }
         }
 
         .latest-horizontal-posts-block__content{
@@ -170,6 +186,10 @@
                 bottom: 0;
                 left: 1rem;
                 justify-self: flex-end;
+                @include mobile{
+                    font-size: size(14) !important;
+                    text-align: start;
+                }
 
             }
             &-content{
@@ -190,12 +210,18 @@
     >.container{
 
     }
+    @include mobile{
+        padding-left: 0;
+    }
     .latest-horizontal-posts-block__heading{
         color: $color--high-light;
         font-weight: $font-weight--semibold;
         >p{
             font-size: 24px;
             color: $color--high-light;
+            @include mobile{
+                font-size: size(20);
+            }
         }
         @include mobile{
             text-align: left !important;
@@ -206,6 +232,10 @@
     .latest-horizontal-posts-block__slides{
         .slick-list{
             padding: 0px 0px 0px size(80) !important;
+            @include mobile{
+                padding: 0px 0px 0px  !important;
+
+            }
         }
         .slide{
             margin-bottom: $margin--large !important;

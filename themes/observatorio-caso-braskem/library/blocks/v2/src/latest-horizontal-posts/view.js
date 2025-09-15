@@ -24,6 +24,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         if (slider.classList.contains('model-columnists')) {
             rowsToShow = 2
+            slidesToShowMobile = 1
         }
 
         jQuery(slides).slick({
