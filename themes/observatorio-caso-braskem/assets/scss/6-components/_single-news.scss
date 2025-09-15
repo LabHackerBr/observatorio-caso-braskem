@@ -1,7 +1,6 @@
 .single {
-    position: relative;
     width: 100%;
-
+    // position: relative;
     // &::before {
     //     content: "";
     //     position: absolute;
@@ -40,11 +39,11 @@
         z-index: 0;
     }
 
-    &__content-overlay {
-        position: relative;
-        z-index: 1;
-        background: transparent;
-    }
+    // &__content-overlay {
+    //     position: relative;
+    //     z-index: 1;
+    //     background: transparent;
+    // }
 
     &__image-size-full,
     &__image-size-small  {
@@ -52,6 +51,8 @@
         flex-direction: column;
         align-items: center;
         gap: $gap--medium;
+        position: relative;
+        z-index: 3;
     }
 
     &__image-size-full {
