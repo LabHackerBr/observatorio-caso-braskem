@@ -47,6 +47,7 @@
         display: flex;
         justify-content: space-between;
         flex-wrap: nowrap;
+        margin-top: size(10);
         @include mobile{
             flex-flow: column;
             justify-content: center;

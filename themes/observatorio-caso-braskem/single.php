@@ -9,6 +9,8 @@ $categories = get_the_category();
 $excerpt = !empty( $post->post_excerpt ) ? wp_kses_post( $post->post_excerpt ) : '';
 ?>
 
+<?php get_template_part('template-parts/share-links', null, ['link'=>get_the_permalink()]) ?>
+
 <div class="single">
     <!-- <div class="single__background"></div> -->
 
@@ -68,7 +70,9 @@ $excerpt = !empty( $post->post_excerpt ) ? wp_kses_post( $post->post_excerpt ) :
         <main class="post-content container">
             <?php the_content() ?>
         </main>
-
+        <div class="share-links-post-content">
+            <?php echo do_shortcode('[addtoany]'); ?>
+        </div>
         <?php
             $coauthors = get_coauthors();
             if ( $coauthors ) : ?>

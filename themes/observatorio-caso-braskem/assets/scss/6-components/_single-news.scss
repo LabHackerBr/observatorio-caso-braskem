@@ -247,7 +247,7 @@
         padding-top: 20px;
 
         @include mobile {
-            margin-left: $margin--medium;
+            margin-left: $margin--small;
         }
     }
 
@@ -300,7 +300,7 @@
         margin: 42px 0;
 
         @include mobile {
-            margin: 32px 0;
+            margin: 32px 0 0;
         }
     }
 
@@ -399,6 +399,9 @@
             opacity: 1 !important;
             text-align: left;
             box-sizing: border-box;
+            @include mobile{
+                padding: 16px 31px 13px 24px;
+            }
         }
 
         .wp-block-cover__inner-container p {
@@ -413,16 +416,57 @@
             font-weight: $font-weight--regular;
             line-height: 130%;
             letter-spacing: 0.48px;
+            @include mobile {
+                margin-top: .5rem;
+                margin-bottom: .5rem;
+            }
+
+        }
+    }
+    .share-links-post-content{
+        width: fit-content;
+        margin-bottom: 1rem;
+        margin-left: auto;
+        margin-right: auto;
+        @media(min-width: 783px){
+            display: none;
+        }
+    }
+    .addtoany_shortcode{
+
+        a{
+            display: flex;
+            gap: 1rem;
+            text-decoration: none;
+            align-items: center;
+            font-size: size(16) !important;
+            text-transform: uppercase;
+            width: fit-content;
+            &::after{
+                content: url('#{$path--assets}/images/btn-share.png');
+                position: relative;
+                top: size(4);
+            }
+            span{
+                display: none !important;
+            }
         }
     }
 
     section.post-authors{
         padding-left: 0;
         padding-right: 0;
+        @include mobile{
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
         .post-author__avatar{
             display: flex;
             gap: 1rem;
             align-items: center;
+            @include mobile{
+                padding-left: 1rem;
+            }
             img{
                 height: size(62);
                 width: size(62);
@@ -434,6 +478,9 @@
                 font-size: size(24);
                 font-weight: 800;
                 letter-spacing: 0.24px;
+                @include mobile{
+                    font-size: size(16);
+                }
                 a{
                     text-decoration: none;
                 }
