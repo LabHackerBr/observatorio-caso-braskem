@@ -360,6 +360,8 @@
         margin-top: 2rem;
         @include mobile{
             padding: 3rem 0 4.5rem;
+            background-size: 100% !important;
+            background-repeat: no-repeat !important;
         }
 
         p{
@@ -476,6 +478,8 @@
         @include mobile{
             margin-top: 2rem;
             padding: 3rem 0 4.5rem;
+            background-size: 100% !important;
+            background-repeat: no-repeat !important;
         }
 
         p{
