@@ -66,9 +66,10 @@
     label[for="checkbox"]{
         @include mobile{
             display: block;
-            width: 80%;
+            width: 88%;
             margin-inline: auto;
             margin-bottom: $margin--small;
+            font-size: size(14);
         }
     }
     .mc4wp-procaptcha{
