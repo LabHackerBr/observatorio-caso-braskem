@@ -107,6 +107,11 @@
         @include mobile{
             padding-top: 0;
         }
+        .wp-block-heading{
+            @include mobile{
+                margin-bottom: -.7rem !important;
+            }
+        }
         .latest-horizontal-posts-block{
             @include mobile{
                 margin-bottom: 3rem;

@@ -216,6 +216,8 @@
     .latest-horizontal-posts-block__heading{
         color: $color--high-light;
         font-weight: $font-weight--semibold;
+        margin-top: -4rem;
+        margin-bottom: .5rem;
         >p{
             font-size: 24px;
             color: $color--high-light;
@@ -226,12 +228,14 @@
         @include mobile{
             text-align: left !important;
             width: 95%;
+            margin-top: -1rem;
+            margin-bottom: -1rem;
         }
     }
 
     .latest-horizontal-posts-block__slides{
         .slick-list{
-            padding: 0px 0px 0px size(80) !important;
+            padding: 0px 0px 0px 40px !important;
             @include mobile{
                 padding: 0px 0px 0px  !important;
 
@@ -294,7 +298,7 @@
         padding-left: $padding--large;
         @include mobile{
             padding-left: 0;
-            bottom: -21rem;
+            bottom: -20rem;
             width: 95%;
         }
     }
