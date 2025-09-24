@@ -1,30 +1,128 @@
 .page-template-page-anchor{
-    .index-wrapper{
-        .c-title{
-            >.container{
-                padding-inline: 0;
+    #app {
+        margin-top: unset;
+        max-width: $grid--wide;
+        margin-inline: auto;
+        padding-top: 2rem;
+
+        @include mobile {
+            padding-top: unset !important;
+        }
+    }
+
+    .index-wrapper.page-with-title {
+        .container {
+            margin-inline: 0;
+            max-width: $grid--wide;
+
+            .c-title.title-default {
+                .container {
+                    @include mobile {
+                        padding-left: 0;
+                    }
+                }
+            }
+
+            .entry-title {
+                font-size: 50px;
+                text-align: left;
+                text-transform: uppercase;
+                padding-left: 0;
+                margin-top: 1rem;
+                font-weight: 400;
+                line-height: 3rem;
+
+                @include mobile {
+                    font-size: 30px;
+                }
             }
         }
-        .container{
-            max-width: $grid--wide;
-        }
-        .row{
+
+        .row {
             display: grid;
-            grid-template-columns: 35% 65%;
-            gap: $gap--large;
-            .sidebarpage{
-                #anchors{
-                    list-style: none;
-                    padding: 0;
-                    li{
-                        a{
-                            text-decoration: none;
-                            text-transform: uppercase;
+            grid-template-columns: 1fr 2fr;
+            padding-top: 2rem;
+
+            @include mobile {
+                grid-template-columns: 1fr;
+            }
+
+            .sidebarpage {
+                padding: $padding--large $padding--medium;
+
+                @include mobile {
+                    display: none;
+                }
+
+                .anchor-title {
+                    font-size: $font-size--large !important;
+                    line-height: 2rem !important;
+                    letter-spacing: -1px;
+                }
+
+                #anchors {
+                    padding-top: 1rem;
+                    padding-inline: 0 $padding--large;
+                    width: 90%;
+
+                    li {
+                        font-family: $font-family--primary;
+                        font-weight: 500;
+                        list-style: none;
+                        padding: 0.5rem;
+
+                        a {
+                            text-decoration: none !important;
                         }
                     }
                 }
             }
         }
 
+        .content {
+            margin-inline: auto;
+            max-width: $grid--normal !important;
+            display: flex;
+            flex-direction: column;
+
+            @include mobile {
+                max-width: 100% !important;
+                width: 100% !important;
+            }
+
+            p, li {
+                font-size: $font-size--medium;
+                margin-bottom: $margin--large;
+                letter-spacing: 0.2px;
+                line-height: 1.7;
+            }
+
+            p {
+                @include mobile {
+                    padding-left: 0;
+                }
+            }
+
+            .wp-block-heading {
+                font-weight: 600;
+                line-height: $line-height--normal;
+                margin-bottom: 1rem;
+                max-width: $grid--wide;
+
+                @include mobile {
+                    font-size: $font-size--x-large;
+                    padding-left: 0;
+                }
+            }
+
+            .wp-block-list {
+                padding-left: 6rem;
+
+                @include mobile {
+                    padding-left: 2rem;
+                }
+            }
+
+        }
     }
 }
