@@ -108,3 +108,18 @@
     box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.15);
     margin-top: 0 !important;
 }
+
+.qlwapp__container {
+    top: 58% !important;
+    left: auto !important;
+    right: 10px !important;
+    bottom: auto !important;
+    transform: translateY(-50%) !important;
+}
+
+.qlwapp__button {
+    margin-top: 16px !important;
+    margin-bottom: unset !important;
+    margin-right: unset !important;
+    padding: 8px !important;
+}
