@@ -1,19 +1,29 @@
 .single {
     width: 100%;
-    // position: relative;
-    // &::before {
-    //     content: "";
-    //     position: absolute;
-    //     top: 0;
-    //     left: 0;
-    //     width: 100%;
-    //     height: 100%;
-    //     background-image: url("/wp-content/themes/observatorio-caso-braskem/assets/images/pattern-privacy-policy.svg");
-    //     background-repeat: repeat;
-    //     background-size: cover;
-    //     opacity: 1;
-    //     z-index: 0;
-    // }
+
+    > #app{
+        background: url('#{$path--assets}/images/bg-white.svg');
+        background-repeat: repeat;
+        background-position: 0 232px;
+        background-size: 100%;
+        padding-bottom: 75px;
+    }
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 10rem;
+        left: 0;
+        width: 100%;
+        height: 232px;
+        background-color: $color--primary-pure;
+        opacity: 1;
+        z-index: 0;
+
+        @include mobile{
+            top: 4rem;
+        }
+    }
 
     p {
         font-family: $font-family--primary;
@@ -187,10 +197,15 @@
         justify-content: flex-start;
         gap: $gap--small;
         flex-wrap: wrap;
-        top: 30px;
-        padding-left: 39px;
+        top: 190px;
+        padding-left: 40px;
         z-index: 3;
         margin-top: $margin--large;
+
+        @include mobile{
+            top: 80px;
+            padding-left: 1rem;
+        }
 
         .tag {
             background-color: $color--secondary-dark;

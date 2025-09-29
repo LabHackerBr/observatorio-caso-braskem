@@ -56,12 +56,12 @@
 
 .home{
     background-color: $color--primary-dark;
-    // > #app{
-    //     background: url('#{$path--assets}/images/home/bg-home-red.svg');
-    //     background-repeat: no-repeat;
-    //     background-position: center;
-    //     background-size: cover;
-    // }
+    > #app{
+        background: url('#{$path--assets}/images/home/bg-home.svg');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 100%;
+    }
     .wp-block-cover:nth-of-type(1){
         @include mobile{
             padding-bottom: 0;
@@ -493,7 +493,12 @@
     &::before{
         display: none;
     }
-    #app{
+    > #app{
+        background-repeat: no-repeat !important;
+        background-position: top !important;
+        @include mobile{
+            background-repeat: repeat !important;
+        }
         .biblioteca-content{
             display: flex;
             gap: 2rem;

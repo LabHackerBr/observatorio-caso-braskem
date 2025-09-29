@@ -290,6 +290,13 @@
 }
 
 .blog{
+    > #app{
+        background: url('#{$path--assets}/images/bg-white.svg');
+        background-repeat:  repeat;
+        background-position: 0 230px;
+        background-size: 100%;
+        padding-bottom: 2rem;
+    }
     .archive__sidebar-desktop{
         @media(max-width: 782px){
             display: none;
@@ -369,6 +376,7 @@
         }
     }
     .pagination{
+        margin-bottom: 0;
         @include mobile{
             margin: 1rem auto 0;
         }
@@ -378,21 +386,43 @@
 //Archive de storymaps
 
 .post-type-archive-map{
-    #app{
-        background: #5E0E04;
-        background: linear-gradient(180deg,rgba(94, 14, 4, 1) 0%, rgba(39, 8, 6, 1) 100%);
+    > #app{
+        background: url('#{$path--assets}/images/home/bg-home.svg');
+        background-repeat: no-repeat;
+        background-position: 0 230px;
+        background-size: 100%;
         @include mobile{
             padding-bottom: size(70);
         }
+        &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            min-height: 750px;
+            background: linear-gradient(0deg,rgba(94, 14, 4, 0) 0%, rgba(94, 14, 4, 1) 35%, rgba(94, 14, 4, 1) 100%);
+            z-index: 0;
+
+            @include mobile{
+                top: 4rem;
+            }
+        }
+
     }
     .archive-title{
         background-color: transparent;
+        position: relative;
+        z-index: 1;
         @include mobile{
             padding-top: 2rem;
             padding-bottom: 4rem;
         }
     }
+
     .post-grid-latest-posts{
+        position: relative;
+        z-index: 1;
         background-color: transparent;
         @include mobile{
             margin-bottom: -3rem !important;
@@ -509,6 +539,10 @@
 // archive de bilbioteca
 
 .post-type-archive-biblioteca{
+    background: url('#{$path--assets}/images/bg-white.svg');
+    background-repeat:  repeat;
+    background-position: 0 450px;
+    background-size: 100%;
     .archive-title{
         margin-bottom: $margin--large;
     }

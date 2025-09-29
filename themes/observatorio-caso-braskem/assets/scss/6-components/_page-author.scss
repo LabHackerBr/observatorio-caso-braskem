@@ -2,220 +2,213 @@ body.author {
     position: relative !important;
     background-color: $color--high-pure;
 
-    &::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-image: url("/wp-content/themes/observatorio-caso-braskem/assets/images/pattern-privacy-policy.svg");
-        background-repeat: repeat;
-        background-size: cover;
-        opacity: 1;
-        z-index: 0;
-    }
-
     .main-footer {
         position:  relative !important;
         box-shadow: 0px -4px 6px 0px rgba(0, 0, 0, 0.15);
     }
-}
 
-.author {
-    &__background {
-        background-color: $color--primary-pure;
-        position: absolute;
-        left: 0;
-        width: 100%;
-        height: 232px;
-        z-index: 0;
+    #app{
+        .author {
+            background: url('#{$path--assets}/images/bg-white.svg');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 100%;
+            padding-bottom: 55px;
+            &__background {
+                background-color: $color--primary-pure;
+                position: absolute;
+                left: 0;
+                width: 100%;
+                height: 232px;
+                z-index: 0;
 
-        @media (max-width: 1164px) {
-            height: 271px;
-        }
+                @media (max-width: 1164px) {
+                    height: 271px;
+                }
 
-        @include mobile {
-            height: 186px;
-        }
-    }
-
-    &__content-overlay {
-        margin-bottom: 55px;
-        position: relative;
-        z-index: 1;
-        background: transparent;
-        padding-bottom: 52px;
-
-        @media (max-width: 1164px) {
-            padding-top: 40px;
-        }
-
-        @include mobile {
-            padding-top: 23px;
-        }
-    }
-
-    &__title-container {
-        display: flex;
-        align-items: center;
-        gap: 20px;
-        padding: 45px 0;
-
-        .entry-title {
-            font-family: $font-family--heading;
-            font-size: $font-size--xx-large;
-            font-weight: $font-weight--bold;
-            text-transform: uppercase;
-            color: $color--high-pure;
-
-            @include mobile {
-                font-size: $font-size--large;
-                line-height: 145%;
+                @include mobile {
+                    height: 186px;
+                }
             }
-        }
 
-        @include mobile {
-            padding: 35px 0 !important;
-        }
-    }
+            &__content-overlay {
+                position: relative;
+                z-index: 1;
+                background: transparent;
+                padding-bottom: 52px;
 
-    &__image {
-        max-width: 142px;
-        width: 100%;
-        height: 142px;
-        border-radius: 50%;
+                @media (max-width: 1164px) {
+                    padding-top: 40px;
+                }
 
-        @include mobile {
-            max-width: 76px;
-            height: 76px;
-        }
-    }
+                @include mobile {
+                    padding-top: 23px;
+                }
+            }
 
-    &__content {
-        max-width: 770px !important;
-        flex: 1;
+            &__title-container {
+                display: flex;
+                align-items: center;
+                gap: 20px;
+                padding: 45px 0;
 
-        @include mobile {
-            order: 2;
-            max-width: 100%;
-            margin-top: unset !important;
-        }
-
-        .post-card {
-            &__category {
-                .tag {
-                    color: $color--secondary-dark !important;
+                .entry-title {
+                    font-family: $font-family--heading;
+                    font-size: $font-size--xx-large;
+                    font-weight: $font-weight--bold;
+                    text-transform: uppercase;
+                    color: $color--high-pure;
 
                     @include mobile {
-                        color: $color--high-pure !important;
+                        font-size: $font-size--large;
+                        line-height: 145%;
                     }
+                }
+
+                @include mobile {
+                    padding: 35px 0 !important;
+                }
+            }
+
+            &__image {
+                max-width: 142px;
+                width: 100%;
+                height: 142px;
+                border-radius: 50%;
+
+                @include mobile {
+                    max-width: 76px;
+                    height: 76px;
                 }
             }
 
             &__content {
-                margin-top: 10px !important;
-            }
-
-            &__excerpt {
-                font-weight: $font-weight--regular !important;
+                max-width: 770px !important;
+                flex: 1;
 
                 @include mobile {
-                    font-weight: $font-weight--bold !important;
+                    order: 2;
+                    max-width: 100%;
+                    margin-top: unset !important;
+                }
+
+                .post-card {
+                    &__category {
+                        .tag {
+                            color: $color--secondary-dark !important;
+
+                            @include mobile {
+                                color: $color--high-pure !important;
+                            }
+                        }
+                    }
+
+                    &__content {
+                        margin-top: 10px !important;
+                    }
+
+                    &__excerpt {
+                        font-weight: $font-weight--regular !important;
+
+                        @include mobile {
+                            font-weight: $font-weight--bold !important;
+                        }
+                    }
+
+                    &__date {
+                        font-weight: $font-weight--regular !important;
+                    }
                 }
             }
 
-            &__date {
-                font-weight: $font-weight--regular !important;
-            }
-        }
-    }
-
-    &__sidebar {
-        flex-basis: 370px;
-        flex-shrink: 0;
-
-        @include mobile {
-            order: 1;
-            flex-basis: auto;
-            width: 100%;
-        }
-    }
-
-    &__wrapper-content {
-        margin-top: 55px;
-        display: flex;
-        justify-content: space-between;
-        gap: 50px;
-
-        @include mobile {
-            flex-direction: column;
-            gap: 56px;
-        }
-    }
-
-    &__sidebar {
-        max-width: 370px;
-        width: 100%;
-
-        @include mobile {
-            max-width: 100%;
-        }
-    }
-
-    &-bio-widget {
-        display: flex;
-        flex-direction: column;
-        gap: 61px;
-
-        @include mobile {
-            gap: 40px;
-        }
-
-        &__about {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
-
-        &__content {
-            p {
-                font-family: $font-family--primary;
-                color: $color--low-pure;
-                font-size: $font-size--x-large;
-                font-weight: $font-weight--regular;
-                line-height: 150%;
-                letter-spacing: 0.24px;
+            &__sidebar {
+                flex-basis: 370px;
+                flex-shrink: 0;
 
                 @include mobile {
-                    font-size: $font-size--medium;
+                    order: 1;
+                    flex-basis: auto;
+                    width: 100%;
+                }
+            }
+
+            &__wrapper-content {
+                margin-top: 55px;
+                display: flex;
+                justify-content: space-between;
+                gap: 50px;
+
+                @include mobile {
+                    flex-direction: column;
+                    gap: 56px;
+                }
+            }
+
+            &__sidebar {
+                max-width: 370px;
+                width: 100%;
+
+                @include mobile {
+                    max-width: 100%;
+                }
+            }
+
+            &-bio-widget {
+                display: flex;
+                flex-direction: column;
+                gap: 61px;
+
+                @include mobile {
+                    gap: 40px;
+                }
+
+                &__about {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 10px;
+                }
+
+                &__content {
+                    p {
+                        font-family: $font-family--primary;
+                        color: $color--low-pure;
+                        font-size: $font-size--x-large;
+                        font-weight: $font-weight--regular;
+                        line-height: 150%;
+                        letter-spacing: 0.24px;
+
+                        @include mobile {
+                            font-size: $font-size--medium;
+                            line-height: 150%;
+                        }
+                    }
+                }
+
+                &__socials {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    gap: 35px;
+                }
+
+                .widget-title {
+                    font-family: $font-family--primary;
+                    color: $color--low-pure;
+                    font-size: $font-size--xx-large;
+                    font-weight: $font-weight--bold;
                     line-height: 150%;
+                    letter-spacing: 0.32px;
+
+                    @include mobile {
+                        font-size: $font-size--large;
+                        letter-spacing: 0.2px;
+                    }
                 }
-            }
-        }
-
-        &__socials {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 35px;
-        }
-
-        .widget-title {
-            font-family: $font-family--primary;
-            color: $color--low-pure;
-            font-size: $font-size--xx-large;
-            font-weight: $font-weight--bold;
-            line-height: 150%;
-            letter-spacing: 0.32px;
-
-            @include mobile {
-                font-size: $font-size--large;
-                letter-spacing: 0.2px;
             }
         }
     }
 }
+
 
 html[lang="pt-br"]{
     .author-bio-widget__extra-en,

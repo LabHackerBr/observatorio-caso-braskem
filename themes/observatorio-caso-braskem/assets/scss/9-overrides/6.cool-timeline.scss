@@ -227,9 +227,19 @@
 
 // Página Linha do tempo
 .page-linha-do-tempo{
+    background-color:$color--primary-dark ;
+    > #app{
+        background: url('#{$path--assets}/images/home/bg-home.svg');
+        background-repeat: repeat;
+        background-position: top;
+        background-size: 100%;
+        @include mobile{
+            padding-bottom: size(70);
+        }
+
+    }
     .who-we-are{
-    background: #630f05 !important;
-    background: linear-gradient(180deg,rgba(73, 8, 6, 1) 0%, rgba(32, 2, 2, 1) 50%) !important;
+    background: linear-gradient(0deg,rgba(94, 14, 4, 0) 0%, rgba(94, 14, 4, 1) 100%) !important;
         .container{
             @include mobile {
                 padding-bottom: 3rem !important;
