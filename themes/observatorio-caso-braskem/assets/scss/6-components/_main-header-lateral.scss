@@ -19,6 +19,37 @@
         }
     }
 
+    &__social {
+        display: flex;
+        flex-direction: column;
+        gap: $gap--small;
+
+        &-title {
+            color: $color--primary-pure;
+            font-family: $font-family--helper;
+            line-height: 1.1;
+            letter-spacing: -0.6px;
+            font-weight: 600;
+            font-size: $font-size--large;
+        }
+
+        .social-menu {
+            gap: $gap--medium;
+            color: $color--primary-pure;
+
+            &__icon {
+                svg {
+                    height: 20px;
+                    width: 20px;
+
+                    path {
+                        fill: currentColor;
+                    }
+                }
+            }
+        }
+    }
+
     &__toggle-menu {
         transition: $transition--default;
         display: none;
@@ -318,6 +349,24 @@
                         height: 2rem;
                     }
                 }
+            }
+
+            .main-header-lateral__social {
+                transition: $transition--default;
+
+                &-title {
+                    font-size: $font-size--medium;
+                }
+
+                .social-menu {
+                    &__icon {
+                        svg {
+                            height: 16px;
+                            width: 16px;
+                        }
+                    }
+                }
+
             }
         }
     }

@@ -13,9 +13,9 @@
     <div class="pre-header">
         <div class="container container--wide">
             <div class="pre-header__content">
-                <div class="main-header__social-content">
+                <!-- <div class="main-header__social-content">
                     <?= the_social_networks_menu(false); ?>
-                </div>
+                </div> -->
                 <div class="pre-header__language-selector">
                     <div class="wpml-language-switcher">
                         <?php do_action('wpml_add_language_selector');?>
@@ -46,6 +46,11 @@
                         </a>
                     <?php endif; ?>
 				</div>
+
+                <div class="main-header-lateral__social">
+                    <h4 class="main-header-lateral__social-title"><?= __( 'Nos siga em nossas redes sociais', 'hacklabr' ) ?></h4>
+                    <?= the_social_networks_menu(false); ?>
+                </div>
 
                 <div class="main-header-lateral__search" x-init="$watch('searchOpen', (isOpen) => isOpen && document.querySelector('#search').focus())">
                     <?php get_search_form(); ?>
