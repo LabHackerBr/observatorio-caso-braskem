@@ -24,6 +24,10 @@
         flex-direction: column;
         gap: $gap--small;
 
+        @media (max-width: 606px) {
+            display: none;
+        }
+
         &-title {
             color: $color--primary-pure;
             font-family: $font-family--helper;
@@ -318,7 +322,8 @@
             right: 30px;
         }
 
-        .main-header-lateral__logo {
+        .main-header-lateral__logo,
+        .main-header-lateral__social {
 
             @include tablet {
                 display: none;
