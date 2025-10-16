@@ -123,3 +123,14 @@
     margin-right: unset !important;
     padding: 8px !important;
 }
+
+body.home {
+    .grade {
+        h2 {
+            color: $color--secondary-dark !important;
+            a {
+                color: $color--secondary-dark !important;
+            }
+        }
+    }
+}
