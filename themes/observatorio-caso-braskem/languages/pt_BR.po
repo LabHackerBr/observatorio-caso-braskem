@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/observatorio-caso-"
 "braskem\n"
-"POT-Creation-Date: 2025-09-10T14:50:22+00:00\n"
-"PO-Revision-Date: 2025-09-10 11:51-0300\n"
+"POT-Creation-Date: 2025-11-03T12:28:36+00:00\n"
+"PO-Revision-Date: 2025-11-03 09:29-0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: pt_BR\n"
@@ -133,23 +133,27 @@ msgstr "e"
 msgid "Privacy Policy"
 msgstr "Política de Privacidade"
 
-#: header-lateral.php:31
+#: header-lateral.php:43
 msgid "Toggle menu visibility"
 msgstr "Alternar visibilidade do menu"
 
-#: header-lateral.php:52
+#: header-lateral.php:63
+msgid "Follow us on our social media"
+msgstr "Nos siga em nossas redes sociais"
+
+#: header-lateral.php:69
 msgid "Toggle search form visibility"
 msgstr "Alternar a visibilidade do formulário de pesquisa"
 
-#: header-lateral.php:55
+#: header-lateral.php:72
 msgid "Toggle language selector visibility"
 msgstr "Alternar a visibilidade do seletor de idiomas"
 
 #: library/blocks/stories-mosaic/stories-mosaic.php:81
 #: library/blocks/stories-mosaic/stories-mosaic.php:97
 #: library/blocks/v2/src/events-from-mapas-culturais/events-from-mapas-culturais.php:39
-#: library/blocks/v2/src/latest-horizontal-posts/latest-horizontal-posts.php:142
-#: library/blocks/v2/src/latest-horizontal-posts/latest-horizontal-posts.php:178
+#: library/blocks/v2/src/latest-horizontal-posts/latest-horizontal-posts.php:168
+#: library/blocks/v2/src/latest-horizontal-posts/latest-horizontal-posts.php:204
 #: library/blocks/v2/src/latest-vertical-posts/latest-vertical-posts.php:184
 #: library/blocks/v2/src/latest-vertical-posts/latest-vertical-posts.php:218
 #: library/blocks/v2/src/opportunities-from-mapas-culturais/opportunities-from-mapas-culturais.php:38
@@ -173,10 +177,6 @@ msgstr "por"
 msgid "Select an option"
 msgstr "Selecione uma opção"
 
-#: library/blocks/v2/includes/helpers.php:169
-msgid "%s ago"
-msgstr "atrás"
-
 #: library/blocks/v2/includes/settings.php:16
 msgid "YouTube API Key"
 msgstr "Chave API do YouTube"
@@ -194,12 +194,12 @@ msgstr "Amanhã"
 msgid "Check the API Key, user or album ID"
 msgstr "Verifique a chave API, usuáriou o ID do álbum"
 
-#: library/blocks/v2/src/latest-horizontal-posts/latest-horizontal-posts.php:125
+#: library/blocks/v2/src/latest-horizontal-posts/latest-horizontal-posts.php:151
 #: library/blocks/v2/src/latest-vertical-posts/latest-vertical-posts.php:155
 msgid "This feature depends on the AjaxPageviews plugin."
 msgstr "Essa funcionalidade depende do plugin AjaxPageviews."
 
-#: library/blocks/v2/src/latest-horizontal-posts/latest-horizontal-posts.php:168
+#: library/blocks/v2/src/latest-horizontal-posts/latest-horizontal-posts.php:194
 msgid "Check the API Key"
 msgstr "Verifique a chave API"
 
@@ -287,7 +287,7 @@ msgstr "Neste vídeo:"
 msgid "In this Gallery:"
 msgstr "Nesta galeria:"
 
-#: single-biblioteca.php:72 single.php:57
+#: single-biblioteca.php:72 single.php:59
 msgid "By "
 msgstr "Por "
 
@@ -372,7 +372,7 @@ msgstr ""
 msgid "Year"
 msgstr "Ano"
 
-#: template-parts/filters-biblioteca.php:85
+#: template-parts/filters-biblioteca.php:87
 msgid "Authorship"
 msgstr "Autoria"
 
@@ -1503,6 +1503,9 @@ msgstr "Auxiliar"
 msgctxt "Font family name"
 msgid "Title"
 msgstr "Título"
+
+#~ msgid "%s ago"
+#~ msgstr "atrás"
 
 #~ msgid "hacklabr"
 #~ msgstr "hacklabr"

@@ -2,14 +2,14 @@
 # This file is distributed under the GNU General Public License v2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: observatorio-caso-braskem 0.12.23\n"
+"Project-Id-Version: observatorio-caso-braskem 0.15.9\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/observatorio-caso-braskem\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2025-09-10T14:50:22+00:00\n"
+"POT-Creation-Date: 2025-11-03T12:28:36+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.10.0\n"
 "X-Domain: hacklabr\n"
@@ -130,23 +130,27 @@ msgstr ""
 msgid "Privacy Policy"
 msgstr ""
 
-#: header-lateral.php:31
+#: header-lateral.php:43
 msgid "Toggle menu visibility"
 msgstr ""
 
-#: header-lateral.php:52
+#: header-lateral.php:63
+msgid "Follow us on our social media"
+msgstr ""
+
+#: header-lateral.php:69
 msgid "Toggle search form visibility"
 msgstr ""
 
-#: header-lateral.php:55
+#: header-lateral.php:72
 msgid "Toggle language selector visibility"
 msgstr ""
 
 #: library/blocks/stories-mosaic/stories-mosaic.php:81
 #: library/blocks/stories-mosaic/stories-mosaic.php:97
 #: library/blocks/v2/src/events-from-mapas-culturais/events-from-mapas-culturais.php:39
-#: library/blocks/v2/src/latest-horizontal-posts/latest-horizontal-posts.php:142
-#: library/blocks/v2/src/latest-horizontal-posts/latest-horizontal-posts.php:178
+#: library/blocks/v2/src/latest-horizontal-posts/latest-horizontal-posts.php:168
+#: library/blocks/v2/src/latest-horizontal-posts/latest-horizontal-posts.php:204
 #: library/blocks/v2/src/latest-vertical-posts/latest-vertical-posts.php:184
 #: library/blocks/v2/src/latest-vertical-posts/latest-vertical-posts.php:218
 #: library/blocks/v2/src/opportunities-from-mapas-culturais/opportunities-from-mapas-culturais.php:38
@@ -170,10 +174,6 @@ msgstr ""
 msgid "Select an option"
 msgstr ""
 
-#: library/blocks/v2/includes/helpers.php:169
-msgid "%s ago"
-msgstr ""
-
 #: library/blocks/v2/includes/settings.php:16
 msgid "YouTube API Key"
 msgstr ""
@@ -191,12 +191,12 @@ msgstr ""
 msgid "Check the API Key, user or album ID"
 msgstr ""
 
-#: library/blocks/v2/src/latest-horizontal-posts/latest-horizontal-posts.php:125
+#: library/blocks/v2/src/latest-horizontal-posts/latest-horizontal-posts.php:151
 #: library/blocks/v2/src/latest-vertical-posts/latest-vertical-posts.php:155
 msgid "This feature depends on the AjaxPageviews plugin."
 msgstr ""
 
-#: library/blocks/v2/src/latest-horizontal-posts/latest-horizontal-posts.php:168
+#: library/blocks/v2/src/latest-horizontal-posts/latest-horizontal-posts.php:194
 msgid "Check the API Key"
 msgstr ""
 
@@ -286,7 +286,7 @@ msgid "In this Gallery:"
 msgstr ""
 
 #: single-biblioteca.php:72
-#: single.php:57
+#: single.php:59
 msgid "By "
 msgstr ""
 
@@ -375,7 +375,7 @@ msgstr ""
 msgid "Year"
 msgstr ""
 
-#: template-parts/filters-biblioteca.php:85
+#: template-parts/filters-biblioteca.php:87
 msgid "Authorship"
 msgstr ""
 
