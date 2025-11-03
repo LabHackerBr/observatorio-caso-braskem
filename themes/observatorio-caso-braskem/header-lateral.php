@@ -6,6 +6,17 @@
 	<?php wp_head()?>
 	<title><?= is_front_page() ? get_bloginfo('name') : wp_title()?></title>
 	<link rel="icon" href="<?= get_site_icon_url() ?>" />
+    <link rel="preconnect" href="https://www.google.com">
+    <link rel="preconnect" href="https://www.googletagmanager.com">
+    <link rel="preconnect" href="https://cdn.userway.org">
+    <link rel="preconnect" href="https://www.gstatic.com">
+
+    <script src="https://www.gstatic.com/recaptcha/releases/-PgDGgfmUF0ySmnjMTJjzqak/recaptcha__pt_br.js" defer></script>
+
+	<script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js" defer></script>
+	<script src="https://cdn.userway.org/widget.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/gh/spbgovbr-vlibras/vlibras-portal@dev/app/vlibras-plugin.js" defer></script>
+
 </head>
 <body <?php body_class(); ?>>
     <?php wp_body_open(); ?>
@@ -13,9 +24,6 @@
     <div class="pre-header">
         <div class="container container--wide">
             <div class="pre-header__content">
-                <!-- <div class="main-header__social-content">
-                    <?= the_social_networks_menu(false); ?>
-                </div> -->
                 <div class="pre-header__language-selector">
                     <div class="wpml-language-switcher">
                         <?php do_action('wpml_add_language_selector');?>
@@ -42,13 +50,13 @@
                         <?php the_custom_logo(); ?>
                     <?php else: ?>
                         <a href="<?= home_url() ?>">
-                            <img src="<?= get_template_directory_uri() ?>/assets/images/logo.svg" width="200" alt="<?= get_bloginfo( 'name' ) ?>">
+                            <img src="<?= get_template_directory_uri() ?>/assets/images/logo.svg" width="200" alt="<?= get_bloginfo( 'name' ) ?>" fetchpriority="high">
                         </a>
                     <?php endif; ?>
 				</div>
 
                 <div class="main-header-lateral__social">
-                    <h4 class="main-header-lateral__social-title"><?= __( 'Nos siga em nossas redes sociais', 'hacklabr' ) ?></h4>
+                    <span class="main-header-lateral__social-title"><?= _e( 'Follow us on our social media', 'hacklabr' ) ?></span>
                     <?= the_social_networks_menu(false); ?>
                 </div>
 
