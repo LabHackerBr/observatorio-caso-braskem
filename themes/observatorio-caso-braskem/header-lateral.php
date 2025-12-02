@@ -8,13 +8,13 @@
 	<link rel="icon" href="<?= get_site_icon_url() ?>" />
     <link rel="preconnect" href="https://www.google.com">
     <link rel="preconnect" href="https://www.googletagmanager.com">
-    <link rel="preconnect" href="https://cdn.userway.org">
+    <!-- <link rel="preconnect" href="https://cdn.userway.org"> -->
     <link rel="preconnect" href="https://www.gstatic.com">
 
     <script src="https://www.gstatic.com/recaptcha/releases/-PgDGgfmUF0ySmnjMTJjzqak/recaptcha__pt_br.js" defer></script>
 
 	<script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js" defer></script>
-	<script src="https://cdn.userway.org/widget.js" defer></script>
+	<!-- <script src="https://cdn.userway.org/widget.js" defer></script> -->
     <script src="https://cdn.jsdelivr.net/gh/spbgovbr-vlibras/vlibras-portal@dev/app/vlibras-plugin.js" defer></script>
 
 </head>
