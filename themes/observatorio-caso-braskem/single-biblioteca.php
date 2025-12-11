@@ -17,7 +17,7 @@ $excerpt = !empty( $post->post_excerpt ) ? wp_kses_post( $post->post_excerpt ) :
     <header class="post-header container">
         <h1 class="sr-only"></h1>
 
-        <h1 class="sr-only post-header__title"> <?php the_title(); ?> </h1>
+        <h1 class="post-header__title"> <?php the_title(); ?> </h1>
 
         <?php
             $raw_value = get_post_meta( get_the_ID(), 'tipo_de_midia', true );

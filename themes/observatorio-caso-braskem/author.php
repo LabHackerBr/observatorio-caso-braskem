@@ -42,7 +42,7 @@ foreach ($social_network_keys as $key) {
                <?php
                 echo $avatar_html;
                 ?>
-                <h1 class="sr-only entry-title"><?php echo esc_html($author_display_name); ?></h1>
+                <h1 class="entry-title"><?php echo esc_html($author_display_name); ?></h1>
             </div>
 
             <div class="author__wrapper-content">

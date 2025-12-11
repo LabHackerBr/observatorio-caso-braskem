@@ -5,7 +5,7 @@ get_header();
     <div class="container container--wide">
         <div class="post-header post-header__separator">
             <h1 class="sr-only"></h1>
-            <h1 class="sr-only post-header__title">
+            <h1 class="post-header__title">
                 <img src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/exclamation-point.png" alt="exclamation-point" class="exclamation-icon">
                 <?php the_title() ?>
             </h1>

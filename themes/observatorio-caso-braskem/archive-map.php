@@ -2,7 +2,7 @@
 
 <div class="archive-title">
     <h1 class="sr-only"></h1>
-    <h1 class="sr-only container sr-only container--wide">
+    <h1 class="container container--wide">
         <img src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/exclamation-point.png" alt="exclamation-point" class="exclamation-icon">
 
         <?php

@@ -1,7 +1,7 @@
 <header class="c-title title-blog">
     <div class="container">
         <h1 class="sr-only"></h1>
-        <h1 class="sr-only entry-title">
+        <h1 class="entry-title">
             <?php echo apply_filters( 'the_title' , get_the_title( get_option( 'page_for_posts' ) ) ); ?>
         </h1>
     </div>

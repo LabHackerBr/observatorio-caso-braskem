@@ -22,6 +22,7 @@
     <?php wp_body_open(); ?>
 
     <div class="pre-header">
+        <a class="sr-only" href="#app"><?= __('Skip to main content') ?></a>
         <div class="container container--wide">
             <div class="pre-header__content">
                 <div class="pre-header__language-selector">
