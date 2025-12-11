@@ -395,3 +395,44 @@ function hacklab_corrige_aria_cooltimeline( $content ) {
     return $content;
 }
 add_filter( 'the_content', 'hacklab_corrige_aria_cooltimeline', 20 );
+
+function hacklab_remove_redundant_link_titles( $content ) {
+    if ( strpos( $content, '<a ' ) === false ) {
+        return $content;
+    }
+
+    libxml_use_internal_errors( true );
+
+    $dom  = new \DOMDocument();
+
+    $html = '<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />' . $content;
+
+    if ( ! $dom->loadHTML( $html, LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD ) ) {
+        libxml_clear_errors();
+        return $content;
+    }
+
+    $links = $dom->getElementsByTagName( 'a' );
+
+    foreach ( $links as $link ) {
+        if ( ! $link->hasAttribute( 'title' ) ) {
+            continue;
+        }
+
+        $title = trim( $link->getAttribute( 'title' ) );
+        $text  = trim( $link->textContent );
+
+        if ( $title !== '' && mb_strtolower( $title ) === mb_strtolower( $text ) ) {
+            $link->removeAttribute( 'title' );
+        }
+    }
+
+    $new_content = $dom->saveHTML();
+
+    $new_content = preg_replace( '~^<meta[^>]+>~', '', $new_content );
+
+    libxml_clear_errors();
+
+    return $new_content;
+}
+add_filter( 'the_content', 'hacklab_remove_redundant_link_titles', 25 );
