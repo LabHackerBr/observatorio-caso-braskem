@@ -33,28 +33,22 @@ function render_stories_mosaic_callback( $attributes ) {
 
     $counter = 0;
 
-    // Determina quantos posts serão exibidos em cada slide
     $posts_to_show  = $attributes['postsToShow'] ?? 11;
 
-        // Posts
-        $attributes_hash = md5( $block_id );
+    $attributes_hash = md5( $block_id );
 
-        $cache_key = 'hacklabr_vertical_' . $attributes_hash;
-        $cached_posts = false;
+    $cache_key = 'hacklabr_vertical_' . $attributes_hash;
+    $cached_posts = false;
 
-        // if ( ! is_admin() && ( ! defined( 'REST_REQUEST' ) || ! REST_REQUEST ) ) {
-        //     $cached_posts = get_transient( $cache_key );
-        // }
-
-        if ( is_archive() || false === $cached_posts ) {
-            $post__not_in = [];
+    if ( is_archive() || false === $cached_posts ) {
+        $post__not_in = [];
 
         if ( ! is_archive() ) {
             $post__not_in = array_merge( $latest_blocks_posts_ids, array_keys( $newspack_blocks_post_id ) );
             $post__not_in = array_unique( $post__not_in, SORT_STRING );
         }
-            // Normalize attributes before calling `build_posts_query`
-        $query_attributes = normalize_posts_query($attributes);
+
+        $query_attributes = normalize_posts_query( $attributes );
         $query_attributes['postsPerPage'] = $posts_to_show;
         $args = build_posts_query( $query_attributes, $post__not_in );
 
@@ -67,8 +61,8 @@ function render_stories_mosaic_callback( $attributes ) {
                 [
                     'field'    => 'term_id',
                     'taxonomy' => $taxonomy,
-                    'terms'    => [$term_id]
-                ]
+                    'terms'    => [ $term_id ],
+                ],
             ];
 
             $args['tax_query'] = $tax_query;
@@ -78,7 +72,7 @@ function render_stories_mosaic_callback( $attributes ) {
 
         if ( false === $posts_query->have_posts() ) {
             if ( is_admin() || defined( 'REST_REQUEST' ) && REST_REQUEST ) {
-                return '<h2>'. __( 'No content found', 'hacklabr' ). '</h2>';
+                return '<h2>' . __( 'No content found', 'hacklabr' ) . '</h2>';
             }
 
             return;
@@ -91,7 +85,6 @@ function render_stories_mosaic_callback( $attributes ) {
 
     $has_content = $posts_query;
 
-
     if ( ! $has_content ) {
         if ( is_admin() || defined( 'REST_REQUEST' ) && REST_REQUEST ) {
             return '<h2>' . __( 'No content found', 'hacklabr' ) . '</h2>';
@@ -102,19 +95,20 @@ function render_stories_mosaic_callback( $attributes ) {
 
     ob_start();
 
-    // Start the block structure
     echo '<div id="block__' . $block_id . '" class="' . implode( ' ', $block_classes ) . ' dragscroll">';
 
-    $heading = $attributes['heading'] ?? '';
+    $heading_raw = isset( $attributes['heading'] ) ? $attributes['heading'] : '';
+    $heading = trim( wp_strip_all_tags( $heading_raw ) );
 
-    echo '<div class="stories-mosaic-block__heading">';
-        if ( ! empty( $link ) ) {
-            echo '<h2><a href="' . esc_url( $link ) . '">' . $heading . '</a></h2>';
-        } else {
-            echo '<h2>' . $heading . '</h2>';
-        }
-    echo '</div>';
-
+    if ( $heading !== '' ) {
+        echo '<div class="stories-mosaic-block__heading">';
+            if ( ! empty( $link ) ) {
+                echo '<h2><a href="' . esc_url( $link ) . '">' . esc_html( $heading ) . '</a></h2>';
+            } else {
+                echo '<h2>' . esc_html( $heading ) . '</h2>';
+            }
+        echo '</div>';
+    }
 
     if ( $has_content->have_posts() ) :
 
@@ -124,7 +118,7 @@ function render_stories_mosaic_callback( $attributes ) {
             $has_content->the_post();
             global $post;
 
-            $latest_blocks_posts_ids[] = $post->ID;
+            $latest_blocks_posts_ids[]      = $post->ID;
             $newspack_blocks_post_id[$post->ID] = true;
             $counter++;
 
@@ -134,7 +128,7 @@ function render_stories_mosaic_callback( $attributes ) {
 
             $attributes['counter_posts']++;
 
-            get_template_part( 'library/blocks/stories-mosaic/template-parts/post', '', ['post' => $post, 'attributes' => $attributes] );
+            get_template_part( 'library/blocks/stories-mosaic/template-parts/post', '', [ 'post' => $post, 'attributes' => $attributes ] );
 
             if ( $counter == 10 ) {
                 echo "</div>";
@@ -149,11 +143,9 @@ function render_stories_mosaic_callback( $attributes ) {
 
     wp_reset_postdata();
 
-
     echo '</div><!-- .stories-mosaic-block -->';
 
     $output = ob_get_clean();
 
     return $output;
-
 }

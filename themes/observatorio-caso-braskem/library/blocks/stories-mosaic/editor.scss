@@ -10,6 +10,10 @@
     .stories-mosaic-block{
         border-radius: 8px;
 
+        .stories-mosaic-block__heading h2:empty {
+            display: none !important;
+        }
+
         .stories-mosaic-block__slides{
             :nth-child(n+3){
                 display: none;
