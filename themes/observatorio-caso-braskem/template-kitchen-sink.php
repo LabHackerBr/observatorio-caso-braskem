@@ -354,10 +354,10 @@ get_header();
         </div>
     </div>
     <div class="thumbnail">
-        <img src="<?= get_template_directory_uri() ?>/screenshot.png" alt="">
+        <img src="<?= get_template_directory_uri() ?>/screenshot.png" alt="descrição da imagem">
     </div>
     <div class="thumbnail thumbnail--square">
-        <img src="<?= get_template_directory_uri() ?>/screenshot.png" alt="">
+        <img src="<?= get_template_directory_uri() ?>/screenshot.png" alt="descrição da imagem">
     </div>
 
 

@@ -22,7 +22,7 @@ $categories = get_the_category();
             <?php if (has_post_thumbnail()): ?>
                 <?php the_post_thumbnail($image_size); ?>
             <?php else: ?>
-                <img src="<?= get_stylesheet_directory_uri() ?>/assets/images/placeholder.png" alt="">
+                <img src="<?= get_stylesheet_directory_uri() ?>/assets/images/placeholder.png" alt="imagem placeholder">
             <?php endif; ?>
         </a>
 

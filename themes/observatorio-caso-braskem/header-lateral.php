@@ -50,8 +50,8 @@
                     <?php if ( has_custom_logo() ): ?>
                         <?php the_custom_logo(); ?>
                     <?php else: ?>
-                        <a href="<?= home_url() ?>">
-                            <img src="<?= get_template_directory_uri() ?>/assets/images/logo.svg" width="200" alt="<?= get_bloginfo( 'name' ) ?>" fetchpriority="high">
+                        <a href="<?= home_url() ?>" alt="logo braskem">
+                            <img src="<?= get_template_directory_uri() ?>/assets/images/logo.svg" width="200" alt="logo braskem" fetchpriority="high">
                         </a>
                     <?php endif; ?>
 				</div>
