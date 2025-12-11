@@ -384,6 +384,14 @@ function hacklabr_limit_text( $text, $limit = 200 ) {
     return $text;
 }
 
+function hacklab_corrige_aria_cooltimeline( $content ) {
+    if ( strpos( $content, 'cool-timeline' ) === false && strpos( $content, 'ctl-title' ) === false ) {
+        return $content;
+    }
 
+    $pattern = '/(<div[^>]+class="[^"]*ctl-title[^"]*"[^>]*)(\saria-label="[^"]*")/i';
+    $content = preg_replace( $pattern, '$1', $content );
 
-
+    return $content;
+}
+add_filter( 'the_content', 'hacklab_corrige_aria_cooltimeline', 20 );
