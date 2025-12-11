@@ -2,7 +2,7 @@
 ?>
 <header class="c-title title-author">
     <div class="container">
-        <h1 class="entry-title">
+        <h1 class="sr-only entry-title">
             <?php printf( __('Author: %s', 'hacklabr'), get_the_author_meta('display_name', get_queried_object_id() ) );?>
         </h1>
         <p><?php the_author_meta( 'description', get_queried_object_id() );?></p>

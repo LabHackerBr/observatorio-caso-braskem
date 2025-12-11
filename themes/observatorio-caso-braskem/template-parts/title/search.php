@@ -13,7 +13,7 @@ if ( ! empty( $search_query ) ) {
 
 <header class="search__header">
     <div class="container">
-        <h1 class="search__title">
+        <h1 class="sr-only search__title">
             <?php echo apply_filters( 'the_title' , $title ); ?>
         </h1>
     </div>

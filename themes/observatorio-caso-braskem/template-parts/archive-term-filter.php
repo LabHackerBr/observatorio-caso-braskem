@@ -47,6 +47,7 @@ if (isset($_GET['order']) && in_array(strtoupper($_GET['order']), ['ASC', 'DESC'
 
 ?>
 <div class="search-filters">
+    <h1 class="sr-only"></h1>
     <form method="get" action="" class="search-filters__form">
         <?php
         foreach ($_GET as $key => $value) {

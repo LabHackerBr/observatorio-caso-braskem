@@ -6,6 +6,7 @@ get_header(); ?>
 
 <div class="index-wrapper page-with-title">
     <div class="container">
+        <h1 class="sr-only"></h1>
         <?php get_template_part( 'template-parts/title/default' ); ?>
         <div class="row">
             <div class="sidebarpage">

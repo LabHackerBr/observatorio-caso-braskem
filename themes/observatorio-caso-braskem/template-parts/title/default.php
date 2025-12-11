@@ -13,7 +13,7 @@ if ( is_category() ) {
 
 <header class="c-title title-default">
     <div class="container">
-        <h1 class="entry-title">
+        <h1 class="sr-only entry-title">
             <?php echo apply_filters( 'the_title' , $title ); ?>
         </h1>
     </div>

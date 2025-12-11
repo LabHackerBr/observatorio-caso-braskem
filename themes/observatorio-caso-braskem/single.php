@@ -32,7 +32,7 @@ $excerpt = !empty( $post->post_excerpt ) ? wp_kses_post( $post->post_excerpt ) :
                     }
                 ?>
             </div>
-
+            <h1 class="sr-only"></h1>
             <h1 class="post-header__title"> <?php the_title(); ?> </h1>
 
             <?php if( $excerpt ) : ?>

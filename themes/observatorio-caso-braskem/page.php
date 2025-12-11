@@ -3,7 +3,8 @@ get_header();
 ?>
     <div class="container">
         <div class="post-header post-header__separator">
-            <h1 class="post-header__title"><?php the_title() ?></h1>
+            <h1 class="sr-only"></h1>
+            <h1 class="sr-only post-header__title"><?php the_title() ?></h1>
             <div class="post-header__excerpt container--wide">
                 <?php the_excerpt() ?>
             </div>

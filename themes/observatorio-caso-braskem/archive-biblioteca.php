@@ -2,7 +2,8 @@
 get_header(); ?>
 
     <div class="archive-header-bibliioteca">
-        <div class="archive-header-bibliioteca__search-filter container container--wide">
+        <div class=" sr-only archive-header-bibliioteca__search-filter container container--wide">
+            <h1 class="sr-only"></h1>
             <h1>
                 <?php
                 $post_type = get_post_type();

@@ -37,7 +37,8 @@ if ( is_search() ) {
 
     <div class="archive-header__content-overlay">
         <div class="archive-header__title-container">
-            <div class="archive-header__title">
+            <div class="sr-only archive-header__title">
+                <h1 class="sr-only"></h1>
                 <h1>
                     <img src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/exclamation-point.png" alt="exclamation-point" class="exclamation-icon">
                     <?php echo apply_filters( 'the_title' , $title ); ?>
