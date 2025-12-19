@@ -107,3 +107,81 @@
 
     }
 }
+
+.search-filters {
+  &__form {
+    .custom-dropdown-wrapper {
+
+      // Quando o trigger for um SELECT (nova versão acessível)
+      select.custom-dropdown-trigger {
+        // remove aparência nativa e deixa igual "botão"
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+
+        display: block;
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0 15px 0 59px; // 23 (padding original) + 16 (ícone) + 20 (gap) = 59
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+
+        font-family: $font-family--primary;
+        font-size: $font-size--medium;
+        font-weight: $font-weight--bold;
+        line-height: normal;
+        text-transform: uppercase;
+        color: $color--low-pure;
+        box-sizing: border-box;
+
+        // seta à direita (mesma arte do botão)
+        background-image: url("/wp-content/themes/observatorio-caso-braskem/assets/images/filter-arrow-down.svg");
+        background-repeat: no-repeat;
+        background-position: right 15px center;
+        background-size: 12px 6px;
+
+        // foco visível (teclado)
+        &:focus-visible {
+          outline: 3px solid $color--low-pure;
+          outline-offset: 2px;
+        }
+      }
+
+      // Ícone à esquerda — usando pseudo-elemento no wrapper
+      // (porque o <select> não tem <span class="custom-dropdown-icon">)
+      &::before {
+        content: "";
+        position: absolute;
+        left: 23px;
+        top: 50%;
+        width: 16px;
+        height: 16px;
+        transform: translateY(-50%);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+        pointer-events: none;
+      }
+
+      // Define o ícone conforme o wrapper atual
+      &.filter-by-taxonomy-wrapper::before {
+        background-image: url("/wp-content/themes/observatorio-caso-braskem/assets/images/icon-search-filter.svg");
+      }
+
+      &.organize-by-wrapper::before {
+        background-image: url("/wp-content/themes/observatorio-caso-braskem/assets/images/icon-organize-by.svg");
+      }
+
+      // (Opcional) garante que o dropdown antigo não apareça caso ainda exista no DOM
+      .custom-dropdown-options {
+        display: none !important;
+      }
+    }
+  }
+}
+
+.custom-dropdown-wrapper:focus-within select.custom-dropdown-trigger {
+    background-image: url("/wp-content/themes/observatorio-caso-braskem/assets/images/filter-arrow-up.svg");
+}

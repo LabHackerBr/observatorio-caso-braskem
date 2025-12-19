@@ -6,23 +6,15 @@
     margin-bottom: 30px;
     padding: 15px;
 
-    .slide {
-        a {
-            &:focus {
-                outline: none;
-            }
-        }
-    }
-
     // .latest-vertical-posts-block__heading
-    &__heading {
-        h2 {
-            a {
-                &:hover {
-                }
-            }
-        }
-    }
+    // &__heading {
+    //     h2 {
+    //         a {
+    //             &:hover {
+    //             }
+    //         }
+    //     }
+    // }
 
     .post {
         flex-direction: row;
@@ -31,12 +23,6 @@
 
         // .post-content
         &-content {
-            .post-title {
-            }
-
-            .post-excerpt {
-            }
-
             .post-meta {
                 &--date {
                     align-items: center;
@@ -53,9 +39,6 @@
                         list-style: none;
                         padding-left: 0;
                     }
-                }
-
-                .post-author {
                 }
             }
         }
@@ -175,9 +158,6 @@
 
                     .post {
                         margin-bottom: 0;
-
-                        &-title {
-                        }
 
                         // .post-thumbnail
                         &-thumbnail {
@@ -384,10 +364,6 @@
 
             &:hover {
                 background-color: #111111;
-            }
-
-            &:focus-visible {
-                outline: 0;
             }
         }
     }

@@ -510,69 +510,137 @@ function hacklab_buffer_start() {
 add_action( 'template_redirect', 'hacklab_buffer_start' );
 
 function hacklab_fix_empty_links_in_output( $html ) {
-    if ( strpos( $html, '<a ' ) === false ) {
-        return $html;
-    }
+	if ( strpos( $html, '<a' ) === false ) {
+		return $html;
+	}
 
-    libxml_use_internal_errors( true );
+	$site_name = get_bloginfo( 'name' );
 
-    $dom  = new \DOMDocument( '1.0', 'UTF-8' );
-    $wrap = '<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />' . $html;
+	return preg_replace_callback(
+		'~<a\b([^>]*)>(.*?)</a>~is',
+		function ( $m ) use ( $site_name ) {
+			$attrs = $m[1];
+			$inner = $m[2];
 
-    if ( ! $dom->loadHTML( $wrap, LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD ) ) {
-        libxml_clear_errors();
-        return $html;
-    }
+			if ( preg_match( '~\baria-label=|\baria-labelledby=~i', $attrs ) ) {
+				return $m[0];
+			}
 
-    $links     = $dom->getElementsByTagName( 'a' );
-    $site_name = get_bloginfo( 'name' );
+			if ( preg_match( '~<\s*(svg|img|span|i|use|picture)\b~i', $inner ) ) {
+				return $m[0];
+			}
 
-    foreach ( $links as $link ) {
-        $text = trim( $link->textContent );
+			$plain = trim( wp_strip_all_tags( $inner ) );
+			if ( $plain !== '' ) {
+				return $m[0];
+			}
 
-        if ( $text !== '' ) {
-            continue;
-        }
+			if ( ! preg_match( '~\bhref=(["\'])(.*?)\1~is', $attrs, $hm ) ) {
+				return $m[0];
+			}
 
-        if ( $link->hasAttribute( 'aria-label' ) || $link->hasAttribute( 'aria-labelledby' ) ) {
-            continue;
-        }
+			$href = $hm[2];
+			$label = '';
 
-        $href = $link->getAttribute( 'href' );
-        if ( ! $href ) {
-            continue;
-        }
+			if ( stripos( $href, 'instagram.com' ) !== false ) {
+				$label = sprintf( 'Instagram de %s', $site_name );
+			} elseif ( stripos( $href, 'facebook.com' ) !== false ) {
+				$label = sprintf( 'Facebook de %s', $site_name );
+			} elseif ( stripos( $href, 'twitter.com' ) !== false || stripos( $href, 'x.com' ) !== false ) {
+				$label = sprintf( 'X (Twitter) de %s', $site_name );
+			} elseif ( stripos( $href, 'youtube.com' ) !== false || stripos( $href, 'youtu.be' ) !== false ) {
+				$label = sprintf( 'YouTube de %s', $site_name );
+			} else {
+				$label = __( 'Link', 'hacklabr' );
+			}
 
-        $label = '';
-
-        if ( strpos( $href, 'instagram.com' ) !== false ) {
-            $label = sprintf( 'Instagram de %s', $site_name );
-        } elseif ( strpos( $href, 'facebook.com' ) !== false ) {
-            $label = sprintf( 'Facebook de %s', $site_name );
-        } elseif ( strpos( $href, 'twitter.com' ) !== false || strpos( $href, 'x.com' ) !== false ) {
-            $label = sprintf( 'Twitter de %s', $site_name );
-        } elseif ( strpos( $href, 'youtube.com' ) !== false || strpos( $href, 'youtu.be' ) !== false ) {
-            $label = sprintf( 'YouTube de %s', $site_name );
-        } else {
-            $label = __( 'Link', 'hacklabr' );
-        }
-
-        $imgs = $link->getElementsByTagName( 'img' );
-        if ( $imgs->length > 0 ) {
-            $img = $imgs->item(0);
-            $alt = trim( $img->getAttribute( 'alt' ) );
-            if ( $alt === '' ) {
-                $img->setAttribute( 'alt', $label );
-            }
-        }
-
-        $link->setAttribute( 'aria-label', $label );
-    }
-
-    $new_html = $dom->saveHTML();
-    $new_html = preg_replace( '~^<meta[^>]+>~', '', $new_html );
-
-    libxml_clear_errors();
-
-    return $new_html;
+			return '<a' . $attrs . ' aria-label="' . esc_attr( $label ) . '"></a>';
+		},
+		$html
+	);
 }
+
+add_filter( 'wpml_ls_html', function ( $html, $args = [] ) {
+
+	if ( empty( $html ) || strpos( $html, 'wpml-ls' ) === false ) {
+		return $html;
+	}
+
+	// Mapeamento de siglas para nomes (ajuste se você tiver outros)
+	$language_map = [
+		'PT' => 'Português',
+		'EN' => 'Inglês',
+		'ES' => 'Espanhol',
+	];
+
+	// Pega todos os <li ... wpml-ls-item ...>...</li> do switcher
+	if ( ! preg_match_all( '~<li\b[^>]*\bwpml-ls-item\b[^>]*>.*?</li>~is', $html, $matches ) ) {
+		return $html;
+	}
+
+	$items = $matches[0];
+	$total = count( $items );
+
+	// Se por algum motivo vier vazio, não mexe
+	if ( $total < 1 ) {
+		return $html;
+	}
+
+	foreach ( $items as $i => $item_html ) {
+		$pos = $i + 1;
+
+		// Detecta se esse <li> é o idioma atual
+		$is_current = (bool) preg_match( '~\bwpml-ls-current-language\b~i', $item_html );
+
+		// Extrai o texto do idioma (geralmente "PT", "EN", "ES") do span wpml-ls-native
+		$short = '';
+		if ( preg_match( '~<span\b[^>]*\bwpml-ls-native\b[^>]*>(.*?)</span>~is', $item_html, $m ) ) {
+			$short = trim( wp_strip_all_tags( $m[1] ) );
+		}
+
+		$short_up = strtoupper( $short );
+		$language = $language_map[ $short_up ] ?? ( $short !== '' ? $short : 'Idioma' );
+
+		$aria_label = $is_current
+			? sprintf( 'Idioma %s selecionado %d de %d', $language, $pos, $total )
+			: sprintf( 'Mudar para idioma %s %d de %d', $language, $pos, $total );
+
+		// Atualiza o <a ... class="... wpml-ls-link ..."> dentro desse <li>
+		$item_html_new = preg_replace_callback(
+			'~<a\b([^>]*\bclass=(["\'])[^\2]*\bwpml-ls-link\b[^\2]*\2[^>]*)>~is',
+			function ( $a ) use ( $aria_label, $is_current ) {
+				$attrs = $a[1];
+
+				// Remove atributos antigos que causam redundância
+				$attrs = preg_replace(
+					[
+						'~\s+\btitle=(["\']).*?\1~is',
+						'~\s+\baria-label=(["\']).*?\1~is',
+					],
+					'',
+					$attrs
+				);
+
+				// Marca o idioma atual
+				if ( $is_current ) {
+					$attrs = preg_replace( '~\s+\baria-current=(["\']).*?\1~is', '', $attrs );
+					$attrs .= ' aria-current="true"';
+				}
+
+				// Adiciona aria-label novo
+				$attrs .= ' aria-label="' . esc_attr( $aria_label ) . '"';
+
+				return '<a' . $attrs . '>';
+			},
+			$item_html,
+			1
+		);
+
+		// Substitui somente esse item no HTML final
+		$html = str_replace( $item_html, $item_html_new, $html );
+	}
+
+	return $html;
+
+}, 20, 2 );
+

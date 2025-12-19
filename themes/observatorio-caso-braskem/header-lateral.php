@@ -34,7 +34,34 @@
         </div>
     </div>
 
-    <header x-data="{ menuOpen: false, searchOpen: false, lsOpen: false }" class="main-header main-header-lateral" :class="{ 'main-header-lateral--menu-open': menuOpen, 'main-header-lateral--search-open': searchOpen, 'main-header-lateral--ls-open': lsOpen }">
+    <header
+        x-data="{
+            menuOpen: false,
+            searchOpen: false,
+            lsOpen: false,
+            focusSearch() {
+                const el =
+                    document.querySelector('#s') ||
+                    document.querySelector('#search') ||
+                    document.querySelector('.search-form input[type=search]') ||
+                    document.querySelector('.search-form input[name=s]');
+                if (el) el.focus();
+            }
+        }"
+        x-init="
+            $watch('searchOpen', (isOpen) => { if (isOpen) $nextTick(() => focusSearch()) });
+        "
+        @keydown.escape.window="
+            if (searchOpen) { searchOpen = false; $nextTick(() => $refs.toggleSearch && $refs.toggleSearch.focus()); }
+            if (lsOpen) { lsOpen = false; $nextTick(() => $refs.toggleLang && $refs.toggleLang.focus()); }
+        "
+        class="main-header main-header-lateral"
+        :class="{
+            'main-header-lateral--menu-open': menuOpen,
+            'main-header-lateral--search-open': searchOpen,
+            'main-header-lateral--ls-open': lsOpen
+        }"
+    >
         <div class="container container--wide">
 			<div class="main-header-lateral__content">
                 <button type="button" class="main-header__toggle-menu main-header-lateral__toggle-menu" aria-label="<?= __('Toggle menu visibility', 'hacklabr') ?>" @click="menuOpen = !menuOpen">
@@ -61,13 +88,53 @@
                     <?= the_social_networks_menu(false); ?>
                 </div>
 
-                <div class="main-header-lateral__search" x-init="$watch('searchOpen', (isOpen) => isOpen && document.querySelector('#search').focus())">
+                <div class="main-header-lateral__search">
                     <?php get_search_form(); ?>
-                    <button type="button" class="main-header__toggle-search main-header-lateral__toggle-search" aria-label="<?= __( 'Toggle search form visibility', 'hacklabr' ) ?>" @click="searchOpen = !searchOpen">
-                        <img src="<?= get_template_directory_uri() ?>/assets/images/search-icon.svg" width="20" alt="Search icon">
+
+                    <button
+                        type="button"
+                        class="main-header__toggle-search main-header-lateral__toggle-search"
+                        x-ref="toggleSearch"
+                        aria-label="<?= esc_attr__( 'Toggle search form visibility', 'hacklabr' ) ?>"
+                        :aria-expanded="searchOpen ? 'true' : 'false'"
+                        aria-controls="header-search-form"
+                        @click="
+                            searchOpen = !searchOpen;
+                            if (!searchOpen) $nextTick(() => $refs.toggleSearch && $refs.toggleSearch.focus());
+                        "
+                        @keydown.enter.prevent="
+                            searchOpen = !searchOpen;
+                            if (!searchOpen) $nextTick(() => $refs.toggleSearch && $refs.toggleSearch.focus());
+                        "
+                        @keydown.space.prevent="
+                            searchOpen = !searchOpen;
+                            if (!searchOpen) $nextTick(() => $refs.toggleSearch && $refs.toggleSearch.focus());
+                        "
+                    >
+                        <img src="<?= get_template_directory_uri() ?>/assets/images/search-icon.svg" width="20" alt="ícone de busca">
                     </button>
-                    <button type="button" class="main-header__toggle-language main-header-lateral__toggle-language" aria-label="<?= __( 'Toggle language selector visibility', 'hacklabr' ) ?>" @click="lsOpen = !lsOpen">
-                        <img src="<?= get_template_directory_uri() ?>/assets/images/web-icon.svg" width="20" alt="Web icon">
+
+                    <button
+                        type="button"
+                        class="main-header__toggle-language main-header-lateral__toggle-language"
+                        x-ref="toggleLang"
+                        aria-label="<?= esc_attr__( 'Toggle language selector visibility', 'hacklabr' ) ?>"
+                        :aria-expanded="lsOpen ? 'true' : 'false'"
+                        aria-controls="header-language-selector"
+                        @click="
+                            lsOpen = !lsOpen;
+                            if (!lsOpen) $nextTick(() => $refs.toggleLang && $refs.toggleLang.focus());
+                        "
+                        @keydown.enter.prevent="
+                            lsOpen = !lsOpen;
+                            if (!lsOpen) $nextTick(() => $refs.toggleLang && $refs.toggleLang.focus());
+                        "
+                        @keydown.space.prevent="
+                            lsOpen = !lsOpen;
+                            if (!lsOpen) $nextTick(() => $refs.toggleLang && $refs.toggleLang.focus());
+                        "
+                    >
+                        <img src="<?= get_template_directory_uri() ?>/assets/images/web-icon.svg" width="20" alt="ícone de web">
                     </button>
                 </div>
 			</div>
@@ -84,7 +151,7 @@
                 <?= wp_nav_menu(['theme_location' => 'main-menu', 'container' => 'nav', 'menu_class' => 'menu', 'container_class' => 'main-header-lateral__menu-mobile']) ?>
             </div>
 
-            <div class="main-header-lateral__language-selector">
+            <div class="main-header-lateral__language-selector" id="header-language-selector">
                 <div class="wpml-language-switcher">
                     <?php do_action('wpml_add_language_selector');?>
                 </div>

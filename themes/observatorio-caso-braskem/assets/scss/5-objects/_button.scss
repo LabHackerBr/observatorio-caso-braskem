@@ -88,3 +88,10 @@
         --hl-button-hover-color: #{$color--warning-dark};
     }
 }
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible {
+  outline: 3px solid #005fcc;
+  outline-offset: 2px;
+}

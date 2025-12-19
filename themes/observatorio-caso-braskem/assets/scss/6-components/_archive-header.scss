@@ -246,9 +246,7 @@
             @include mobile{
                 justify-content: center;
             }
-            &:focus-visible{
-                outline: none !important;
-            }
+
             input{
                 width: size(570);
                 border-radius: $border-radius--round 0 0 $border-radius--round;

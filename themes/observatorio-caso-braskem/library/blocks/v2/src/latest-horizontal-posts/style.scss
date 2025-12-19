@@ -139,7 +139,6 @@
 
             &:focus-visible {
                 border: 0;
-                outline: none;
             }
 
             &__info {
@@ -177,7 +176,6 @@
 
                 &:focus-visible {
                     border: 0;
-                    outline: none;
                     background-color: transparent;
                 }
             }
@@ -395,9 +393,6 @@
                     }
                 }
             }
-        }
-
-        a {
         }
     }
 }

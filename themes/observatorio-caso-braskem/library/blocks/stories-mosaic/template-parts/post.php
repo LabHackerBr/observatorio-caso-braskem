@@ -28,7 +28,7 @@ $show_date      = isset( $args['attributes']['showDate'] ) ? $args['attributes']
 
                 $thumbnail = $thumbnail ? $thumbnail : get_stylesheet_directory_uri() . "/assets/images/default-image.png"; ?>
 
-                <img src="<?php echo $thumbnail; ?>">
+                <img src="<?php echo $thumbnail; ?>" alt="<?php echo $title; ?>">
             </div>
 
         <?php endif; ?>
