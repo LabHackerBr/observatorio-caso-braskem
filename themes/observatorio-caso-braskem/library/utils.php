@@ -384,190 +384,190 @@ function hacklabr_limit_text( $text, $limit = 200 ) {
     return $text;
 }
 
-function hacklab_corrige_aria_cooltimeline( $content ) {
-    if ( strpos( $content, 'cool-timeline' ) === false && strpos( $content, 'ctl-title' ) === false ) {
-        return $content;
-    }
+// function hacklab_corrige_aria_cooltimeline( $content ) {
+//     if ( strpos( $content, 'cool-timeline' ) === false && strpos( $content, 'ctl-title' ) === false ) {
+//         return $content;
+//     }
 
-    $pattern = '/(<div[^>]+class="[^"]*ctl-title[^"]*"[^>]*)(\saria-label="[^"]*")/i';
-    $content = preg_replace( $pattern, '$1', $content );
+//     $pattern = '/(<div[^>]+class="[^"]*ctl-title[^"]*"[^>]*)(\saria-label="[^"]*")/i';
+//     $content = preg_replace( $pattern, '$1', $content );
 
-    return $content;
-}
-add_filter( 'the_content', 'hacklab_corrige_aria_cooltimeline', 20 );
+//     return $content;
+// }
+// add_filter( 'the_content', 'hacklab_corrige_aria_cooltimeline', 20 );
 
-function hacklab_remove_redundant_link_titles( $content ) {
-    if ( strpos( $content, '<a ' ) === false ) {
-        return $content;
-    }
+// function hacklab_remove_redundant_link_titles( $content ) {
+//     if ( strpos( $content, '<a ' ) === false ) {
+//         return $content;
+//     }
 
-    libxml_use_internal_errors( true );
+//     libxml_use_internal_errors( true );
 
-    $dom  = new \DOMDocument();
+//     $dom  = new \DOMDocument();
 
-    $html = '<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />' . $content;
+//     $html = '<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />' . $content;
 
-    if ( ! $dom->loadHTML( $html, LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD ) ) {
-        libxml_clear_errors();
-        return $content;
-    }
+//     if ( ! $dom->loadHTML( $html, LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD ) ) {
+//         libxml_clear_errors();
+//         return $content;
+//     }
 
-    $links = $dom->getElementsByTagName( 'a' );
+//     $links = $dom->getElementsByTagName( 'a' );
 
-    foreach ( $links as $link ) {
-        if ( ! $link->hasAttribute( 'title' ) ) {
-            continue;
-        }
+//     foreach ( $links as $link ) {
+//         if ( ! $link->hasAttribute( 'title' ) ) {
+//             continue;
+//         }
 
-        $title = trim( $link->getAttribute( 'title' ) );
-        $text  = trim( $link->textContent );
+//         $title = trim( $link->getAttribute( 'title' ) );
+//         $text  = trim( $link->textContent );
 
-        if ( $title !== '' && mb_strtolower( $title ) === mb_strtolower( $text ) ) {
-            $link->removeAttribute( 'title' );
-        }
-    }
+//         if ( $title !== '' && mb_strtolower( $title ) === mb_strtolower( $text ) ) {
+//             $link->removeAttribute( 'title' );
+//         }
+//     }
 
-    $new_content = $dom->saveHTML();
+//     $new_content = $dom->saveHTML();
 
-    $new_content = preg_replace( '~^<meta[^>]+>~', '', $new_content );
+//     $new_content = preg_replace( '~^<meta[^>]+>~', '', $new_content );
 
-    libxml_clear_errors();
+//     libxml_clear_errors();
 
-    return $new_content;
-}
-add_filter( 'the_content', 'hacklab_remove_redundant_link_titles', 25 );
+//     return $new_content;
+// }
+// add_filter( 'the_content', 'hacklab_remove_redundant_link_titles', 25 );
 
-function hacklab_add_legends_to_fieldsets( $content ) {
-    if ( strpos( $content, '<fieldset' ) === false ) {
-        return $content;
-    }
+// function hacklab_add_legends_to_fieldsets( $content ) {
+//     if ( strpos( $content, '<fieldset' ) === false ) {
+//         return $content;
+//     }
 
-    libxml_use_internal_errors( true );
+//     libxml_use_internal_errors( true );
 
-    $dom  = new \DOMDocument( '1.0', 'UTF-8' );
-    $html = '<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />' . $content;
+//     $dom  = new \DOMDocument( '1.0', 'UTF-8' );
+//     $html = '<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />' . $content;
 
-    if ( ! $dom->loadHTML( $html, LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD ) ) {
-        libxml_clear_errors();
-        return $content;
-    }
+//     if ( ! $dom->loadHTML( $html, LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD ) ) {
+//         libxml_clear_errors();
+//         return $content;
+//     }
 
-    $fieldsets = $dom->getElementsByTagName( 'fieldset' );
-    $index     = 0;
+//     $fieldsets = $dom->getElementsByTagName( 'fieldset' );
+//     $index     = 0;
 
-    foreach ( $fieldsets as $fs ) {
-        $index++;
+//     foreach ( $fieldsets as $fs ) {
+//         $index++;
 
-        if ( $fs->getElementsByTagName( 'legend' )->length > 0 ||
-             $fs->hasAttribute( 'aria-label' ) ||
-             $fs->hasAttribute( 'aria-labelledby' ) ) {
-            continue;
-        }
+//         if ( $fs->getElementsByTagName( 'legend' )->length > 0 ||
+//              $fs->hasAttribute( 'aria-label' ) ||
+//              $fs->hasAttribute( 'aria-labelledby' ) ) {
+//             continue;
+//         }
 
-        $label_text = '';
+//         $label_text = '';
 
-        $labels = $fs->getElementsByTagName( 'label' );
-        if ( $labels->length > 0 ) {
-            $label_text = trim( $labels->item(0)->textContent );
-        }
+//         $labels = $fs->getElementsByTagName( 'label' );
+//         if ( $labels->length > 0 ) {
+//             $label_text = trim( $labels->item(0)->textContent );
+//         }
 
-        if ( $label_text === '' ) {
-            $label_text = sprintf( __( 'Grupo de campos %d', 'hacklabr' ), $index );
-        }
+//         if ( $label_text === '' ) {
+//             $label_text = sprintf( __( 'Grupo de campos %d', 'hacklabr' ), $index );
+//         }
 
-        $legend = $dom->createElement( 'legend', $label_text );
-        $legend->setAttribute( 'class', 'screen-reader-text' );
+//         $legend = $dom->createElement( 'legend', $label_text );
+//         $legend->setAttribute( 'class', 'screen-reader-text' );
 
-        if ( $fs->firstChild ) {
-            $fs->insertBefore( $legend, $fs->firstChild );
-        } else {
-            $fs->appendChild( $legend );
-        }
-    }
+//         if ( $fs->firstChild ) {
+//             $fs->insertBefore( $legend, $fs->firstChild );
+//         } else {
+//             $fs->appendChild( $legend );
+//         }
+//     }
 
-    $new_content = $dom->saveHTML();
+//     $new_content = $dom->saveHTML();
 
-    $new_content = preg_replace( '~^<meta[^>]+>~', '', $new_content );
+//     $new_content = preg_replace( '~^<meta[^>]+>~', '', $new_content );
 
-    libxml_clear_errors();
+//     libxml_clear_errors();
 
-    return $new_content;
-}
-add_filter( 'the_content', 'hacklab_add_legends_to_fieldsets', 26 );
+//     return $new_content;
+// }
+// add_filter( 'the_content', 'hacklab_add_legends_to_fieldsets', 26 );
 
-function hacklab_buffer_start() {
-    if ( is_admin() || wp_doing_ajax() || ( defined( 'REST_REQUEST' ) && REST_REQUEST ) ) {
-        return;
-    }
+// function hacklab_buffer_start() {
+//     if ( is_admin() || wp_doing_ajax() || ( defined( 'REST_REQUEST' ) && REST_REQUEST ) ) {
+//         return;
+//     }
 
-    ob_start( 'hacklab_fix_empty_links_in_output' );
-}
-add_action( 'template_redirect', 'hacklab_buffer_start' );
+//     ob_start( 'hacklab_fix_empty_links_in_output' );
+// }
+// add_action( 'template_redirect', 'hacklab_buffer_start' );
 
-function hacklab_fix_empty_links_in_output( $html ) {
-    if ( strpos( $html, '<a ' ) === false ) {
-        return $html;
-    }
+// function hacklab_fix_empty_links_in_output( $html ) {
+//     if ( strpos( $html, '<a ' ) === false ) {
+//         return $html;
+//     }
 
-    libxml_use_internal_errors( true );
+//     libxml_use_internal_errors( true );
 
-    $dom  = new \DOMDocument( '1.0', 'UTF-8' );
-    $wrap = '<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />' . $html;
+//     $dom  = new \DOMDocument( '1.0', 'UTF-8' );
+//     $wrap = '<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />' . $html;
 
-    if ( ! $dom->loadHTML( $wrap, LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD ) ) {
-        libxml_clear_errors();
-        return $html;
-    }
+//     if ( ! $dom->loadHTML( $wrap, LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD ) ) {
+//         libxml_clear_errors();
+//         return $html;
+//     }
 
-    $links     = $dom->getElementsByTagName( 'a' );
-    $site_name = get_bloginfo( 'name' );
+//     $links     = $dom->getElementsByTagName( 'a' );
+//     $site_name = get_bloginfo( 'name' );
 
-    foreach ( $links as $link ) {
-        $text = trim( $link->textContent );
+//     foreach ( $links as $link ) {
+//         $text = trim( $link->textContent );
 
-        if ( $text !== '' ) {
-            continue;
-        }
+//         if ( $text !== '' ) {
+//             continue;
+//         }
 
-        if ( $link->hasAttribute( 'aria-label' ) || $link->hasAttribute( 'aria-labelledby' ) ) {
-            continue;
-        }
+//         if ( $link->hasAttribute( 'aria-label' ) || $link->hasAttribute( 'aria-labelledby' ) ) {
+//             continue;
+//         }
 
-        $href = $link->getAttribute( 'href' );
-        if ( ! $href ) {
-            continue;
-        }
+//         $href = $link->getAttribute( 'href' );
+//         if ( ! $href ) {
+//             continue;
+//         }
 
-        $label = '';
+//         $label = '';
 
-        if ( strpos( $href, 'instagram.com' ) !== false ) {
-            $label = sprintf( 'Instagram de %s', $site_name );
-        } elseif ( strpos( $href, 'facebook.com' ) !== false ) {
-            $label = sprintf( 'Facebook de %s', $site_name );
-        } elseif ( strpos( $href, 'twitter.com' ) !== false || strpos( $href, 'x.com' ) !== false ) {
-            $label = sprintf( 'Twitter de %s', $site_name );
-        } elseif ( strpos( $href, 'youtube.com' ) !== false || strpos( $href, 'youtu.be' ) !== false ) {
-            $label = sprintf( 'YouTube de %s', $site_name );
-        } else {
-            $label = __( 'Link', 'hacklabr' );
-        }
+//         if ( strpos( $href, 'instagram.com' ) !== false ) {
+//             $label = sprintf( 'Instagram de %s', $site_name );
+//         } elseif ( strpos( $href, 'facebook.com' ) !== false ) {
+//             $label = sprintf( 'Facebook de %s', $site_name );
+//         } elseif ( strpos( $href, 'twitter.com' ) !== false || strpos( $href, 'x.com' ) !== false ) {
+//             $label = sprintf( 'Twitter de %s', $site_name );
+//         } elseif ( strpos( $href, 'youtube.com' ) !== false || strpos( $href, 'youtu.be' ) !== false ) {
+//             $label = sprintf( 'YouTube de %s', $site_name );
+//         } else {
+//             $label = __( 'Link', 'hacklabr' );
+//         }
 
-        $imgs = $link->getElementsByTagName( 'img' );
-        if ( $imgs->length > 0 ) {
-            $img = $imgs->item(0);
-            $alt = trim( $img->getAttribute( 'alt' ) );
-            if ( $alt === '' ) {
-                $img->setAttribute( 'alt', $label );
-            }
-        }
+//         $imgs = $link->getElementsByTagName( 'img' );
+//         if ( $imgs->length > 0 ) {
+//             $img = $imgs->item(0);
+//             $alt = trim( $img->getAttribute( 'alt' ) );
+//             if ( $alt === '' ) {
+//                 $img->setAttribute( 'alt', $label );
+//             }
+//         }
 
-        $link->setAttribute( 'aria-label', $label );
-    }
+//         $link->setAttribute( 'aria-label', $label );
+//     }
 
-    $new_html = $dom->saveHTML();
-    $new_html = preg_replace( '~^<meta[^>]+>~', '', $new_html );
+//     $new_html = $dom->saveHTML();
+//     $new_html = preg_replace( '~^<meta[^>]+>~', '', $new_html );
 
-    libxml_clear_errors();
+//     libxml_clear_errors();
 
-    return $new_html;
-}
+//     return $new_html;
+// }
