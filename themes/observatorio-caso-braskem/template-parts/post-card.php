@@ -61,11 +61,11 @@ $categories = get_the_category();
             </div>
         <?php endif; ?>
         <div class="post-card-post-info">
-            <h3 class="post-card__title">
+            <h2 class="post-card__title">
                 <a href="<?php the_permalink();?>">
                     <?php echo hacklabr_limit_text( get_the_title(), 93 ); ?>
                 </a>
-            </h3>
+            </h2>
             <?php if ( get_post_type() === 'biblioteca' ) : ?>
                 <?php if ( ! $hide_excerpt ) : ?>
                     <p class="post-card__excerpt">

@@ -442,64 +442,6 @@ function hacklab_remove_redundant_link_titles( $content ) {
 }
 add_filter( 'the_content', 'hacklab_remove_redundant_link_titles', 25 );
 
-function hacklab_add_legends_to_fieldsets( $content ) {
-    if ( strpos( $content, '<fieldset' ) === false ) {
-        return $content;
-    }
-
-    libxml_use_internal_errors( true );
-
-    $dom  = new \DOMDocument( '1.0', 'UTF-8' );
-    $html = '<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />' . $content;
-
-    if ( ! $dom->loadHTML( $html, LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD ) ) {
-        libxml_clear_errors();
-        return $content;
-    }
-
-    $fieldsets = $dom->getElementsByTagName( 'fieldset' );
-    $index     = 0;
-
-    foreach ( $fieldsets as $fs ) {
-        $index++;
-
-        if ( $fs->getElementsByTagName( 'legend' )->length > 0 ||
-             $fs->hasAttribute( 'aria-label' ) ||
-             $fs->hasAttribute( 'aria-labelledby' ) ) {
-            continue;
-        }
-
-        $label_text = '';
-
-        $labels = $fs->getElementsByTagName( 'label' );
-        if ( $labels->length > 0 ) {
-            $label_text = trim( $labels->item(0)->textContent );
-        }
-
-        if ( $label_text === '' ) {
-            $label_text = sprintf( __( 'Grupo de campos %d', 'hacklabr' ), $index );
-        }
-
-        $legend = $dom->createElement( 'legend', $label_text );
-        $legend->setAttribute( 'class', 'screen-reader-text' );
-
-        if ( $fs->firstChild ) {
-            $fs->insertBefore( $legend, $fs->firstChild );
-        } else {
-            $fs->appendChild( $legend );
-        }
-    }
-
-    $new_content = $dom->saveHTML();
-
-    $new_content = preg_replace( '~^<meta[^>]+>~', '', $new_content );
-
-    libxml_clear_errors();
-
-    return $new_content;
-}
-add_filter( 'the_content', 'hacklab_add_legends_to_fieldsets', 26 );
-
 function hacklab_buffer_start() {
     if ( is_admin() || wp_doing_ajax() || ( defined( 'REST_REQUEST' ) && REST_REQUEST ) ) {
         return;

@@ -84,7 +84,7 @@
 				</div>
 
                 <div class="main-header-lateral__social">
-                    <span class="main-header-lateral__social-title"><?= _e( 'Follow us on our social media', 'hacklabr' ) ?></span>
+                    <h1 class="main-header-lateral__social-title"><?= _e( 'Follow us on our social media', 'hacklabr' ) ?></span>
                     <?= the_social_networks_menu(false); ?>
                 </div>
 
