@@ -16,7 +16,7 @@ if ( count( $bio ) >= 15 ) {
 }
 
 // Thumbnail
-$thumbnail = ( has_post_thumbnail( $coauthor ) ) ? get_the_post_thumbnail( $coauthor ) : '<img src="' . get_stylesheet_directory_uri() . '/assets/images/default-image.png">';
+$thumbnail = ( has_post_thumbnail( $coauthor ) ) ? get_the_post_thumbnail( $coauthor ) : '<img alt="imagem com fundo padrão cinza" src="' . get_stylesheet_directory_uri() . '/assets/images/default-image.png">';
 ?>
 
 <a href="<?php echo esc_url( $link ); ?>">
