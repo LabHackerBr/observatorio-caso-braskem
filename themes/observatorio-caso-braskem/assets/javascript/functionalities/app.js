@@ -19,7 +19,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const i18n = labels[lang] || labels.pt;
 
   const applySlickAria = (root = document) => {
-    // pega cada bloco do Newspack (ou equivalente) e atualiza suas setas
     root.querySelectorAll('.latest-horizontal-posts-block').forEach(block => {
       const prev = block.querySelector('.latest-horizontal-posts-block__arrows .slick-prev, .slick-prev');
       const next = block.querySelector('.latest-horizontal-posts-block__arrows .slick-next, .slick-next');
@@ -28,20 +27,16 @@ document.addEventListener('DOMContentLoaded', () => {
       if (next) next.setAttribute('aria-label', i18n.next);
     });
 
-    // fallback: se tiver slick fora desse bloco, tenta atualizar também
     root.querySelectorAll('button.slick-prev').forEach(btn => btn.setAttribute('aria-label', i18n.prev));
     root.querySelectorAll('button.slick-next').forEach(btn => btn.setAttribute('aria-label', i18n.next));
   };
 
-  // roda uma vez no load
   applySlickAria(document);
 
-  // e observa mudanças (sliders que inicializam depois)
   const observer = new MutationObserver((mutations) => {
     for (const m of mutations) {
       for (const node of m.addedNodes) {
-        if (node.nodeType !== 1) continue; // element
-        // aplica no nó inserido e também no documento (pra cobrir casos em que só classes mudam)
+        if (node.nodeType !== 1) continue;
         applySlickAria(node);
       }
     }
@@ -50,5 +45,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
   observer.observe(document.body, { childList: true, subtree: true });
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.wpml-ls-item a').forEach(link => {
+    const span = link.querySelector('.wpml-ls-native[aria-label]');
+    if (!span) return;
+
+    link.setAttribute('aria-label', span.getAttribute('aria-label'));
+
+    span.removeAttribute('aria-label');
+  });
+});
+
 
 

@@ -405,7 +405,6 @@ function hacklab_remove_redundant_link_titles( $content ) {
 
 	$dom = new \DOMDocument();
 
-	// Wrapper + encoding mais confiável no DOMDocument.
 	$html = '<?xml encoding="UTF-8"><div id="hacklab-wrap">' . $content . '</div>';
 
 	if ( ! $dom->loadHTML( $html, LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD ) ) {
