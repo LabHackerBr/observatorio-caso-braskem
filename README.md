@@ -1,202 +1,112 @@
-# hacklabr
+# Observatório Caso Braskem: Portal Informativo
 
-Este repositório contém os arquivos iniciais para se ter um projeto WordPress
-nos moldes do Hacklab. Isso significa que as ferramentas de desenvolvimento
-e deploy estão protegidas por um padrão.
+Este software é um portal informativo e uma plataforma de dados construída em WordPress, destinada a documentar e apresentar informações sobre o caso Braskem.
 
-A ideia é que seja feito um fork deste repositório para começar um novo projeto
-WordPress. Os arquivos deverão ser modificados conforme as peculiaridades do
-projeto.
+---
 
-## Desenvolvimento
+## Contextualização
 
-### Editor
+Este projeto serve como um observatório digital para o caso Braskem, centralizando e disponibilizando informações de interesse público. A plataforma é destinada a pesquisadores, jornalistas, estudantes e à sociedade civil, oferecendo acesso a uma linha do tempo interativa, mapas, uma biblioteca de documentos e um arquivo de histórias relacionadas ao caso.
 
-Para o desenvolvimento recomenda-se a utilização do editor Visual Studio Code com as seguintes extensões:
+---
 
-- EditorConfig for VS Code
-- PHP Intelephense
-- SCSS IntelliSense
-- Docker
-- GitLens
-- ...
+## Estrutura do Projeto
+
+O projeto utiliza uma arquitetura baseada em containers (Docker) para isolamento do ambiente de desenvolvimento:
+
+* **/themes/observatorio-caso-braskem/**: Contém o tema customizado (Templates, SCSS e JS).
+* **/plugins/**: Diretório para plugins customizados e submódulos (ex: `hacklab-blocks`).
+* **/dev-scripts/**: Scripts de automação para banco de dados e comandos WP-CLI.
+* **/compose/**: Configurações de infraestrutura local e personalizações do PHP (`extra.ini`).
+
+> **Nota sobre versionamento:** O conteúdo de `wp-content` está no `.gitignore`. Para adicionar plugins ou temas ao repositório, coloque-os diretamente nas pastas `plugins/` ou `themes/` da raiz.
+
+---
+
+## Instalação e Execução
 
 ### Requisitos
+* Git, Docker e Docker Compose, Node.js e npm.
 
-Para o desenvolvimento é requisito ter instaladas ao menos as seguintes ferramtas:
+### Guia de Instalação
 
-- **Git**
-- **Docker** e **Docker Compose** - Docker é a ferramenta recomendada para desenvolver localmente. Para instalá-lo siga [estas instruções](https://docs.docker.com/install/#supported-platforms).
-- **node** e **npm**
+1.  **Clone o Repositório:**
+    ```bash
+    git clone --recursive <URL_DO_REPOSITORIO_GIT>
+    ```
 
-### Clonando o repositório
+2.  **Importação do Banco de Dados (Opcional):**
+    Copie seu dump `.sql` ou `.sql.gz` para `compose/local/mariadb/data/`.
+    *Se os containers já existirem, use `docker-compose down -v` antes de subir novamente.*
 
-Clone o repositório e seus submódulos recursivamente:
+3.  **Instale as Dependências do Tema:**
+    ```bash
+    cd themes/observatorio-caso-braskem/
+    npm install
+    npm run watch # Para compilar assets em tempo real
+    ```
 
-```bash
-git clone git@git.hacklab.com.br:open-source/base-wordpress-project.git --recursive
-```
+4.  **Inicie o Ambiente:**
+    Na raiz do projeto: `docker-compose up -d`. Acesse em [http://localhost](http://localhost).
 
-### Adicionando submódulos
+---
 
-Exemplo aplicando o plugin Hacklab Blocks como submódulo na pasta `/plugins`. O `-f` é necessário quando a pasta `plugins` está no `.gitignore`
+## Configurações e Debug
 
-```bash
-git submodule add -f git@gitlab.hacklab.com.br:open-source/hacklab-blocks.git plugins/hacklab-blocks
-```
+### Customização do Ambiente
+* **Variáveis WordPress:** Editáveis no `docker-compose.yml` (ex: `WORDPRESS_DEBUG: 1`).
+* **Configurações PHP:** Edite `compose/local/wordpress/php/extra.ini` e reinicie os containers.
 
-### Acesso a atualizações do tema base
-
-Para receber novas funcionalidades do tema base diretamente no seu board, é pré-requisito inserir o repositório do tema base como um `remote` do Git:
-
-```bash
-git remote add temaBase git@git.hacklab.com.br:open-source/base-wordpress-project.git
-```
-
-Então, para sincronizar o tema base com seu fork, rode o seguinte comando no branch `develop` do seu fork:
-
-```bash
-git pull temaBase develop
-```
-
-### Compilando os assets do tema
-
-Abra um terminal, vá até a a pasta `themes/observatorio-caso-braskem/` e execute os comandos abaixo:
-
-```bash
-npm install
-npm run watch # vai ficar observando as mudanças nos assets
-```
-
-### Subindo o ambiente
-
-Abra outro terminal e na raíz do repositório execute o comando abaixo:
-
-```bash
-docker-compose up
-```
-
-### Scripts para desenvolvimento
-
-Há uma série de scripts úteis na pasta `dev-scripts`:
-
-- **dump** - faz um dump do banco de desenvolvimento<br>
-    exemplo de uso: `dev-scripts/$ ./dump > dump.sql`
-- **mysql** - entra no shell do MySQL com o usuário `wordpress`
-- **mysql-root** - entra no shell do MySQL com o usuário `root`
-- **wp** - executa o comando WP-CLI dentro do container `wordpress`<br>
-    exemplo de uso: `dev-scripts/$ ./wp search-replace https:// http://`
-
-Acesse http://localhost para ver o site.
-
-## Release no ambiente de staging/produção
-Para o release no ambiente de staging/produção, utilizamos CI/CD através do plugin GitUpdater.
-Após fazer o commit de suas alterações e alterar a versão do tema no style.css, faça o merge da branch de desenvolvimento na branch main e crie a tag correspondente na main.
-
-Observações: 
-- A tag e a versão do tema no style.css devem ser iguais
-- A tag deve ser feita na branch Main, lembre-se de fazer a mesclagem da branch de develop nela antes de iniciar o release.
-
-Comandos para criação da tag:
-- Exemplo: versão do tema 0.1.2
-`git tag -a 0.1.2 -m "v0.1.2"`
-`git push origin refs/tags/0.1.2`
-
-### Importar um dump de banco de dados
-
-Se você tem um dump de banco de dados `.sql` ou `.sql.gz`, para importá-lo em sua versão local, copie o arquivo para `compose/local/mariadb/data` e execute:
-
-```bash
-docker-compose down -v # o parametro -v apaga os dados do mariadb
-docker-compose up
-```
-
-### Substituir strings
-
-- Renomear o nome do tema no arquivo `style.css`
-
-### Variáveis de ambiente
-
-#### Variáveis da imagem WordPress
-
-https://hub.docker.com/_/wordpress
-
-Exemplo: desativando o debug do WordPress
-
-```yaml
-WORDPRESS_DEBUG: 0
-```
-
-### Configurações PHP
-
-Editar arquivo `compose/local/wordpress/php/extra.ini` e reiniciar container
-
-Exemplo: desativando avisos de recursos depreciados do PHP
-
-```ini
-error_reporting = E_ALL & ~E_NOTICE & ~E_DEPRECATED
-```
-
-### Debug utilizando PSY
-
-1. Você ja deve ter rodado o `docker-compose up` pelo menos uma vez
-2. Instale e ative o plugin `hacklab-dev-utils` (esse plugin é um submódulo desse repositório, caso não tenha clonado o repositório com `--recursive`, rode `git submodule init` e depois `git submodule update`)
-
-Para iniciar o ambiente de debug, rode o script `./dev-scripts/dev.sh`
-
-Adicione `<?php eval(\psy\sh()); ?>` na linha onde deseja debugar. No terminal, o código será interrompido exatamente no lugar onde adicionou o comando e você terá às variavés declaradas, classes instanciadas, funções disponíveis e etc.
-
-#### Exemplo
-
-Ao adicionar `eval(\psy\sh());` dentro do loop você pode chamar a função get_the_title() no terminal.
-
-#### Adicione um snippet no VS Code
-
-- Pressione `Ctrl + Shift + P`, va em *Configure User Snippets*
-- Selecione PHP
-- E adicione:
-
+### Debug Interativo (PSY)
+1. Certifique-se de que o plugin `hacklab-dev-utils` está ativo.
+2. Execute o script: `./dev-scripts/dev.sh`.
+3. No código PHP, insira: `eval(\psy\sh());`.
+4. Para facilitar, adicione o snippet abaixo no seu VS Code (User Snippets > PHP):
 ```json
-"psy": {
-    "scope": "php",
-    "prefix": "psy",
-    "body": [
-        "eval(\\psy\\sh());",
-    ],
-}
+"psy": { "prefix": "psy", "body": ["eval(\\psy\\sh());"] }
 ```
 
-Com isso, ao digitar `psy` e pressionar a tecla `Tab`, o VS Code vai imprimir o códígo `eval(\\psy\\sh());`
+---
 
-Para sair desbloquear o processo de debug no terminal, utilize o comando `exit`.
+## Guia de Uso e Desenvolvimento
 
-## Instalando plugins e temas
+### Como o Software Funciona
+A plataforma utiliza tipos de post customizados (CPTs) para organizar os dados:
+* **Biblioteca**: Documentos oficiais e pesquisas.
+* **Storymap**: Narrativas geográficas sobre os impactos.
+* **Map & Linha do Tempo**: Visualizações interativas de eventos e locais.
 
-### Copiando arquivos para dentro do repositório
+### Scripts Úteis
+A pasta `dev-scripts/` centraliza comandos frequentes para evitar a complexidade do Docker:
+* `./dev-scripts/wp <comando>`: Executa comandos WP-CLI dentro do container.
+* `./dev-scripts/dump > backup.sql`: Gera um dump do banco de dados atual.
+* `./dev-scripts/mysql`: Acessa o terminal interativo do MySQL.
 
-O conteúdo de `wp-content` está excluído do versionamento por padrão. Para adicionar seu plugin ou tema como parte do repositório, você deve colocá-los nas pastas `plugins` ou `themes` que estão na raiz do repositório.
+### Traduções
+Se as traduções de arquivos `.js` via `wp i18n` não carregarem no navegador, verifique se o arquivo JSON gerado segue o padrão de nomenclatura: 
+`{domain}-{locale}-{script-handle}.json`
 
-## Traduções
+---
 
-Quando utilizar o comando `wp i18n make-json languages/` para gerar as traduções de arquivos `.js` e as traduções não funcionarem, uma das possíveis soluções pode ser renomear o arquivo gerado de `{locale}-{hash}.json` para `{domain}-{locale}-{script-handle}.json`.
+## Fluxo de CI/CD e Deploy
 
-## Github Workflow e plugin git-updater (v12.4.0)
-Para que o plugin funcione corretamente devemos ter o nome da pasta do tema, o nome do repositório no github e o a slug configurada no plugin sendo a mesma string. Por exemplo:
-pasta do tema no repo: themes/novo-nome
-endereço do repo: github.com/hacklabr/novo-nome
-Slug configurada no plugin: novo-nome
+O deploy é automatizado via **GitHub Actions** em conjunto com o plugin **GitUpdater**.
 
-Além disso precisamos ter um link simbolico na raiz do repo apontando para o arquivo style.css dentro da pasta do tema.
+### Requisitos de Configuração
+Para o funcionamento correto, o arquivo `.github/workflows/main.yml` deve conter as seguintes variáveis:
+* **CURL_URL**: URL do endpoint de atualização (webhook) do ambiente.
+* **DEPLOY**: Deve ser configurado com um valor diferente de `0` para permitir o release automático.
 
-Para que a estrutura dos arquivos do repositório siga esse padrão você deve executar, logo após clonar, o script dev-scripts/cria-tema.sh que faz as seguintes alterações:
-- altera a pasta do tema
-- substitui em massa a string observatorio-caso-braskem pelo novo nome
-- cria o link simbolico entre /themes/novo-nome/style.css e /style.css
-- altera a versão do tema para 0.1
+### Realizando um Release
+Para atualizar o ambiente de staging/produção, siga rigorosamente este fluxo:
 
-### outras alterações:
-- a variável CURL_URL no arquivo .github/workflows/main.yml com a URL do ambiente a ser atualizado (o plugin git-updater deve estar instalado e o tema adicionado na aba additions)
-- a variável DEPLOY no arquivo .github/workflows/main.yml com um número diferente de 0 se desejar atualizações automáticas.
+1. Atualize a versão do tema no arquivo `style.css`.
+2. Certifique-se de que a branch `develop` está mesclada em `main`.
+3. Crie e envie uma **Tag** no Git com o **mesmo número** da versão definida no `style.css`:
 
-### observações importantes: 
-- para atualizar o tema no ambiente usando o plugin a versão na tag do repositório deve ser igual à versão do tema no style.css
+```bash
+git tag -a 1.0.2 -m "v1.0.2"
+git push origin refs/tags/1.0.2
+```
+
+> **Atenção:** Se a versão da Tag e a versão no style.css forem diferentes, o plugin GitUpdater não reconhecerá a atualização e o deploy falhará.
