@@ -56,6 +56,3 @@ document.addEventListener('DOMContentLoaded', () => {
     span.removeAttribute('aria-label');
   });
 });
-
-
-

@@ -585,3 +585,43 @@ add_filter( 'wpml_ls_html', function ( $html, $args = [] ) {
 
 }, 20, 2 );
 
+add_action('template_redirect', function () {
+
+    if (is_admin() || wp_doing_ajax()) return;
+
+    ob_start(function ($html) {
+        $locale = function_exists('determine_locale') ? determine_locale() : get_locale();
+        $lang = strtolower(substr($locale, 0, 2));
+
+        $labels = [
+            'pt' => ['prev' => 'Voltar',    'next' => 'Avançar'],
+            'en' => ['prev' => 'Previous',  'next' => 'Next'],
+            'es' => ['prev' => 'Anterior',  'next' => 'Siguiente'],
+        ];
+        $i18n = $labels[$lang] ?? $labels['pt'];
+
+        $to_button = function ($match, $ariaLabel) {
+            $attrs = $match[1];
+
+            $attrs = preg_replace('/\s+tabindex=("|\').*?\1/i', '', $attrs);
+
+            $attrs = preg_replace('/\s+aria-label=("|\').*?\1/i', '', $attrs);
+
+            return '<button type="button"' . $attrs . ' aria-label="' . esc_attr($ariaLabel) . '"></button>';
+        };
+
+        $html = preg_replace_callback(
+            '/<div([^>]*\bclass=("|\')[^"\']*\bglider-prev\b[^"\']*\2[^>]*)>\s*<\/div>/i',
+            fn($m) => $to_button($m, $i18n['prev']),
+            $html
+        );
+
+        $html = preg_replace_callback(
+            '/<div([^>]*\bclass=("|\')[^"\']*\bglider-next\b[^"\']*\2[^>]*)>\s*<\/div>/i',
+            fn($m) => $to_button($m, $i18n['next']),
+            $html
+        );
+
+        return $html;
+    });
+}, 0);
