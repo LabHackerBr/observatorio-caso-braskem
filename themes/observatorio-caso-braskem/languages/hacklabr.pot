@@ -1,15 +1,15 @@
-# Copyright (C) 2025 Hacklab
+# Copyright (C) 2026 Hacklab
 # This file is distributed under the GNU General Public License v2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: observatorio-caso-braskem 0.16.1\n"
+"Project-Id-Version: observatorio-caso-braskem 0.16.3\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/observatorio-caso-braskem\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2025-12-19T13:58:45+00:00\n"
+"POT-Creation-Date: 2026-01-05T19:14:37+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.10.0\n"
 "X-Domain: hacklabr\n"
@@ -122,19 +122,19 @@ msgstr ""
 msgid "Terms of use and Privacy Policy"
 msgstr ""
 
-#: header-lateral.php:40
-msgid "Toggle menu visibility"
+#: header-lateral.php:67
+msgid "Toggle menu visibility closed"
 msgstr ""
 
-#: header-lateral.php:60
+#: header-lateral.php:87
 msgid "Follow us on our social media"
 msgstr ""
 
-#: header-lateral.php:66
-msgid "Toggle search form visibility"
+#: header-lateral.php:98
+msgid "Toggle search form visibility closed"
 msgstr ""
 
-#: header-lateral.php:69
+#: header-lateral.php:121
 msgid "Toggle language selector visibility"
 msgstr ""
 
@@ -149,13 +149,18 @@ msgstr ""
 msgid "No content found"
 msgstr ""
 
-#: library/blocks/stories-mosaic/template-parts/post.php:56
+#. translators: %s: post title
+#: library/blocks/stories-mosaic/template-parts/post.php:63
+msgid "Imagem ilustrativa para %s"
+msgstr ""
+
+#: library/blocks/stories-mosaic/template-parts/post.php:93
 #: library/blocks/v2/src/latest-horizontal-posts/template-parts/post.php:31
 #: library/blocks/v2/src/latest-vertical-posts/template-parts/post.php:56
 msgid "in"
 msgstr ""
 
-#: library/blocks/stories-mosaic/template-parts/post.php:64
+#: library/blocks/stories-mosaic/template-parts/post.php:101
 #: library/blocks/v2/src/latest-vertical-posts/template-parts/post.php:64
 msgid "by"
 msgstr ""
@@ -249,11 +254,7 @@ msgstr ""
 msgid "All news"
 msgstr ""
 
-#: library/utils.php:480
-msgid "Grupo de campos %d"
-msgstr ""
-
-#: library/utils.php:557
+#: library/utils.php:495
 msgid "Link"
 msgstr ""
 
@@ -300,30 +301,30 @@ msgstr ""
 
 #: template-parts/archive-term-filter.php:9
 #: template-parts/archive-term-filter.php:69
-#: template-parts/search-filters.php:9
-#: template-parts/search-filters.php:69
+#: template-parts/search-filters.php:10
+#: template-parts/search-filters.php:70
 msgid "FILTER BY"
 msgstr ""
 
 #: template-parts/archive-term-filter.php:12
 #: template-parts/archive-term-filter.php:76
-#: template-parts/search-filters.php:12
-#: template-parts/search-filters.php:76
+#: template-parts/search-filters.php:13
+#: template-parts/search-filters.php:77
 msgid "ALL"
 msgstr ""
 
 #: template-parts/archive-term-filter.php:25
-#: template-parts/search-filters.php:25
+#: template-parts/search-filters.php:26
 msgid "Latests"
 msgstr ""
 
 #: template-parts/archive-term-filter.php:26
-#: template-parts/search-filters.php:26
+#: template-parts/search-filters.php:27
 msgid "Oldests"
 msgstr ""
 
 #: template-parts/archive-term-filter.php:27
-#: template-parts/search-filters.php:27
+#: template-parts/search-filters.php:28
 msgid "Alphabetical"
 msgstr ""
 
@@ -331,10 +332,10 @@ msgstr ""
 #: template-parts/archive-term-filter.php:34
 #: template-parts/archive-term-filter.php:90
 #: template-parts/archive-term-filter.php:97
-#: template-parts/search-filters.php:30
-#: template-parts/search-filters.php:34
-#: template-parts/search-filters.php:90
-#: template-parts/search-filters.php:97
+#: template-parts/search-filters.php:31
+#: template-parts/search-filters.php:35
+#: template-parts/search-filters.php:104
+#: template-parts/search-filters.php:111
 msgid "ORDER BY"
 msgstr ""
 
@@ -446,42 +447,8 @@ msgstr ""
 msgid "Author: %s"
 msgstr ""
 
-#: dist/blocks/banner-with-image/editor.js:2
-#: dist/blocks/card-header/editor.js:2
-#: library/blocks/shared/SelectImage.js:15
-#: dist/blocks/banner-with-image/editor.js:79
-#: dist/blocks/card-header/editor.js:66
-msgid "Change image"
-msgstr ""
-
-#: dist/blocks/banner-with-image/editor.js:2
-#: dist/blocks/card-header/editor.js:2
-#: library/blocks/shared/SelectImage.js:18
-#: dist/blocks/banner-with-image/editor.js:82
-#: dist/blocks/card-header/editor.js:69
-msgid "Remove image"
-msgstr ""
-
-#: dist/blocks/banner-with-image/editor.js:2
-#: dist/blocks/card-header/editor.js:2
-#: library/blocks/shared/SelectImage.js:24
-#: dist/blocks/banner-with-image/editor.js:88
-#: dist/blocks/card-header/editor.js:75
-msgid "Select image"
-msgstr ""
-
-#: dist/blocks/banner-with-image/editor.js:2
-#: dist/blocks/card-header/editor.js:2
-#: library/blocks/banner-with-image/editor.js:28
-#: library/blocks/shared/SelectImage.js:32
-#: dist/blocks/banner-with-image/editor.js:96
-#: dist/blocks/banner-with-image/editor.js:145
-#: dist/blocks/card-header/editor.js:83
-msgid "Image"
-msgstr ""
-
-#: dist/blocks/banner-with-image/editor.js:2
-#: dist/blocks/card-header/editor.js:2
+#: dist/blocks/banner-with-image/editor.js:29
+#: dist/blocks/card-header/editor.js:19
 #: library/blocks/banner-with-image/editor.js:11
 #: library/blocks/card-header/editor.js:11
 #: dist/blocks/banner-with-image/editor.js:128
@@ -489,10 +456,10 @@ msgstr ""
 msgid "Header content"
 msgstr ""
 
-#: dist/blocks/banner-with-image/editor.js:2
-#: dist/blocks/card-header/editor.js:2
-#: dist/blocks/posts-grid/editor.js:2
-#: dist/blocks/stories-mosaic/editor.js:2
+#: dist/blocks/banner-with-image/editor.js:29
+#: dist/blocks/card-header/editor.js:19
+#: dist/blocks/posts-grid/editor.js:19
+#: dist/blocks/stories-mosaic/editor.js:96
 #: library/blocks/banner-with-image/editor.js:25
 #: library/blocks/card-header/editor.js:38
 #: library/blocks/posts-grid/editor.js:22
@@ -516,20 +483,152 @@ msgstr ""
 msgid "Layout"
 msgstr ""
 
-#: dist/blocks/card-body/editor.js:2
+#: dist/blocks/banner-with-image/editor.js:29
+#: dist/blocks/banner-with-image/editor.js:39
+#: dist/blocks/card-header/editor.js:29
+#: library/blocks/banner-with-image/editor.js:28
+#: library/blocks/shared/SelectImage.js:32
+#: dist/blocks/banner-with-image/editor.js:96
+#: dist/blocks/banner-with-image/editor.js:145
+#: dist/blocks/card-header/editor.js:83
+msgid "Image"
+msgstr ""
+
+#: dist/blocks/banner-with-image/editor.js:39
+#: dist/blocks/card-header/editor.js:29
+#: library/blocks/shared/SelectImage.js:15
+#: dist/blocks/banner-with-image/editor.js:79
+#: dist/blocks/card-header/editor.js:66
+msgid "Change image"
+msgstr ""
+
+#: dist/blocks/banner-with-image/editor.js:39
+#: dist/blocks/card-header/editor.js:29
+#: library/blocks/shared/SelectImage.js:18
+#: dist/blocks/banner-with-image/editor.js:82
+#: dist/blocks/card-header/editor.js:69
+msgid "Remove image"
+msgstr ""
+
+#: dist/blocks/banner-with-image/editor.js:39
+#: dist/blocks/card-header/editor.js:29
+#: library/blocks/shared/SelectImage.js:24
+#: dist/blocks/banner-with-image/editor.js:88
+#: dist/blocks/card-header/editor.js:75
+msgid "Select image"
+msgstr ""
+
+#: dist/blocks/card-body/editor.js:19
 #: library/blocks/card-body/editor.js:8
 #: dist/blocks/card-body/editor.js:58
 msgid "Body content"
 msgstr ""
 
-#: dist/blocks/card-header/editor.js:2
+#: dist/blocks/card-header/editor.js:19
 #: library/blocks/card-header/editor.js:41
 #: dist/blocks/card-header/editor.js:145
 msgid "Background image"
 msgstr ""
 
-#: dist/blocks/posts-grid/editor.js:2
-#: dist/blocks/stories-mosaic/editor.js:2
+#: dist/blocks/posts-grid/editor.js:19
+#: library/blocks/posts-grid/editor.js:39
+#: dist/blocks/posts-grid/editor.js:1843
+msgid "Grid columns"
+msgstr ""
+
+#: dist/blocks/posts-grid/editor.js:19
+#: library/blocks/posts-grid/editor.js:48
+#: dist/blocks/posts-grid/editor.js:1852
+msgid "Grid rows"
+msgstr ""
+
+#: dist/blocks/posts-grid/editor.js:19
+#: library/blocks/posts-grid/editor.js:57
+#: dist/blocks/posts-grid/editor.js:1861
+msgid "Grid gap"
+msgstr ""
+
+#: dist/blocks/posts-grid/editor.js:19
+#: library/blocks/posts-grid/editor.js:65
+#: dist/blocks/posts-grid/editor.js:1869
+msgid "Hide author"
+msgstr ""
+
+#: dist/blocks/posts-grid/editor.js:19
+#: library/blocks/posts-grid/editor.js:73
+#: dist/blocks/posts-grid/editor.js:1877
+msgid "Hide categories"
+msgstr ""
+
+#: dist/blocks/posts-grid/editor.js:19
+#: library/blocks/posts-grid/editor.js:81
+#: dist/blocks/posts-grid/editor.js:1885
+msgid "Hide date"
+msgstr ""
+
+#: dist/blocks/posts-grid/editor.js:19
+#: library/blocks/posts-grid/editor.js:89
+#: dist/blocks/posts-grid/editor.js:1893
+msgid "Hide excerpt"
+msgstr ""
+
+#: dist/blocks/posts-grid/editor.js:30
+#: dist/blocks/stories-mosaic/editor.js:19
+#: library/blocks/shared/QueryPanel.js:11
+#: library/blocks/v2/build/latest-horizontal-posts/index.js:557
+#: library/blocks/v2/build/latest-vertical-posts/index.js:623
+#: library/blocks/v2/src/latest-horizontal-posts/edit.js:268
+#: library/blocks/v2/src/latest-vertical-posts/edit.js:355
+#: dist/blocks/posts-grid/editor.js:1498
+#: dist/blocks/stories-mosaic/editor.js:1444
+#: library/blocks/v2/build/latest-horizontal-posts/index.js:460
+#: library/blocks/v2/build/latest-vertical-posts/index.js:547
+msgid "Query"
+msgstr ""
+
+#: dist/blocks/posts-grid/editor.js:30
+#: dist/blocks/stories-mosaic/editor.js:19
+#: library/blocks/shared/QueryPanel.js:35
+#: dist/blocks/posts-grid/editor.js:1522
+#: dist/blocks/stories-mosaic/editor.js:1468
+msgid "Show children posts?"
+msgstr ""
+
+#: dist/blocks/posts-grid/editor.js:30
+#: dist/blocks/stories-mosaic/editor.js:19
+#: library/blocks/shared/QueryPanel.js:79
+#: library/blocks/v2/build/latest-horizontal-posts/index.js:713
+#: library/blocks/v2/build/latest-vertical-posts/index.js:730
+#: library/blocks/v2/src/latest-horizontal-posts/edit.js:489
+#: library/blocks/v2/src/latest-vertical-posts/edit.js:513
+#: dist/blocks/posts-grid/editor.js:1566
+#: dist/blocks/stories-mosaic/editor.js:1512
+#: library/blocks/v2/build/latest-horizontal-posts/index.js:681
+#: library/blocks/v2/build/latest-vertical-posts/index.js:705
+msgid "Filter posts to not display"
+msgstr ""
+
+#: dist/blocks/posts-grid/editor.js:41
+#: library/blocks/shared/SelectCardModel.js:21
+#: dist/blocks/posts-grid/editor.js:1630
+msgid "Card model"
+msgstr ""
+
+#: dist/blocks/posts-grid/editor.js:41
+#: library/blocks/shared/SelectCardModel.js:26
+#: dist/blocks/posts-grid/editor.js:1635
+msgctxt "card"
+msgid "Default model"
+msgstr ""
+
+#: dist/blocks/posts-grid/editor.js:52
+#: library/blocks/shared/SelectCardModifier.js:29
+#: dist/blocks/posts-grid/editor.js:1676
+msgid "Card modifier"
+msgstr ""
+
+#: dist/blocks/posts-grid/editor.js:63
+#: dist/blocks/stories-mosaic/editor.js:30
 #: library/blocks/shared/SelectCompare.js:5
 #: library/blocks/v2/build/latest-horizontal-posts/index.js:666
 #: library/blocks/v2/build/latest-horizontal-posts/index.js:733
@@ -548,8 +647,8 @@ msgstr ""
 msgid "OR"
 msgstr ""
 
-#: dist/blocks/posts-grid/editor.js:2
-#: dist/blocks/stories-mosaic/editor.js:2
+#: dist/blocks/posts-grid/editor.js:63
+#: dist/blocks/stories-mosaic/editor.js:30
 #: library/blocks/shared/SelectCompare.js:6
 #: library/blocks/v2/build/latest-horizontal-posts/index.js:669
 #: library/blocks/v2/build/latest-horizontal-posts/index.js:736
@@ -568,8 +667,8 @@ msgstr ""
 msgid "AND"
 msgstr ""
 
-#: dist/blocks/posts-grid/editor.js:2
-#: dist/blocks/stories-mosaic/editor.js:2
+#: dist/blocks/posts-grid/editor.js:63
+#: dist/blocks/stories-mosaic/editor.js:30
 #: library/blocks/shared/SelectCompare.js:9
 #: library/blocks/v2/build/latest-horizontal-posts/index.js:663
 #: library/blocks/v2/build/latest-horizontal-posts/index.js:730
@@ -588,198 +687,101 @@ msgstr ""
 msgid "Compare terms"
 msgstr ""
 
-#: dist/blocks/posts-grid/editor.js:2
-#: dist/blocks/stories-mosaic/editor.js:2
+#: dist/blocks/posts-grid/editor.js:74
+#: dist/blocks/stories-mosaic/editor.js:41
 #: library/blocks/shared/SelectPostType.js:21
 #: dist/blocks/posts-grid/editor.js:1377
 #: dist/blocks/stories-mosaic/editor.js:1324
 msgid "Post type"
 msgstr ""
 
-#: dist/blocks/posts-grid/editor.js:2
-#: dist/blocks/stories-mosaic/editor.js:2
+#: dist/blocks/posts-grid/editor.js:74
+#: dist/blocks/stories-mosaic/editor.js:41
 #: library/blocks/shared/SelectPostType.js:26
 #: dist/blocks/posts-grid/editor.js:1382
 #: dist/blocks/stories-mosaic/editor.js:1329
 msgid "No post type"
 msgstr ""
 
-#: dist/blocks/posts-grid/editor.js:2
-#: dist/blocks/stories-mosaic/editor.js:2
-#: library/blocks/shared/SelectTaxonomy.js:21
-#: dist/blocks/posts-grid/editor.js:1415
-#: dist/blocks/stories-mosaic/editor.js:1362
-msgid "Taxonomy"
-msgstr ""
-
-#: dist/blocks/posts-grid/editor.js:2
-#: dist/blocks/stories-mosaic/editor.js:2
-#: library/blocks/shared/SelectTaxonomy.js:26
-#: dist/blocks/posts-grid/editor.js:1420
-#: dist/blocks/stories-mosaic/editor.js:1367
-msgid "No taxonomy"
-msgstr ""
-
-#: dist/blocks/posts-grid/editor.js:2
-#: dist/blocks/stories-mosaic/editor.js:2
-#: library/blocks/shared/SelectTerms.js:9
-#: dist/blocks/posts-grid/editor.js:1442
-#: dist/blocks/stories-mosaic/editor.js:1388
-msgid "Terms"
-msgstr ""
-
-#: dist/blocks/posts-grid/editor.js:2
-#: dist/blocks/stories-mosaic/editor.js:2
-#: library/blocks/shared/QueryPanel.js:11
-#: library/blocks/v2/build/latest-horizontal-posts/index.js:557
-#: library/blocks/v2/build/latest-vertical-posts/index.js:623
-#: library/blocks/v2/src/latest-horizontal-posts/edit.js:268
-#: library/blocks/v2/src/latest-vertical-posts/edit.js:355
-#: dist/blocks/posts-grid/editor.js:1498
-#: dist/blocks/stories-mosaic/editor.js:1444
-#: library/blocks/v2/build/latest-horizontal-posts/index.js:460
-#: library/blocks/v2/build/latest-vertical-posts/index.js:547
-msgid "Query"
-msgstr ""
-
-#: dist/blocks/posts-grid/editor.js:2
-#: dist/blocks/stories-mosaic/editor.js:2
-#: library/blocks/shared/QueryPanel.js:35
-#: dist/blocks/posts-grid/editor.js:1522
-#: dist/blocks/stories-mosaic/editor.js:1468
-msgid "Show children posts?"
-msgstr ""
-
-#: dist/blocks/posts-grid/editor.js:2
-#: dist/blocks/stories-mosaic/editor.js:2
-#: library/blocks/shared/QueryPanel.js:79
-#: library/blocks/v2/build/latest-horizontal-posts/index.js:713
-#: library/blocks/v2/build/latest-vertical-posts/index.js:730
-#: library/blocks/v2/src/latest-horizontal-posts/edit.js:489
-#: library/blocks/v2/src/latest-vertical-posts/edit.js:513
-#: dist/blocks/posts-grid/editor.js:1566
-#: dist/blocks/stories-mosaic/editor.js:1512
-#: library/blocks/v2/build/latest-horizontal-posts/index.js:681
-#: library/blocks/v2/build/latest-vertical-posts/index.js:705
-msgid "Filter posts to not display"
-msgstr ""
-
-#: dist/blocks/posts-grid/editor.js:2
-#: library/blocks/shared/SelectCardModel.js:21
-#: dist/blocks/posts-grid/editor.js:1630
-msgid "Card model"
-msgstr ""
-
-#: dist/blocks/posts-grid/editor.js:2
-#: library/blocks/shared/SelectCardModel.js:26
-#: dist/blocks/posts-grid/editor.js:1635
-msgctxt "card"
-msgid "Default model"
-msgstr ""
-
-#: dist/blocks/posts-grid/editor.js:2
-#: library/blocks/shared/SelectCardModifier.js:29
-#: dist/blocks/posts-grid/editor.js:1676
-msgid "Card modifier"
-msgstr ""
-
-#: dist/blocks/posts-grid/editor.js:2
+#: dist/blocks/posts-grid/editor.js:85
 #: library/blocks/shared/SelectSize.js:7
 #: dist/blocks/posts-grid/editor.js:1739
 msgctxt "size"
 msgid "Large"
 msgstr ""
 
-#: dist/blocks/posts-grid/editor.js:2
+#: dist/blocks/posts-grid/editor.js:85
 #: library/blocks/shared/SelectSize.js:8
 #: dist/blocks/posts-grid/editor.js:1740
 msgctxt "size"
 msgid "Medium"
 msgstr ""
 
-#: dist/blocks/posts-grid/editor.js:2
+#: dist/blocks/posts-grid/editor.js:85
 #: library/blocks/shared/SelectSize.js:9
 #: dist/blocks/posts-grid/editor.js:1741
 msgctxt "size"
 msgid "Small"
 msgstr ""
 
-#: dist/blocks/posts-grid/editor.js:2
+#: dist/blocks/posts-grid/editor.js:85
 #: library/blocks/shared/SelectSize.js:10
 #: dist/blocks/posts-grid/editor.js:1742
 msgctxt "size"
 msgid "Extra Large"
 msgstr ""
 
-#: dist/blocks/posts-grid/editor.js:2
+#: dist/blocks/posts-grid/editor.js:85
 #: library/blocks/shared/SelectSize.js:11
 #: dist/blocks/posts-grid/editor.js:1743
 msgctxt "size"
 msgid "Extra Small"
 msgstr ""
 
-#: dist/blocks/posts-grid/editor.js:2
+#: dist/blocks/posts-grid/editor.js:85
 #: library/blocks/shared/SelectSize.js:59
 #: dist/blocks/posts-grid/editor.js:1791
 msgid "Size"
 msgstr ""
 
-#: dist/blocks/posts-grid/editor.js:2
-#: library/blocks/posts-grid/editor.js:39
-#: dist/blocks/posts-grid/editor.js:1843
-msgid "Grid columns"
+#: dist/blocks/posts-grid/editor.js:96
+#: dist/blocks/stories-mosaic/editor.js:52
+#: library/blocks/shared/SelectTaxonomy.js:21
+#: dist/blocks/posts-grid/editor.js:1415
+#: dist/blocks/stories-mosaic/editor.js:1362
+msgid "Taxonomy"
 msgstr ""
 
-#: dist/blocks/posts-grid/editor.js:2
-#: library/blocks/posts-grid/editor.js:48
-#: dist/blocks/posts-grid/editor.js:1852
-msgid "Grid rows"
+#: dist/blocks/posts-grid/editor.js:96
+#: dist/blocks/stories-mosaic/editor.js:52
+#: library/blocks/shared/SelectTaxonomy.js:26
+#: dist/blocks/posts-grid/editor.js:1420
+#: dist/blocks/stories-mosaic/editor.js:1367
+msgid "No taxonomy"
 msgstr ""
 
-#: dist/blocks/posts-grid/editor.js:2
-#: library/blocks/posts-grid/editor.js:57
-#: dist/blocks/posts-grid/editor.js:1861
-msgid "Grid gap"
+#: dist/blocks/posts-grid/editor.js:107
+#: dist/blocks/stories-mosaic/editor.js:63
+#: library/blocks/shared/SelectTerms.js:9
+#: dist/blocks/posts-grid/editor.js:1442
+#: dist/blocks/stories-mosaic/editor.js:1388
+msgid "Terms"
 msgstr ""
 
-#: dist/blocks/posts-grid/editor.js:2
-#: library/blocks/posts-grid/editor.js:65
-#: dist/blocks/posts-grid/editor.js:1869
-msgid "Hide author"
-msgstr ""
-
-#: dist/blocks/posts-grid/editor.js:2
-#: library/blocks/posts-grid/editor.js:73
-#: dist/blocks/posts-grid/editor.js:1877
-msgid "Hide categories"
-msgstr ""
-
-#: dist/blocks/posts-grid/editor.js:2
-#: library/blocks/posts-grid/editor.js:81
-#: dist/blocks/posts-grid/editor.js:1885
-msgid "Hide date"
-msgstr ""
-
-#: dist/blocks/posts-grid/editor.js:2
-#: library/blocks/posts-grid/editor.js:89
-#: dist/blocks/posts-grid/editor.js:1893
-msgid "Hide excerpt"
-msgstr ""
-
-#: dist/blocks/read-more/editor.js:2
+#: dist/blocks/read-more/editor.js:19
 #: library/blocks/read-more/editor.js:14
 #: dist/blocks/read-more/editor.js:66
 msgid "Full text"
 msgstr ""
 
-#: dist/blocks/read-more/editor.js:2
+#: dist/blocks/read-more/editor.js:19
 #: library/blocks/read-more/editor.js:34
 #: dist/blocks/read-more/editor.js:86
 msgid "Lines shown"
 msgstr ""
 
-#: dist/blocks/read-more/editor.js:2
-#: dist/blocks/read-more/index.js:1
+#: dist/blocks/read-more/editor.js:19
+#: dist/blocks/read-more/index.js:19
 #: library/blocks/read-more/editor.js:53
 #: library/blocks/read-more/index.js:15
 #: dist/blocks/read-more/editor.js:105
@@ -787,8 +789,8 @@ msgstr ""
 msgid "Read less"
 msgstr ""
 
-#: dist/blocks/read-more/editor.js:2
-#: dist/blocks/read-more/index.js:1
+#: dist/blocks/read-more/editor.js:19
+#: dist/blocks/read-more/index.js:19
 #: library/blocks/read-more/editor.js:53
 #: library/blocks/read-more/editor.js:71
 #: library/blocks/read-more/index.js:12
@@ -798,7 +800,7 @@ msgstr ""
 msgid "Read more"
 msgstr ""
 
-#: dist/blocks/stories-mosaic/editor.js:2
+#: dist/blocks/stories-mosaic/editor.js:96
 #: library/blocks/stories-mosaic/editor.js:64
 #: library/blocks/v2/build/events-from-mapas-culturais/index.js:77
 #: library/blocks/v2/build/latest-horizontal-posts/index.js:489
@@ -816,7 +818,7 @@ msgstr ""
 msgid "Heading"
 msgstr ""
 
-#: dist/blocks/stories-mosaic/editor.js:2
+#: dist/blocks/stories-mosaic/editor.js:96
 #: library/blocks/stories-mosaic/editor.js:67
 #: library/blocks/v2/build/events-from-mapas-culturais/index.js:80
 #: library/blocks/v2/build/latest-horizontal-posts/index.js:492
@@ -834,7 +836,7 @@ msgstr ""
 msgid "The block title. Leave blank to not display"
 msgstr ""
 
-#: dist/blocks/stories-mosaic/editor.js:2
+#: dist/blocks/stories-mosaic/editor.js:96
 #: library/blocks/stories-mosaic/editor.js:80
 #: library/blocks/v2/build/latest-horizontal-posts/index.js:575
 #: library/blocks/v2/build/latest-horizontal-posts/index.js:677
@@ -855,7 +857,7 @@ msgstr ""
 msgid "Total number of posts to display"
 msgstr ""
 
-#: dist/js/functionalities/gutenberg.js:2
+#: dist/js/functionalities/gutenberg.js:29
 #: dist/js/functionalities/gutenberg.js:2510
 msgid "Iconify ID"
 msgstr ""
