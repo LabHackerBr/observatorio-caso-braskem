@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Template part para exibir os filtros da página de busca
  */
@@ -74,12 +75,25 @@ if (isset($_GET['order']) && in_array(strtoupper($_GET['order']), ['ASC', 'DESC'
             <ul class="custom-dropdown-options" role="listbox" style="display: none;">
                 <?php
                 $label_todos = __('ALL', 'hacklabr');
-                echo '<li role="option" data-value="" data-label="' . esc_attr(strtoupper($label_todos)) . '" class="' . ($current_filter_val === '' ? 'selected' : '') . '">' . esc_html(strtoupper($label_todos)) . '</li>';
-
+                ?>
+                <li class="<?= ($current_filter_val === '' ? 'selected' : '') ?>">
+                    <a href="javascript:void(0);" tabindex="0" role="option" data-value="" data-label=" <?= esc_attr(strtoupper($label_todos)) ?> ">
+                        <?= esc_html(strtoupper($label_todos)) ?>
+                    </a>
+                </li>
+                <?php
                 foreach ($all_categories as $category) {
                     $option_value = 'category:' . esc_attr($category->slug);
                     $option_label = esc_html(strtoupper($category->name));
-                    echo '<li role="option" data-value="' . $option_value . '" data-label="' . $option_label . '" class="' . ($current_filter_val === $option_value ? 'selected' : '') . '">' . $option_label . '</li>';
+                ?>
+
+                    <li class="<?= ($current_filter_val === $option_value ? 'selected' : '') ?>">
+                        <a href="javascript:void(0);" tabindex="0" role="option" data-value="<?= $option_value ?>" data-label="<?= $option_label ?>">
+                            <?= $option_label ?>
+                        </a>
+                    </li>
+                <?php
+
                 }
                 ?>
             </ul>
@@ -87,19 +101,31 @@ if (isset($_GET['order']) && in_array(strtoupper($_GET['order']), ['ASC', 'DESC'
         </div>
 
         <div class="filter-control search-filters__organize-by custom-dropdown-wrapper organize-by-wrapper">
-             <button type="button" class="custom-dropdown-trigger" data-placeholder="<?php echo esc_attr(__('ORDER BY', 'hacklabr')); ?>" aria-haspopup="listbox" aria-expanded="false">
+            <button type="button" class="custom-dropdown-trigger" data-placeholder="<?php echo esc_attr(__('ORDER BY', 'hacklabr')); ?>" aria-haspopup="listbox" aria-expanded="false">
                 <span class="custom-dropdown-icon organize-icon"></span>
                 <span class="custom-dropdown-label"><?php echo esc_html(strtoupper($current_orderby_button_label)); ?></span>
                 <span class="custom-dropdown-arrow"></span>
             </button>
             <ul class="custom-dropdown-options" role="listbox" style="display: none;">
                 <?php
-                 $label_relevance = __('ORDER BY', 'hacklabr');
-                 echo '<li role="option" data-value="relevance" data-label="' . esc_attr(strtoupper($label_relevance)) . '" class="' . ($current_orderby_get === 'relevance' ? 'selected' : '') . '">' . esc_html(strtoupper($label_relevance)) . '</li>';
+                $label_relevance = __('ORDER BY', 'hacklabr');
+                ?>
+                <li class="<?= ($current_orderby_get === 'relevance' ? 'selected' : '') ?>">
+                    <a href="javascript:void(0);" tabindex="0" role="option" data-value="relevance" data-label=" <?= esc_attr(strtoupper($label_relevance)) ?> ">
+                        <?= esc_html(strtoupper($label_relevance)) ?>
+                    </a>
+                </li>
+                <?php
 
                 foreach ($orderby_options_from_user as $value => $label) {
                     $option_label = esc_html(strtoupper($label));
-                    echo '<li role="option" data-value="' . esc_attr($value) . '" data-label="' . $option_label . '" class="' . ($current_orderby_get === $value ? 'selected' : '') . '">' . $option_label . '</li>';
+                ?>
+                <li class="<?= ($current_orderby_get === $value ? 'selected' : '') ?>">
+                    <a href="javascript:void(0);" tabindex="0" role="option" data-value="esc_attr($value)" data-label=" <?= $option_label ?> ">
+                        <?= $option_label ?>
+                    </a>
+                </li>
+                <?php
                 }
                 ?>
             </ul>

@@ -34,37 +34,38 @@ document.addEventListener('DOMContentLoaded', function() {
             optionsList.style.display = isExpanded ? 'none' : 'block';
         });
 
-        optionsList.addEventListener('click', function(e) {
-            if (e.target.tagName === 'LI') {
-                const selectedLi = e.target;
-                const value = selectedLi.getAttribute('data-value');
-                const label = selectedLi.getAttribute('data-label') || selectedLi.textContent;
+        optionsList.querySelectorAll('li').forEach(selectedLi => {
+            selectedLi.querySelectorAll('a').forEach(selectedLink => {
+                const value = selectedLink.getAttribute('data-value');
+                const label = selectedLink.getAttribute('data-label') || selectedLink.textContent;
 
-                triggerLabelSpan.textContent = label;
-                mainHiddenInput.value = value;
+                selectedLink.addEventListener('click', function(e) {
+                    triggerLabelSpan.textContent = label;
+                    mainHiddenInput.value = value;
 
-                if (wrapperElement.classList.contains('search-filters__organize-by') && orderHiddenInput) {
-                    let newOrderValue = 'DESC';
-                    if (value.includes('_asc')) {
-                        newOrderValue = 'ASC';
-                    } else if (value.includes('_desc')) {
-                        newOrderValue = 'DESC';
-                    } else if (value === 'relevance') {
-                        newOrderValue = 'DESC';
+                    if (wrapperElement.classList.contains('search-filters__organize-by') && orderHiddenInput) {
+                        let newOrderValue = 'DESC';
+                        if (value.includes('_asc')) {
+                            newOrderValue = 'ASC';
+                        } else if (value.includes('_desc')) {
+                            newOrderValue = 'DESC';
+                        } else if (value === 'relevance') {
+                            newOrderValue = 'DESC';
+                        }
+                        orderHiddenInput.value = newOrderValue;
                     }
-                    orderHiddenInput.value = newOrderValue;
-                }
 
-                optionsList.querySelectorAll('li').forEach(li => li.classList.remove('selected'));
-                selectedLi.classList.add('selected');
+                    optionsList.querySelectorAll('li').forEach(li => li.classList.remove('selected'));
+                    selectedLi.classList.add('selected');
 
-                trigger.setAttribute('aria-expanded', 'false');
-                optionsList.style.display = 'none';
+                    trigger.setAttribute('aria-expanded', 'false');
+                    optionsList.style.display = 'none';
 
-                if (form) {
-                    form.submit();
-                }
-            }
+                    if (form) {
+                        form.submit();
+                    }
+                });
+            });
         });
     }
 
