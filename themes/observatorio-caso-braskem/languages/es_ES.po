@@ -5,8 +5,8 @@ msgstr ""
 "Project-Id-Version: hacklabr 0.10.8\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/observatorio-caso-"
 "braskem\n"
-"POT-Creation-Date: 2026-01-05T19:14:37+00:00\n"
-"PO-Revision-Date: 2026-01-05 16:18-0300\n"
+"POT-Creation-Date: 2026-01-07T20:48:25+00:00\n"
+"PO-Revision-Date: 2026-01-07 17:56-0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: es\n"
@@ -379,17 +379,17 @@ msgstr "Paternidad literaria"
 
 #: template-parts/filters-biblioteca.php:135
 msgid "Media type"
-msgstr ""
+msgstr "Tipo de medio"
 
 #: template-parts/filters-biblioteca.php:176
 #: template-parts/filters-biblioteca.php:265
 msgid "Instance"
-msgstr ""
+msgstr "Instancia"
 
 #: template-parts/filters-biblioteca.php:214
 #: template-parts/filters-biblioteca.php:266
 msgid "Class"
-msgstr ""
+msgstr "Classe"
 
 #: template-parts/filters-biblioteca.php:248
 msgid "Only documents related to the CPI"

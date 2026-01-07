@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/observatorio-caso-"
 "braskem\n"
-"POT-Creation-Date: 2026-01-05T19:14:37+00:00\n"
-"PO-Revision-Date: 2026-01-05 16:17-0300\n"
+"POT-Creation-Date: 2026-01-07T20:48:25+00:00\n"
+"PO-Revision-Date: 2026-01-07 17:51-0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: pt_BR\n"
@@ -384,12 +384,12 @@ msgstr "Tipo de mídia"
 #: template-parts/filters-biblioteca.php:176
 #: template-parts/filters-biblioteca.php:265
 msgid "Instance"
-msgstr ""
+msgstr "Instância"
 
 #: template-parts/filters-biblioteca.php:214
 #: template-parts/filters-biblioteca.php:266
 msgid "Class"
-msgstr ""
+msgstr "Classe"
 
 #: template-parts/filters-biblioteca.php:248
 msgid "Only documents related to the CPI"
