@@ -1,0 +1,244 @@
+.wp-block-accordion {
+    width: 100%;
+    gap: 0 !important;
+    margin-top: $margin--large;
+    margin-bottom: $margin--large;
+
+    .wp-block-accordion-item {
+        margin: 0 !important;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+
+        &:last-child {
+            border-bottom: none;
+        }
+    }
+
+    // HEADER / BOTAO DO ACCORDION
+    .wp-block-accordion-heading__toggle {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        min-height: 51px;
+        padding: 10px 24px;
+        background-color: var(--wp--preset--color--primary-dark);
+        border: none;
+        border-radius: 10px;
+        color: var(--wp--preset--color--high-pure);
+        cursor: pointer;
+        appearance: none;
+        position: relative;
+        z-index: 1;
+        transition: border-radius 0.3s ease;
+        margin: 0 !important;
+
+        &:focus {
+            outline: 2px solid var(--wp--preset--color--primary-light);
+            outline-offset: 2px;
+        }
+
+        span {
+            font-family: var(--wp--preset--font-family--heading);
+            font-size: 20px;
+            font-weight: $font-weight--bold;
+            line-height: 1.5;
+        }
+
+        .wp-block-accordion-heading__toggle-icon,
+        svg {
+            display: none;
+        }
+
+        &::after {
+            content: "";
+            flex-shrink: 0;
+            width: 12px;
+            height: 12px;
+            margin-left: $margin--medium;
+            border: solid currentColor;
+            border-width: 0 2px 2px 0;
+            transform: rotate(45deg);
+            transition: transform 0.3s ease;
+        }
+
+        &[aria-expanded="true"] {
+
+            &::after {
+                transform: rotate(-135deg);
+            }
+        }
+    }
+
+    // PAINEL DE CONTEUDO
+    .wp-block-accordion-panel {
+        display: block !important;
+        max-height: 0;
+        overflow: hidden;
+
+        transition: max-height 0.4s ease-in-out, padding 0.3s ease-in-out, opacity 0.3s ease-in-out;
+
+        background-color: var(--wp--preset--color--high-pure);
+        border-radius: 0 0 10px 10px;
+
+        padding-top: 0 !important;
+        padding-bottom: 0 !important;
+        padding-left: 28px;
+        padding-right: 40px;
+
+        // Bloqueia margens fantasmas do WordPress
+        margin: 0 !important;
+
+        opacity: 0;
+        visibility: hidden;
+
+        p,
+        li {
+            font-size: var(--wp--preset--font-size--large);
+            color: var(--wp--preset--color--low-dark);
+            line-height: 1.3;
+            font-weight: 300;
+        }
+
+        p {
+            margin-bottom: unset !important;
+
+            strong{
+                font-weight: $font-weight--bold;
+                color: var(--wp--preset--color--primary-dark);
+            }
+
+            // Adiciona um respiro entre os parágrafos soltos
+            &:not(:last-child) {
+                margin-bottom: 16px !important;
+            }
+
+            strong {
+                line-height: 1.2;
+                color: var(--wp--preset--color--primary-dark);
+            }
+        }
+
+        a {
+            color: var(--Primary-dark, #091D5A);
+            font-size: $font-size--medium;
+            font-weight: $font-weight--regular;
+            line-height: 1.3;
+            text-decoration-line: underline;
+            text-decoration-style: solid;
+            text-decoration-skip-ink: none;
+            text-decoration-thickness: auto;
+            text-underline-offset: auto;
+            text-underline-position: from-font;
+
+            &:hover {
+                opacity: 0.8;
+            }
+        }
+
+        .wp-block-list{
+            margin-bottom: 0 !important;
+            li{
+                font-weight: $font-weight--regular;
+                color: $color--low-pure !important;
+            }
+        }
+    }
+
+    // ESTADO ABERTO
+    .wp-block-accordion-item:has([aria-expanded="true"]) .wp-block-accordion-panel,
+    .wp-block-accordion-item.is-open .wp-block-accordion-panel {
+        max-height: 2000px;
+        padding: 32px 18px 24px 18px !important;
+        opacity: 1;
+        visibility: visible;
+
+        @include mobile{
+            max-height: 3500px;
+        }
+    }
+}
+
+
+.wp-block-accordion-panel{
+    .wp-block-table{
+        background-color: $color--high-dark;
+    }
+}
+
+/* Container: Permite scroll no mobile e trava no desktop */
+.wp-block-table.is-style-matriz-curricular {
+    width: 100%;
+    max-width: 770px;
+    margin: 0 auto 2rem auto;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+
+    @media (min-width: 992px) {
+        overflow: hidden;
+    }
+}
+
+/* Base da Tabela: Layout fixo no desktop, automático no mobile para scroll */
+.wp-block-table.is-style-matriz-curricular table {
+    width: 100%;
+    min-width: size(600); // Garante largura mínima para o scroll aparecer no mobile
+    border-collapse: collapse;
+    table-layout: auto;
+    background-color: #f6f5eb;
+    color: #4a4a4a;
+    white-space: nowrap; // Mantém as células em uma linha como no desktop
+
+    @media (min-width: 992px) {
+        min-width: 100%;
+        table-layout: fixed;
+        white-space: normal;
+    }
+}
+
+/* ========================================================
+   RESET DE BORDAS DO TEMA (Remove as linhas pretas grossas)
+   ======================================================== */
+.wp-block-table.is-style-matriz-curricular table,
+.wp-block-table.is-style-matriz-curricular thead,
+.wp-block-table.is-style-matriz-curricular tbody,
+.wp-block-table.is-style-matriz-curricular tfoot,
+.wp-block-table.is-style-matriz-curricular tr {
+    border: none !important;
+}
+
+/* Reset de Tipografia: Força a remoção de TODO negrito */
+.wp-block-table.is-style-matriz-curricular th,
+.wp-block-table.is-style-matriz-curricular td,
+.wp-block-table.is-style-matriz-curricular strong,
+.wp-block-table.is-style-matriz-curricular b {
+    font-weight: normal !important;
+}
+
+/* Bordas Consistentes Forçadas (!important previne sobreposição do tema) */
+.wp-block-table.is-style-matriz-curricular th,
+.wp-block-table.is-style-matriz-curricular td {
+    border: 1px solid #dfdcd0 !important;
+    padding: 12px 10px;
+    vertical-align: middle;
+    font-size: 13px;
+    line-height: 1.4;
+    word-break: normal;
+    overflow-wrap: break-word;
+}
+
+/* Alinhamento Global de Cabeçalhos */
+.wp-block-table.is-style-matriz-curricular thead th {
+    text-align: center;
+}
+
+/* Primeira Coluna: Alinhamento à esquerda */
+.wp-block-table.is-style-matriz-curricular th:first-child,
+.wp-block-table.is-style-matriz-curricular td:first-child {
+    text-align: left;
+}
+
+/* Colunas numéricas centralizadas rigorosamente */
+.wp-block-table.is-style-matriz-curricular tbody td:not(:first-child),
+.wp-block-table.is-style-matriz-curricular tfoot td:not(:first-child) {
+    text-align: center;
+}
