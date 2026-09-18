@@ -23,7 +23,7 @@ $categories = get_the_category();
             <?php if (has_post_thumbnail()): ?>
                 <?php the_post_thumbnail($image_size); ?>
             <?php else: ?>
-                <img src="<?= get_stylesheet_directory_uri() ?>/assets/images/placeholder.png" alt="imagem placeholder">
+                <img src="<?= get_stylesheet_directory_uri() ?>/assets/images/image-placeholder.png" alt="<?php esc_attr_e('Imagem indisponível', 'hacklabr'); ?>">
             <?php endif; ?>
         </a>
 

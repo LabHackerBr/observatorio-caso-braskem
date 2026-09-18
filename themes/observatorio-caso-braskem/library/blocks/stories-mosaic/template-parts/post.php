@@ -53,7 +53,7 @@ $title   = get_the_title( $post_id );
 
 					// Fallback de imagem default
 					if ( empty( $thumbnail_url ) ) {
-						$thumbnail_url = get_stylesheet_directory_uri() . '/assets/images/default-image.png';
+						$thumbnail_url = get_stylesheet_directory_uri() . '/assets/images/image-placeholder.png';
 					}
 
 					// Fallback do alt

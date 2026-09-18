@@ -6,7 +6,7 @@
                     <?php if ( has_post_thumbnail() ) : ?>
                         <?php the_post_thumbnail( 'medium_large' ); ?>
                     <?php else : ?>
-                        <img alt="imagem com fundo padrão cinza" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/default-image.png" alt="<?php the_title(); ?>">
+                        <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/image-placeholder.png" alt="<?php esc_attr_e('Imagem indisponível', 'hacklabr'); ?>">
                     <?php endif; ?>
                 </div><!-- /.aspect-ratio -->
             </a>
