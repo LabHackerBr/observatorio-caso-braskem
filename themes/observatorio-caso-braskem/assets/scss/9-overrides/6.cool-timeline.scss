@@ -19,6 +19,7 @@
         @include mobile{
             height: 500px !important;
             margin-inline: 0 !important;
+            margin-top: 3rem !important;
             width: 100% !important ;
         }
         .ctl-h-line{
@@ -42,6 +43,7 @@
         .ctl-icondot {
             position: absolute !important;
             top: 60% !important;
+            z-index: 10 !important;
             background-color: transparent !important;
             background: url('#{$path--assets}/images/icon-dot-tl.svg') !important;
             background-repeat: no-repeat !important;

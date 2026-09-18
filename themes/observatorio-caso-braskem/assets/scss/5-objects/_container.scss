@@ -17,8 +17,14 @@
     &:not(.container--wide) {
 
         .alignwide {
-
+            // Issue #74: breakout para a grade larga (75rem) apenas quando há
+            // espaço no viewport; entre 62rem e 75rem mantém 100% para não
+            // gerar overflow horizontal no range 782px-1232px
             @include desktop {
+                width: 100%;
+            }
+
+            @include desktop-large {
                 margin-inline-start: calc(#{math.div($grid--wide, -2)} + 50%);
                 width: $grid--wide;
             }
