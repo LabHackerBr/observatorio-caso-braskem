@@ -1,22 +1,44 @@
 window.addEventListener('load', () => {
     if (typeof Swiper === 'undefined') return;
 
-    document.querySelectorAll('.ctl-horizontal-wrapper').forEach((wrapper) => {
+    document.querySelectorAll('.cool-timeline-wrapper.ctl-horizontal-wrapper').forEach((wrapper) => {
         const container = wrapper.querySelector('.ctl-slider-container');
-        if (!container) return;
+        const swiper = container && container.swiper;
+        if (!swiper) return;
 
-        // destrói a instância do plugin (calculada com larguras erradas)
-        if (container.swiper) container.swiper.destroy(true, true);
+        // mantém tudo do plugin (autoHeight, line-filling, navegação, RTL);
+        // apenas troca o cálculo horizontal para respeitar a largura real do CSS
+        // (385px / 100%), corrigindo o corte dos últimos slides
+        swiper.params.breakpoints = {};
+        swiper.params.slidesPerView = 'auto';
+        swiper.update();
 
-        new Swiper(container, {
-            slidesPerView: 'auto',
-            slidesPerGroup: 1,
-            spaceBetween: 0,
-            watchOverflow: true,
-            navigation: {
-                nextEl: wrapper.querySelector('.ctl-button-next'),
-                prevEl: wrapper.querySelector('.ctl-button-prev'),
-            },
+        // replica o autoHeight customizado do plugin (altura do container = maior
+        // outerHeight(true) dos slides visíveis), que quebra com slidesPerView 'auto'
+        // (slice com NaN no código do plugin)
+        const applyHeight = () => {
+            const visible = (swiper.visibleSlides && swiper.visibleSlides.length)
+                ? swiper.visibleSlides
+                : Array.from(swiper.slides).slice(swiper.activeIndex, swiper.activeIndex + 2);
+
+            let height = 0;
+            visible.forEach((slide) => {
+                const styles = getComputedStyle(slide);
+                height = Math.max(height, slide.offsetHeight + parseFloat(styles.marginTop) + parseFloat(styles.marginBottom));
+            });
+
+            if (height > 0) {
+                container.style.height = height + 'px';
+            }
+        };
+
+        applyHeight();
+        swiper.on('slideChangeTransitionEnd', applyHeight);
+
+        let resizeTimer;
+        window.addEventListener('resize', () => {
+            clearTimeout(resizeTimer);
+            resizeTimer = setTimeout(applyHeight, 200);
         });
     });
 });
