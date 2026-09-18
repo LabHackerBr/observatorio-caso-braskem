@@ -391,9 +391,14 @@ class Assets {
                 'file' => 'webstories-slider.js',
                 'pre-load' => true,
                 'preload_callback' => function () {
-					return is_front_page();
-				}
-			],
+                    return is_front_page();
+                }
+            ],
+
+            'cool-timeline-slider' => [
+                'file' => 'cool-timeline-slider.js',
+                'global' => true,
+            ],
  		];
 
 		$js_files = apply_filters('js_files_before_output', $js_files);

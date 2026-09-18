@@ -17,6 +17,7 @@ $modifiers = implode(' ', $modifiers);
 $categories = get_the_category();
 ?>
 <article id="post-ID-<?php the_ID(); ?>" class="post-card <?=$modifiers?>">
+    <?php if ( ! is_post_type_archive('biblioteca') ) : ?>
     <header class="post-card__image">
         <a href="<?php the_permalink();?>" aria-label="<?= esc_attr(get_the_title()) ?>">
             <?php if (has_post_thumbnail()): ?>
@@ -35,19 +36,8 @@ $categories = get_the_category();
                 <?php endforeach; ?>
             </div>
         <?php endif; ?>
-
-        <?php if (is_post_type_archive('biblioteca') ): ?>
-        <div class="post-card-bilioteca__meta">
-
-            <?php if (!$hide_date): ?>
-            <time class="post-card__date">
-                <?php echo get_the_date(); ?>
-            </time>
-            <?php endif; ?>
-        </div>
-        <?php endif; ?>
-
     </header>
+    <?php endif; ?>
 
     <main class="post-card__content">
 
@@ -71,6 +61,9 @@ $categories = get_the_category();
                     <p class="post-card__excerpt">
                         <?php echo hacklabr_limit_text( get_the_excerpt(), 245 ); ?>
                     </p>
+                <?php endif; ?>
+                <?php if ( is_post_type_archive('biblioteca') && ! $hide_date ) : ?>
+                    <time class="post-card__date post-card__date--biblioteca"><?php echo get_the_date(); ?></time>
                 <?php endif; ?>
             <?php endif; ?>
         </div>

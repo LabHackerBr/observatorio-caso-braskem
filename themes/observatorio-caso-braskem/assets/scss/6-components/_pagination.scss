@@ -16,6 +16,15 @@
         border-radius: $border-radius--round;
         font-weight: $font-weight--bold;
         text-decoration: none;
+        align-items: center;
+        display: flex;
+        justify-content: center;
+
+        svg {
+            display: block;
+            height: 1em;
+            width: 1em;
+        }
     }
 
     &__number {
@@ -41,16 +50,11 @@
         &__previous,
         &__next {
             background-color: $color--high-pure;
-            iconify-icon{
+
+            svg {
                 color: $color--secondary-pure;
-                font-size: size(20);
-                svg{
-                    path{
-                        stroke{
-                            color: $color--secondary-pure;
-                        }
-                    }
-                }
+                height: size(20);
+                width: size(20);
             }
         }
 
