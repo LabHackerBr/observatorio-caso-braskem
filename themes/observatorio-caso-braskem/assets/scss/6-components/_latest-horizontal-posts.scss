@@ -132,7 +132,11 @@
 
         .latest-horizontal-posts-block__arrows, .latest-horizontal-posts-block__dots{
             width: 130% !important;
-            @include mobile{
+
+            // Issue #74: abaixo de ~50rem a coluna do footer pode quebrar para
+            // largura total; com o breakout de 130% as setas/dots saíam da
+            // tela e eram cortadas pelo overflow:hidden do bloco
+            @media (max-width: 50rem){
                 width: 100% !important;
             }
         }
