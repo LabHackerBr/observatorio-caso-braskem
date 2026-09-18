@@ -177,7 +177,7 @@ function get_posts_by_month( $args = [] ) {
                 $close_ul = true;
             endif;
 
-            $thumbnail = ( has_post_thumbnail( get_the_ID() ) ) ? get_the_post_thumbnail( get_the_ID() ) : '<img alt="imagem com fundo padrão cinza" src="' . get_stylesheet_directory_uri() . '/assets/images/image-placeholder.png">';
+            $thumbnail = ( has_post_thumbnail( get_the_ID() ) ) ? get_the_post_thumbnail( get_the_ID() ) : '<img alt="imagem com fundo padrão cinza" src="' . get_stylesheet_directory_uri() . '/assets/images/ocb-placeholder.png">';
 
             $content_slider .= sprintf(
                 '<li id="item-%1$s" class="item item-month-%2$s"><a href="%3$s"><div class="thumb">%4$s</div><div class="title"><h3>%5$s</h3></div></a></li>',
@@ -668,7 +668,7 @@ add_filter( 'render_block', function ( $block_content, $block ) {
 
     $placeholder = sprintf(
         '<img src="%s" alt="%s" class="wp-post-image" />',
-        esc_url( get_stylesheet_directory_uri() . '/assets/images/image-placeholder.png' ),
+        esc_url( get_stylesheet_directory_uri() . '/assets/images/ocb-placeholder.png' ),
         esc_attr__( 'Imagem indisponível', 'hacklabr' )
     );
 

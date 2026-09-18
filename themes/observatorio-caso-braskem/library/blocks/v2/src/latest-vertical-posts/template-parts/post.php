@@ -26,7 +26,7 @@ $show_date      = isset( $args['attributes']['showDate'] ) ? $args['attributes']
                         $thumbnail = get_the_post_thumbnail_url( $args['post']->ID, 'medium' );
                     }
 
-                    $thumbnail = $thumbnail ? $thumbnail : get_stylesheet_directory_uri() . "/assets/images/image-placeholder.png"; ?>
+                    $thumbnail = $thumbnail ? $thumbnail : get_stylesheet_directory_uri() . "/assets/images/ocb-placeholder.png"; ?>
 
                     <img src="<?php echo $thumbnail; ?>">
                 </div>

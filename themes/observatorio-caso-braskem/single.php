@@ -20,7 +20,7 @@ $excerpt = !empty( $post->post_excerpt ) ? wp_kses_post( $post->post_excerpt ) :
                 <?php if ( has_post_thumbnail() ) : ?>
                     <?= get_the_post_thumbnail(null, 'post-thumbnail',['class'=>'post-header__featured-image']); ?>
                 <?php else : ?>
-                    <img src="<?= get_stylesheet_directory_uri() ?>/assets/images/image-placeholder.png" alt="<?php esc_attr_e('Imagem indisponível', 'hacklabr'); ?>" class="post-header__featured-image">
+                    <img src="<?= get_stylesheet_directory_uri() ?>/assets/images/ocb-placeholder.png" alt="<?php esc_attr_e('Imagem indisponível', 'hacklabr'); ?>" class="post-header__featured-image">
                 <?php endif; ?>
             </div>
 
