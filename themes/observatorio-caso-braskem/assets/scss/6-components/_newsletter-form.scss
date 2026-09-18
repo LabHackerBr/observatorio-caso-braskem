@@ -31,8 +31,11 @@
     input[type="submit"]{
         height: 50px;
         width: 40%;
-        background-color: $color--secondary-dark;
-        color: $color--high-light;
+        // Issue #74: a seção da newsletter tem fundo vinho (#490806); verde
+        // escuro rendia ~1.9:1 (reprova WCAG 1.4.11). Combo acessível:
+        // fundo verde puro (6:1 vs vinho) + texto vinho escuro (6:1 vs verde)
+        background-color: $color--secondary-pure;
+        color: $color--primary-dark;
         font-family: $font-family--heading;
         text-transform: uppercase;
         font-weight: $font-weight--bold;
@@ -93,5 +96,13 @@ h2.newsletter-block-title{
         font-size: size(32) !important;
         font-weight: $font-weight--bold !important;
 
+    }
+}
+
+// Issue #74: na faixa tablet (782-1199px) o título empilha em largura total;
+// o padding-left inline (spacing--80) o deixava desalinhado do formulário
+@media (min-width: 782px) and (max-width: 1199px) {
+    .newsletter-block-title {
+        padding-left: 0 !important;
     }
 }

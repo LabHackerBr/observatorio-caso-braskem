@@ -31,8 +31,14 @@
 
     & .is-layout-constrained >.alignwide, .alignwide{
         max-width: $grid--wide;
-        width: 150%;
-		padding-inline: $padding--medium;
+        width: 100%;
+        padding-inline: $padding--medium;
+
+        // Issue #74: breakout de 150% apenas com espaço no viewport (>= 75rem),
+        // evita overflow horizontal entre 782px e 1232px
+        @include desktop-large{
+            width: 150%;
+        }
 
         @include mobile{
             width: 100%;
@@ -41,7 +47,7 @@
     }
 
     .alignwide{
-        @include desktop{
+        @include desktop-large{
             margin-inline-start: -25%;
             padding-inline: 0;
         }

@@ -127,10 +127,65 @@
 body.home {
     .grade {
         h2 {
-            color: $color--secondary-dark !important;
+            color: $color--secondary-pure !important;
             a {
-                color: $color--secondary-dark !important;
+                color: $color--secondary-pure !important;
             }
         }
     }
 }
+
+/*
+ * Issue #74: responsividade no range 782px-1232px
+ *****************************************************************************/
+
+// O core do WP força flex-wrap: nowrap acima de 782px; combinado com larguras
+// fixas de colunas (flex-basis inline), o conteúdo estourava o viewport até
+// ~1200px. Nesta faixa, permitimos a quebra de linha das colunas Gutenberg e
+// as empilhamos em largura total (mesmo comportamento do mobile <782px),
+// evitando colunas "meio-largas" ao envolver por causa do gap.
+@media (min-width: 782px) and (max-width: 1199px) {
+    .wp-block-columns:not(.is-not-stacked-on-mobile) {
+        flex-wrap: wrap !important;
+    }
+
+    .wp-block-columns:not(.is-not-stacked-on-mobile) > .wp-block-column {
+        flex-basis: 100% !important;
+    }
+}
+
+// Issue #74: exceção para blocos de colunas marcados com .column-mobile-reverse
+// (ex.: linha "COMPARTILHE SUA HISTÓRIA" x "Arraste para o lado" da home):
+// permanecem na mesma linha, ancorados nos cantos opostos
+@media (min-width: 782px) and (max-width: 1199px) {
+    .wp-block-columns.column-mobile-reverse:not(.is-not-stacked-on-mobile) {
+        flex-wrap: nowrap !important;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .wp-block-columns.column-mobile-reverse:not(.is-not-stacked-on-mobile) > .wp-block-column {
+        flex-basis: auto !important;
+        flex-grow: 0 !important;
+    }
+
+    // CTA ancorado à esquerda (o grupo de botões centraliza por padrão)
+    .wp-block-columns.column-mobile-reverse .wp-block-buttons {
+        justify-content: flex-start;
+    }
+
+    // o texto "arraste para o lado" fica contido e ancorado à direita
+    .wp-block-columns.column-mobile-reverse > .wp-block-column:last-child {
+        max-width: 45%;
+    }
+}
+
+/*
+ * Issue #74: contraste vinho x verde escuro (WCAG 1.4.11)
+ *****************************************************************************/
+
+// Os CTAs da home usavam verde escuro (#016738) sobre o fundo vinho (~1.9:1).
+// A correção das cores é feita NO CONTEÚDO dos blocos (classes de preset do
+// Gutenberg, editáveis via wp-admin): fundo verde puro (#21B574, 4.95:1 vs
+// vinho) + texto vinho escuro (#490806, 6:1 vs verde puro). Nada de override
+// CSS aqui — editor e frontend permanecem WYSIWYG.
