@@ -17,7 +17,11 @@ $excerpt = !empty( $post->post_excerpt ) ? wp_kses_post( $post->post_excerpt ) :
     <div class="single__content-overlay">
         <header class="post-header container">
             <div class="post-header__featured-image">
-                <?= get_the_post_thumbnail(null, 'post-thumbnail',['class'=>'post-header__featured-image']); ?>
+                <?php if ( has_post_thumbnail() ) : ?>
+                    <?= get_the_post_thumbnail(null, 'post-thumbnail',['class'=>'post-header__featured-image']); ?>
+                <?php else : ?>
+                    <img src="<?= get_stylesheet_directory_uri() ?>/assets/images/ocb-placeholder.png" alt="<?php esc_attr_e('Imagem indisponível', 'hacklabr'); ?>" class="post-header__featured-image">
+                <?php endif; ?>
             </div>
 
             <div class="post-header__tags">

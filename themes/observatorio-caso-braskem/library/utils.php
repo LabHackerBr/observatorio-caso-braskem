@@ -177,7 +177,7 @@ function get_posts_by_month( $args = [] ) {
                 $close_ul = true;
             endif;
 
-            $thumbnail = ( has_post_thumbnail( get_the_ID() ) ) ? get_the_post_thumbnail( get_the_ID() ) : '<img alt="imagem com fundo padrão cinza" src="' . get_stylesheet_directory_uri() . '/assets/images/default-image.png">';
+            $thumbnail = ( has_post_thumbnail( get_the_ID() ) ) ? get_the_post_thumbnail( get_the_ID() ) : '<img alt="imagem com fundo padrão cinza" src="' . get_stylesheet_directory_uri() . '/assets/images/ocb-placeholder.png">';
 
             $content_slider .= sprintf(
                 '<li id="item-%1$s" class="item item-month-%2$s"><a href="%3$s"><div class="thumb">%4$s</div><div class="title"><h3>%5$s</h3></div></a></li>',
@@ -642,3 +642,48 @@ add_action('template_redirect', function () {
         return $html;
     });
 }, 0);
+
+/**
+ * Adiciona um placeholder quando o bloco "Imagem destacada" (core/post-featured-image)
+ * do Gutenberg renderiza um post sem imagem de destaque.
+ *
+ * O callback do core retorna string vazia quando não há thumbnail, então aqui
+ * montamos o <figure> completo para herdar os estilos do bloco e do tema.
+ */
+add_filter( 'render_block', function ( $block_content, $block ) {
+    if ( 'core/post-featured-image' !== $block['blockName'] ) {
+        return $block_content;
+    }
+
+    // Já renderizou uma imagem (thumbnail ou primeira imagem do post).
+    if ( preg_match( '/<img/i', $block_content ) ) {
+        return $block_content;
+    }
+
+    $post_id = isset( $block['context']['postId'] ) ? (int) $block['context']['postId'] : get_the_ID();
+
+    if ( ! $post_id ) {
+        return $block_content;
+    }
+
+    $placeholder = sprintf(
+        '<img src="%s" alt="%s" class="wp-post-image" />',
+        esc_url( get_stylesheet_directory_uri() . '/assets/images/ocb-placeholder.png' ),
+        esc_attr__( 'Imagem indisponível', 'hacklabr' )
+    );
+
+    if ( ! empty( $block['attrs']['isLink'] ) ) {
+        $target = isset( $block['attrs']['linkTarget'] ) ? $block['attrs']['linkTarget'] : '_self';
+        $rel    = isset( $block['attrs']['rel'] ) ? ' rel="' . esc_attr( $block['attrs']['rel'] ) . '"' : '';
+
+        $placeholder = sprintf(
+            '<a href="%s" target="%s"%s>%s</a>',
+            esc_url( get_the_permalink( $post_id ) ),
+            esc_attr( $target ),
+            $rel,
+            $placeholder
+        );
+    }
+
+    return sprintf( '<figure class="wp-block-post-featured-image">%s</figure>', $placeholder );
+}, 10, 2 );
