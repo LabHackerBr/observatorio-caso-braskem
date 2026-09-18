@@ -304,3 +304,32 @@
     }
 }
 
+.authors-collectives{
+    .latest-horizontal-posts-block{
+        .latest-horizontal-posts-block__heading{
+            margin-top: 0;
+            margin-bottom: 3rem;
+        }
+        .latest-horizontal-posts-block__footer{
+            margin: 2rem auto 0;
+            display: initial !important;
+            @media (max-width: 48rem){
+                bottom: -10px;
+            }
+
+            .slick-prev{
+                margin-left: -2rem !important;
+                @media (max-width: 48rem){
+                    margin-left: 0 !important;
+                }
+            }
+            .slick-next{
+                margin-right: -2rem !important;
+                @media (max-width: 48rem){
+                    margin-right: 0 !important;
+                }
+            }
+        }
+    }
+}
+
