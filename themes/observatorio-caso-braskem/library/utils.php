@@ -384,6 +384,23 @@ function hacklabr_limit_text( $text, $limit = 200 ) {
     return $text;
 }
 
+//Setas SVG inline para a paginação (conteúdo real no DOM, compatível com overlays de acessibilidade)
+function hacklabr_pagination_arrow( $direction ) {
+    $paths = [
+        'previous' => 'm14 7l-5 5m0 0l5 5',
+        'next'     => 'm10 17l5-5m0 0l-5-5',
+    ];
+
+    $path  = $paths[ $direction ] ?? $paths['next'];
+    $label = ( 'previous' === $direction ) ? __( 'Página anterior', 'hacklabr' ) : __( 'Próxima página', 'hacklabr' );
+
+    return sprintf(
+        '<svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="%s"></path></svg><span class="sr-only">%s</span>',
+        esc_attr( $path ),
+        esc_html( $label )
+    );
+}
+
 function hacklab_corrige_aria_cooltimeline( $content ) {
     if ( strpos( $content, 'cool-timeline' ) === false && strpos( $content, 'ctl-title' ) === false ) {
         return $content;

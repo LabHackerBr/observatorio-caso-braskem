@@ -73,8 +73,8 @@
 
     <?php
     the_posts_pagination([
-        'prev_text' => __('<iconify-icon icon="iconamoon:arrow-left-2-bold"></iconify-icon>', 'hacklbr'),
-        'next_text' => __('<iconify-icon icon="iconamoon:arrow-right-2-bold"></iconify-icon>', 'hacklbr'),
+        'prev_text' => hacklabr_pagination_arrow( 'previous' ),
+        'next_text' => hacklabr_pagination_arrow( 'next' ),
     ]);
     ?>
 

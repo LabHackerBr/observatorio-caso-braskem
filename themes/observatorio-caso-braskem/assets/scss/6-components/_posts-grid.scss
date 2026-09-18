@@ -567,30 +567,21 @@
         .post-card--vertical{
             box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.15);
             padding: 1rem;
-            .post-card__image{
-                height: size(180);
-                @include mobile{
-                    height: size(160);
-                }
-                .post-card-bilioteca__meta{
-                    position: relative;
-                    color: $color--high-pure;
-                    right: 1rem;
-                    top: -2rem;
-                    z-index: 10;
-                    .post-card__date{
-                        display: flex;
-                        justify-content: flex-end;
-                    }
-                }
-            }
             .post-card__content{
                 min-height: size(240) !important;
                 justify-content: space-between !important;
+                margin-top: 0;
                 @include tablet{
                     min-height: auto !important;
 
                 }
+            }
+            .post-card__date--biblioteca{
+                color: #000;
+                display: block;
+                font-size: size(14);
+                margin-top: .5rem;
+                text-align: left;
             }
             .post-card__title{
                 font-size: size(16);
