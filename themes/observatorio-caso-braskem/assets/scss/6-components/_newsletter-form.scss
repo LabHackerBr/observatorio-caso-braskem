@@ -91,18 +91,17 @@
     }
 }
 h2.newsletter-block-title{
-    @include mobile{
+    @media(max-width: 1199px){
         padding-left: 0 !important;
         font-size: size(32) !important;
         font-weight: $font-weight--bold !important;
-
     }
 }
 
 // Issue #74: na faixa tablet (782-1199px) o título empilha em largura total;
 // o padding-left inline (spacing--80) o deixava desalinhado do formulário
-@media (min-width: 782px) and (max-width: 1199px) {
-    .newsletter-block-title {
-        padding-left: 0 !important;
-    }
-}
+// @media (min-width: 782px) and (max-width: 1199px) {
+//     .newsletter-block-title {
+//         padding-left: 0 !important;
+//     }
+// }
