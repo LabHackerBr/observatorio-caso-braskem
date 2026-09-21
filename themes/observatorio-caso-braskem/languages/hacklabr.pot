@@ -2,14 +2,14 @@
 # This file is distributed under the GNU General Public License v2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: observatorio-caso-braskem 0.16.3\n"
+"Project-Id-Version: observatorio-caso-braskem 0.16.11\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/observatorio-caso-braskem\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-01-07T20:48:25+00:00\n"
+"POT-Creation-Date: 2026-09-21T10:37:06+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.10.0\n"
 "X-Domain: hacklabr\n"
@@ -254,8 +254,23 @@ msgstr ""
 msgid "All news"
 msgstr ""
 
-#: library/utils.php:495
+#: library/utils.php:395
+msgid "Página anterior"
+msgstr ""
+
+#: library/utils.php:395
+msgid "Próxima página"
+msgstr ""
+
+#: library/utils.php:512
 msgid "Link"
+msgstr ""
+
+#: library/utils.php:672
+#: single.php:23
+#: template-parts/content/post.php:9
+#: template-parts/post-card.php:26
+msgid "Imagem indisponível"
 msgstr ""
 
 #. Template Name of the theme
@@ -287,7 +302,7 @@ msgid "In this Gallery:"
 msgstr ""
 
 #: single-biblioteca.php:73
-#: single.php:59
+#: single.php:63
 msgid "By "
 msgstr ""
 
@@ -415,7 +430,31 @@ msgstr ""
 msgid "Clear all filters"
 msgstr ""
 
-#: template-parts/post-card.php:112
+#: template-parts/post-card.php:64
+msgid "Video"
+msgstr ""
+
+#: template-parts/post-card.php:69
+msgid "Text"
+msgstr ""
+
+#: template-parts/post-card.php:74
+#: dist/blocks/banner-with-image/editor.js:29
+#: dist/blocks/banner-with-image/editor.js:39
+#: dist/blocks/card-header/editor.js:29
+#: library/blocks/banner-with-image/editor.js:28
+#: library/blocks/shared/SelectImage.js:32
+#: dist/blocks/banner-with-image/editor.js:96
+#: dist/blocks/banner-with-image/editor.js:145
+#: dist/blocks/card-header/editor.js:83
+msgid "Image"
+msgstr ""
+
+#: template-parts/post-card.php:80
+msgid "Audio"
+msgstr ""
+
+#: template-parts/post-card.php:137
 msgid "By"
 msgstr ""
 
@@ -481,17 +520,6 @@ msgstr ""
 #: library/blocks/v2/build/latest-vertical-posts/index.js:357
 #: library/blocks/v2/build/opportunities-from-mapas-culturais/index.js:55
 msgid "Layout"
-msgstr ""
-
-#: dist/blocks/banner-with-image/editor.js:29
-#: dist/blocks/banner-with-image/editor.js:39
-#: dist/blocks/card-header/editor.js:29
-#: library/blocks/banner-with-image/editor.js:28
-#: library/blocks/shared/SelectImage.js:32
-#: dist/blocks/banner-with-image/editor.js:96
-#: dist/blocks/banner-with-image/editor.js:145
-#: dist/blocks/card-header/editor.js:83
-msgid "Image"
 msgstr ""
 
 #: dist/blocks/banner-with-image/editor.js:39

@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/observatorio-caso-"
 "braskem\n"
-"POT-Creation-Date: 2026-01-07T20:48:25+00:00\n"
-"PO-Revision-Date: 2026-01-07 17:51-0300\n"
+"POT-Creation-Date: 2026-09-21T10:37:06+00:00\n"
+"PO-Revision-Date: 2026-09-21 07:39-0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: pt_BR\n"
@@ -256,8 +256,21 @@ msgstr "Nenhuma notícia encontrada na lixeira"
 msgid "All news"
 msgstr "Todas as notícias"
 
-#: library/utils.php:495
+#: library/utils.php:395
+msgid "Página anterior"
+msgstr ""
+
+#: library/utils.php:395
+msgid "Próxima página"
+msgstr ""
+
+#: library/utils.php:512
 msgid "Link"
+msgstr ""
+
+#: library/utils.php:672 single.php:23 template-parts/content/post.php:9
+#: template-parts/post-card.php:26
+msgid "Imagem indisponível"
 msgstr ""
 
 #. Template Name of the theme
@@ -288,7 +301,7 @@ msgstr "Neste vídeo:"
 msgid "In this Gallery:"
 msgstr "Nesta galeria:"
 
-#: single-biblioteca.php:73 single.php:59
+#: single-biblioteca.php:73 single.php:63
 msgid "By "
 msgstr "Por "
 
@@ -412,7 +425,30 @@ msgstr "Mídia"
 msgid "Clear all filters"
 msgstr "Limpar filtros"
 
-#: template-parts/post-card.php:112
+#: template-parts/post-card.php:64
+msgid "Video"
+msgstr "Vídeo"
+
+#: template-parts/post-card.php:69
+msgid "Text"
+msgstr "Texto"
+
+#: template-parts/post-card.php:74 dist/blocks/banner-with-image/editor.js:29
+#: dist/blocks/banner-with-image/editor.js:39
+#: dist/blocks/card-header/editor.js:29
+#: library/blocks/banner-with-image/editor.js:28
+#: library/blocks/shared/SelectImage.js:32
+#: dist/blocks/banner-with-image/editor.js:96
+#: dist/blocks/banner-with-image/editor.js:145
+#: dist/blocks/card-header/editor.js:83
+msgid "Image"
+msgstr "Imagem"
+
+#: template-parts/post-card.php:80
+msgid "Audio"
+msgstr "Áudio"
+
+#: template-parts/post-card.php:137
 msgid "By"
 msgstr "Por"
 
@@ -477,17 +513,6 @@ msgstr "Conteúdo do cabeçalho"
 #: library/blocks/v2/build/opportunities-from-mapas-culturais/index.js:55
 msgid "Layout"
 msgstr ""
-
-#: dist/blocks/banner-with-image/editor.js:29
-#: dist/blocks/banner-with-image/editor.js:39
-#: dist/blocks/card-header/editor.js:29
-#: library/blocks/banner-with-image/editor.js:28
-#: library/blocks/shared/SelectImage.js:32
-#: dist/blocks/banner-with-image/editor.js:96
-#: dist/blocks/banner-with-image/editor.js:145
-#: dist/blocks/card-header/editor.js:83
-msgid "Image"
-msgstr "Imagem"
 
 #: dist/blocks/banner-with-image/editor.js:39
 #: dist/blocks/card-header/editor.js:29 library/blocks/shared/SelectImage.js:15
