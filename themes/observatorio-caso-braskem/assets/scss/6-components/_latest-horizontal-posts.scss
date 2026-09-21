@@ -19,9 +19,10 @@
             li{
                 width: 10px;
                 height: 10px;
+                background-color: $color--low-light !important;
             }
             .slick-active{
-                background-color: $color--secondary-pure !important;
+                background-color: $color--secondary-dark !important;
             }
         }
 
@@ -136,7 +137,7 @@
             // Issue #74: abaixo de ~50rem a coluna do footer pode quebrar para
             // largura total; com o breakout de 130% as setas/dots saíam da
             // tela e eram cortadas pelo overflow:hidden do bloco
-            @media (max-width: 50rem){
+            @media (max-width: 1232px) {
                 width: 100% !important;
             }
         }
@@ -337,3 +338,16 @@
     }
 }
 
+
+// Contraste sobre fundo vinho (seção "quem faz" da home e covers escuros)
+.authors-collectives,
+.has-primary-dark-background-color,
+.has-primary-pure-background-color {
+    .latest-horizontal-posts-block {
+        color: $color--high-pure;
+
+        a:not(.wp-block-button__link) {
+            color: $color--high-pure;
+        }
+    }
+}
