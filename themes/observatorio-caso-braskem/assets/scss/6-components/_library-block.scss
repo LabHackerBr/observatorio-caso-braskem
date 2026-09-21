@@ -25,3 +25,28 @@
         }
     }
 }
+
+//bloco de biblioteca da home
+
+.library-block{
+
+    @include mobile{
+        .wp-block-button{
+            text-align: center;
+        }
+    }
+    .wp-block-query{
+        li:last-child{
+            .wp-block-separator{
+                display: none;
+            }
+        }
+        @include mobile{
+            margin-bottom: 1.5rem;
+            .wp-block-group{
+                padding-left: 0 !important;
+                padding-right: 0 !important;
+            }
+        }
+    }
+}
