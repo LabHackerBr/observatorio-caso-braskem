@@ -245,8 +245,9 @@
         gap: $gap--small;
         width: 100%;
         margin-bottom: 1.5rem;
-        max-width: size(477);
+        max-width: size(449);
         width: 100%;
+        margin-left: auto;
         @include mobile {
             margin-bottom: 2.5rem;
         }
@@ -274,6 +275,10 @@
             padding: 0;
             display: flex;
             cursor: pointer;
+            svg{
+                width: 20px;
+                height: auto;
+            }
         }
     }
     .archive-filters__selects{
