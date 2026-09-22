@@ -200,8 +200,8 @@
 }
 
 .archive-header-bibliioteca{
-    padding-top: 2rem;
-    padding-bottom: 2rem;
+    padding-top: 1rem;
+    padding-bottom: .5rem;
     background-color: $color--primary-pure;
     color: $color--high-pure;
     @include mobile{
@@ -244,9 +244,12 @@
         align-items: center;
         gap: $gap--small;
         width: 100%;
-        margin-bottom: 2.5rem;
+        margin-bottom: 1.5rem;
         max-width: size(477);
         width: 100%;
+        @include mobile {
+            margin-bottom: 2.5rem;
+        }
         input{
             flex: 1;
             min-width: 0;
