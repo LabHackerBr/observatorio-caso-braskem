@@ -1,4 +1,7 @@
 .maps-block{
+    @media (max-width: 1232px) {
+        padding-bottom: 2rem;
+    }
     .hacklabr-posts-grid-block{
         .post-card{
             &__image{
@@ -31,6 +34,9 @@
     }
 
     .more-button{
+        @media (max-width: 1232px) {
+            padding-top: 2rem;
+        }
         padding-left: $padding--large;
         @include mobile{
             padding-left: 0;

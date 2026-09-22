@@ -144,6 +144,11 @@
 }
 
 .page-cpi{
+    #app {
+        @media (max-width: 1232px){
+            padding-bottom: size(70);
+        }
+    }
     .post-content{
         margin-inline: initial;
         max-width: 100%;
@@ -196,8 +201,8 @@
 
     .ocb-pdf-btn{
         position: relative;
-        padding-left: 2.5rem;
-        top: size(-170);
+        padding-left: 2rem;
+        top: size(-144);
         width: fit-content;
         @include mobile{
             padding-left: 0;
@@ -221,6 +226,10 @@
         margin-bottom: 0;
         max-width: size(1170) !important;
         padding: 3rem 0 1rem;
+
+        @media (max-width: 1232px) {
+            padding: 0 0 1rem !important;
+        }
         .container{
             @include mobile{
                 flex-direction: column !important;
