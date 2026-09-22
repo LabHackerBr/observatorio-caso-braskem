@@ -40,6 +40,7 @@
         .social-menu {
             gap: $gap--medium;
             color: $color--primary-pure;
+            margin-top: .5rem;
 
             &__icon {
                 svg {
@@ -50,6 +51,16 @@
                         fill: currentColor;
                     }
                 }
+            }
+
+            .icon-instagram{
+                height: 18px;
+                width: 18px;
+            }
+
+            .icon-youtube{
+                position: relative;
+                top: 1px;
             }
         }
     }
