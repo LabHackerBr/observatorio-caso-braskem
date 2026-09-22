@@ -284,6 +284,10 @@
     .archive-filters__selects{
         display: flex;
         gap: $gap--large;
+
+        @media (max-width: 796px){
+            flex-wrap: wrap;
+        }
         @include mobile{
             flex-direction: column;
         }
