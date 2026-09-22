@@ -6,7 +6,16 @@
         <div class="post-thumbnail">
             <div class="post-thumbnail--image">
                 <?php if ( has_post_thumbnail() ) : ?>
-                    <?php echo get_the_post_thumbnail( $args['post']->ID, 'medium' ); ?>
+                    <?php
+                    // Força carregamento eager e pula o Jetpack Lazy Images: as imagens
+                    // deste bloco vivem em slides clonados pelo Slick (infinite mode), e o
+                    // placeholder do lazy load nao sofre swap nos clones, deixando a thumb
+                    // em branco nas posicoes 1 e ultima do slider.
+                    echo get_the_post_thumbnail( $args['post']->ID, 'medium', [
+                        'loading' => 'eager',
+                        'class'   => 'skip-lazy attachment-medium size-medium wp-post-image',
+                    ] );
+                    ?>
                 <?php else : ?>
                     <img src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/ocb-placeholder.png" alt="imagem padrão" height="600" width="800">
                 <?php endif; ?>
