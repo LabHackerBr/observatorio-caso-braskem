@@ -11,13 +11,15 @@
 }
 html {
     scroll-behavior: smooth;
+    overflow-x: clip;
 }
 
 body {
     font-family: $font-family--primary;
     line-height: $line-height--normal;
     -webkit-font-smoothing: antialiased;
-    overflow-x:  hidden;
+    overflow-x: hidden;
+    overflow-x: clip; // clip não cria scroll container, preservando position: sticky
 
     @include mobile {
         margin-top: 0;

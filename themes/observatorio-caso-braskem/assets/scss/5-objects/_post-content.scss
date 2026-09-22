@@ -148,6 +148,7 @@
         margin-inline: initial;
         max-width: 100%;
         margin-inline: auto;
+        padding-inline: $padding--medium;
         p:nth-of-type(1){
             font-size: size(20) !important;
             max-width: size(1170);
@@ -170,10 +171,10 @@
     .wp-block-group:nth-of-type(1),
     .wp-block-group:nth-of-type(2){
         margin-bottom: -5rem;
-        @media(max-width: 1199px){
-            padding-left: 1rem;
-            padding-right: 1rem;
-        }
+        // @media(max-width: 1199px){
+        //     padding-left: 1rem;
+        //     padding-right: 1rem;
+        // }
         @include mobile{
             max-height: size(605);
         }
@@ -290,10 +291,12 @@
                 li{
                     height: size(12) !important;
                     width: size(12) !important;
-                    background-color: $color--high-dark !important;
+                    background-color: $color--low-light !important;
+                    color: $color--high-pure;
                 }
                 .slick-active{
                     background-color: $color--secondary-dark !important;
+                    color: $color--high-pure;
                 }
             }
         }
@@ -408,6 +411,104 @@
         width: 90% !important;
         padding-left: 0 !important;
     }
+
+    // Faixa 360–1231px (issue #74): layout empilhado e centralizado para mobile
+    // e tablet. O __footer desktop fica aninhado dentro de __content (depois do
+    // heading); com display:contents no __content ele vira item flex do container
+    // e o order reposiciona heading -> cards -> dots/setas. O __footer.medium-only
+    // fica vazio (o slick anexa dots/setas no primeiro __dots/__arrows do DOM) e é
+    // ocultado. As regras abaixo também neutralizam os hacks de pixel do mobile
+    // antigo (top: 215px/-100px/-290px, max-height: 605px, width: 300px).
+    @media (min-width: 360px) and (max-width: 1231px) {
+        .wp-block-group:nth-of-type(1),
+        .wp-block-group:nth-of-type(2){
+            margin-bottom: 24px;
+            max-height: none !important;
+        }
+
+        .latest-horizontal-posts-block{
+            .container{
+                display: flex !important;
+                flex-direction: column !important;
+                gap: 2rem !important;
+            }
+
+            &__content{
+                display: contents;
+            }
+
+            &__heading{
+                order: 1;
+
+                p:nth-last-of-type(1){
+                    max-width: 100% !important;
+                }
+            }
+
+            &__slides{
+                order: 2;
+                flex-basis: auto !important;
+                width: 100%;
+                padding-left: 0;
+                position: static;
+                top: 0;
+
+                .slick-slide{
+                    height: auto !important;
+                }
+            }
+
+            .latest-horizontal-posts-block__content > .latest-horizontal-posts-block__footer{
+                order: 3;
+                position: relative;
+                top: 0 !important;
+                left: 0 !important;
+                max-width: none;
+                width: 100%;
+                margin-inline: auto;
+                display: block;
+                padding-left: 0 !important;
+            }
+
+            &__footer.medium-only{
+                display: none;
+            }
+
+            // Dots compactos e centralizados (fit-content)
+            &__dots{
+                position: relative;
+                top: 0;
+                width: fit-content;
+                margin-inline: auto;
+
+                .slick-dots{
+                    left: 0;
+                    margin-left: 0;
+                    width: auto;
+                }
+            }
+
+            // Setas flanqueando os dots: < ... >
+            .latest-horizontal-posts-block__content > .latest-horizontal-posts-block__footer .latest-horizontal-posts-block__arrows{
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                width: min(21rem, calc(100% - 2rem)) !important;
+                margin-top: 0 !important;
+                margin-left: 0 !important;
+                margin-right: 0 !important;
+                padding-left: 0 !important;
+            }
+        }
+
+        .ocb-pdf-btn{
+            top: 0;
+            margin-left: auto !important;
+            margin-right: auto !important;
+            padding-left: 0;
+        }
+    }
     .sharedaddy{
         display: none;
     }
@@ -487,6 +588,43 @@
                 }
             }
         }
+    }
+}
+
+// Playlist do YouTube (VÍDEOS) em fileira horizontal no mobile — 360–768px,
+// igual ao layout de 769–992px (issue #74). Reverte os overrides de mobile:
+// coluna -> fileira (row), card 100% -> 180px, grid "a b / a c" -> "a a / b b / c c",
+// embed 124x68 -> largura total do card com proporção 16:9.
+// Seletores com a mesma profundidade dos overrides originais (com
+// .video-gallery-wrapper) para vencerem no cascata.
+@media (min-width: 360px) and (max-width: 768px) {
+    .page-cpi .video-gallery-block .video-gallery-wrapper .scroll-ratio {
+        height: auto;
+        padding: 0 1rem;
+    }
+
+    .page-cpi .video-gallery-block .video-gallery-wrapper .scroll-ratio .sidebar-itens {
+        flex-direction: row !important;
+        flex-wrap: nowrap !important;
+        overflow-x: auto !important;
+        overflow-y: hidden !important;
+        padding-right: 0 !important;
+    }
+
+    .page-cpi .video-gallery-block .video-gallery-wrapper .scroll-ratio .sidebar-itens button {
+        width: 180px !important;
+        flex: 0 0 auto !important;
+    }
+
+    .page-cpi .video-gallery-block .video-gallery-wrapper .scroll-ratio .sidebar-itens button .embed-template-block {
+        grid-template-areas: "a a" "b b" "c c" !important;
+        grid-template-columns: 1fr !important;
+        margin-bottom: 0 !important;
+    }
+
+    .page-cpi .video-gallery-block .video-gallery-wrapper .scroll-ratio .sidebar-itens button .embed-template-block .wp-block-embed {
+        width: 100% !important;
+        height: auto !important;
     }
 }
 

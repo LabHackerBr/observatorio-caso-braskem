@@ -103,6 +103,7 @@
             max-width: $grid--wide;
             margin-inline: auto;
             justify-content: space-between;
+            padding-inline: $padding--medium;
 
             @include mobile{
                 justify-content: center;

@@ -109,6 +109,21 @@
     margin-top: 0 !important;
 }
 
+// Trava defensiva: embeds/iframe nunca estouram a viewport (conflito embed-optimizer/lazyload)
+.wp-block-embed,
+.embed-template-block {
+    max-width: 100%;
+
+    .wp-block-embed__wrapper,
+    iframe {
+        max-width: 100% !important;
+    }
+
+    iframe {
+        width: 100% !important;
+    }
+}
+
 .qlwapp__container {
     top: 58% !important;
     left: auto !important;
