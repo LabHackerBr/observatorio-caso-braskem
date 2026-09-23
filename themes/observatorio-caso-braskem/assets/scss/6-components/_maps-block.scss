@@ -1,6 +1,10 @@
 .maps-block{
     @media (max-width: 1232px) {
         padding-bottom: 2rem;
+
+        .wp-block-columns {
+            padding-inline: unset !important;
+        }
     }
     .hacklabr-posts-grid-block{
         .post-card{
@@ -40,6 +44,26 @@
         padding-left: $padding--large;
         @include mobile{
             padding-left: 0;
+        }
+    }
+
+    .latest-horizontal-posts-block.maps-slide {
+        @media ((min-width: 769px) and (max-width: 783px)) {
+            .latest-horizontal-posts-block__arrows{
+                padding-right: 32px !important;
+                justify-content: space-around !important;
+            }
+        }
+        @media (max-width: 1232px) {
+            padding: 0 !important;
+
+            .latest-horizontal-posts-block__footer{
+                padding-left: unset !important;
+            }
+
+            .latest-horizontal-posts-block__slides.slick-list {
+                margin: unset !important;
+            }
         }
     }
 }
