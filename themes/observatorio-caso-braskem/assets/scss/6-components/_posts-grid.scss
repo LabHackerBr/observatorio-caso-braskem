@@ -246,8 +246,8 @@
             }
             .post-card__image{
                 @include mobile{
-                height: 100px;
-
+                    height: 100px;
+                    position: relative;
                 }
             }
             .post-card__title{
@@ -271,9 +271,13 @@
             }
             .post-card__category{
                 @include mobile{
-                    position: relative;
+                    // mesmo padrao do desktop: overlay absoluto ancorado na imagem,
+                    // em vez de deslocamento relativo fragil (bottom: 2.3rem)
+                    position: absolute;
                     left: .5rem;
-                    bottom: 2.3rem;
+                    bottom: .5rem;
+                    z-index: 10;
+                    max-width: calc(100% - 1rem);
                 }
             }
             .post-card-news__category{
@@ -378,7 +382,8 @@
     .pagination{
         margin-bottom: 0;
         @include mobile{
-            margin: 1rem auto 0;
+            // respiro entre o ultimo card e a paginacao (antes 1rem, colava no card)
+            margin: 2rem auto 1rem;
         }
     }
 }

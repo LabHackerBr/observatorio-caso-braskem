@@ -45,6 +45,39 @@
     &--cover {
         position: relative;
 
+        // card cover tem altura fixa pela imagem; conteudo absoluto ancorado em
+        // bottom cresce PARA CIMA. Titulo com clamp mantem tags/categoria dentro
+        // do card mesmo com manchetes longas em telas menores (padrao teaser de noticias)
+        .post-card__title {
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 3;
+            line-clamp: 3;
+            overflow: hidden;
+        }
+
+        // altura minima da imagem acomoda o pior caso de conteudo (categoria +
+        // 3 linhas de titulo + meta): em colunas estreitas (~782px) a imagem
+        // natural era mais baixa que o conteudo, empurrando a categoria para
+        // fora do topo do card
+        .post-card__image {
+            display: flex;
+            min-height: 12.5rem;
+
+            a {
+                display: flex;
+                width: 100%;
+            }
+
+            img {
+                aspect-ratio: auto;
+                height: 100%;
+                min-height: 0;
+                object-fit: cover;
+                width: 100%;
+            }
+        }
+
         .post-card__content {
             background: linear-gradient(
                 180deg,

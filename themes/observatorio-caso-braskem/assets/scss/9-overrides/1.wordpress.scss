@@ -124,6 +124,17 @@
     }
 }
 
+// Trava defensiva: logos do Carousel Block (parcerias) nunca sao cortados —
+// neutraliza styles inline do tipo object-fit:cover em caixa quadrada
+.cb-carousel-block img {
+    object-fit: contain !important;
+    width: auto !important;
+    height: auto !important;
+    max-width: 100% !important;
+    max-height: 125px !important;
+    margin-inline: auto !important;
+}
+
 .qlwapp__container {
     top: 58% !important;
     left: auto !important;

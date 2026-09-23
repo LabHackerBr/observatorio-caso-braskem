@@ -185,15 +185,25 @@
         }
     }
 
+    // barra superior sempre acima do backdrop e do painel
+    >.container{
+        position: relative;
+        z-index: 1;
+    }
+
     &__scroll-content{
+        // painel overlay ancorado abaixo da barra (top: 100%):
+        // nao empurra o conteudo nem expande a faixa branca do header
         display: flex;
-        max-width: $grid--wide;
+        flex-flow: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
         width: 100%;
-        margin-inline: auto;
-        justify-content: space-between;
-        @include mobile{
-            flex-flow: column;
-        }
+        max-height: calc(100vh - 5rem);
+        overflow-y: auto;
+        z-index: 1;
     }
 
     &__mobile-content {
@@ -207,12 +217,7 @@
 
     &__menu-mobile{
         background-color: $color--low-pure;
-        max-width: fit-content;
-        @include mobile{
-            width: 80%;
-            max-width: unset;
-            margin-inline: auto;
-        }
+        width: 100%;
         ul, li{
             color: $color--high-light;
             list-style: none;
@@ -271,6 +276,14 @@
         }
     }
 
+    // escurece o conteudo da pagina sob o menu aberto
+    &__menu-backdrop{
+        position: fixed;
+        inset: 0;
+        background-color: rgba($color--low-pure, .55);
+        z-index: 0;
+    }
+
     &--ls-open{
         .main-header-lateral__language-selector{
             width: 100%;
@@ -280,14 +293,21 @@
     }
 
     &--menu-open {
+        z-index: 1000;
+
+        .main-header-lateral__scroll-content {
+            background-color: $color--low-pure;
+            box-shadow: $box-shadow--default;
+            animation: main-header-lateral-panel-in .2s ease-out both;
+        }
+
         .main-header-lateral__mobile-content {
             display: block;
         }
         @include mobile{
             .main-header-lateral__language-selector{
                 display: flex;
-                width: 80%;
-                margin-inline: auto;
+                width: 100%;
 
                 .wpml-language-switcher{
                     width: 100%;
@@ -390,5 +410,22 @@
 
             }
         }
+    }
+}
+
+// precedencia sobre .main-header { z-index: 1 } (importado depois em app.scss):
+// com o menu aberto, header e painel ficam acima de qualquer conteudo da pagina
+.main-header.main-header-lateral--menu-open {
+    z-index: 1000;
+}
+
+@keyframes main-header-lateral-panel-in {
+    from {
+        opacity: 0;
+        transform: translateY(-6px);
+    }
+    to {
+        opacity: 1;
+        transform: none;
     }
 }
