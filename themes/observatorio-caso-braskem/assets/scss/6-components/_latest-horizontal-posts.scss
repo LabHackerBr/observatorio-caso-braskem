@@ -310,6 +310,7 @@
 }
 
 .authors-collectives{
+    padding-bottom: 0 !important;
     .latest-horizontal-posts-block{
         .latest-horizontal-posts-block__heading{
             margin-top: 0;
@@ -334,6 +335,23 @@
                     margin-right: 0 !important;
                 }
             }
+        }
+    }
+
+    .partnerships{
+        padding-top: 0 !important;
+        min-height: 1px !important;
+
+        .wp-block-group{
+            padding-top: 1rem !important;
+            @media(max-width: 1199px){
+                padding-left: 1rem !important;
+                padding-right: 1rem !important;
+            }
+        }
+        .wp-block-heading{
+            margin-top: 1.5rem !important;
+            margin-bottom: 2rem !important;
         }
     }
 }
