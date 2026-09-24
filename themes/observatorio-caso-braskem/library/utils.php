@@ -265,10 +265,6 @@ function override_storymap_template($template) {
 		return get_stylesheet_directory() . '/single-storymap.php';
 	}
 
-    if(is_singular('map')) {
-        return get_stylesheet_directory() . '/single-map.php';
-    }
-
 	return $template;
 }
 
