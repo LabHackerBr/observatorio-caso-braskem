@@ -221,7 +221,7 @@ class Assets {
 	 * Enqueues WordPress theme styles for the editor.
 	 */
 	public function action_add_editor_styles() {
-		add_editor_style( 'assets/css/editor/editor-styles.min.css' );
+		add_editor_style( 'dist/css/editor-content.css' );
 	}
 
 	/**

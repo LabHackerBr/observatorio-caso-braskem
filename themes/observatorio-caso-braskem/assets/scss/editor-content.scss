@@ -1,0 +1,17 @@
+// Paridade do canvas do editor — injetado via add_editor_style() (assets.php),
+// carrega DENTRO do iframe do editor. Mesmo padrão do tema hacklabr/ibiomas.
+//
+// A seção "Autores e coletivos" da home é um cover com overlay #190100 em
+// dimRatio 0 (transparente): no frontend o fundo vinho vem do body.home
+// (5-objects/_post-content.scss), que não existe no canvas do editor —
+// os textos high-pure ficavam brancos sobre branco. Pinta o cover com a
+// mesma cor configurada no painel do bloco.
+
+// SETTINGS
+@import '1-settings/1.constants';
+@import '1-settings/2.variables';
+
+.editor-styles-wrapper .wp-block-cover.authors-collectives,
+.editor-styles-wrapper .wp-block-cover.fade-cover {
+    background-color: #190100;
+}
