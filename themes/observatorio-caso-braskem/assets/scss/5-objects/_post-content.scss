@@ -333,7 +333,17 @@
             }
             .slick-slide{
                 height: size(265) !important;
-                @include mobile{
+                @media(max-width: 782px) {
+                    height: size(320) !important;
+
+                }
+                @media(max-width: 748px){
+                    height: size(290) !important;
+                }
+                @media(max-width: 600px){
+                    height: size(250) !important;
+                }
+                @media(max-width: 475px){
                     height: size(210) !important;
                 }
 
