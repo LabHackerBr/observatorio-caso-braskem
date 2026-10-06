@@ -228,7 +228,7 @@
         padding: 3rem 0 1rem;
 
         @media (max-width: 1232px) {
-            padding: 0 0 1rem !important;
+            padding: 0 32px 1rem 16px !important;
         }
         .container{
             @include mobile{
@@ -333,27 +333,23 @@
             }
             .slick-slide{
                 height: size(265) !important;
-                // @include mobile{
-                //     height: auto !important;
-
-                // }
-                .post{
-                    @include mobile{
-                        max-width: size(161) !important;
-                    }
+                @include mobile{
+                    height: size(210) !important;
                 }
+
                 .post-thumbnail{
                     aspect-ratio: 16 / 10;
-                    @include mobile{
-                        max-width: size(161) !important;
-                    }
+
                 }
                 .post-content{
                     flex-direction: column-reverse;
                     bottom: 4rem !important;
                     gap: 1.5rem;
+
                     @include mobile{
                         gap: 1rem;
+                        padding-inline: 0;
+
                     }
                     .post-meta{
                         display: flex;
@@ -462,9 +458,9 @@
                 position: static;
                 top: 0;
 
-                .slick-slide{
-                    height: auto !important;
-                }
+                // .slick-slide{
+                //     height: auto !important;
+                // }
             }
 
             .latest-horizontal-posts-block__content > .latest-horizontal-posts-block__footer{
