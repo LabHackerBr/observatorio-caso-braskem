@@ -666,18 +666,20 @@
             margin-right: auto;
             padding-top: 1rem;
             padding-bottom: 2rem;
-            @include mobile{
+            @media(max-width: 1199px){
+                padding: 0 1rem;
                 flex-direction: column;
                 gap: 0;
+            }
+            @include mobile{
+
                 padding-bottom: 0;
-                margin-bottom: 0    ;
+                margin-bottom: 0;
             }
             .post-content{
                 padding-left: 0;
                 padding-right: 0;
-                @include mobile{
-                    padding: 0 .5rem;
-                }
+
                 .wp-block-post-title{
                     color: $color--primary-pure;
                     font-size: size(20);
