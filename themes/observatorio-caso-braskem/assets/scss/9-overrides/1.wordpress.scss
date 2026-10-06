@@ -158,6 +158,17 @@ body.home {
                 color: $color--secondary-pure !important;
             }
         }
+
+        @media(max-width: 768px){
+            ul{
+                gap: size(24);
+            }
+        }
+        @media(max-width: 600px){
+            ul{
+                gap: 0;
+            }
+        }
     }
 }
 
