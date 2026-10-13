@@ -21,6 +21,7 @@
             padding-inline: $padding--medium;
 
             .redes{
+                text-align: center;
                 .siga-nas-redes, .wp-block-heading{
                     text-align: center;
                     font-size: $font-size--large !important;
@@ -28,8 +29,9 @@
                 }
                 >:last-child{
                     margin-inline: auto;
+                    justify-content: center;
                     .wp-block-column{
-                        flex-basis: 20% !important;
+                        flex-basis: 8% !important;
                         .wp-block-image{
                             display: flex;
                             justify-content: center;
@@ -74,8 +76,10 @@
         }
 
         .redes{
+            text-align: center;
             >:last-child{
                 margin-block-start: $margin--medium;
+                justify-content: center;
             }
         }
 
