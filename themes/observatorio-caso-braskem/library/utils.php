@@ -683,3 +683,18 @@ add_filter( 'render_block', function ( $block_content, $block ) {
 
     return sprintf( '<figure class="wp-block-post-featured-image">%s</figure>', $placeholder );
 }, 10, 2 );
+
+/**
+ * Remove o stylesheet fantasma "wp-base-styles" da tela de login do plugin Password Protected.
+ *
+ * O Password Protected (2.8.4) faz wp_enqueue_style( 'wp-base-styles', true, ... ) com src
+ * booleano. O core converte para "1?ver=2.8.4" e o esc_url() prefixa "http://" na URL relativa,
+ * gerando href="https://1?ver=2.8.4". O navegador resolve o host "1" como 0.0.0.1 (rede local),
+ * disparando o prompt de Local Network Access ("Acessar outros dispositivos na sua rede local")
+ * na tela de senha. O handle não aponta para nenhum CSS real, então a remoção é sem efeito visual.
+ */
+add_action( 'login_enqueue_scripts', function () {
+    if ( wp_style_is( 'wp-base-styles', 'enqueued' ) ) {
+        wp_dequeue_style( 'wp-base-styles' );
+    }
+}, 99 );
