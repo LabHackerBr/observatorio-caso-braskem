@@ -11,6 +11,7 @@ const dist_dir = root_dir + '/dist';
 
 mix.sass(assets_dir + '/scss/app.scss','./css/app.css');
 mix.sass(assets_dir + '/scss/editor.scss','./css/editor.css');
+mix.sass(assets_dir + '/scss/editor-content.scss','./css/editor-content.css');
 
 // Compile all JS functionalities into separate files
 glob(assets_dir + '/javascript/functionalities/*.js').forEach((path) => {

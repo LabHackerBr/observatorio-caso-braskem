@@ -1,4 +1,12 @@
 // Bloco da home
+
+.home-timeline-section{
+    .more-button{
+        position: relative;
+        z-index: 99;
+    }
+}
+
 .ctl-wrapper{
     max-width: unset !important;
     padding-inline: $padding--large;

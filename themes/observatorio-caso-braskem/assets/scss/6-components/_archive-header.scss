@@ -250,6 +250,7 @@
         margin-left: auto;
         @include mobile {
             margin-bottom: 2.5rem;
+            margin-right: auto;
         }
         input{
             flex: 1;

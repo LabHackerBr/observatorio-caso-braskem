@@ -49,11 +49,13 @@
             }
         }"
         x-init="
+            $watch('menuOpen', (isOpen) => { document.body.style.overflow = isOpen ? 'hidden' : ''; });
             $watch('searchOpen', (isOpen) => { if (isOpen) $nextTick(() => focusSearch()) });
         "
         @keydown.escape.window="
             if (searchOpen) { searchOpen = false; $nextTick(() => $refs.toggleSearch && $refs.toggleSearch.focus()); }
             if (lsOpen) { lsOpen = false; $nextTick(() => $refs.toggleLang && $refs.toggleLang.focus()); }
+            if (menuOpen) { menuOpen = false; $nextTick(() => $refs.toggleMenu && $refs.toggleMenu.focus()); }
         "
         class="main-header main-header-lateral"
         :class="{
@@ -64,7 +66,7 @@
     >
         <div class="container container--wide">
 			<div class="main-header-lateral__content">
-                <button type="button" class="main-header__toggle-menu main-header-lateral__toggle-menu" aria-label="<?= __('Toggle menu visibility closed', 'hacklabr') ?>" @click="menuOpen = !menuOpen">
+                <button type="button" class="main-header__toggle-menu main-header-lateral__toggle-menu" x-ref="toggleMenu" aria-label="<?= esc_attr__( 'Toggle menu visibility', 'hacklabr' ) ?>" :aria-expanded="menuOpen ? 'true' : 'false'" aria-controls="header-mobile-menu" @click="menuOpen = !menuOpen">
                     <svg class="hamburger" :class="{ 'hamburger--open': menuOpen }" role="img" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg">
                         <title>Exibir menu</title>
                         <rect width="16" height="2" x="0" y="2"/>
@@ -84,7 +86,7 @@
 				</div>
 
                 <div class="main-header-lateral__social">
-                    <h1 class="main-header-lateral__social-title"><?= _e( 'Follow us on our social media', 'hacklabr' ) ?></span>
+                    <p class="main-header-lateral__social-title"><?= _e( 'Follow us on our social media', 'hacklabr' ) ?></p>
                     <?= the_social_networks_menu(false); ?>
                 </div>
 
@@ -147,7 +149,7 @@
         </div>
 
         <div class="main-header-lateral__scroll-content">
-            <div class="main-header-lateral__mobile-content">
+            <div class="main-header-lateral__mobile-content" id="header-mobile-menu">
                 <?= wp_nav_menu(['theme_location' => 'main-menu', 'container' => 'nav', 'menu_class' => 'menu', 'container_class' => 'main-header-lateral__menu-mobile']) ?>
             </div>
 
@@ -157,6 +159,8 @@
                 </div>
             </div>
         </div>
+
+        <div class="main-header-lateral__menu-backdrop" x-show="menuOpen" x-transition.opacity.duration.200ms @click="menuOpen = false" aria-hidden="true"></div>
 
 	</header>
 

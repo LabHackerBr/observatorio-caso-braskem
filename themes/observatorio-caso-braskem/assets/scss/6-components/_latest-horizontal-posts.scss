@@ -110,13 +110,47 @@
             }
             .post{
                 @include mobile{
-                    max-width: size(161) !important;
+                    max-width: size(330) !important;
+                }
+                @media(max-width: 720px){
+                    max-width: 280px !important;
+                }
+
+                @media(max-width: 670px){
+                    max-width: 250px !important;
+                }
+
+                @media(max-width: 560px){
+                    max-width: 200px !important;
+                }
+
+                @media(max-width: 440px){
+                    max-width: 171px !important;
+                }
+                @media(max-width: 385px){
+                    max-width: 151px !important;
                 }
             }
             .post-thumbnail{
 
                 @include mobile{
-                    max-width: size(161) !important;
+                    max-width: size(330) !important;
+                }
+                @media(max-width: 720px){
+                    max-width: 280px !important;
+                }
+
+                @media(max-width: 670px){
+                    max-width: 250px !important;
+                }
+                @media(max-width: 560px){
+                    max-width: 200px !important;
+                }
+                @media(max-width: 400px){
+                    max-width: 171px !important;
+                }
+                @media(max-width: 385px){
+                    max-width: 151px !important;
                 }
             }
         }
