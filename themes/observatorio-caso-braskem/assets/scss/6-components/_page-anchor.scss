@@ -48,7 +48,10 @@
             }
 
             .sidebarpage {
+                align-self: start;
                 padding: $padding--large $padding--medium;
+                position: sticky;
+                top: var(--main-header-height, 7rem);
 
                 @include mobile {
                     display: none;
@@ -61,6 +64,8 @@
                 }
 
                 #anchors {
+                    max-height: calc(100vh - var(--main-header-height, 7rem) - 6.5rem);
+                    overflow-y: auto;
                     padding-top: 1rem;
                     padding-inline: 0 $padding--large;
                     width: 90%;
@@ -72,7 +77,12 @@
                         padding: 0.5rem;
 
                         a {
-                            text-decoration: none !important;
+                            text-decoration: none;
+                        }
+
+                        &.current-section a {
+                            color: $color--primary-pure;
+                            text-decoration: underline;
                         }
                     }
                 }
@@ -84,6 +94,10 @@
             max-width: $grid--normal !important;
             display: flex;
             flex-direction: column;
+
+            > h1, > h2, > h3, > h4, > h5, > h6 {
+                scroll-margin-top: calc(var(--main-header-height, 7rem) + #{$padding--medium});
+            }
 
             @include mobile {
                 max-width: 100% !important;
