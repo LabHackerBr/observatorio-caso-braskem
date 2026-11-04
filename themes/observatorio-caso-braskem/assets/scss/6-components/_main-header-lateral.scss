@@ -22,7 +22,6 @@
     &__social {
         display: flex;
         flex-direction: column;
-        gap: $gap--small;
 
         @media (max-width: 606px) {
             display: none;
