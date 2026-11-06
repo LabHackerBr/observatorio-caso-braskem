@@ -5,4 +5,4 @@
 - platform: github
 - host: github.com
 - project: LabHackerBr/observatorio-caso-braskem
-- setup-verified: 1.4.0
+- setup-verified: 1.6.0
